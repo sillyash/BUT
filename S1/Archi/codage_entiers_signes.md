@@ -57,11 +57,19 @@ Le code x par excès de e est égal au code de x+e en binaire naturel
 
 **Remarque**
 
-En général, l'excès e est égal à 2^(n-1) - 1
+En général, l'excès e est égal à 2⁽n-1⁾ - 1, n étant le nombre de bits utilisés
+
+Ceci permet d'avoir la moitié des codes pour les nombres négatifs et l'autre moitié pour les nombres positifs
 
 **Avantages**
 
-**Exemple**
+Opérations de comparaison rapides
+
+Utilisé pour le codage de l'exposant des réels dans la norme IEEE754
+
+**Exemple sur 8 bits**
+
+- n = 8 bits -> e = 2⁷
 
 #### Remarques
 
