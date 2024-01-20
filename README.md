@@ -11,7 +11,7 @@
   - [CWAC | Fictional school web page](http://github.com/sillyash/cwac/)
   - [S102 | Pictures and PPM files manipulation](https://github.com/sillyash/S102/)
   - [S103 | Setting up a machine for DevOps](https://github.com/sillyash/S103/)
-  - [S104 | Setting up a database from scratch and making CDM](https://github.com/sillyash/S104/)
+  - [S104 | Setting up a database from scratch and making CDM](/S1/S104_CréaBD/)
 - Semester 2
 
 ## Semester 1
