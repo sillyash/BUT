@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1704810913 source:/home/amerie1/R101_InitDev/InitDev2/Lab6/chocolate.cpp
+	<iostream>
+	<stdlib.h>
+	<stdexcept>
+	"chocolate.h"
+
+1704810913 /home/amerie1/R101_InitDev/InitDev2/Lab6/chocolate.h
+	<iostream>
+	<vector>
+
+1704810185 source:/home/amerie1/R101_InitDev/InitDev2/Lab6/main.cpp
+	<iostream>
+	<ctime>
+	"chocolate.h"
+
+1704810913 source:z:\r101_initdev\initdev2\lab6\chocolate.cpp
+	<iostream>
+	<stdlib.h>
+	<stdexcept>
+	"chocolate.h"
+
+1704810913 z:\r101_initdev\initdev2\lab6\chocolate.h
+	<iostream>
+	<vector>
+
+1704810958 source:z:\r101_initdev\initdev2\lab6\main.cpp
+	<iostream>
+	<ctime>
+	"chocolate.h"
+

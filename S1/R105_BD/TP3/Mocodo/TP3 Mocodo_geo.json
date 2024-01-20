@@ -1,0 +1,24 @@
+{
+  "width": 571,
+  "height": 483,
+  "cx": [
+    [ "ETAPES", 173 ],
+    [ "VOYAGE", 328 ],
+    [ "TARIFS", 514 ],
+    [ "LIEU", 173 ],
+    [ "LIEU TOURNAGE", 421 ],
+    [ "FILMS", 75 ],
+    [ "PAYS", 421 ]
+  ],
+  "cy": [
+    [ "ETAPES", 77 ],
+    [ "VOYAGE", 77 ],
+    [ "TARIFS", 77 ],
+    [ "LIEU", 229 ],
+    [ "LIEU TOURNAGE", 229 ],
+    [ "FILMS", 389 ],
+    [ "PAYS", 389 ]
+  ],
+  "shift": [],
+  "ratio": []
+}

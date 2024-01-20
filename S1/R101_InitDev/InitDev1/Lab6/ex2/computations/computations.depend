@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1697613322 source:z:\r101_initdev\lab6\computations\main.cpp
+	<iostream>
+	"menu.h"
+
+1697611080 z:\r101_initdev\lab6\computations\menu.h
+
+1697613118 source:z:\r101_initdev\lab6\computations\menu.cpp
+	<iostream>
+	"menu.h"
+
+1697614062 source:z:\r101_initdev\lab6\ex2\computations\computations.cpp
+	<iostream>
+	"computations.h"
+
+1697614073 z:\r101_initdev\lab6\ex2\computations\computations.h
+
+1697615825 source:z:\r101_initdev\lab6\ex2\computations\main.cpp
+	<iostream>
+	"computations.h"
+	"isInterval.h"
+
+1697615871 source:z:\r101_initdev\lab6\ex2\computations\isinterval.cpp
+	<iostream>
+	"isInterval.h"
+
+1697615860 z:\r101_initdev\lab6\ex2\computations\isinterval.h
+

@@ -1,0 +1,83 @@
+#include <iostream>
+#include <stdlib.h>     // rand, srand
+#include <stdexcept>    // invalid_argument
+
+#include "chocolate.h"
+using namespace std;
+
+
+// empty constructor
+Chocolate::Chocolate()
+{
+    _type = 0;
+    _weight = 30;
+}
+
+
+// regular constructor
+Chocolate::Chocolate(const string &type, const int &weight)
+{
+    _type = _stringToType(type);
+    _weight = weight;
+}
+
+
+// weight only constructor (random type)
+Chocolate::Chocolate(const int &weight)
+{
+    _type = rand() % NBTYPES;
+    _weight = weight;
+}
+
+
+// theWeight
+int Chocolate::theWeight()const
+{
+    return _weight;
+}
+
+
+// theType
+string Chocolate::theType()const
+{
+    return _typeToString(_type);
+}
+
+
+// typeToString
+string Chocolate::_typeToString(int n)const
+{
+    // returns the string equivalent to the type
+    if (n!=0 && n!=1 && n!=2) throw invalid_argument ("String is of incorrect type.\n\t\t\tTypes are "+BLACK+", "+WHITE+", "+MILK+".");
+    string s;
+
+    switch(n){
+        case 0: s="black";break;
+        case 1: s="white";break;
+        case 2: s="milk";break;
+    }
+    return s;
+}
+
+
+// stringToType
+int Chocolate::_stringToType(string n)const
+{
+    // returns the type equivalent to the string
+    if (n != BLACK && n != WHITE && n != MILK) throw invalid_argument ("String is of incorrect type.\n\t\t\tTypes are "+BLACK+", "+WHITE+", "+MILK+".");
+    int type;
+    if (n==BLACK) type = CBLACK;
+    else if (n==WHITE) type = CWHITE;
+    else type = CMILK;
+    return type;
+}
+
+
+// operator overloading
+ostream& operator<<(ostream& os, const Chocolate& choco)const
+{
+    os  << choco._typeToString(choco.theType())
+        << ", " << choco.theWeight() << "g" << endl;
+    return os;
+}
+

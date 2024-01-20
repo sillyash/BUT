@@ -1,0 +1,178 @@
+/// YOUR NAME HERE: MERIENNE Ash
+/// YOUR GROUP NUMBER HERE:
+
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+
+void vecCout(vector<float> vec) {
+    // Display content of vec
+    for (int i = 0; i < vec.size(); i++) {
+        cout << vec[i] << "  ";
+    }
+}
+
+float vecAvg(vector<float> vec) {
+    // Returns average value of the elements in vec
+    float avg = 0;
+    for (int i = 0; i < vec.size(); i++) {
+        avg += vec[i];
+    }
+    avg /= vec.size();
+    return avg;
+}
+
+int vecMax(vector<float> vec) {
+    // Returns the index of the max value in vec
+    int i = 0;
+    float max = vec[0];
+    int iMax = 0;
+    for (int i = 0; i < vec.size(); i++) {
+        if (vec[i] > max) {
+            max = vec[i];
+            iMax = i;
+        }
+    }
+    return iMax;
+}
+
+int vecMin(vector<float> vec) {
+    // Returns the index of the min value in vec
+    int i = 0;
+    float min = vec[0];
+    int iMin = 0;
+    for (int i = 0; i < vec.size(); i++) {
+        if (vec[i] < min) {
+            min = vec[i];
+            iMin = i;
+        }
+    }
+    return iMin;
+}
+
+vector<float> vecNeg(vector<float> vec) {
+    // Returns the vector containing only negative values from vec
+    int i = 0;
+    vector<float> vectorNeg;
+    for (int i = 0; i < vec.size(); i++) {
+        if (vec[i] < 0) {
+            vectorNeg.push_back(vec[i]);
+        }
+    }
+    return vectorNeg;
+}
+
+vector<float> indNeg(vector<float> vec) {
+    // Returns the vector containing only negative values index from vec
+    int i = 0;
+    vector<float> vectorNeg;
+    for (int i = 0; i < vec.size(); i++) {
+        if (vec[i] < 0) {
+            vectorNeg.push_back(i);
+        }
+    }
+    return vectorNeg;
+}
+
+vector<float> vecPos(vector<float> vec) {
+    // Returns the vector containing only positive values from vec
+    int i = 0;
+    vector<float> vectorPos;
+    for (int i = 0; i < vec.size(); i++) {
+        if (vec[i] > 0) {
+            vectorPos.push_back(vec[i]);
+        }
+    }
+    return vectorPos;
+}
+
+vector<float> indPos(vector<float> vec) {
+    // Returns the vector containing only positive values index from vec
+    int i = 0;
+    vector<float> vectorPos;
+    for (int i = 0; i < vec.size(); i++) {
+        if (vec[i] > 0) {
+            vectorPos.push_back(i);
+        }
+    }
+    return vectorPos;
+}
+
+vector<float> vecNoNull(vector<float> vec) {
+    // Returns the vector vec without its null values
+    int i = 0;
+    vector<float> vectorPos;
+    for (int i = 0; i < vec.size(); i++) {
+        if (vec[i] != 0) {
+            vectorPos.push_back(vec[i]);
+        }
+    }
+    return vectorPos;
+}
+
+
+int main() {
+    // Declare variables and constants
+    const double STOP = -999.9;
+    vector<float> myVector;
+    vector<float> vectorNeg;
+    vector<float> vectorPos;
+    int iMax, iMin;
+    double num;
+
+    // Asks for input until STOP, and puts it in myVector
+    do {
+        cout << "Enter a real number, -999.9 to stop." << endl;
+        cin >> num;
+        if (num != STOP) {
+            myVector.push_back(num);
+
+        }
+    }
+    while (num != STOP);
+
+    // Display content
+    cout << endl << "myVector:  "; vecCout(myVector);
+
+    // Remove null values from myVector and display it
+    myVector = vecNoNull(myVector);
+    cout << endl << "Without null values:  "; vecCout(myVector);
+    // Display average
+    cout << endl << "Average:  " << vecAvg(myVector) << endl;
+
+    // Store Max and Min index
+    iMax = vecMax(myVector);
+    iMin = vecMin(myVector);
+    // Display max and min and their index
+    cout << "Maximum:  " << myVector[iMax] << ", Index:  " << iMax << endl;
+    cout << "Minimum:  " << myVector[iMin] << ", Index:  " << iMin << endl;
+
+    // Create vectors of index of negatives and positives
+    vectorNeg = indNeg(myVector);
+    vectorPos = indPos(myVector);
+    // Display vectors of index
+    cout << "indNeg:  "; vecCout(vectorNeg);
+    cout << endl << "indPos:  "; vecCout(vectorPos);
+    cout << endl;
+
+    // Display vectors of negatives and vector of positives
+    cout << "Negative values:  ";
+    for (int i = 0; i < indNeg.size(); i++) {
+        cout << myVector[indNeg[i]] << "  ";
+    }
+    cout << endl << "Positive values:  ";
+    for (int i = 0; i < indPos.size(); i++) {
+        cout << myVector[indPos[i]] << "  ";
+    }
+    cout << endl;
+
+}
+
+/*
+TESTS
+
+
+*/
+

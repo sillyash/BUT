@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1694591171 source:z:\documents\c++\lab1\ex4\main.cpp
+	<iostream>
+	<cstdlib>
+

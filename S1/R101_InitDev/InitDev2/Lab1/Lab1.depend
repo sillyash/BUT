@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1700583482 source:/home/amerie1/R101_InitDev/InitDev2/Lab1/license.cpp
+	<string>
+	<iostream>
+	<stdexcept>
+	"license.h"
+
+1700582652 /home/amerie1/R101_InitDev/InitDev2/Lab1/license.h
+	<string>
+
+1700584246 source:/home/amerie1/R101_InitDev/InitDev2/Lab1/main.cpp
+	<string>
+	<iostream>
+	<vector>
+	<stdexcept>
+	"license.h"
+

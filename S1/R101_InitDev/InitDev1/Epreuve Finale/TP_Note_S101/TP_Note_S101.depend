@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1700151249 source:z:\r101_initdev\epreuve finale\tp_note_s101\gestionnotes.cpp
+	<iostream>
+	<vector>
+	"gestionNotes.h"
+
+1700151182 z:\r101_initdev\epreuve finale\tp_note_s101\gestionnotes.h
+	<iostream>
+	<vector>
+
+1700150533 source:z:\r101_initdev\epreuve finale\tp_note_s101\main.cpp
+	<iostream>
+	"gestionNotes.h"
+

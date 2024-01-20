@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1705530495 source:c:\users\swann\downloads\tp6_revisions\main.cpp
+	<iostream>
+	<string>
+	<stdlib.h>
+	<time.h>
+	"chocolat.h"
+	"boitechoco.h"
+
+1705529466 c:\users\swann\downloads\tp6_revisions\chocolat.h
+
+1705530495 source:c:\users\swann\downloads\tp6_revisions\chocolat.cpp
+	<iostream>
+	"chocolat.h"
+	<stdlib.h>
+	<time.h>
+	<string>
+
+1705530441 source:c:\users\swann\downloads\tp6_revisions\boitechoco.cpp
+	<iostream>
+	"chocolat.h"
+	"boitechoco.h"
+	<stdlib.h>
+	<time.h>
+	<string>
+
+1705530441 c:\users\swann\downloads\tp6_revisions\boitechoco.h
+	<vector>
+	<string>
+	<iostream>
+

@@ -1,0 +1,16 @@
+:
+ETAPES: NumEtape, #NumVoyage->VOYAGE->NumVoyage, #NumLieu->LIEU->NumLieu, Durée
+:
+VOYAGE: NumVoyage, NomVoyage, CapacitéMin, CapacitéMax, DateDépart, TypePension
+:
+TARIFS: NumPrix, Prix, #NumVoyage->VOYAGE->NumVoyage, #DateDépart->VOYAGE->DateDépart, #TypePension->VOYAGE->TypePension
+
+:
+LIEU: NumLieu, #NumPays->PAYS->NumPays, NomLieu
+::
+LIEU TOURNAGE: NumLieuTournage, #NumLieu->LIEU->NumLieu, #NumPays->PAYS->NumPays, NomLieuTournage, Description
+
+FILMS: NumFilm, #NumLieuTournage->LIEU TOURNAGE->NumLieuTournage, NomFilm, AnnéeFilm, BudgetFilm, RevenuFilm, ScoreFilm, #PaysFinancement->PAYS->NumPays
+:::
+PAYS: NumPays, CodePays, NomEN, NomFR, Vaccinations, Passeport, CNI
+

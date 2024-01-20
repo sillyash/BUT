@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/swann/Downloads/TP3/Voyages.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2221"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="0" parent="0"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,5:mainETAPE"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="ETAPE" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="72"/><column index="2" value="84"/><column index="3" value="61"/><column index="4" value="47"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="FILM" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="58"/><column index="2" value="122"/><column index="3" value="120"/><column index="4" value="58"/><column index="5" value="73"/><column index="6" value="77"/><column index="7" value="80"/><column index="8" value="68"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="LIEU" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="61"/><column index="3" value="66"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="LIEU_TOURNAGE" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="122"/><column index="2" value="61"/><column index="3" value="66"/><column index="4" value="58"/><column index="5" value="211"/><column index="6" value="81"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="PAYS" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="66"/><column index="2" value="71"/><column index="3" value="50"/><column index="4" value="50"/><column index="5" value="90"/><column index="6" value="74"/><column index="7" value="40"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="VOYAGE" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="84"/><column index="2" value="90"/><column index="3" value="86"/><column index="4" value="83"/><column index="5" value="84"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">DROP TABLE TARIFS;
+DROP TABLE LIEU_TOURNAGE;
+DROP TABLE FILM;
+DROP TABLE ETAPE;
+DROP TABLE LIEU;
+DROP TABLE PAYS;
+DROP TABLE VOYAGE;
+
+
+CREATE TABLE VOYAGE (
+	NumVoyage INT NOT NULL UNIQUE PRIMARY KEY,
+	NomVoyage INT NOT NULL,
+	CapacitéMin INT,
+	CapaitéMax INT,
+	TypePension TEXT NOT NULL
+);
+
+CREATE TABLE PAYS (
+	NumPays INT NOT NULL UNIQUE PRIMARY KEY,
+	CodePays TEXT,
+	NomFR TEXT NOT NULL,
+	NomEN TEXT NOT NULL,
+	Vaccinations TEXT,
+	Passeport INT,
+	CNI INT
+);
+
+CREATE TABLE LIEU (
+	NumLieu INT NOT NULL UNIQUE PRIMARY KEY,
+	NomLieu TEXT NOT NULL,
+	NumPays INT NOT NULL,
+	FOREIGN KEY(NumPays) REFERENCES PAYS(NumPays)
+);
+
+CREATE TABLE ETAPE (
+	NumEtape INT NOT NULL UNIQUE PRIMARY KEY,
+	NumVoyage INT NOT NULL,
+	NumLieu INT NOT NULL,
+	Durée INT,
+	FOREIGN KEY(NumVoyage) REFERENCES VOYAGE(NumVoyage),
+	FOREIGN KEY(NumLieu) REFERENCES LIEU(NumLieu)
+);
+
+CREATE TABLE FILM (
+	NumFilm INT NOT NULL UNIQUE PRIMARY KEY,
+	PaysFinancement INT NOT NULL,
+	NomFilm TEXT NOT NULL,
+	AnnéeFilm INT,
+	BudgetFilm INT,
+	RevenuFilm INT,
+	ScoreFilm REAL,
+	FOREIGN KEY(PaysFinancement) REFERENCES PAYS(NumPays)
+);
+
+CREATE TABLE LIEU_TOURNAGE (
+	NumLieuTournage INT NOT NULL UNIQUE PRIMARY KEY,
+	NumLieu INT NOT NULL,
+	NumPays INT NOT NULL,
+	NumFilm INT NOT NULL,
+	NomLieuTournage TEXT NOT NULL,
+	Description TEXT,
+	FOREIGN KEY(NumFilm) REFERENCES FILM(NumFilm),
+	FOREIGN KEY(NumLieu) REFERENCES LIEU(NumLieu),
+	FOREIGN KEY(NumPays) REFERENCES PAYS(NumPays)
+);
+
+CREATE TABLE TARIFS (
+	NumPrix INT NOT NULL UNIQUE PRIMARY KEY,
+	Prix INT,
+	NumVoyage INT NOT NULL,
+	DateDépart TEXT,
+	FOREIGN KEY(NumVoyage) REFERENCES VOYAGE(NumVoyage)
+);
+
+INSERT INTO VOYAGE VALUES(1, &quot;Les 400 Coups&quot;, 5, 15, &quot;PC&quot;);
+
+INSERT INTO PAYS VALUES(7, &quot;FR&quot;, &quot;France&quot;, &quot;France&quot;, NULL, 0, 1);
+
+INSERT INTO LIEU VALUES(2, &quot;Paris&quot;, 7);
+INSERT INTO LIEU VALUES(457, &quot;Honfleur&quot;, 7);
+
+INSERT INTO ETAPE VALUES(1, 1, 2, 1);
+INSERT INTO ETAPE VALUES(2, 1, 457, 3);
+INSERT INTO ETAPE VALUES(3, 1, 2, 1);
+
+INSERT INTO FILM VALUES(176, 7, &quot;Les 400 Coups&quot;, 1959, NULL, NULL, 7.8);
+
+INSERT INTO LIEU_TOURNAGE VALUES(227, 2, 7, 176, &quot;Paris&quot;, NULL);
+INSERT INTO LIEU_TOURNAGE VALUES(755, 2, 7, 176, &quot;Montmartre, Paris 18&quot;, NULL);
+INSERT INTO LIEU_TOURNAGE VALUES(762, 2, 7, 176, &quot;Sacré Coeur, Paris 18&quot;, NULL);
+INSERT INTO LIEU_TOURNAGE VALUES(1573, 2, 7, 176, &quot;Avenue Frochot, Paris 9&quot;, NULL);
+INSERT INTO LIEU_TOURNAGE VALUES(1575, 2, 7, 176, &quot;Palais de Chaillot, Paris 16&quot;, NULL);
+INSERT INTO LIEU_TOURNAGE VALUES(1576, 2, 7, 176, &quot;Pigalle, Paris 9&quot;, NULL);
+INSERT INTO LIEU_TOURNAGE VALUES(1577, 2, 7, 176, &quot;Tour Eiffel, Champ de Mars, Paris 7&quot;, NULL);
+INSERT INTO LIEU_TOURNAGE VALUES(1574, 457, 7, 176, &quot;Honfleur&quot;, NULL);
+
+INSERT INTO TARIFS VALUES(1, 390, 1, &quot;25-09-23&quot;);
+INSERT INTO TARIFS VALUES(2, 380, 1, &quot;02-10-23&quot;);
+INSERT INTO TARIFS VALUES(3, 380, 1, &quot;09-10-23&quot;);
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

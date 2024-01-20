@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1699523593 source:z:\r101_initdev\s101\ex2\mainfacebook.cpp
+	<iostream>
+	<vector>
+	<string>
+	"functionsFacebook.h"
+
+1699522620 z:\r101_initdev\s101\ex2\functionsfacebook.h
+	<iostream>
+	<vector>
+	<string>
+
+1699523649 source:z:\r101_initdev\s101\ex2\functionsfacebook.cpp
+	<iostream>
+	<vector>
+	"functionsFacebook.h"
+
+1699903700 source:c:\users\swann\downloads\r101_initdev\s101\ex2\mainfacebook.cpp
+	<iostream>
+	<vector>
+	<string>
+	"functionsFacebook.h"
+
+1699903564 c:\users\swann\downloads\r101_initdev\s101\ex2\functionsfacebook.h
+	<iostream>
+	<vector>
+	<string>
+
+1699903527 source:c:\users\swann\downloads\r101_initdev\s101\ex2\functionsfacebook.cpp
+	<iostream>
+	<vector>
+	"functionsFacebook.h"
+

@@ -1,0 +1,188 @@
+# depslib dependency file v1.0
+1701787026 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/mainIntroSearch.cpp
+	<iostream>
+	<iostream>
+	<vector>
+	<stdexcept>
+	<cmath>
+
+1701791609 >
+
+1701793527 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/main.cpp
+	<iostream>
+	<stdexcept>
+	<vector>
+	<fstream>
+	"student.h"
+	"schoolClass.h"
+	<iostream>
+	<vector>
+	<cmath>
+	"piece.h"
+	"appartement.h"
+
+1702301915 nt.h"
+
+1701640587 /home/amerie1/R101_InitDev/InitDev2/Lab3/student.h
+	<iostream>
+
+1669737262 
+
+1701640672 /home/amerie1/R101_InitDev/InitDev2/Lab3/schoolClass.h
+	<iostream>
+	<vector>
+	"student.h"
+
+1701640485 "
+
+1701640478 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/schoolClass.cpp
+	<iostream>
+	<vector>
+	<fstream>
+	"student.h"
+	"schoolClass.h"
+
+1702304891 ss.h"
+
+1701640485 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/student.cpp
+	"student.h"
+
+1701788757 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/room.cpp
+	"room.h"
+	<iostream>
+
+1669737262 /home/amerie1/R101_InitDev/InitDev2/Lab3/room.h
+	<string>
+
+1669737262 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/piece.cpp
+	"piece.h"
+	<iostream>
+
+1669737262 /home/amerie1/R101_InitDev/InitDev2/Lab3/piece.h
+	<string>
+
+1701792723 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/appartement.cpp
+	<vector>
+	<iostream>
+	"piece.h"
+	"appartement.h"
+	<string>
+	<cmath>
+
+1701791609 /home/amerie1/R101_InitDev/InitDev2/Lab3/appartement.h
+	<string>
+	<vector>
+	"piece.h"
+	<stdexcept>
+
+1701791032 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/mainPt3.cpp
+	<iostream>
+	<vector>
+	<cmath>
+	"piece.h"
+	"appartement.h"
+
+1702302899 source:z:\r101_initdev\initdev2\lab3\appartement.cpp
+	<vector>
+	<iostream>
+	"piece.h"
+	"appartement.h"
+	<string>
+	<cmath>
+
+1669737262 z:\r101_initdev\initdev2\lab3\piece.h
+	<string>
+
+1701791609 z:\r101_initdev\initdev2\lab3\appartement.h
+	<string>
+	<vector>
+	"piece.h"
+	<stdexcept>
+
+1669737262 source:z:\r101_initdev\initdev2\lab3\piece.cpp
+	"piece.h"
+	<iostream>
+
+1702304891 source:z:\r101_initdev\initdev2\lab3\schoolclass.cpp
+	<iostream>
+	<vector>
+	<fstream>
+	<cmath>
+	"student.h"
+	"schoolClass.h"
+
+1702303886 z:\r101_initdev\initdev2\lab3\student.h
+	<iostream>
+
+1702303564 z:\r101_initdev\initdev2\lab3\schoolclass.h
+	<iostream>
+	<vector>
+	"student.h"
+
+1701640485 source:z:\r101_initdev\initdev2\lab3\student.cpp
+	"student.h"
+
+1702301915 source:z:\r101_initdev\initdev2\lab3\main.cpp
+	<iostream>
+	<stdexcept>
+	<vector>
+	<fstream>
+	<string>
+	<cmath>
+	"student.h"
+	"schoolClass.h"
+	"piece.h"
+	"appartement.h"
+
+1702909680 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/appartement.cpp
+	<vector>
+	<iostream>
+	"piece.h"
+	"appartement.h"
+	<string>
+	<cmath>
+
+1669737262 /home/amerie1/R101_InitDev/InitDev2/Lab3/piece.h
+	<string>
+
+1702909955 /home/amerie1/R101_InitDev/InitDev2/Lab3/appartement.h
+	<string>
+	<vector>
+	"piece.h"
+	<stdexcept>
+
+1702908024 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/piece.cpp
+	"piece.h"
+	<iostream>
+
+1702304891 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/schoolClass.cpp
+	<iostream>
+	<vector>
+	<fstream>
+	<cmath>
+	"student.h"
+	"schoolClass.h"
+
+1702303886 /home/amerie1/R101_InitDev/InitDev2/Lab3/student.h
+	<iostream>
+
+1702303564 /home/amerie1/R101_InitDev/InitDev2/Lab3/schoolClass.h
+	<iostream>
+	<vector>
+	"student.h"
+
+1701640485 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/student.cpp
+	"student.h"
+
+1702909913 source:/home/amerie1/R101_InitDev/InitDev2/Lab3/main.cpp
+	<iostream>
+	<stdexcept>
+	<vector>
+	<fstream>
+	<string>
+	<cmath>
+	"student.h"
+	"schoolClass.h"
+	"piece.h"
+	"appartement.h"
+

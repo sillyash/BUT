@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1695234419 source:c:\users\swann\onedrive\documents\code\c++\lab3\ex5\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+

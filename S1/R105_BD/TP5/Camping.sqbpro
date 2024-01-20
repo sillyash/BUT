@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/swann/Downloads/TP5/Camping.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2353"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainACTIVITE"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="ACTIVITE" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="70"/><column index="2" value="86"/><column index="3" value="90"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="Camping.sql">DROP TABLE TARIF;
+DROP TABLE COMPO_CAMP;
+DROP TABLE PRIX;
+DROP TABLE CAMPING;
+DROP TABLE OFFRE;
+DROP TABLE BASE_LOISIRS;
+DROP TABLE PERIODE;
+DROP TABLE TYPECHAL;
+DROP TABLE ACTIVITE;
+
+
+CREATE TABLE &quot;ACTIVITE&quot; (
+	&quot;idActivite&quot;	INT,
+	&quot;NomActivite&quot;	TEXT NOT NULL,
+	&quot;TypeActivite&quot;	INT NOT NULL,
+	PRIMARY KEY(&quot;idActivite&quot;)
+);
+
+CREATE TABLE &quot;TYPECHAL&quot; (
+	&quot;idTC&quot; INT,
+	PRIMARY KEY(&quot;idTC&quot;)
+);
+
+CREATE TABLE &quot;PERIODE&quot; (
+	&quot;CodePeriode&quot;	INT,
+	&quot;NomPeriode&quot;	TEXT NOT NULL,
+	PRIMARY KEY(&quot;CodePeriode&quot;)
+);
+
+CREATE TABLE &quot;BASE_LOISIRS&quot; (
+	&quot;idBase&quot;	INT,
+	&quot;NomBase&quot;	TEXT NOT NULL,
+	&quot;VoieBL&quot;	TEXT NOT NULL,
+	&quot;VilleBL&quot;	TEXT NOT NULL,
+	&quot;CPBL&quot;	INTEGER NOT NULL,
+	PRIMARY KEY(&quot;idBase&quot;)
+);
+
+CREATE TABLE &quot;OFFRE&quot; (
+	&quot;idBase&quot; INT,
+	&quot;idActivite&quot; INT,
+	PRIMARY KEY(&quot;idBase&quot;,&quot;idActivite&quot;),
+	FOREIGN KEY(&quot;idBase&quot;) REFERENCES BASE_LOISIRS(&quot;idBase&quot;),
+	FOREIGN KEY(&quot;idActivite&quot;) REFERENCES ACTIVITE(&quot;idActivite&quot;)
+);
+
+CREATE TABLE &quot;CAMPING&quot; (
+	&quot;idCamping&quot;	INT,
+	&quot;NomCamping&quot; TEXT NOT NULL,
+	&quot;DateOuv&quot; TEXT NOT NULL,
+	&quot;DateFerm&quot; TEXT NOT NULL,
+	&quot;Etoiles&quot; INT NOT NULL,
+	&quot;LabelQF&quot; INT,
+	&quot;Telephone&quot; TEXT NOT NULL,
+	&quot;VoieCamping&quot;	TEXT NOT NULL,
+	&quot;VilleCamping&quot;	TEXT NOT NULL,
+	&quot;CPCamping&quot;	INT NOT NULL,
+	&quot;idBase&quot; INT,
+	PRIMARY KEY(&quot;idCamping&quot;),
+	FOREIGN KEY(&quot;idBase&quot;) REFERENCES BASE_LOISIRS(&quot;idBase&quot;)
+);
+
+CREATE TABLE &quot;PRIX&quot; (
+	&quot;idCamping&quot;	INT,
+	&quot;idActivite&quot; INT,
+	&quot;Prix&quot; INT,
+	PRIMARY KEY(&quot;idCamping&quot;,&quot;idActivite&quot;),
+	FOREIGN KEY(&quot;idCamping&quot;) REFERENCES CAMPING(&quot;idCamping&quot;),
+	FOREIGN KEY(&quot;idActivite&quot;) REFERENCES ACTIVITE(&quot;idActivite&quot;)
+);
+
+CREATE TABLE &quot;COMPO_CAMP&quot; (
+	&quot;idCamping&quot;	INT,
+	&quot;idTC&quot; INT,
+	&quot;nbChal&quot; INT,
+	PRIMARY KEY(&quot;idCamping&quot;,&quot;idTC&quot;),
+	FOREIGN KEY(&quot;idCamping&quot;) REFERENCES CAMPING(&quot;idCamping&quot;),
+	FOREIGN KEY(&quot;idTC&quot;) REFERENCES TYPECHAL(&quot;idTC&quot;)
+);
+
+CREATE TABLE &quot;TARIF&quot; (
+	&quot;idCamping&quot;	INT,
+	&quot;idTC&quot; INT,
+	&quot;CodePeriode&quot; INT NOT NULL,
+	PRIMARY KEY(&quot;idCamping&quot;,&quot;idTC&quot;),
+	FOREIGN KEY(&quot;idCamping&quot;, &quot;idTC&quot;) REFERENCES COMPO_CAMP(&quot;idCamping&quot;,&quot;idTC&quot;)
+);
+
+INSERT INTO BASE_LOISIRS VALUES(1, &quot;AquaPark Biscarosse&quot;, &quot;12 rue du Lac&quot;, &quot;Roubaix&quot;, 59100);
+INSERT INTO BASE_LOISIRS VALUES(2, &quot;Sporting Adventure Rive Gauche&quot;, &quot;12 rue du Lac&quot;, &quot;Roubaix&quot;, 59100);
+INSERT INTO BASE_LOISIRS VALUES(3, &quot;Etang de Tamniès&quot;, &quot;12 rue du Lac&quot;, &quot;Roubaix&quot;, 59100);
+INSERT INTO BASE_LOISIRS VALUES(4, &quot;La Maladrerie&quot;, &quot;12 rue du Lac&quot;, &quot;Roubaix&quot;, 59100);
+
+INSERT INTO CAMPING VALUES(2, '20230415', '20230110', 3, 0, &quot;05 56 22 73 28&quot;, &quot;La Forêt&quot;, &quot;Route de Souillac&quot;, &quot;Sarlat La Canéda&quot;, 59100, 1);
+INSERT INTO CAMPING VALUES(3, '20230430', '20230930', 3, 0, &quot;05 56 22 10 44&quot;, &quot;Panorama du Pyla&quot;, &quot;Route de Souillac&quot;, &quot;Sarlat La Canéda&quot;, 59100, 1);
+INSERT INTO CAMPING VALUES(4, '20230318', '20231119', 4, 1, &quot;05 46 47 62 37&quot;, &quot;La Brande&quot;, &quot;Route de Souillac&quot;, &quot;Sarlat La Canéda&quot;, 59100, NULL);
+INSERT INTO CAMPING VALUES(5, '20230101', '20231231', 4, 0, &quot;05 46 76 52 29&quot;, &quot;Les Gros Joncs&quot;, &quot;Route de Souillac&quot;, &quot;Sarlat La Canéda&quot;, 59100, NULL);
+INSERT INTO CAMPING VALUES(6, '20230603', '20230903', 3, 1, &quot;05 46 47 60 85&quot;, &quot;Fief-Melin&quot;, &quot;25 rue du Stade&quot;, &quot;Sainte Cécile&quot;, 85110, NULL);
+INSERT INTO CAMPING VALUES(7, '20230603', '20230917', 4, 0, &quot;05 65 46 89 85&quot;, &quot;Les Granges&quot;, &quot;Lac de Pareloup&quot;, &quot;Canet-de-Salars&quot;, 12290, 3);
+INSERT INTO CAMPING VALUES(8, '20230513', '20230930', 4, 0, &quot;05 53 31 46 00&quot;, &quot;Aqua Viva&quot;, &quot;Route de Souillac&quot;, &quot;Sarlat La Canéda&quot;, 59100, 3);
+INSERT INTO CAMPING VALUES(9, '20230401', '20230930', 4, 1, &quot;05 53 31 46 00&quot;, &quot;Soleil Plage&quot;, &quot;Route de Souillac&quot;, &quot;Sarlat La Canéda&quot;, 59100, 3);
+INSERT INTO CAMPING VALUES(10, '20230401', '20231015', 2, 0, &quot;05 53 31 46 00&quot;, &quot;Le Mont Libre&quot;, &quot;Route de Souillac&quot;, &quot;Sarlat La Canéda&quot;, 59100, 2);
+INSERT INTO CAMPING VALUES(11, '20230603', '20230930', 2, 0, &quot;02 51 40 24 07&quot;, &quot;La Rivière&quot;, &quot;25 rue du Stade&quot;, &quot;Sainte Cécile&quot;, 85110, NULL);
+INSERT INTO CAMPING VALUES(12, '20230101', '20231231', 3, 1, &quot;05 65 46 89 85&quot;, &quot;Le Caussonel&quot;, &quot;Lac de Pareloup&quot;, &quot;Canet-de-Salars&quot;, 12290, 4);
+INSERT INTO CAMPING VALUES(13, '20230502', '20231001', 3, 0, &quot;05 53 31 46 00&quot;, &quot;la Devèze&quot;, &quot;Route de Souillac&quot;, &quot;Sarlat La Canéda&quot;, 59100, 4);
+
+--Q1
+SELECT CPCamping, VilleCamping
+FROM CAMPING
+WHERE(idBase IS NOT NULL);
+
+--Q2 ??? DOES NOT WORK &gt;:3
+SELECT NomCamping
+FROM CAMPING
+WHERE((DateOuv &lt; '20230601') AND (DateFerm &lt;= '20230501'));
+--https://stackoverflow.com/questions/1975737/sqlite-datetime-comparison
+
+--Q3
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

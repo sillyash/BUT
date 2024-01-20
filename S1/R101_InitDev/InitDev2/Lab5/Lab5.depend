@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1702910159 source:/home/amerie1/R101_InitDev/InitDev2/Lab5/main.cpp
+	<cstdlib>
+	<ctime>
+	<stdexcept>
+	<iostream>
+	"vectorSort.h"
+	"tools.h"
+
+1671484860 /home/amerie1/R101_InitDev/InitDev2/Lab5/vectorSort.h
+	<vector>
+	"tools.h"
+
+1671484860 /home/amerie1/R101_InitDev/InitDev2/Lab5/tools.h
+	<vector>
+
+1702910494 source:/home/amerie1/R101_InitDev/InitDev2/Lab5/tools.cpp
+	<iostream>
+	"vectorSort.h"
+	"tools.h"
+
+1702993059 source:/home/amerie1/R101_InitDev/InitDev2/Lab5/vectorSort.cpp
+	<iostream>
+	"vectorSort.h"
+	"tools.h"
+

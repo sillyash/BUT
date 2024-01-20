@@ -1,0 +1,30 @@
+PRODUIT: idProduit, Prix, Description, Spécifications, FicheTechnique
+:::
+LIGNECOMMANDE: #idCommande > COMMANDE > idCommande, _#idProduit > PRODUIT > idProduit, NbProduit
+:::
+COMMANDE: idCommande, DateCommande, TauxTVA, idSite, idClient
+:::
+
+::::
+STOCK: #idProduit > PRODUIT > idProduit, #idEntrepot > ENTREPOT > idEntrepot, QuantiteStock, Référence, NumBaie, NumRangée
+::
+ENTREPOT: idEntrepot, AddresseEntrepot, QuaiDeDéchargement, #CodeDepartement > DEPARTEMENT > CodeDepartement, #CodeVille > VILLE > CodeVille
+:::::
+
+:::::::::::
+VILLE: CodeDepartement, _CodeVille, NomVille
+:
+
+:::::::::::
+DEPARTEMENT: CodeDepartement, NomDepartement
+:
+
+:::
+INTERLOCUTEUR: idInterloc, PrenomInterloc, NomInterlocuteur, EmailInterloc, RoleInterloc, TelInterloc, idClient
+:::
+CLIENT: idClient, RaisonSociale, StatutJuridique, NomJuridique, AdresseSiege, TelClient, EmailClient, Siret, IBAN, BIC, CodeDepartement, CodeVille
+:::::
+
+:::::::
+SITE: idSite, _CodeDepartement, NomSite, Adresse, CodeVille, idClient, idInterloc
+:::::

@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1698310407 source:z:\r101_initdev\s101\ex1\soccer.cpp
+	<iostream>
+	<string>
+	<vector>
+	"vectors.h"
+
+1698312257 z:\r101_initdev\s101\ex1\vectors.h
+	<iostream>
+	<string>
+	<vector>
+
+1698312393 source:z:\r101_initdev\s101\ex1\vectors.cpp
+	<iostream>
+	<string>
+	<vector>
+	<stdio.h>
+	<ctype.h>
+	"vectors.h"
+

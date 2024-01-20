@@ -1,0 +1,39 @@
+Semaine 10
+
+
+A. Requêtes SQL
+
+1)	SELECT COUNT (*) - COUNT (BaseLoisirs) AS NbCampingNonAffilié
+	FROM CAMPING;
+
+2)	SELECT COUNT (DISTINCT(AC.NumCamping)) AS 'Nombre de campings avec activité(s) aquatique(s)'
+	FROM ACTICAMPING AC
+	INNER JOIN ACTIVITE A ON A.NumActivite = AC.NumActivite
+	WHERE(A.TypeActivite = 'Aquatique');
+
+3)	SELECT COUNT (*) AS 'Nombre de chalets 4 pers. dans le camping 12'
+	FROM COMPOCAMPING CC
+	INNER JOIN TYPECHALET TC ON TC.NumTypeChalet = CC.NumTypeChalet
+	WHERE ((CC.NumCamping = 12) AND (TC.Capacite = 4));
+
+4)	SELECT (COUNT (*) / COUNT (DISTINCT(NumCamping)) AS 'Nombre moyen d''activités des campings avec activités'
+	FROM ACTICAMPING;
+
+5)	SELECT COUNT (*) AS 'Nombre d'activités des campings affiliés à la base ''l''étang de Tamniès'''
+	FROM CAMPING C
+	INNER JOIN BASELOISIRS BL ON BL.NumBaseL = C.BaseLoisirs
+	INNER JOIN ACTICAMPING AC ON AC.NumCamping = C.NumCamping
+	WHERE (BL.NomBaseL = 'l''étang de Tamniès');
+
+
+B. Evaluer et traduire
+
+1) 	Donner les numéros des types de chalets existants et pour chaque type, le nombre 
+	de campings ayant 3 étoiles qui les utilisent.
+
+
+C. Requêtes SQL
+
+1)	SELECT NumCamping, COUNT (*) AS NbTypeChalet, SUM (NbreChalet) AS NbChaletTT
+	FROM COMPOCAMPING
+	GROUP BY (NumCamping);

@@ -1,0 +1,43 @@
+Semaine 11
+
+
+A. Requêtes SQL
+
+1)	SELECT C.NumCamping, C.NomCamping, SUM (CC.NbreChalet) AS 'NbChalet4Pers'
+	FROM Camping C
+	INNER JOIN CompoCamping CC ON CC.NumCamping = C.NumCamping
+	INNER JOIN TypeChalet TC ON TC.NumTypeChalet = CC.NumTypeChalet
+	WHERE C.QualiteFrance AND (TC.Capacite = 4)
+	GROUP BY (C.NumCamping, C.NomCamping);
+
+2)	SELECT BL.NumBaseL, BL.NomBaseL, COUNT (DISTINCT (AC.NumActivite)) AS 'TTActivites'
+	FROM BaseLoisirs BL
+	INNER JOIN Camping C ON C.BaseLoisirs = BL.NumBaseL
+	INNER JOIN ActiCamping AC ON AC.NumCamping = C.NumCamping
+	GROUP BY (BL.NumBaseL, BL.NomBaseL);
+
+
+B. Evaluer et traduire
+
+1)	Donner pour chaque Camping qui n'a qu'un seul type de chalet, son numéro.
+
+2)	Donner pour chaque Camping qui a le même nombre de chalets par type possédé, son numéro.
+
+3)	Donner pour chaque Camping dont on connaît le prix de toutes ses activités sportives
+	(et qui en propose au moins une), son numéro.
+
+
+C. Requêtes SQL
+
+1)	SELECT NumCamping
+	FROM ActiCamping AC
+	GROUP BY (NumCamping)
+	HAVING COUNT (*) >= 3;
+
+2)	SELECT C.NumCamping, C.NomCamping
+	FROM Camping C
+	INNER JOIN ActiCamping AC ON AC.NumCamping = C.NumCamping
+	INNER JOIN Activite A ON A.NumActivite = AC.NumActivite
+	WHERE (A.TypeActivite = 'Aquatique')
+	GROUP BY (C.NumCamping, C.NomCamping)
+	HAVING COUNT (*) >= 3;

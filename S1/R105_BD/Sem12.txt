@@ -1,0 +1,61 @@
+Semaine 12
+
+
+A. Requêtes SQL
+
+1)	SELECT DISTINCT C.nomcamping
+	FROM Camping C
+	INNER JOIN ActiCamping AC ON AC.numcamping = C.numcamping
+	INNER JOIN Activite A ON A.numactivite = AC.numactivite
+	WHERE (A.typeactivite = 'Aquatique')
+	ORDER BY C.nomcamping;
+
+2)	SELECT BL.numbasel, BL.nombaseL, C.numcamping, A.numactivite, A.nomactivite
+	FROM BaseLoisirs BL
+	INNER JOIN Camping C ON C.baseloisirs = BL.numbasel
+	INNER JOIN ActiCamping AC ON AC.numcamping = C.numcamping
+	INNER JOIN Activite A ON A.numactivite = AC.numactivite
+	ORDER BY BL.numbasel, C.numcamping, A.numactivite;
+
+3)	SELECT BL.numbasel, BL.nombaseL, A.nomactivite
+	FROM BaseLoisirs BL
+	INNER JOIN Camping C ON C.baseloisirs = BL.numbasel
+	INNER JOIN ActiCamping AC ON AC.numcamping = C.numcamping
+	INNER JOIN Activite A ON A.numactivite = AC.numactivite
+	GROUP BY (BL.numbasel, BL.nombaseL, A.nomactivite)
+	HAVIN COUNT (*) >= 2
+	ORDER BY BL.numbasel;
+
+4)	SELECT A.numactivite, A.nomactivite
+	FROM Activite A
+	INNER JOIN ActiCamping AC ON AC.numactivite = A.numactivite
+	INNER JOIN Camping C ON C.numcamping = AC.numcamping
+	WHERE (C.nbetoiles >= 3)
+	GROUP BY (A.numactivite, A.nomactivite)
+	HAVING (COUNT (*) >= 4)
+	ORDER BY A.numactivite;
+
+5)	SELECT COUNT (DISTINCT C.numcamping) NbCamping
+	FROM Camping C
+	INNER JOIN ActiCamping AC ON AC.numcamping = C.numcamping
+	INNER JOIN Activite A ON A.numactivite = AC.numactivite
+	INNER JOIN CompoCamping CC ON CC.numcamping = C.numcamping
+	INNER JOIN TypeChalet TC ON TC.numtypechalet = CC.numtypechalet
+	WHERE	TC.nomtypechalet = 'Eden' AND 
+		(A.nomactivite = 'Sauna' OR A.nomactivite = 'Piscine') AND CC.nbrechalet >= 2;
+
+6)	SELECT DISTINCT C.numcamping C.nomcamping
+	FROM Camping C
+	INNER JOIN CompoCamping CC ON CC.numcamping = C.numcamping
+	INNER JOIN Tarif TF ON (TF.numcamping, TF.numtypechalet) = (CC.numcamping, CC.numtypechalet)
+	WHERE (TF.prixsem > 200) AND (TF.prixsem < 500)
+	ORDER BY C.numcamping;
+
+7)	SELECT C.nomcamping, COUNT (DISTINCT (A.typeactivite)) AS NbTypeActivite
+	FROM Camping C
+	INNER JOIN ActiCamping AC ON AC.numcamping = C.numcamping
+	INNER JOIN Activite A ON A.numactivite = AC.numactivite
+	GROUP BY (C.nomcamping)
+	ORDER BY C.nomcamping;
+
+

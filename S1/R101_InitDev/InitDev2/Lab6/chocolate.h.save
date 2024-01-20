@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+// Constants
+const int       NBTYPES= 3; // number of chocolate types
+const float     WEIGHT=30;  // default weight (in grams)
+const string    BLACK = "black";
+const int       CBLACK = 0;
+const string    WHITE = "white";
+const int       CWHITE = 1;
+const string    MILK = "milk";
+const int       CMILK = 2;
+
+
+class Chocolate{
+    int _type;      // 0 dark, 1 white, 2 milk
+    int _weight;    // weight of the chocolate
+    string _typeToString(int n)const;   // returns the string equivalent to the type
+    int _stringToType(string)const;     // returns the type equivalent to the string
+
+public:
+    // constructors
+    Chocolate();    // empty constructor
+    Chocolate(const string &type, const int &weight = 30); // regular constructor
+    Chocolate(const int &weight);   // weight only constructor (random type)
+
+    // methods
+    int theWeight()const;
+    string theType()const;
+};
+
+// operator overloading
+operator<<(const Chocolate& choco)const;
