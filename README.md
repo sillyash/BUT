@@ -26,6 +26,7 @@
 - R109 | Economics
 - R110 | Technical English
 - R111 | Communication
+- R112 | Professional and personal project (interviewing jobs to get an overview of the filed)
 
 ## Semester 2
 
