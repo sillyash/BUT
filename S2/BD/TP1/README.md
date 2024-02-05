@@ -42,7 +42,7 @@ Donne les campings qui proposent le prix minimal pour le chalet de type numéro 
                       FROM TypeChalet
                       WHERE capacite = 6) ;
 
-Donne les campings qui disposent d'autant de chalets de capacité 6 que le nombre de chalets capacité 6 dans la table ```TypeChalet```.
+Donne les campings qui disposent de tous les types chalets de capacité 6.
 
 <br>
 
