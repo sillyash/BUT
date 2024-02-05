@@ -50,27 +50,7 @@ Donne les campings qui disposent d'autant de chalets de capacité 6 que le nombr
 
 **Écrire en SQL les requêtes suivantes**
 
-#### a) Donner les noms des campings proposant au moins une activité à moins de 3€, avec le nom de l’activité.
-
-
-
-#### b) Donner le prix de l’activité la plus chère pratiquée au camping « La Forêt ».
-
-
-
-#### c) Donner tous les campings où il existe une activité plus chère que toutes celles de « La Forêt ».
-
-
-
-#### d) Donner les noms des campings proposant plus d’activités que le camping « Aqua Viva ».
-
-
-
-#### e) Donner les noms des activités proposées par au moins un camping 3 étoiles.
-
-
-
-#### f) Donner les noms des activités proposées par tous les camping 3 étoiles.
+[Voir fichier](./TP1.sql)
 
 
 
