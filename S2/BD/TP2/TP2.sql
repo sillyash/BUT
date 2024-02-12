@@ -62,9 +62,21 @@ FROM Voyage VG
 WHERE (SELECT COUNT (*)
         FROM Etape E
         INNER JOIN Ville V ON E.numville = V.numville
-        WHERE etat = 'Californie')
+        WHERE etat = 'California' AND E.numvoyage = VG.numvoyage)
         > (SELECT COUNT (*)
            FROM Etape E
            INNER JOIN Ville V ON E.numville = V.numville
-           WHERE etat = 'Arizona');
+           WHERE etat = 'Arizona' AND E.numvoyage = VG.numvoyage);
 
+
+// g)
+SELECT VG.nomvoyage
+FROM Voyage VG
+WHERE (SELECT COUNT (*)
+        FROM Etape E
+        INNER JOIN Ville V ON E.numville = V.numville
+        WHERE etat = 'California' AND E.numvoyage = VG.numvoyage)
+        > (SELECT COUNT (*)
+           FROM Etape E
+           INNER JOIN Ville V ON E.numville = V.numville
+           WHERE etat = 'Arizona' AND E.numvoyage = VG.numvoyage);
