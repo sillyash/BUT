@@ -68,15 +68,22 @@ WHERE (SELECT COUNT (*)
            INNER JOIN Ville V ON E.numville = V.numville
            WHERE etat = 'Arizona' AND E.numvoyage = VG.numvoyage);
 
+/* SELECT VG.nomvoyage
+FROM Voyage VG
+INNER JOIN Etape E ON E.numvoyage = VG.numvoyage
+INNER JOIN Ville V ON V.numville = E.numville
+GROUP BY VG.nomvoyage
+HAVING COUNT(); */
+
 
 // g)
 SELECT VG.nomvoyage
 FROM Voyage VG
-WHERE (SELECT COUNT (*)
+WHERE (SELECT SUM(duree)
         FROM Etape E
         INNER JOIN Ville V ON E.numville = V.numville
         WHERE etat = 'California' AND E.numvoyage = VG.numvoyage)
-        > (SELECT COUNT (*)
+        > (SELECT SUM(duree)
            FROM Etape E
            INNER JOIN Ville V ON E.numville = V.numville
            WHERE etat = 'Arizona' AND E.numvoyage = VG.numvoyage);
