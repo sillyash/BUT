@@ -26,5 +26,5 @@ TODO: complete tables
 
 ## Mockup
 
-[See file](./TPIHM1.penpot)
+[Link to penpot project](https://design.penpot.app/#/view/93d0ad32-dfe5-8194-8003-d953742b817b?page-id=0969c730-9d90-80a9-8003-d953bf9e6641&section=interactions&index=0&share-id=93d0ad32-dfe5-8194-8003-e83de6e752fb)
 
