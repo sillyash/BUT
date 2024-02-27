@@ -81,6 +81,45 @@ SET DateFerm = ADD_MONTHS (DateFerm, 12),
 // c)
 INSERT INTO CAMPING VALUES (20, 'Les Flots Bleus', NULL, NULL, NULL, NULL, NULL, '01-JAN-2024', '31-DEC-2024', NULL, 'Oui');
 
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES
+(20, 1, 1),
+(20, 2, 1),
+(20, 3, 1),
+(20, 4, 1),
+(20, 5, 1),
+(20, 6, 1);
+
+// d)
+INSERT INTO CAMPING VALUES (SELECT MAX(NumCamping)+1 FROM CAMPING, 'Les Dents de la Mer', NULL, NULL, NULL, NULL, NULL, '05-JUL-2024', '31-AUG-2024', NULL, 'Non');
+
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES
+(SELECT MAX(NumCamping) FROM CAMPING, 1, 1),
+(SELECT MAX(NumCamping) FROM CAMPING, 2, 1),
+(SELECT MAX(NumCamping) FROM CAMPING, 3, 1),
+(SELECT MAX(NumCamping) FROM CAMPING, 4, 1),
+(SELECT MAX(NumCamping) FROM CAMPING, 5, 1),
+(SELECT MAX(NumCamping) FROM CAMPING, 6, 1);
+
+// e)
+SELECT NumCamping
+FROM CAMPING C
+INNER JOIN BASELOISIRS BL ON C.BaseLoisirs = BL.NumBaseL
+WHERE BL.NomBaseL = 'La Maladrerie';
+
+
+// f)
+
+
+
+// g)
+
+
+
+// h)
+
+
+
+// -------------------------
 DROP TABLE compoCamping;
 DROP TABLE baseLoisirs;
 DROP TABLE typeChalet;
