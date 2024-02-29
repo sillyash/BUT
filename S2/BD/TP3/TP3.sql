@@ -73,42 +73,68 @@ INSERT INTO BASELOISIRS SELECT * FROM FFIOREN.BASELOISIRS;
 INSERT INTO CAMPING SELECT * FROM FFIOREN.CAMPING;
 INSERT INTO COMPOCAMPING SELECT * FROM FFIOREN.COMPOCAMPING;
 
+
 // b)
 UPDATE CAMPING
 SET DateFerm = ADD_MONTHS (DateFerm, 12),
     DateOuv = ADD_MONTHS (DateOuv, 12);
 
+
 // c)
 INSERT INTO CAMPING VALUES (20, 'Les Flots Bleus', NULL, NULL, NULL, NULL, NULL, '01-JAN-2024', '31-DEC-2024', NULL, 'Oui');
 
-INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES
-(20, 1, 1),
-(20, 2, 1),
-(20, 3, 1),
-(20, 4, 1),
-(20, 5, 1),
-(20, 6, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES (20, 1, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES (20, 2, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES (20, 3, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES (20, 4, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES (20, 5, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES (20, 6, 1);
+
 
 // d)
-INSERT INTO CAMPING VALUES (SELECT MAX(NumCamping)+1 FROM CAMPING, 'Les Dents de la Mer', NULL, NULL, NULL, NULL, NULL, '05-JUL-2024', '31-AUG-2024', NULL, 'Non');
+INSERT INTO CAMPING VALUES ((SELECT MAX(NumCamping)+1 FROM CAMPING), 'Les Dents de la Mer', NULL, NULL, NULL, NULL, NULL, '05-JUL-2024', '31-AUG-2024', NULL, 'Non');
 
-INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES
-(SELECT MAX(NumCamping) FROM CAMPING, 1, 1),
-(SELECT MAX(NumCamping) FROM CAMPING, 2, 1),
-(SELECT MAX(NumCamping) FROM CAMPING, 3, 1),
-(SELECT MAX(NumCamping) FROM CAMPING, 4, 1),
-(SELECT MAX(NumCamping) FROM CAMPING, 5, 1),
-(SELECT MAX(NumCamping) FROM CAMPING, 6, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 1, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 2, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 3, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 4, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 5, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 6, 1);
 
-// e)
-SELECT NumCamping
-FROM CAMPING C
-INNER JOIN BASELOISIRS BL ON C.BaseLoisirs = BL.NumBaseL
-WHERE BL.NomBaseL = 'La Maladrerie';
+// 
+e)
+CREATE TABLE PossedeChalet (NumCamping INT);
+INSERT INTO PossedeChalet(
+    SELECT NumCamping
+    FROM COMPOCAMPING C
+    WHERE NumTypeChalet = 6
+);
+
+CREATE TABLE AffilieBaseL (NumCamping INT);
+INSERT INTO AffilieBaseL (
+    SELECT NumCamping
+    FROM CAMPING C
+    INNER JOIN BASELOISIRS BL ON C.BaseLoisirs = BL.NumBaseL
+    WHERE BL.NomBaseL = 'La Maladrerie'
+);
+
+UPDATE COMPOCAMPING
+SET COMPOCAMPING.nbrechalet = COMPOCAMPING.nbrechalet + 1
+WHERE (NumCamping IN (select * from PossedeChalet)
+    AND NumCamping IN (select * from AffilieBaseL));
+
+
+INSERT INTO COMPOCAMPING 
+SELECT NumCamping, 6, 1
+FROM AffilieBaseL
+WHERE NumCamping NOT IN (select * from PossedeChalet);
+
+DROP TABLE AffilieBaseL;
+DROP TABLE PossedeChalet;
 
 
 // f)
-
+ALTER TABLE CAMPING MODIFY BaseLoisirs NUMBER (8) NOT NULL;
 
 
 // g)
@@ -124,6 +150,7 @@ DROP TABLE compoCamping;
 DROP TABLE baseLoisirs;
 DROP TABLE typeChalet;
 DROP TABLE Camping;
+
 
 
 
