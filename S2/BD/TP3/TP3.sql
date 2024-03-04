@@ -101,8 +101,7 @@ INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT
 INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 5, 1);
 INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 6, 1);
 
-// 
-e)
+// e)
 CREATE TABLE PossedeChalet (NumCamping INT);
 INSERT INTO PossedeChalet(
     SELECT NumCamping
