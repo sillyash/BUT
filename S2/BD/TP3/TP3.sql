@@ -54,6 +54,7 @@ CREATE TABLE compoCamping (
     CONSTRAINT CampingCIR FOREIGN KEY (NumCamping) REFERENCES Camping,
     CONSTRAINT TypeChaletCIR FOREIGN KEY (NumTypeChalet) REFERENCES typeChalet,
     CONSTRAINT NbreChaletCHK CHECK (NbreChalet > 0)
+    
 );
 
 
@@ -133,18 +134,48 @@ DROP TABLE PossedeChalet;
 
 
 // f)
-ALTER TABLE CAMPING MODIFY BaseLoisirs NUMBER (8) NOT NULL;
+DROP TABLE CompoCamping;
+
+CREATE TABLE compoCamping (
+    NumCamping      NUMBER(8) NOT NULL,
+    NumTypeChalet   NUMBER(8) NOT NULL,
+    NbreChalet      NUMBER(8) NOT NULL,
+    
+    CONSTRAINT compoCampingPK PRIMARY KEY (NumCamping, NumTypeChalet),
+    CONSTRAINT CampingCIR FOREIGN KEY (NumCamping) REFERENCES Camping ON DELETE CASCADE,
+    CONSTRAINT TypeChaletCIR FOREIGN KEY (NumTypeChalet) REFERENCES typeChalet,
+    CONSTRAINT NbreChaletCHK CHECK (NbreChalet > 0)
+);
+
+INSERT INTO COMPOCAMPING SELECT * FROM FFIOREN.COMPOCAMPING;
+
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES (20, 1, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES (20, 2, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES (20, 3, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES (20, 4, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES (20, 5, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES (20, 6, 1);
+
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 1, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 2, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 3, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 4, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 5, 1);
+INSERT INTO COMPOCAMPING (NumCamping, NumTypeChalet, NbreChalet) VALUES ((SELECT MAX(NumCamping) FROM CAMPING), 6, 1);
+
+delete from camping where baseloisirs is null;
+rollback;
 
 
 // g)
-
+UPDATE CompoCamping CC
+SET CC.NbreChalet = CC.NbreChalet + (select nbrechalet from compocamping
+                                    where numtypechalet = 5 and numcamping = CC.numcamping)
+WHERE NumCamping IN (select numcamping from camping
+                    where numtypechalet = 5);
 
 
 // h)
-
-
-
-// -------------------------
 DROP TABLE compoCamping;
 DROP TABLE baseLoisirs;
 DROP TABLE typeChalet;
