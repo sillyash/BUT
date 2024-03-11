@@ -10,7 +10,7 @@ CREATE TABLE Client (
     planClient      VARCHAR (24) NOT NULL,
     
     CONSTRAINT ClientPK PRIMARY KEY (idClient),
-    CONSTRAINT planClientCHK CHECK (planClient = 'Standard' OR planClient = 'Essentiel avec publicité' OR planClient = 'Essentiel' OR planClient = 'Supérieur' OR planClient = 'Premium')
+    CONSTRAINT planClientCHK CHECK (planClient IN ('Standard', 'Essentiel avec publicité', 'Essentiel', 'Supérieur', 'Premium'))
 );
 
 CREATE TABLE Visionnage (
@@ -58,5 +58,17 @@ WHERE idclient = (select idclient from Client where prenomclient = 'Helena' AND 
 
 DELETE FROM Client
 WHERE prenomclient = 'Helena' AND nomclient = 'Lovett';
+
+
+// g)
+ROLLBACK;
+
+
+// h)
+INSERT INTO CLIENT VALUES (1, 'Ashley', 'Merienne', 'Standard');
+INSERT INTO CLIENT VALUES (2, 'Emma', 'Escoffier', 'Standard');
+
+
+// i)
 
 
