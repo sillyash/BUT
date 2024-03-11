@@ -68,3 +68,13 @@ WHERE EF.job = 'Director'
 ORDER BY F.idFilm, P.idPersonne;
 
 SELECT * FROM vFilmReal;
+
+// UPDATE vFilmReal SET idPersonne = 6 WHERE titre = 'Call Me by Your Name';
+// UPDATE vFilmReal SET titreOriginal = 'Otto e mezzo' where idFilm = 422;
+// DELETE FROM vFilmReal WHERE nomPersonne = 'Aronofsky';
+// => Pas possible
+
+SELECT *
+FROM vFilmReal
+WHERE nomPersonne = 'Tarantino';
+
