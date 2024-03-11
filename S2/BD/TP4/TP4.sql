@@ -24,7 +24,7 @@ SELECT DISTINCT P.prenomPersonne, P.nomPersonne
 FROM bdfilm.Personne P
 INNER JOIN bdfilm.EquipeFilm EF ON EF.idPersonne = P.idPersonne
 INNER JOIN bdfilm.Film F ON EF.idFilm = F.idFilm
-WHERE P.idPersonne IN (select idPersonne from bdfilm.RoleFilm where idFilm = F.idFilm);
+WHERE P.idPersonne IN (select idPersonne from bdfilm.RoleFilm where idFilm = F.idFilm) AND EF.job = 'Director';
 
 
 // Exercice 2
@@ -39,3 +39,27 @@ ORDER BY idFilm;
 SELECT * FROM vFilm;
 
 
+// b)
+DROP VIEW vActeur;
+
+CREATE VIEW vActeur AS
+SELECT DISTINCT P.idPersonne, P.prenomPersonne, P.nomPersonne
+FROM bdfilm.Personne P
+INNER JOIN bdfilm.RoleFilm RF ON RF.idPersonne = P.idPersonne
+ORDER BY P.idPersonne;
+
+SELECT * FROM vActeur;
+
+
+// c)
+SELECT *
+FROM vActeur VA
+WHERE VA.nomPersonne = 'Howard';
+
+// d)
+DROP VIEW vFilmReal;
+
+CREATE VIEW vFilmReal AS
+SELECT idFilm, titreFilm
+FROM bdfilm.film F
+INNER JOIN bdfilm.EquipeFilm EF ON EF.idFilm = F.idFilm;
