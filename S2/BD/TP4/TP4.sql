@@ -60,6 +60,11 @@ WHERE VA.nomPersonne = 'Howard';
 DROP VIEW vFilmReal;
 
 CREATE VIEW vFilmReal AS
-SELECT idFilm, titreFilm
+SELECT F.idFilm, F.titreOriginal, P.idPersonne, P.prenomPersonne, P.nomPersonne
 FROM bdfilm.film F
-INNER JOIN bdfilm.EquipeFilm EF ON EF.idFilm = F.idFilm;
+INNER JOIN bdfilm.EquipeFilm EF ON EF.idFilm = F.idFilm
+INNER JOIN bdfilm.Personne P ON P.idPersonne = EF.idPersonne
+WHERE EF.job = 'Director'
+ORDER BY F.idFilm, P.idPersonne;
+
+SELECT * FROM vFilmReal;
