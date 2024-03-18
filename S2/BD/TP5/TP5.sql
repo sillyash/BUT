@@ -70,5 +70,8 @@ INSERT INTO CLIENT VALUES (2, 'Emma', 'Escoffier', 'Standard');
 
 
 // i)
-
-
+SELECT C.prenomclient, C.nomclient, COUNT(*) AS Visionnages
+FROM Client C
+INNER JOIN Visionnage V ON V.idClient = C.idClient
+GROUP BY C.prenomclient, C.nomclient
+ORDER BY C.nomclient;
