@@ -1,4 +1,3 @@
-
 // Enoncé
 DROP TABLE Visionnage;
 DROP TABLE Client;
@@ -95,11 +94,14 @@ SELECT * FROM vClient;
 // f)
 DROP VIEW vFilmAtt;
 
-CREATE VIEW vFilmAtt AS
-SELECT C.prenomClient, C.nomClient, VI.numversion, TO_CHAR(VI.horodatagedebut,'DD-MM-YYYY') AS horodatagedebut,
-        TO_CHAR(VI.horodatagefin,'DD-MM-YYYY') AS horodatagedefin
+CREATE OR REPLACE VIEW vFilmAtt AS
+SELECT C.prenomClient, C.nomClient, VI.numversion, VI.horodatagedebut, VI.horodatagefin, VI.minutestop
 FROM Client C
 INNER JOIN Visionnage VI ON VI.idClient = C.idClient
-WHERE VI.horodatagefin is null;
+WHERE VI.minutestop is null
+WITH CHECK OPTION;
 
 SELECT * FROM vFilmAtt;
+
+UPDATE vFilmAtt
+SET minutestop = 36;
