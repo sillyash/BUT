@@ -49,7 +49,7 @@ COMMIT;
 // e)
 UPDATE Visionnage
 SET horodatagefin = SYSDATE+(1/24)
-WHERE idclient = (select idclient from Client where prenomclient = 'Helena' AND nomclient = 'Lovett') AND idfilm = 7345;
+WHERE idclient = (select idclient from Client where prenomclient = 'Helena' AND nomclient = 'Lovett') AND idfilm = 7345 AND horodatagefin = null;
 
 
 // f)
