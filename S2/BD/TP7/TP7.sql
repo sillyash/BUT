@@ -66,7 +66,8 @@ BEGIN
                         from bdfilm.Film F
                         inner join bdfilm.EquipeFilm EF ON EF.idFilm = F.idFilm
                         where EF.idPersonne = idReal)
-    AND EF.idPersonne = idReal;
+    AND EF.idPersonne = idReal
+    AND EF.job = 'Director';
     
     DBMS_OUTPUT.PUT_LINE('Le film n°599 est '||titreFilm||'.');
     DBMS_OUTPUT.PUT_LINE('Son réalisateur est '||prenomReal||' '||nomReal||'.');
@@ -75,3 +76,4 @@ END exercice2;
 /
 
 EXECUTE exercice2;
+
