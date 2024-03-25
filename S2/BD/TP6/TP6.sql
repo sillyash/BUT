@@ -20,8 +20,8 @@ CREATE TABLE Visionnage (
     minuteStop      NUMBER (10),
     horoDatageFin   TIMESTAMP,
     
-    CONSTRAINT VisionnagePK PRIMARY KEY (idClient, horoDatageDebut),
-    CONSTRAINT idFilmFK FOREIGN KEY (idFilm, numVersion) REFERENCES bdfilm.Version
+    CONSTRAINT VisionnagePK PRIMARY KEY (idClient, horoDatageDebut)
+    /*CONSTRAINT idFilmFK FOREIGN KEY (idFilm, numVersion) REFERENCES bdfilm.Version*/
 );
 
 
@@ -68,7 +68,8 @@ SELECT VE.idFilm, VE.numversion, VE.resolution, C.idClient, C.nomclient,
         C.prenomclient, VI.horodatagedebut, VI.horodatagefin, VI.minutestop
 FROM bdfilm.Version VE
 INNER JOIN Visionnage VI ON (VI.idFilm = VE.idFilm) AND (VI.numVersion = VE.numVersion)
-INNER JOIN Client C ON VI.idClient = C.idClient;
+INNER JOIN Client C ON VI.idClient = C.idClient
+WHERE TRUNC(SYSDATE) = TRUNC(VI.horodatagedebut);
 
 SELECT * FROM vvAuj;
 
