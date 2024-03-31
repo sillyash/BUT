@@ -27,7 +27,7 @@ Il est omniprésent, heure, statut, achats, conduite...
 
 Codifié (loi > jurisprudence) SAUF common law (loi = jurisprudence)
 
-France = romano-civiliste
+France = **romano-civiliste**
 
 - Romano-civiliste
 - Common law
@@ -62,23 +62,23 @@ Juste : il peut être mis au service du meilleur ou du pire
 
 ### 3. L'organisation du système judiciaire
 
-Personne physique
+#### Personne physique
 - être humain doté de la personnalité juridique
 - sujet de droit, ≠ objet de droit
 
-Personne morale
+#### Personne morale
 - entité qui sans être physique est dotée de droits
 - morales de droit public
 - morales de droit privé
 
-Ordre judiciaire
+#### Ordre judiciaire
 - juridictions civiles, traitent les contentieux entre personnes
 - juridictions pénales, traitent les infractions
 
-Ordre administratif
+#### Ordre administratif
 - les juridictions administratives, contentieux entre a
 
-Juridictions civiles
+#### Juridictions civiles
 - prud'hommes, contentieux entre les salarié.es et employeurs
 - tribunal de commerce, contentieux entre ou avec commerçant
 - tribunal judiciaire, par défaut, anciennement TGI (grande instance), lorsque aucun autre tribunal compétent
@@ -92,7 +92,7 @@ Juridictions civiles
 - Conseil d'État
 - Cour de justice de l'Union Européenne
 
-Juridictions administratives
+#### Juridictions administratives
 - Tribunal administratif, contentieux entre État
 - 
 
@@ -101,7 +101,7 @@ Faire appel: droit de contester une décision prononcée par le juge
 
 ### 4. Saisir la justice
 
-Juridictions civiles 
+#### Juridictions civiles 
 - La procédure civile est déclenchée par la saisine du juge, puis action en justice
   - soit suit à un dépôt de plainte
   - soit en lui adressant un courrier
