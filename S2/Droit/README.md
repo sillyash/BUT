@@ -125,6 +125,138 @@ Faire appel: droit de contester une décision prononcée par le juge
   - soit en lui adressant un courrier
   - soit suite à un signalement
 
+<br>
+
+## Les contrats - Principes généraux
+
+### Oral et écrit
+
+- Le contrat oral vaut le contrat écrit.
+- Le contrat oral prend par défaut la forme qui nous protège le plus.
+
+
+- Si on accepte (signe) un contrat, on se doit de le respecter tel que l'on respecte la loi.
+
+- Cependant, un contrat doit respecter tous les "étages" juridiques supérieurs, c'est à dire la loi : un contrat ne peut agir contre la loi.
+
+- Le contrat est un moyen de se créer plus de droits et d'obligation. -> liberté contractuelle
+
+- On peut faire un contrat avec n'importe qui (sauf enfants, etc.).
+
+- Une fois un contrat valablement passé, on ne peut pas faire machine arrière. (sauf contrat illégal ou accord entre les deux partis)
+
+### Conditions de validité :
+
+- Consentement des partis
+- Partis ayant le droit de signer un contrat
+- Capacité à contracter
+- Contrat légal/licite et certain
+- Contenu certain
+
+### Conditions d'annulation
+
+Une erreur sur une qualité essentielle du contrat.
+
+Le **dolle** : si l'on trompe/ment/manipule/dissimule volontairement des éléments du contrat.
+
+La contrainte par la **violence**
+
+Signature par une personne "non-capable" :
+- Enfants
+- Sénile
+- Certaines personnes sous tutelle
+
+Contenu dit "incertain" si l'on ne peut pas comprendre le contenu, ou si il demande des choses impossibles à faire.
+
+
+### Contrats de travail
+
+3 conditions **en plus** :
+- Demande de travail (physique, moral...)
+- Rémunération (monnaie, choses...)
+- Lien de subordination (patron, soi)
+
+Une fois le contrat de travail, les partis doivent respecter le code du travail.
+
+### Obligations 
+- subordination au supérieur 
+- non-divulgation : on ne divulgue pas les secrets d'entreprise.
+- formations de sécurité, etc.
+
+### Stage
+
+Pas un contrat de travail
+
+
+### CDI
+
+Forme de travail par défaut (si non stipulé).
+
+
+### CDD
+
+Contrat dit "d'exception", l'employeur doit justifier le CDD, sinon il se doit de faire un CDI.
+- remplacer quelqu'un
+- tâches saisonnières par nature (agriculture, animateur de colo...)
+- l'accroissement temporaire d'activité
+
+18 mois maximum. Si l'on travaille 1 jour de plus, on passe automatiquement en CDI.
+
+Renouvelable 2 fois maximum avec total de moins de 18 mois.
+
+Avant de réembaucher au même poste, délai de carence de 1/3 de la durée du contrat.
+
+Compensation de dédommagement pour les difficultés liées au CDD, appelée "indemnité".
+- sauf si on part
+- sauf si on a prévu de partir quoiqu'il arrive
+- sauf si licenciement pour faute lourde
+= 10% du salaire
+
+Si les contraintes ne sont pas respectées, sanctions lourdes.
+
+Si une entreprise veut vous prendre en CDI, elle peut rompre le CDD.
+
+
+### Clauses facultatives communes 
+
+#### Période d'essai
+
+Licenciement pendant la période d'essai : pas de dédommagement, pas de justification.
+
+*CDI :*
+
+Durée maximum de 8 mois.
+
+-> Faire attention aux périodes d'essai trop longues
+
+
+*CDD :*
+
+...
+
+
+#### Clause de non concurrence
+
+Non divulgation d'éléments secrets, ou d'éléments pour la concurrence (prix et clients de l'entreprise A).
+
+Si on a un poste haut placé, on doit attendre avant de changer d'enyreprise, et on est pendant ce temps payé.
+
+
+#### Licenciement
+
+Hors période d'essai, il y a deux possibilités : à l'amiable ou avec justification de l'employeur.
+
+Justifications valables :
+- motif économique : plus assez d'argent
+- retards récurrents
+- fautes graves (violences, dégradations...)
+  - si volonté de nuire, pas de dédommagement 
+- impossibilité de travailler (perte d'un membre...)
+- insuffisance : ne remplit pas les objectifs 
+
+On peut aller à Pôle Emploi (sauf démission et abandon de poste).
+
+Si licenciement abusif, Prud'hommes.
 
 
 
