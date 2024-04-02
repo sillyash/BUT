@@ -46,17 +46,17 @@ Non, il n'y a pas d'héritage multiple en Java, mais on peut hériter hiérarchi
 	1
 
 
-ligne a : Cette ligne crée un objet ```o``` de type ```C1```, mais il est référencé par une variable de type ```C```. Cela est permis car ```C1``` est une sous-classe de ```C```.
+***ligne a*** : Cette ligne crée un objet ```o``` de type ```C1```, mais il est référencé par une variable de type ```C```. Cela est permis car ```C1``` est une sous-classe de ```C```.
 
-ligne b : On accède à la variable ```i``` de ```C1``` en effectuant un cast de ```o``` vers ```C1``` et en lui attribuant la valeur ```1```.
+***ligne b*** : On accède à la variable ```i``` de ```C1``` en effectuant un cast de ```o``` vers ```C1``` et en lui attribuant la valeur ```1```.
 
-ligne c : On définit la variable ```i``` de la classe ```C``` (la superclasse) à ```2```. Comme ```C``` possède sa propre variable ```i``` et que ```o``` est toujours référencé en tant que ```C```, cette instruction définira la variable i de la superclasse à ```2```.
+***ligne c*** : On définit la variable ```i``` de la classe ```C``` (la superclasse) à ```2```. Comme ```C``` possède sa propre variable ```i``` et que ```o``` est toujours référencé en tant que ```C```, cette instruction définira la variable i de la superclasse à ```2```.
 
-ligne d : On affiche la valeur de ```i``` de l'objet ```o```. Comme ```o``` est de type ```C1``` et que ```i``` n'est pas redéfinie dans ```C1```, la valeur affichée est celle de la variable ```i``` de ```C```, qui a été définie à ```2```.
+***ligne d*** : On affiche la valeur de ```i``` de l'objet ```o```. Comme ```o``` est de type ```C1``` et que ```i``` n'est pas redéfinie dans ```C1```, la valeur affichée est celle de la variable ```i``` de ```C```, qui a été définie à ```2```.
 
-ligne e : On affiche également la valeur de ```i``` de l'objet ```o```, mais en effectuant un **cast explicite** vers ```C```. Comme précédemment, cela affiche la valeur de ```i``` de la superclasse, qui est ```2```.
+***ligne e*** : On affiche également la valeur de ```i``` de l'objet ```o```, mais en effectuant un **cast explicite** vers ```C```. Comme précédemment, cela affiche la valeur de ```i``` de la superclasse, qui est ```2```.
 
-ligne f : On affiche la valeur de ((C1)o).i, cela affiche 1, démontrant que la variable i spécifique à C1 conserve sa valeur
+***ligne f*** : On affiche la valeur de ((C1)o).i, cela affiche 1, démontrant que la variable i spécifique à C1 conserve sa valeur
 
 <br>
 
