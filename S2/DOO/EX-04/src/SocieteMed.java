@@ -19,15 +19,15 @@ public class SocieteMed {
 		
 		SocieteMed testMed = new SocieteMed("La Croix Rouge");
 		
-		testMed.addVehicule((Vehicule) new PosteCommandement());
-		testMed.addVehicule(new PosteCommandement());
+		testMed.addVehicule((Vehicule) new PC());
+		testMed.addVehicule(new PC());
 		
-		testMed.addVehicule(new VehiculeSecours());
-		addVehicule(new VehiculeSecours());
-		addVehicule(new VehiculeSecours());
+		testMed.addVehicule(new VS());
+		addVehicule(new VS());
+		addVehicule(new VS());
 		
-		addVehicule(new VehiculeAssistance());
-		addVehicule(new VehiculeAssistance());
+		addVehicule(new VA());
+		addVehicule(new VA());
 		
 	}
 

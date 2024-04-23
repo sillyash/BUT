@@ -1,6 +1,6 @@
 package vehicules;
 
-public class PosteCommandement extends Vehicule {
+public class PC extends Vehicule {
 	
 	// ---------- Attributs ----------
 	
@@ -8,7 +8,7 @@ public class PosteCommandement extends Vehicule {
 
 	// -------- Constructeurs --------
 	
-	public PosteCommandement() {
+	public PC() {
 		super();
 	}
 

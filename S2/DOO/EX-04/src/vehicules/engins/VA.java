@@ -1,6 +1,6 @@
 package vehicules.engins;
 
-public class VehiculeAssistance extends Engin {
+public class VA extends Engin {
 	
 	// ---------- Attributs ----------
 	
@@ -9,7 +9,7 @@ public class VehiculeAssistance extends Engin {
 	
 	// -------- Constructeurs --------
 	
-	public VehiculeAssistance() {
+	public VA() {
 		super();
 	}
 		
