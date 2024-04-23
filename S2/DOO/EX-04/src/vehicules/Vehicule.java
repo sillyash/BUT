@@ -26,4 +26,19 @@ public abstract class Vehicule {
 	
 	public abstract float getCout();
 	
+	public void affecterIntervention(int numeroIntervention, int distance) {
+		this.distanceIntervention = distance;
+		this.numeroIntervention = numeroIntervention;
+	}
+	
+	public String toString() {
+		String s = "";
+		s += "ID : ";
+		s += this.vehiculeID;
+		s += " |\tNuméro d'intervention : ";
+		s += this.numeroIntervention;
+		s += " |\tDistance d'intervention : ";
+		s += this.distanceIntervention;
+		return s;
+	}
 }
