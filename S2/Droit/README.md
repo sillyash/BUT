@@ -258,5 +258,160 @@ On peut aller à Pôle Emploi (sauf démission et abandon de poste).
 
 Si licenciement abusif, Prud'hommes.
 
+<br>
+
+## Le droit du travail
+
+### Définitions
+
+- Concerne essentiellement les travailleurs sous contrat privé
+- ???
+
+
+### Histoire et généralités
+
+- Fonction protectrice du droit du travail
+  - la relation de travail est intrinsèquement inégale du fait de la subordination des salarié.e.s.
+- Fonction régulatrice du droit du travail 
+  - à l'échelle sociétale : travail du dimanche, de nuit...
+
+
+#### XIXe siècle 
+
+- Un droit ancré dans l'histoire des luttes
+- Objectif : la protection des travailleurs.euses face au pouvoir de direction et au lien de subordination
+- Création au XIXe siècle :
+  - Interdiction du travail des enfants de moins de 8 ans, abolition du délit de coalition, liberté syndicale, indemnisation des accidents du travail, limitation à 11h par jour de travail pour les femmes et enfants.
+
+
+#### Première moitié du XXe siècle
+
+- Un contexte politique favorable à l'obtention de nouveaux droits :
+  - Charte d'Amiens (1906) : apogée des thèses syndicalistes révolutionnaires 
+  - 1917 : Révolution Russe
+  - 1936 : Front Populaire au pouvoir
+- 1927 : Premier code du travail
+- 1936 : Accords de Matignon - congés payés et réduction du temps de travail à 45h/semaine
+
+
+#### Deuxième moitié du XXe siècle
+
+- Après la 2e guerre mondiale : revendications du Conseil National de la Résistance (CNR)
+- Les 30 glorieuses : période de prospérité économique qui permet de financer les mesures sociales
+- Syndicalisme organisé et massif : 35% de syndiqué.e.s en 1947
+- De nouveaux droits : la grève ne rompt pas le contrat de travail, le licenciement nécessite une cause réelle et sérieuse, les salaires sont mensualisés...
+- Développement des assurances sociales (chômage, maladie, vieillesse et invalidité)
+- Développement du «paritarisme»
+
+
+#### L'époque contemporaine
+
+- Changement de logique : après la protection des travailleurs.euses, la protection des personnes au travail
+- Capitalisme et mondialisation
+- Crise du syndicalisme
+  - Chute des adhésions : -10% de syndiqués en France
+  - Remise en cause du modèle paritaire
+- Crises successives
+
+- Poursuite de la réduction du temps de travail (39h en 1981, 35h en 1998-2000)
+  - ...ou pas
+- Déréglementation 
+
+
+### Les sources applicables
+
+#### Bloc de constitutionnalité
+
+- Liberté d'entreprise (DDHC 26 août 1789)
+- Droit à l'emploi (art. 5 préambule 1946)
+- Droit de grève (art. 7 préambule 1946)
+- ???
+
+
+#### Bloc de conventionnalité 
+
+- ???
+- ???
+
+
+#### Le Code du Travail (lois, ordonnances et décrets)
+
+Par exemple : Art. L1121-1 CdT : « Nul ne peut apporter aux droits des personnes et aux libertés individuelles et collectives de restrictions qui ne seraient pas justifiées »
+
+
+#### Les accords collectifs
+
+- Accords signés entre organisations patronales et salariales représentatives 
+- Terminologie variable : accords d'établissement m, accords de branche, accords collectifs, convention colletives, accords nationaux interprofessionnels (ANI)...
+- Champ d'application différents : géographiques (national, régional, local) et/ou professionnel (interprofessionnel... ???
+
+
+#### Le règlement intérieur de l'entreprise
+
+- Acte écrit par l'employeur qui fixe les règles concernant la discipline, la santé et la sécurité ????
+
+
+#### Les contrats 
+
+- Le contrat doit respecter les normes des autres sources
+- Il peut s'appliquer prioritairement s'il est plus ?????
+
+
+### Exemples 
+
+#### Santé et sécurité 
+
+- L'employeur a l'obligation d'assurer la sécurité et la santé (mentale et physique) des salarié.e.s contre les risques : chute, psychosociaux, (surcharge, aggression...), chimiques, bruits, rythme, TMS...
+- Par tous les moyens : équipements, organisation, actions de prévention, d'information et de formation...
+- Responsabilité civile et pénale des employeurs 
+- ???
+
+- Les salarié.e.s ont droit à une visite médicale d'information et de prévention :
+  - Auprès d'un.e médecin ou d'un.e professionnel.le de santé au travail 
+  - Obligatoire, maximum 3 mois après l'embauche
+  - Renouvelée au moins tous les 5 ans
+  - Pendant le temps de travail : rémunérée et transport remboursé 
+
+
+#### Formation
+
+- L'employeur a l'obligation d'assurer l'adaptation des salarié.e.s aux postes de travail
+  - La formation professionnelle continue
+  - Maintien de la capacité de la personne salariée à occuper ???
+  - ???
+
+- Le compte personnel de formation (CPF)
+  - 500€ par an pour ETP, cumulables jusqu'à 5000€ (800€ - 8000€ max pour les personnes peu qualifiées)
+  - l'accord exprès des concerné.e.s est impératif pour les utiliser
+  - maintien de la rémunération pendant la formation
+  - CDI : après 1 an d'ancienneté - CDD : après 4 mois d'ancienneté
+  - [moncompteformation.gouv.fr](moncompteformation.gouv.fr)
+
+
+#### Repos quotidien et hebdomadaire 
+
+- Chaque jour, les salarié.e.s ont droit ???
+
+
+#### Congés payés
+
+- Toute personne salariée à la droit à des jours de congés payés par son employeur, quel que soit son contrat de travail, son temps de travail et son ancienneté
+- Pendant cette période : pas de salaire mais une indemnité de congés payés 
+- 2.5 jours ouvrables par mois, soit 30 jours ou 5 semaines par année complète
+- L'entreprise peut refuser d'accorder un congé à son ???
+
+
+#### Salaires
+
+- Salaire net moyen en France en 2019 (ramené à un ETP)
+  - Ensemble 2424€ par mois (2630€ en 2022)
+  - Femmes : 2181€
+  - Holmes : 2597€ (+19%)
+- Le salaire médian en France en 2019 (ramené à un ETP)
+- ???
+
+
+
+
 
 
