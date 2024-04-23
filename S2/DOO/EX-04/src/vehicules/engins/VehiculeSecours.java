@@ -8,7 +8,9 @@ public class VehiculeSecours extends Engin {
 		
 	// -------- Constructeurs --------
 		
-	
+	public VehiculeSecours() {
+		super();
+	}
 			
 	// ----------- Méthodes -----------
 	

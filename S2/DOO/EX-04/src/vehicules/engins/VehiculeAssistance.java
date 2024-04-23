@@ -9,7 +9,9 @@ public class VehiculeAssistance extends Engin {
 	
 	// -------- Constructeurs --------
 	
-	
+	public VehiculeAssistance() {
+		super();
+	}
 		
 	// ----------- Méthodes -----------
 	

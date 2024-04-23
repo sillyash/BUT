@@ -16,6 +16,12 @@ public abstract class Vehicule {
 		this.vehiculeID = lastID++;
 	}
 	
+	Vehicule(int numeroIntervention, float distanceIntervention) {
+		this.vehiculeID = lastID++;
+		this.numeroIntervention = numeroIntervention;
+		this.distanceIntervention = distanceIntervention;
+	}
+	
 	// ----------- Méthodes -----------
 	
 	public abstract float getCout();

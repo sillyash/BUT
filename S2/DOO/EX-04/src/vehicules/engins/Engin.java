@@ -13,7 +13,9 @@ public abstract class Engin extends Vehicule {
 		
 	// -------- Constructeurs --------
 	
-	
+	public Engin() {
+		super();
+	}
 		
 	// ----------- Méthodes -----------
 	
