@@ -164,7 +164,7 @@ numFilm bdfilm.film.idFilm%type;
 BEGIN
     SELECT idFilm INTO numFilm
     FROM bdfilm.Film F
-    WHERE F.titre = titreFilm;
+    WHERE F.titre LIKE '%titreFilm%';
     DBMS_OUTPUT.PUT_LINE('Le film "'||titreFilm||'" est le film n°'||numFilm||'.');
     DBMS_OUTPUT.PUT_LINE('');
     ActeursDe(numFilm);
