@@ -18,6 +18,7 @@
 
 ```AbstractAction``` n'est pas une classe concrète.
 
+
 ### Est-ce que AbstractAction est une classe abstraite ?
 
 ```AbstractAction``` est une classe abstraite : on utilise ```extends``` dans sa déclaration.
