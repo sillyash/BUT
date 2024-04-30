@@ -16,16 +16,16 @@
 
 ### Est-ce que AbstractAction est une classe concrète ?
 
->```AbstractAction``` n'est pas une classe concrète.
+```AbstractAction``` n'est pas une classe concrète.
 
 ### Est-ce que AbstractAction est une classe abstraite ?
 
->```AbstractAction``` est une classe abstraite : on utilise ```extends``` dans sa déclaration.
+```AbstractAction``` est une classe abstraite : on utilise ```extends``` dans sa déclaration.
 
 
 ### Est-ce que AbstractAction est une interface ?
 
->Non, c'est une classe abstraite.
+Non, c'est une classe abstraite.
 
 <br>
 
@@ -33,11 +33,11 @@
 
 ### Qu’est-ce qu’il ne peut pas faire ?
 
->Le développeur ne opeut pas instancier la classe ```AbstractAction``` car elle est abstraite.
+Le développeur ne opeut pas instancier la classe ```AbstractAction``` car elle est abstraite.
 
 
 ### Qu’est-ce qu’il doit faire pour utiliser cette classe abstraite ? 
 
->Le développeur doit utiliser ou créer une sous-classe instanciable de ```AbstractAction``` pour l'utiliser.
+Le développeur doit utiliser ou créer une sous-classe instanciable de ```AbstractAction``` pour l'utiliser.
 
 
