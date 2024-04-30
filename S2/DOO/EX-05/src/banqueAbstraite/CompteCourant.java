@@ -1,4 +1,4 @@
-package banqueHeritee;
+package banqueAbstraite;
 
 public class CompteCourant extends Compte {
 

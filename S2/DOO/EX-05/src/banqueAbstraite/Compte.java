@@ -94,4 +94,6 @@ public abstract class Compte {
 		else setSolde(getSolde() - montant);
 	}
 	
+	public abstract void crediter(float montant);
+	
 }

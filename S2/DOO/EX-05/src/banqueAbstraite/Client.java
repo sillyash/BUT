@@ -1,4 +1,4 @@
-package banqueHeritee;
+package banqueAbstraite;
 
 import java.util.ArrayList;
 
