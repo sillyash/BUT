@@ -19,10 +19,6 @@ public abstract class Compte {
 		setSolde(solde);
 	}
 	
-	public Compte(float solde, float seuil) {
-		setNumero(lastNum++);
-	}
-	
 	public Compte(float solde, Client client) {
 		setNumero(lastNum++);
 		setSolde(solde);

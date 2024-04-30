@@ -2,19 +2,19 @@ package banqueAbstraite;
 
 public class CompteCourant extends Compte {
 
-	protected static final float SEUIL_SECURITE = 1000.00f;
+	protected static final float SEUIL_SECURITE = 10000.00f;
 	protected float seuilDecouvertAutorise;
 	
 	// --------- Constructor(s) ---------
 	
 	CompteCourant (float solde, float seuilDecouvertAutorise) {
-		super(solde, SEUIL_SECURITE);
+		super(solde);
 		this.seuilDecouvertAutorise = seuilDecouvertAutorise;
 		setSolde(solde);
 	}
 	
 	CompteCourant (float solde) {
-		super(solde, SEUIL_SECURITE);
+		super(solde);
 		this.seuilDecouvertAutorise = SEUIL_SECURITE;
 	}
 	
