@@ -9,6 +9,5 @@
 	<classpathentry kind="src" path="EX-02/src"/>
 	<classpathentry kind="src" path="EX-03/src"/>
 	<classpathentry kind="src" path="EX-04/src"/>
-	<classpathentry kind="src" path="/EX-04"/>
 	<classpathentry kind="output" path="EX-01/bin"/>
 </classpath>
