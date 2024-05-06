@@ -192,13 +192,34 @@ Il ne devrait donc pas être possible d’avoir le cas où ```minuteStop``` est 
 
 ### Ecrire un trigger ```verifStop``` qui assure le respect de cette contrainte.
 
-	// TODO : Code
+	CREATE OR REPLACE TRIGGER VerifStop
+	BEFORE INSERT OR UPDATE OF minuteStop
+	ON Visionnage FOR EACH ROW
+	BEGIN
+	    IF :NEW.horodatageFin IS NULL AND :NEW.minuteStop IS NOT NULL THEN
+	        RAISE_APPLICATION_ERROR(-20001, 'minuteStop renseigné alors que horodatageFin n"est pas renseigné.');
+	    END IF;
+	END VerifStop;
+	/
 
 <br>
 
 ## Exercice 3. On veut empêcher un client de visionner plus d’un film à la fois. Ecrire un trigger ```verifVisio``` qui bloque l’insertion d’un visionnage en cours (voir ci-dessus) lorsque le client concerné a déjà un visionnage en cours dans la table ```Visionnage```.
 
-	// TODO : Code
+	CREATE OR REPLACE TRIGGER VerifVisio
+	BEFORE INSERT OR UPDATE OF horoDatageFin
+	ON Visionnage FOR EACH ROW
+	DECLARE nbFilms NUMBER;
+	BEGIN
+	    SELECT COUNT(*) INTO nbFilms
+	    FROM Visionnage V
+	    INNER JOIN Client C ON C.idClient = V.idClient
+	    WHERE idClient = :OLD.idClient;
+	    IF nbFilms >= 1 THEN
+	        RAISE_APPLICATION_ERROR(-20002, 'Tentative d"insertion d"un visionnage alors que le Client en a déjà un.');
+	    END IF;
+	END VerifVisio;
+	/
 
 <br>
 
