@@ -1,3 +1,5 @@
+SET SERVEROUTPUT ON;
+
 // Exercice 1
 
 // a)
@@ -136,8 +138,76 @@ ROLLBACK;
 
 // Exercice 2
 
+CREATE OR REPLACE TRIGGER VerifStop
+BEFORE INSERT OR UPDATE OF minuteStop
+ON Visionnage FOR EACH ROW
+BEGIN
+    IF :NEW.horodatageFin IS NULL AND :NEW.minuteStop IS NOT NULL THEN
+        RAISE_APPLICATION_ERROR(-20001, 'minuteStop renseigné alors que horodatageFin n"est pas renseigné.');
+    END IF;
+END VerifStop;
+/
+
+// Exercice 3
+
+CREATE OR REPLACE TRIGGER VerifVisio
+BEFORE INSERT OR UPDATE
+ON Visionnage FOR EACH ROW
+DECLARE nbFilms NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO nbFilms
+    FROM Visionnage V
+    WHERE (idClient = :OLD.idClient);
+    IF nbFilms >= 1 THEN
+        RAISE_APPLICATION_ERROR(-20002, 'Tentative d"insertion d"un visionnage alors que le Client en a déjà un.');
+    END IF;
+END VerifVisio;
+/
+
+// Exercice 4
+
+DROP TABLE Visionnage;
+
 // a)
 
+CREATE OR REPLACE TRIGGER AlerteSuppr
+BEFORE DELETE
+ON Client FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Alerte : suppression d"une ligne de la table Client.');
+END AlerteSuppr;
+/
 
+// b)
 
+CREATE OR REPLACE TRIGGER AlerteSupprTiers
+BEFORE DELETE
+ON Client FOR EACH ROW
+BEGIN
+    IF USER != 'AMERIE1' THEN
+        DBMS_OUTPUT.PUT_LINE('Alerte : suppression sur la table Client par un tiers.');
+    END IF;
+END AlerteSupprTiers;
+/
 
+// c)
+
+CREATE OR REPLACE TRIGGER BloquerSupprTiers
+BEFORE DELETE
+ON Client FOR EACH ROW
+BEGIN
+    IF USER != 'AMERIE1' THEN
+        RAISE_APPLICATION_ERROR(-20003, 'Erreur : suppression sur la table Client par un tiers.');
+    END IF;
+END BloquerSupprTiers;
+/
+
+// d)
+
+GRANT SELECT, UPDATE, INSERT
+ON Client
+TO AVIAU;
+
+REVOKE ALL
+ON Client
+FROM AVIAU;
