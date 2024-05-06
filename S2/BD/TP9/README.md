@@ -162,11 +162,23 @@ heures.)
 (Le client n. 114455 a toujours interrompu ses visionnages 1 minute plus tard de ce qui était
 indiqué.)
 
+>Le ```trigger4``` est déclenché avant l'insertion de données et insère une ligne dans ```Trace``` nous informant d'un début d'insertion/modification de données.
 >
+>Le ```trigger3``` est aussi déclenché avant l'insertion de cahque ligne (ici 2 lignes) dans ```Visionnage```, et insère une ligne dans trace nous informant de l'insertion.
+>
+>Après l'insertion de chaque ligne (ici 2 lignes), le ```trigger1``` est déclenché, nous informant de la fin de l'insertion de la ligne dans la table ```Visionnage```, en insérant une nouvelle ligne dans la table ```Trace```.
+>
+>Enfin, le ```trigger2``` est déclenché après l'insertion de données et insère une ligne dans ```Trace``` nous informant de la fin de l'insertion/modification de données.
 
 ### h. Que peut-on en déduire sur l’ordre d’activation des déclencheurs d’une même table, en fonction de leurs types ?
 
- >??
+>Le déclencheurs ```trigger4``` est déclenché en premier car son type se déclenche avant l'insertion ou la modification de données dans la table.
+>
+>Ensuite, le déclencheur ```trigger3``` est déclenché car son type se déclenche avant la modification ou l'insertion de données pour chaque ligne.
+>
+>Puis, le déclencheur ```trigger1``` est déclenché car son type se déclenche après la modification ou l'insertion de données pour chaque ligne.
+>
+>Enfin, le ```trigger4``` est déclenché car sin type se déclenche après l'insertion ou la modification de données dans la table.
 
 ## Exercice 2. Dans la table ```Visionnage``` il existe trois types de lignes :
 
