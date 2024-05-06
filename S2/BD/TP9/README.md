@@ -154,6 +154,25 @@ indiqué.)
 
  >??
 
+## Exercice 2. Dans la table ```Visionnage``` il existe trois types de lignes :
 
+- Les visionnages en cours : ```minuteStop``` et ```horoDatageFin``` ne sont pas renseignés (leur valeur est ```NULL```). Dans ce cas le client est en train de visionner le film;
+- Les visionnages terminés : ```minuteStop``` n’est pas renseigné mais ```horoDatageFin``` est renseigné. Dans ce cas le client a visionné le film en entier et a terminé au moment indiqué dans ```horoDatageFin```;
+- Les visionnages interrompus : ```minuteStop``` et ```horoDatageFin``` sont renseignés. Dans ce cas le client a visionné le film jusqu’à minuteStop et a interrompu la vision du film au moment indiqué dans ```horoDatageFin```. Il pourra reprendre plus tard la vision.
+
+Il ne devrait donc pas être possible d’avoir le cas où ```minuteStop``` est renseigné et ```horoDatageFin``` ne l’est pas, car ```minuteStop``` correspond toujours à une interruption. Toutefois, il est techniquement possible d’avoir une telle ligne dans la table ```Visionnage```.
+
+### Ecrire un trigger ```verifStop``` qui assure le respect de cette contrainte.
+
+	// TODO : Code
+
+## Exercice 3. On veut empêcher un client de visionner plus d’un film à la fois. Ecrire un trigger ```verifVisio``` qui bloque l’insertion d’un visionnage en cours (voir ci-dessus) lorsque le client concerné a déjà un visionnage en cours dans la table ```Visionnage```.
+
+## Exercice 4. On souhaite créer 3 déclencheurs qui surveillent la suppression d’une ligne de la table ```Client```. Afin de pouvoir tester sans contrainte, supprimez pour le moment la table ```Visionnage``` (le script pour la récréer et la peupler doit toujours être disponible).
+
+- Le premier envoie une alerte à chaque suppression.
+- Le deuxième envoie un message d’alerte quand la suppression est faite par quelqu’un d'autre que soi.
+- Le troisième bloque la suppression quand ce n’est pas soi-même qui la fait.
+- Donner à votre voisin/voisine les droits nécessaires sur votre table Client et testez !
 
 
