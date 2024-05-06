@@ -225,11 +225,50 @@ Il ne devrait donc pas être possible d’avoir le cas où ```minuteStop``` est 
 ## Exercice 4. On souhaite créer 3 déclencheurs qui surveillent la suppression d’une ligne de la table ```Client```. Afin de pouvoir tester sans contrainte, supprimez pour le moment la table ```Visionnage``` (le script pour la récréer et la peupler doit toujours être disponible).
 
 - Le premier envoie une alerte à chaque suppression.
+<!-- end of the list -->
+
+	CREATE OR REPLACE TRIGGER AlerteSuppr
+	BEFORE DELETE
+	ON Client FOR EACH ROW
+	BEGIN
+	    DBMS_OUTPUT.PUT_LINE('Alerte : suppression d"une ligne de la table Client.');
+	END AlerteSuppr;
+	/
+
 - Le deuxième envoie un message d’alerte quand la suppression est faite par quelqu’un d'autre que soi.
+<!-- end of the list -->
+
+	CREATE OR REPLACE TRIGGER AlerteSupprTiers
+	BEFORE DELETE
+	ON Client FOR EACH ROW
+	BEGIN
+	    IF USER != 'AMERIE1' THEN
+	        DBMS_OUTPUT.PUT_LINE('Alerte : suppression sur la table Client par un tiers.');
+	    END IF;
+	END AlerteSupprTiers;
+	/
+
 - Le troisième bloque la suppression quand ce n’est pas soi-même qui la fait.
+<!-- end of the list -->
+
+	CREATE OR REPLACE TRIGGER BloquerSupprTiers
+	BEFORE DELETE
+	ON Client FOR EACH ROW
+	BEGIN
+	    IF USER != 'AMERIE1' THEN
+	        RAISE_APPLICATION_ERROR(-20003, 'Erreur : suppression sur la table Client par un tiers.');
+	    END IF;
+	END BloquerSupprTiers;
+	/
+
 - Donner à votre voisin/voisine les droits nécessaires sur votre table Client et testez !
+<!-- end of the list -->
 
-<br>
-
- 	// TODO : Code
+	GRANT SELECT, UPDATE, INSERT
+	ON Client
+	TO AVIAU;
+	
+	REVOKE ALL
+	ON Client
+	FROM AVIAU;
 
