@@ -124,9 +124,35 @@
  
  (Le client n. 882213 a commencé à voir le film n. 792307 il y a 3 heures et finit de le voir maintenant.)
 
->
+>??
 
+### f. Dire ce qui se passe dans la table Trace si on exécute la requête qui met à jour la ligne qu’on vient d’insérer pour le client n. 882213 :
 
+	UPDATE Visionnage
+	SET horoDatageFin = NULL
+	WHERE idClient = 882213
+	AND TRUNC(horoDatageDebut) = TRUNC(SYSDATE);
+
+(Le client n. 882213 n’a en effet pas encore fini de le voir le film n. 792307 commencé il y a 3
+heures.)
+
+>??
+
+### g. Dire ce qui se passe dans la table Trace si on exécute la requête qui met à jour 2 lignes pour le client n. 114455 :
+
+	UPDATE Visionnage
+	SET horoDatageFin = horoDatageFin+1/(24*60)
+	WHERE idClient = 114455
+	AND minuteStop IS NOT NULL;
+
+(Le client n. 114455 a toujours interrompu ses visionnages 1 minute plus tard de ce qui était
+indiqué.)
+
+>??
+
+### h. Que peut-on en déduire sur l’ordre d’activation des déclencheurs d’une même table, en fonction de leurs types ?
+
+ >??
 
 
 
