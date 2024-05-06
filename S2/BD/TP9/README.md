@@ -1,3 +1,15 @@
+# R206 - BD
+
+## TP9 - Déclencheurs
+
+### Ash MERIENNE - 2C
+
+<br>
+
+#### Remarque : Avant toute chose, on active l'output de serveur.
+
+	SET SERVEROUTPUT ON;
+
 ## Exercice 1. Nous allons tester l’ordre de déclanchement des triggers. Cet exercice est complétement guidé, il faut juste suivre attentivement toutes les étapes.
 
 ### a. Rependre le script d’insertion dans les tables Visionnage et Client vu au TP précédents. Il faut avoir 7 lignes dans Visionnage et au moins 3 dans Client.
