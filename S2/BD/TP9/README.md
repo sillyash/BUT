@@ -180,6 +180,8 @@ indiqué.)
 >
 >Enfin, le ```trigger4``` est déclenché car sin type se déclenche après l'insertion ou la modification de données dans la table.
 
+<br>
+
 ## Exercice 2. Dans la table ```Visionnage``` il existe trois types de lignes :
 
 - Les visionnages en cours : ```minuteStop``` et ```horoDatageFin``` ne sont pas renseignés (leur valeur est ```NULL```). Dans ce cas le client est en train de visionner le film;
@@ -192,7 +194,13 @@ Il ne devrait donc pas être possible d’avoir le cas où ```minuteStop``` est 
 
 	// TODO : Code
 
+<br>
+
 ## Exercice 3. On veut empêcher un client de visionner plus d’un film à la fois. Ecrire un trigger ```verifVisio``` qui bloque l’insertion d’un visionnage en cours (voir ci-dessus) lorsque le client concerné a déjà un visionnage en cours dans la table ```Visionnage```.
+
+	// TODO : Code
+
+<br>
 
 ## Exercice 4. On souhaite créer 3 déclencheurs qui surveillent la suppression d’une ligne de la table ```Client```. Afin de pouvoir tester sans contrainte, supprimez pour le moment la table ```Visionnage``` (le script pour la récréer et la peupler doit toujours être disponible).
 
@@ -201,4 +209,7 @@ Il ne devrait donc pas être possible d’avoir le cas où ```minuteStop``` est 
 - Le troisième bloque la suppression quand ce n’est pas soi-même qui la fait.
 - Donner à votre voisin/voisine les droits nécessaires sur votre table Client et testez !
 
+<br>
+
+ 	// TODO : Code
 
