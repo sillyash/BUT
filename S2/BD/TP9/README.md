@@ -118,13 +118,25 @@
 	END trigger4;
 	/
 
+#### Remarque : Pour voir clairement les triggers pour chaque question, on utilise le ```rollback```
+
+	// Instructions...
+  	SELECT * FROM Trace;
+   	ROLLBACK;  // On enlève les modifications et les insertions dans trace, pour mieux voir les triggers à la question suivante
+
 ### e. Dire ce qui se passe dans la table Trace si on exécute la requête qui insère un nouveau visionnage pour le client n. 882213 :
 
 	INSERT INTO Visionnage VALUES (882213, SYSDATE-3/24, 792307, 1, NULL, SYSDATE);
  
  (Le client n. 882213 a commencé à voir le film n. 792307 il y a 3 heures et finit de le voir maintenant.)
 
->??
+>Le ```trigger4``` est déclenché avant l'insertion de données et insère une ligne dans ```Trace``` nous informant d'un début d'insertion/modification de données.
+>
+>Le ```trigger3``` est aussi déclenché avant l'insertion de cahque ligne (ici une seule) dans ```Visionnage```, et insère une ligne dans trace nous informant de l'insertion.
+>
+>Après l'insertion de chaque ligne, le ```trigger1``` est déclenché, nous informant de la fin de l'insertion de la ligne dans la table ```Visionnage```, en insérant une nouvelle ligne dans la table ```Trace```.
+>
+>Enfin, le ```trigger2``` est déclenché après l'insertion de données et insère une ligne dans ```Trace``` nous informant de la fin de l'insertion/modification de données.
 
 ### f. Dire ce qui se passe dans la table Trace si on exécute la requête qui met à jour la ligne qu’on vient d’insérer pour le client n. 882213 :
 
@@ -136,7 +148,9 @@
 (Le client n. 882213 n’a en effet pas encore fini de le voir le film n. 792307 commencé il y a 3
 heures.)
 
->??
+>Le ```trigger4``` est déclenché avant l'insertion de données et insère une ligne dans ```Trace``` nous informant d'un début d'insertion/modification de données.
+>
+>Ensuite, le ```trigger2``` est déclenché après l'insertion de données et insère une ligne dans ```Trace``` nous informant de la fin de l'insertion/modification de données.
 
 ### g. Dire ce qui se passe dans la table Trace si on exécute la requête qui met à jour 2 lignes pour le client n. 114455 :
 
@@ -148,7 +162,7 @@ heures.)
 (Le client n. 114455 a toujours interrompu ses visionnages 1 minute plus tard de ce qui était
 indiqué.)
 
->??
+>
 
 ### h. Que peut-on en déduire sur l’ordre d’activation des déclencheurs d’une même table, en fonction de leurs types ?
 
