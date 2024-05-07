@@ -2,11 +2,12 @@
 public abstract class Commercial extends Employe {
 	
 	protected float chiffreAffairesMensuel;
-	protected int bonusMensuel;
+	protected float bonusMensuel;
 	protected float partSalaire;
 	
-	public Commercial (String nom, String prenom, int age, int anneeAnciennete, float chiffreAffairesMensuel, int bonusMensuel, float partSalaire) {
-		super(nom, prenom, age, anneeAnciennete);
+	public Commercial (String nom, String prenom, int age, int anneeAnciennete, boolean employeARisque, float chiffreAffairesMensuel,
+			float bonusMensuel, float partSalaire) {
+		super(nom, prenom, age, anneeAnciennete, employeARisque);
 		this.chiffreAffairesMensuel = chiffreAffairesMensuel;
 		this.bonusMensuel = bonusMensuel;
 		this.partSalaire = partSalaire;
@@ -14,7 +15,9 @@ public abstract class Commercial extends Employe {
 	
 	@Override
 	public float calculerSalaire() {
-		return getPartSalaire() * getChiffreAffairesMensuel() + getBonusMensuel();
+		if (this.employeARisque)
+			return getPartSalaire() * getChiffreAffairesMensuel() + getBonusMensuel() + BONUS_RISQUE;
+		else return getPartSalaire() * getChiffreAffairesMensuel() + getBonusMensuel();
 	}
 
 	public float getChiffreAffairesMensuel() {
@@ -25,7 +28,7 @@ public abstract class Commercial extends Employe {
 		this.chiffreAffairesMensuel = chiffreAffairesMensuel;
 	}
 
-	public int getBonusMensuel() {
+	public float getBonusMensuel() {
 		return bonusMensuel;
 	}
 
@@ -39,6 +42,18 @@ public abstract class Commercial extends Employe {
 
 	public void setPartSalaire(float partSalaire) {
 		this.partSalaire = partSalaire;
+	}
+	
+	@Override
+	public String toString() {
+		String s = "";
+		
+		s += super.ToString() + ", ";
+		s += "bonus : " + getBonusMensuel();
+		s += ", part : " + Math.round(getPartSalaire()*100) + "% ";
+		s += ", salaire : " + calculerSalaire();
+		
+		return s;
 	}
 		
 }

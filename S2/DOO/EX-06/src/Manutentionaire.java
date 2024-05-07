@@ -4,21 +4,34 @@ public class Manutentionaire extends Employe {
 	protected int heuresTravailleesMensuel;
 	protected static final int multiplicateurSalaire = 15;
 	
-	public Manutentionaire(String nom, String prenom, int age, int anneeAnciennete, int unitesProduitesMensuel) {
-		super(nom, prenom, age, anneeAnciennete);
+	public Manutentionaire(String nom, String prenom, int age, int anneeAnciennete, boolean employeARisque, int unitesProduitesMensuel) {
+		super(nom, prenom, age, anneeAnciennete, employeARisque);
 		this.heuresTravailleesMensuel = unitesProduitesMensuel;
 	}
 
 	@Override
 	protected float calculerSalaire() {
-		return getUnitesProduitesMensuel() * multiplicateurSalaire;
+		if (this.employeARisque)
+			return getHeuresTravailleesMensuel() * multiplicateurSalaire + BONUS_RISQUE;
+		else return getHeuresTravailleesMensuel() * multiplicateurSalaire;
 	}
 
-	public int getUnitesProduitesMensuel() {
+	public int getHeuresTravailleesMensuel() {
 		return heuresTravailleesMensuel;
 	}
 
-	public void setUnitesProduitesMensuel(int unitesProduitesMensuel) {
+	public void setHeuresTravailleesMensuel(int unitesProduitesMensuel) {
 		this.heuresTravailleesMensuel = unitesProduitesMensuel;
+	}
+
+	@Override
+	public String toString() {
+		String s = "";
+		
+		s += super.ToString() + ", ";
+		s += "heures travaillées : " + getHeuresTravailleesMensuel();
+		s += ", salaire : " + calculerSalaire();
+		
+		return s;
 	}
 }

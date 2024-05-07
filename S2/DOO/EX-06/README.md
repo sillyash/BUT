@@ -41,4 +41,46 @@ Le développeur ne opeut pas instancier la classe ```AbstractAction``` car elle 
 
 Le développeur doit utiliser ou créer une sous-classe instanciable de ```AbstractAction``` pour l'utiliser.
 
+<br>
+
+## On vous donne la classe suivante :
+
+	class Personnel {
+		private Employe[] staff;
+		private int nbreEmploye;
+		private final static int MAXEMPLOYE = 200;
+		
+		public Personnel() {
+			staff = new Employe[MAXEMPLOYE];
+			nbreEmploye = 0;    
+		}
+		
+		public void ajouterEmploye(Employe e) {
+			if (nbreEmploye <= MAXEMPLOYE) {
+				++nbreEmploye;
+				staff[nbreEmploye - 1] = e;
+			} else {
+				System.out.println("Pas plus de " + MAXEMPLOYE + " employés");
+			}
+		}
+		
+		public double salaireMoyen() {
+			double somme = 0.0;
+			for (int i = 0; i < nbreEmploye; i++) {
+				somme += staff[i].calculerSalaire();
+			}
+			return somme / nbreEmploye;
+		}
+		
+		public void afficherSalaires() {
+			for (int i = 0; i < nbreEmploye; i++) {
+				System.out.println(staff[i].getNom() + " gagne "+ staff[i].calculerSalaire());
+			}
+		}
+	}
+
+### Parmi les méthodes qui sont définies et celles qui sont appelées dans cette classe Personnel, quelle est (ou quelles sont) la (ou les) méthodes polymorphes ?
+
+Les méthodes ```salaireMoyen()``` et ```afficherSalaire()``` sont polymorphes.
+
 
