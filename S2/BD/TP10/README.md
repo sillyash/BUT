@@ -14,11 +14,17 @@
 
 ### Créer un paquetage ```statistics``` qui rassemble :
 
+	CREATE OR REPLACE PACKAGE statistics AS
+	    FUNCTION nbHorsFrance RETURN NUMBER;
+	    PROCEDURE basseRes;
+	END statistics;
+	/
+
 - a. Une fonction ```nbHorsFrance``` donnant le nombre de films jamais sortis en France
 - b. Une procédure ```basseRes``` affichant le pourcentage de films pour lesquels il n’y a pas de version à haute résolution (4K ou 8K).
 <!-- end of the list -->
 
-  Code
+	Code
 
 ### Exécuter cette fonction et cette procédure.
 
@@ -33,17 +39,17 @@
   - Une fonction donnant le nombre de films dans lesquels ont joué (globalement) les personnes portant un nom donné en paramètre
 <!-- end of the list -->
 
-  Code
+	Code
 
 - b. Ecrire un bloc PL/SQL qui appelle toutes ces fonctions et procédures avec pour chacune le nom « Jackson » passé en paramètre
 <!-- end of the list -->
 
-  Code
+	Code
 
 - c. Rendre le bloc PL/SQL du point ```b)``` ci-dessus une procédure supplémentaire du paquetage famille et le tester.
 <!-- end of the list -->
 
-  Code
+	Code
 
 - d. Faire en sorte que la procédure ci-dessus affiche, en plus, la liste des films dans lesquels chaque personne a joué.
 <!-- end of the list -->
