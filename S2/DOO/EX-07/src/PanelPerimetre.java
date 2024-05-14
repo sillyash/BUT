@@ -1,124 +1,109 @@
-import java.awt.LayoutManager;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class PanelPerimetre extends JPanel {
-	JButton BTNCalculer;
-	JButton BTNNettoyer;
-	JLabel LBLLongueur;
-	JLabel LBLLargeur;
-	JLabel LBLResultat;
-	JTextField TXFLongueur;
-	JTextField TXFLargeur;
+	protected JButton BTNCalculer;
+	protected JButton BTNNettoyer;
+	protected JLabel LBLLongueur;
+	protected JLabel LBLLargeur;
+	protected JLabel LBLResultat;
+	protected JTextField TXFLongueur;
+	protected JTextField TXFLargeur;
 	
 	public PanelPerimetre() {
-		BTNCalculer = new JButton("Calculer");
-		BTNNettoyer = new JButton("Nettoyer");
-		LBLLongueur = new JLabel("Longueur :   ");
-		LBLLargeur = new JLabel ("Largeur  :   ");
-		LBLResultat = new JLabel("Résultat :   ");
-		TXFLongueur = new JTextField(15);
-		TXFLargeur = new JTextField(15);
-		
-		TXFLongueur.setHorizontalAlignment(JTextField.CENTER);
-		TXFLargeur.setHorizontalAlignment(JTextField.CENTER);
-		
-		this.add(LBLLongueur);
-		this.add(TXFLongueur);
-		
-		this.add(LBLLargeur);
-		this.add(TXFLargeur);
-		
-		this.add(LBLResultat);
-		
-		this.add(BTNNettoyer);
-		this.add(BTNCalculer);
-		
+		InitializeElements();
+		AddElementsToSelf();
+		SetButtonActions();
 		this.setVisible(true);
 	}
 
 	public PanelPerimetre(LayoutManager layout) {
 		super(layout);
-		BTNCalculer = new JButton("Calculer");
-		BTNNettoyer = new JButton("Nettoyer");
-		LBLLongueur = new JLabel("Longueur :   ");
-		LBLLargeur = new JLabel ("Largeur  :   ");
-		LBLResultat = new JLabel("Résultat :   ");
-		TXFLongueur = new JTextField(15);
-		TXFLargeur = new JTextField(15);
-		
-		TXFLongueur.setHorizontalAlignment(JTextField.CENTER);
-		TXFLargeur.setHorizontalAlignment(JTextField.CENTER);
-		
-		this.add(LBLLongueur);
-		this.add(TXFLongueur);
-		
-		this.add(LBLLargeur);
-		this.add(TXFLargeur);
-		
-		this.add(LBLResultat);
-		
-		this.add(BTNNettoyer);
-		this.add(BTNCalculer);
-		
+		InitializeElements();
+		AddElementsToSelf();
+		SetButtonActions();
 		this.setVisible(true);
 	}
 
 	public PanelPerimetre(boolean isDoubleBuffered) {
 		super(isDoubleBuffered);
-		BTNCalculer = new JButton("Calculer");
-		BTNNettoyer = new JButton("Nettoyer");
-		LBLLongueur = new JLabel("Longueur :   ");
-		LBLLargeur = new JLabel ("Largeur  :   ");
-		LBLResultat = new JLabel("Résultat :   ");
-		TXFLongueur = new JTextField(15);
-		TXFLargeur = new JTextField(15);
-		
-		TXFLongueur.setHorizontalAlignment(JTextField.CENTER);
-		TXFLargeur.setHorizontalAlignment(JTextField.CENTER);
-		
-		this.add(LBLLongueur);
-		this.add(TXFLongueur);
-		
-		this.add(LBLLargeur);
-		this.add(TXFLargeur);
-		
-		this.add(LBLResultat);
-		
-		this.add(BTNNettoyer);
-		this.add(BTNCalculer);
-		
+		InitializeElements();
+		AddElementsToSelf();
+		SetButtonActions();
 		this.setVisible(true);
 	}
 
 	public PanelPerimetre(LayoutManager layout, boolean isDoubleBuffered) {
 		super(layout, isDoubleBuffered);
+		InitializeElements();
+		AddElementsToSelf();
+		SetButtonActions();
+		this.setVisible(true);
+	}
+	
+	private void InitializeElements() {
 		BTNCalculer = new JButton("Calculer");
 		BTNNettoyer = new JButton("Nettoyer");
 		LBLLongueur = new JLabel("Longueur :   ");
 		LBLLargeur = new JLabel ("Largeur  :   ");
-		LBLResultat = new JLabel("Résultat :   ");
+		LBLResultat = new JLabel("Résultat :      ");
 		TXFLongueur = new JTextField(15);
 		TXFLargeur = new JTextField(15);
-		
 		TXFLongueur.setHorizontalAlignment(JTextField.CENTER);
 		TXFLargeur.setHorizontalAlignment(JTextField.CENTER);
-		
+	}
+	
+	private void ClearFields() {
+		TXFLongueur.setText("");
+		TXFLargeur.setText("");
+		LBLResultat.setText("Résultat :      ");
+	}
+	
+	private void AddElementsToSelf() {
 		this.add(LBLLongueur);
 		this.add(TXFLongueur);
-		
 		this.add(LBLLargeur);
 		this.add(TXFLargeur);
-		
 		this.add(LBLResultat);
-		
 		this.add(BTNNettoyer);
 		this.add(BTNCalculer);
+	}
+	
+	private boolean IsNumeric(String str) {
+		if (str == "" || str == null) return false;
+		else try {
+			Double dbl = Double.parseDouble(str);
+		} catch (NumberFormatException nfe) {
+	        return false;
+	    }
+		return true;
+	}
+	
+	private boolean CheckTXFValues() {
+		if (IsNumeric(TXFLargeur.getText()) && IsNumeric(TXFLongueur.getText())) return true;
+		else return false;
+	}
+	
+	private void SetButtonActions() {
+		BTNCalculer.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (!CheckTXFValues()) return;
+				
+				Double largeur = Double.parseDouble(TXFLargeur.getText());
+				Double longueur = Double.parseDouble(TXFLongueur.getText());
+				
+				LBLResultat.setText("Résultat : " + largeur*longueur);
+			}
+		});
 		
-		this.setVisible(true);
+		BTNNettoyer.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ClearFields();
+			}
+		});
 	}
 	
 	public static void main(String args[])
