@@ -1,10 +1,24 @@
 import javax.swing.JPanel;
 import javax.swing.JFrame;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class PerimetreMain {
+	
+	public static boolean IsNumeric(String str) {
+		if (str == "" || str == null) return false;
+		else try {
+			Double dbl = Double.parseDouble(str);
+		} catch (NumberFormatException nfe) {
+	        return false;
+	    }
+		return true;
+	}
 	
 	public static void main(String[] args) {
 		
@@ -24,6 +38,27 @@ public class PerimetreMain {
 		
 		JTextField TXFLongueur = new JTextField(15);
 		JTextField TXFLargeur = new JTextField(15);
+		
+		BTNCalculer.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (!(IsNumeric(TXFLargeur.getText()) && IsNumeric(TXFLongueur.getText()))) return;
+				
+				Double largeur = Double.parseDouble(TXFLargeur.getText());
+				Double longueur = Double.parseDouble(TXFLongueur.getText());
+				
+				LBLResultat.setText("Résultat : " + largeur*longueur);
+			}
+		});
+		
+		BTNNettoyer.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				TXFLongueur.setText("");
+				TXFLargeur.setText("");
+				LBLResultat.setText("Résultat :      ");
+			}
+		});
 		
 		TXFLongueur.setHorizontalAlignment(JTextField.CENTER);
 		TXFLargeur.setHorizontalAlignment(JTextField.CENTER);

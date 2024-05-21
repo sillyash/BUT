@@ -19,19 +19,11 @@ public class PanelPerimetre extends JPanel {
 	}
 
 	public PanelPerimetre(LayoutManager layout) {
-		super(layout);
-		InitializeElements();
-		AddElementsToSelf();
-		SetButtonActions();
-		this.setVisible(true);
+		this();
 	}
 
 	public PanelPerimetre(boolean isDoubleBuffered) {
-		super(isDoubleBuffered);
-		InitializeElements();
-		AddElementsToSelf();
-		SetButtonActions();
-		this.setVisible(true);
+		this();
 	}
 
 	public PanelPerimetre(LayoutManager layout, boolean isDoubleBuffered) {
@@ -81,8 +73,7 @@ public class PanelPerimetre extends JPanel {
 	}
 	
 	private boolean CheckTXFValues() {
-		if (IsNumeric(TXFLargeur.getText()) && IsNumeric(TXFLongueur.getText())) return true;
-		else return false;
+		return (IsNumeric(TXFLargeur.getText()) && IsNumeric(TXFLongueur.getText()));
 	}
 	
 	private void SetButtonActions() {
