@@ -56,7 +56,6 @@ public class PanelCalculatrice extends JPanel {
 	}
 	
 	private void InitializeElements() {
-		InitializeLayout();
 		LBLResult = new JLabel("0");
 		BTNPlus = new JButton("+");
 		BTNMinus = new JButton("-");
@@ -70,39 +69,6 @@ public class PanelCalculatrice extends JPanel {
 		for (int i=0; i<10; i++) {
 			BTNNums.add(new JButton(String.valueOf(i)));
 		}
-	}
-	
-	private void InitializeLayout() {
-		LytMgr = new LayoutManager() {
-			@Override
-			public void addLayoutComponent(String name, Component comp) {
-				// TODO aaaaa
-			}
-
-			@Override
-			public void removeLayoutComponent(Component comp) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public Dimension preferredLayoutSize(Container parent) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public Dimension minimumLayoutSize(Container parent) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public void layoutContainer(Container parent) {
-				// TODO Auto-generated method stub
-				
-			}
-		};
 	}
 	
 	private void SetStyle() {
