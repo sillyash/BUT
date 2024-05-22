@@ -9,7 +9,7 @@ C'est un discours monologique et solennel.
 ### Sujet : Les enfants esclaves ou le goût amer du cacao en Côte d'Ivoire
 
 
-## L'exorde (intro)
+## Intro • L'exorde
 
 - Les salutations
   + "Cher public", "Chers auditeurs"
@@ -22,17 +22,17 @@ C'est un discours monologique et solennel.
   + 
 
 
-## La narration (I)
+## I • La narration
 
 Susciter le pathos (émotion) en racontant la vécu de 2-3 victimes de l'injustice dont nous traitons.
 
 
-## L'éthique, i.e ethos (II)
+## II • L'éthique, i.e ethos
 
 Montrer les infractions aux lois internationales / nationales.
 
 
-## Les solutions (III)
+## III • Les solutions
 
 Sanctions pénales contre des personnes physiques ou morales.
 
