@@ -18,8 +18,7 @@ C'est un discours monologique et solennel.
 - L'usage du dialogisme et de l'apostrophe avec questions rhétoriques et d'impératives
   + "Supporteriez vous ... ?"
   + "Sachez que ..."
-- Annoncez votre plan
-  + 
+- Annonce du plan
 
 
 ## I • La narration
