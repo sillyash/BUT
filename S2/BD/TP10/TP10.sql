@@ -48,12 +48,57 @@ EXECUTE statistics.basseRes;
 
 // Exercice 2
 
+// a)
 
 CREATE OR REPLACE PACKAGE famille AS
+    FUNCTION nbPersonnesNom(nom IN VARCHAR2) RETURN NUMBER;
+    PROCEDURE printFullName;
+    FUNCTION nbFilmsRealises(nom IN VARCHAR2) RETURN NUMBER;
+    FUNCTION nbFilmsJoues(nom IN VARCHAR2) RETURN NUMBER;
 END famille;
 /
 
 CREATE OR REPLACE PACKAGE BODY famille AS
+    FUNCTION nbPersonnesNom(nom IN VARCHAR2) RETURN NUMBER IS
+        nbPersonnes NUMBER(5);
+    BEGIN
+        SELECT COUNT(*)
+        INTO nbPersonnes
+        FROM bdfilm.Personne P
+        WHERE nomPersonne = nom;
+        
+        RETURN nbPersonnes;
+    END nbPersonnesNom;
+    
+    PROCEDURE printFullName IS
+        prenom  bdfilm.Personne.prenomPersonne%type;
+        nom     bdfilm.Personne.nomPersonne%type;
+    BEGIN
+        SELECT COUNT(*)
+        INTO nbPersonnes
+        FROM bdfilm.Personne P
+        WHERE nomPersonne = nom;
+    END printFullName;
+    
+    FUNCTION nbFilmsRealises(nom IN VARCHAR2) RETURN NUMBER IS
+    BEGIN
+        RETURN 112;
+    END nbFilmsRealises;
+    
+    FUNCTION nbFilmsJoues(nom IN VARCHAR2) RETURN NUMBER IS
+    BEGIN
+        RETURN 112;
+    END nbFilmsJoues;
 END famille;
 /
+
+// b)
+
+
+
+// c)
+
+
+
+// d)
 
