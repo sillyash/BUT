@@ -1,0 +1,13 @@
+# Exercice 1
+
+J'utilise une interface lorsque je veux pouvoir implémenter et utiliser une ou plusieurs méthodes
+sur plusieurs objets (ex : je veux trier mes Balles).
+
+J'utilise une classe abstraite lorsque je veux également pouvoir utiliser des attributs et des super-constructeurs,
+ce qui me permet de créer des sous-classes spécifiques en gardant une classe abstraite généraliste
+(ex : Véhicule abstrait, pour créer des Voitures, Camions...).
+
+Une classe peut implémenter plusieurs interfaces, elle doit simplement implémenter leurs méthodes.
+Une classe ne peut pas hériter de plusieurs classes (problème du diamant).
+Une classe peut hériter d'une classe et implémenter une/plusieurs interface(s).
+
