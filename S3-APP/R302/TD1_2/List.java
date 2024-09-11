@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class List<T> extends BTree<T> implements ListI<T> {
+public class List<T> extends BinaryTree<T> implements ListInteger<T> {
     
     private T data;
     private List<T> tail;

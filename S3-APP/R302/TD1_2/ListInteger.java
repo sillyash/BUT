@@ -1,5 +1,5 @@
 
-public interface ListI<T> extends BTreeI<T>{ 
+public interface ListInteger<T> extends BinaryTreeInteger<T>{ 
     public T data();
     public List<T> tail();
     public List<T> parent();
