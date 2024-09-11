@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class BinaryTree<T> extends Tree<T> implements BinaryTreeInteger<T>{
+public class BinaryTree<T> extends Tree<T> implements BinaryTreeInterface<T>{
 
     private T data;
     private BinaryTree<T> left;

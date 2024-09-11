@@ -1,5 +1,5 @@
 
-public interface ListInteger<T> extends BinaryTreeInteger<T>{ 
+public interface ListInterface<T> extends BinaryTreeInterface<T>{ 
     public T data();
     public List<T> tail();
     public List<T> parent();
@@ -17,6 +17,7 @@ public interface ListInteger<T> extends BinaryTreeInteger<T>{
     public void setLeft(List<T> t);
     public List<T> child(int i);
     public int nbChildren();
-    public void addChildren(@SuppressWarnings("unchecked") List<T>... childs);
+    @SuppressWarnings("unchecked")
+    public void addChildren(List<T>... childs);
     public void setChild(int i, List<T> child);
 }

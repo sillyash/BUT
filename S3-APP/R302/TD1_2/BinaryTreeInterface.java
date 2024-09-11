@@ -1,4 +1,4 @@
-public interface BinaryTreeInteger<T> extends TreeInteger<T>{ 
+public interface BinaryTreeInterface<T> extends TreeInterface<T>{ 
     public T data();
     public BinaryTree<T> parent();
     public BinaryTree<T> left();

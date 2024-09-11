@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Tree<T> implements TreeInteger<T>{
+public class Tree<T> implements TreeInterface<T>{
 
     private T data;
     private ArrayList<Tree<T>> children;
