@@ -65,6 +65,7 @@ public class PanelPerimetre extends JPanel {
 	private boolean IsNumeric(String str) {
 		if (str == "" || str == null) return false;
 		else try {
+			@SuppressWarnings("unused")
 			Double dbl = Double.parseDouble(str);
 		} catch (NumberFormatException nfe) {
 	        return false;

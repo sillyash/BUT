@@ -17,6 +17,6 @@ public interface ListInteger<T> extends BinaryTreeInteger<T>{
     public void setLeft(List<T> t);
     public List<T> child(int i);
     public int nbChildren();
-    public void addChildren(List<T>... childs);
+    public void addChildren(@SuppressWarnings("unchecked") List<T>... childs);
     public void setChild(int i, List<T> child);
 }

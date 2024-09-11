@@ -1,9 +1,7 @@
 import javax.swing.JPanel;
 import javax.swing.JFrame;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -13,6 +11,7 @@ public class PerimetreMain {
 	public static boolean IsNumeric(String str) {
 		if (str == "" || str == null) return false;
 		else try {
+			@SuppressWarnings("unused")
 			Double dbl = Double.parseDouble(str);
 		} catch (NumberFormatException nfe) {
 	        return false;

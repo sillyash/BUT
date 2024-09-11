@@ -1,5 +1,4 @@
-import java.awt.*; 
-import javax.swing.*; 
+import java.awt.*;
 
 public class Editeur {
 	public void afficherStats (FormeGeometrique f) {

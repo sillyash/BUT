@@ -14,6 +14,6 @@ public interface BinaryTreeInteger<T> extends TreeInteger<T>{
      */
     public Tree<T> child(int i);
     public int nbChildren();
-    public void addChildren(BinaryTree<T>... childs);
+    public void addChildren(@SuppressWarnings("unchecked") BinaryTree<T>... childs);
     public void setChild(int i, BinaryTree<T> child);
 }
