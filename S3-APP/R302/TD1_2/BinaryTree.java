@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
-public class BTree<T> extends Tree<T> implements BTreeI<T>{
+public class BinaryTree<T> extends Tree<T> implements BinaryTreeI<T>{
 
     private T data;
-    private BTree<T> left;
-    private BTree<T> right;
-    private BTree<T> parent;
+    private BinaryTree<T> left;
+    private BinaryTree<T> right;
+    private BinaryTree<T> parent;
 
-    public BTree(){}
+    public BinaryTree(){}
 
     @SafeVarargs
-    public BTree(T data, BTree<T>... child) {
+    public BinaryTree(T data, BinaryTree<T>... child) {
         this.data = data;
         if (child.length > 0){
             this.setLeft(child[0]);
@@ -25,24 +25,24 @@ public class BTree<T> extends Tree<T> implements BTreeI<T>{
         return this.data;
     }
 
-    public BTree<T> parent(){
+    public BinaryTree<T> parent(){
         return this.parent;
     }
 
-    public BTree<T> left() {
+    public BinaryTree<T> left() {
         return this.left;
     }
 
-    public void setLeft(BTree<T> t) {
+    public void setLeft(BinaryTree<T> t) {
         this.left = t;
         this.left.parent = this;
     }
 
-    public BTree<T> right() {
+    public BinaryTree<T> right() {
         return this.right;
     }
 
-    public void setRight(BTree<T> t) {
+    public void setRight(BinaryTree<T> t) {
         this.right = t;
         this.right.parent = this;
     }
@@ -77,14 +77,14 @@ public class BTree<T> extends Tree<T> implements BTreeI<T>{
 
     /* Pour la compatibilité avec Tree<T> */
 
-    private ArrayList<BTree<T>> children(){
-        ArrayList<BTree<T>> result = new ArrayList<>();
+    private ArrayList<BinaryTree<T>> children(){
+        ArrayList<BinaryTree<T>> result = new ArrayList<>();
         if (this.left() != null){result.add (this.left());}
         if (this.right() != null){result.add (this.right());}
         return result;
     }
 
-    public BTree<T> child(int n){
+    public BinaryTree<T> child(int n){
         try{
             return this.children().get(n);
         }
@@ -93,7 +93,7 @@ public class BTree<T> extends Tree<T> implements BTreeI<T>{
         }
     }
 
-    public void setChild(int i, BTree<T> child){
+    public void setChild(int i, BinaryTree<T> child){
         if (i == 0){
             this.setLeft(child);
             return;
@@ -106,7 +106,7 @@ public class BTree<T> extends Tree<T> implements BTreeI<T>{
     }
     
     @SafeVarargs
-    public final void addChildren(BTree<T>... childs){
+    public final void addChildren(BinaryTree<T>... childs){
         if (childs.length > 0){
             this.setLeft(childs[0]);
             return;

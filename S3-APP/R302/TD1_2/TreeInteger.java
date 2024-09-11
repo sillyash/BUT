@@ -1,4 +1,4 @@
-public interface TreeI<T>{
+public interface TreeInteger<T>{
     public T data();
     public Tree<T> child(int i);
     public int nbChildren();
