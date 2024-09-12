@@ -1,0 +1,3 @@
+SET SERVEROUTPUT ON;
+
+SELECT * FROM ens2004.individu;
