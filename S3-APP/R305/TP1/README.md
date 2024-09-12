@@ -1,4 +1,4 @@
-# TP 1
+# TP 1 - Signaux et processus
 
 ## Exercice 0 : Hello world
 
