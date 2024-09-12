@@ -1,3 +1,81 @@
 SET SERVEROUTPUT ON;
 
-SELECT * FROM ens2004.individu;
+-- 1)
+-- a)
+
+CREATE OR REPLACE FUNCTION nbFilmsRealisateur(nomReal ens2004.individu.numIndividu%type)
+RETURN NUMBER IS nbFilmsRealises NUMBER(8);
+BEGIN
+    SELECT COUNT(*) INTO nbFilmsRealises
+    FROM ens2004.Film F
+    WHERE F.realisateur = nomReal;
+
+    RETURN nbFilmsRealises;
+END nbFilmsRealisateur;
+/
+
+EXECUTE DBMS_OUTPUT.PUT_LINE('Quentin Tarantino a réalisé ' || NBFILMSREALISATEUR(1292) || ' films.');
+
+
+-- b)
+
+CREATE OR REPLACE FUNCTION nbFilmsRealisateur(nomReal ens2004.individu.nomIndividu%type)
+RETURN NUMBER IS nbFilmsRealises NUMBER(8);
+BEGIN
+    SELECT COUNT(*) INTO nbFilmsRealises
+    FROM ens2004.Film F
+    INNER JOIN ens2004.INDIVIDU I ON I.NUMINDIVIDU = F.REALISATEUR
+    WHERE I.NOMINDIVIDU = UPPER(nomReal);
+
+    RETURN nbFilmsRealises;
+END nbFilmsRealisateur;
+/
+
+EXECUTE DBMS_OUTPUT.PUT_LINE('Tarantino a réalisé ' || NBFILMSREALISATEUR('Tarantino') || ' films.');
+
+
+-- c)
+
+CREATE OR REPLACE PROCEDURE filmsRealisateur(nomReal ens2004.individu.nomIndividu%type) IS
+CURSOR c IS
+    SELECT *
+    FROM ens2004.FILM F
+    INNER JOIN ens2004.INDIVIDU I ON I.NUMINDIVIDU = F.REALISATEUR
+    WHERE I.NOMINDIVIDU = UPPER(nomReal);
+BEGIN
+    FOR linec in c
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(linec.titre);
+    END LOOP;
+END filmsRealisateur;
+/
+
+EXECUTE FILMSREALISATEUR('Tarantino');
+
+
+-- 2)
+
+
+CREATE OR REPLACE FUNCTION EXEMPLAIRESRESTANTS(NUMFILM ENS2004.FILM.NUMFILM%TYPE)
+RETURN NUMBER IS NBEXEMPLAIRES NUMBER(8);
+BEGIN
+    SELECT COUNT(*) INTO NBEXEMPLAIRES
+    FROM ENS2004.FILM F
+    INNER JOIN ENS2004.EXEMPLAIRE E ON E.NUMEXEMPLAIRE = F.NUMFILM
+    INNER JOIN LOCATION L ON L.NUMEXEMPLAIRE = E.NUMEXEMPLAIRE
+    WHERE (F.NUMFILM = NUMFILM) AND (L.DATERETOUR IS NOT NULL);
+
+    RETURN NBEXEMPLAIRES;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Aucun film n"existe avec cet identifiant.');
+
+END EXEMPLAIRESRESTANTS;
+/
+
+EXECUTE DBMS_OUTPUT.PUT_LINE('Il reste ' || EXEMPLAIRESRESTANTS(11846) ||
+    ' exemplaires de Pulp Fiction.');
+
+DROP TABLE CLIENT;
+DROP TABLE LOCATION;
+
