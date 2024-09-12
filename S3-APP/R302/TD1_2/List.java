@@ -87,4 +87,21 @@ public class List<T> extends BinaryTree<T> implements ListInterface<T> {
         else throw new IndexOutOfBoundsException();
     }
 
+    // Custom stuff below
+
+    public void addFirstElement(T elem) {
+        List<T> temp = new List(this.data, this.tail);
+
+        this.data = elem;
+        this.tail = temp;
+    }
+
+    public void addEndElement(T elem) {
+        if (this.tail() == null) {
+            this.setTail(new List(elem));
+        } else {
+            this.tail().addEndElement(elem);
+        }
+    }
+
 }
