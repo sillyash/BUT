@@ -134,14 +134,18 @@ public class BinaryTree<T> extends Tree<T> implements BinaryTreeInterface<T>{
         return 1 + Math.max(this.left.depth(), this.right.depth());
     }
 
-    public int childrenCount() {
+    public int nodeCount() {
         if (this.left == null && this.right == null) {
             return 1;
         } else if (this.left == null) {
-            return 1 + this.right.childrenCount();
+            return 1 + this.right.nodeCount();
         } else if (this.right == null) {
-            return 1 + this.left.childrenCount();
+            return 1 + this.left.nodeCount();
         }
-        return 1 + Math.max(this.left.childrenCount(), this.right.childrenCount());
+        return 1 + this.left.nodeCount() + this.right.nodeCount();
+    }
+
+    public T max() {
+        return null;
     }
 }

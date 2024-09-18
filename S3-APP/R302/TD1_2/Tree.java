@@ -101,14 +101,18 @@ public class Tree<T> implements TreeInterface<T>{
         return 1 + Collections.max(depths);
     }
 
-    public int childrenCount() {
-        ArrayList<Integer> childCount = new ArrayList<>();
+    public int nodeCount() {
+        int nodeCount = 0;
         if (this.children.size() == 0) {
             return 1;
         }
-        for (Tree child : children) {
-            childCount.add(child.childrenCount());
+        for (Tree<T> child : children) {
+            nodeCount += child.nodeCount();
         }
-        return 1 + Collections.max(childCount);
+        return 1 + nodeCount;
+    }
+
+    public T max() {
+        return null;
     }
 }
