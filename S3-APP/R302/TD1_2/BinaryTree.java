@@ -125,12 +125,23 @@ public class BinaryTree<T> extends Tree<T> implements BinaryTreeInterface<T>{
 
     public int depth() {
         if (this.left == null && this.right == null) {
-            return 1;
+            return 0;
         } else if (this.left == null) {
             return 1 + this.right.depth();
         } else if (this.right == null) {
             return 1 + this.left.depth();
         }
         return 1 + Math.max(this.left.depth(), this.right.depth());
+    }
+
+    public int childrenCount() {
+        if (this.left == null && this.right == null) {
+            return 1;
+        } else if (this.left == null) {
+            return 1 + this.right.childrenCount();
+        } else if (this.right == null) {
+            return 1 + this.left.childrenCount();
+        }
+        return 1 + Math.max(this.left.childrenCount(), this.right.childrenCount());
     }
 }
