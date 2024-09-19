@@ -115,10 +115,19 @@ else printf("No needles.\n");
 
 #### Écrivez le programme C correspondant et joignez le code source à votre compte rendu.
 
-[See file](./neddle.c)
+[See file](./needle.c)
 
 
 #### Énumérez les bonnes valeurs d’indice à donner à votre programme pour le tester.
+
+- -1
+- 0
+- un nombre entre 0 et TABSIZE
+- un nombre >= TABSIZE
+
+
+## Exercice 2 : Des foules pour des fouilles
+
 
 
 
