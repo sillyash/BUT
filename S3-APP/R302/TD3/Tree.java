@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class Tree<T> implements TreeInterface<T>{
@@ -13,9 +14,7 @@ public class Tree<T> implements TreeInterface<T>{
     public Tree(T data, Tree<T>... childs) {
         this.data = data;
         this.children = new ArrayList<Tree<T>>();
-        for (Tree<T> child : childs){
-            this.children.add(child);
-        }
+        this.children.addAll(Arrays.asList(childs));
         this.parent = null;
     }
 
@@ -32,7 +31,7 @@ public class Tree<T> implements TreeInterface<T>{
         }
     }
 
-    private ArrayList<Tree<T>> children(){
+    public ArrayList<Tree<T>> children(){
         return this.children;
     }
 
@@ -88,7 +87,7 @@ public class Tree<T> implements TreeInterface<T>{
     // Custom stuff below
 
     public int depth() {
-        if (this.children == null || this.children.size() == 0) {
+        if (this.children == null || this.children.isEmpty()) {
             return 0;
         }
 
@@ -103,7 +102,7 @@ public class Tree<T> implements TreeInterface<T>{
 
     public int nodeCount() {
         int nodeCount = 0;
-        if (this.children.size() == 0) {
+        if (this.children.isEmpty()) {
             return 1;
         }
         for (Tree<T> child : children) {
