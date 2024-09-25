@@ -1,3 +1,5 @@
+// ASH MERIENNE & EMMA ESCOFFIER
+
 public interface TreeInterface<T>{
     public T data();
     public Tree<T> child(int i);
