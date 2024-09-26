@@ -231,14 +231,45 @@ We declare the variables ```count``` and ```step``` as ```volatile``` to prevent
 #### Complete the code so that count is reset to 1 when the process receives the SIGUSR1 signal.
 
 ```c
+volatile unsigned int count = 0;
+volatile int step = 1;
 
+void hnd1(int sig) { // signal handler
+    count = 1;
+}
+
+int main() {
+    // bind SIGUSR1 to handler hnd1
+    signal(SIGUSR1, &hnd1);
+
+    for (count = 1; count > 0; count += step);
+    return 0;
+}
 ```
 
 
 #### Complete the code so that the increment step changes sign when the process receives SIGUSR2.
 
 ```c
+volatile unsigned int count = 0;
+volatile int step = 1;
 
+void hnd1(int sig) { // signal handler
+    count = 1;
+}
+
+void hnd2(int sig) {
+    step = -step;
+}
+
+int main() {
+    // bind SIGUSR1 to handler hnd1
+    signal(SIGUSR1, &hnd1);
+    signal(SIGUSR2, &hnd2);
+
+    for (count = 1; count > 0; count += step);
+    return 0;
+}
 ```
 
 To ensure that our program behaves correctly, we want to watch the counter. A new system call comes in handy:
@@ -250,10 +281,39 @@ unsigned int alarm(unsigned int nb_sec);
 
 The system call ```alarm()``` sets a timer that will send a ```SIGALRM``` signal to the calling process ```nb_sec``` seconds later. Any ```alarm()``` call cancels and replaces the previously set alarm; ```alarm(0)``` cancels the current alarm and does not set a new one.
 
+
 #### Complete the code so that the current value of count is printed every second.
 
 ```c
+#include <unistd.h>
 
+volatile unsigned int count = 0;
+volatile int step = 1;
+
+void hnd1(int sig) { // signal handler
+    count = 1;
+}
+
+void hnd2(int sig) {
+    step = -step;
+}
+
+void hnd3(int sig) {
+    printf("Count : %d", count);
+    alarm(1);
+}
+
+int main() {
+    // bind SIGUSR1 to handler hnd1
+    signal(SIGUSR1, &hnd1);
+    signal(SIGUSR2, &hnd2);
+    signal(SIGALRM, &hnd3);
+    
+    alarm(1);
+
+    for (count = 1; count > 0; count += step);
+    return 0;
+}
 ```
 
 
