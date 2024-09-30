@@ -48,7 +48,7 @@
 
 ### Passage en paramètre
 
-[See file](./)
+[See file](./paramFunc.c)
 
 
 #### Output
