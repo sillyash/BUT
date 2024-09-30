@@ -4,6 +4,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <signal.h>
 
 int goThroughArray(
     unsigned char arr[],
@@ -12,8 +13,7 @@ int goThroughArray(
     char numToCheck
     ) {
     for (long int i = begin; i < end; i++) {
-        putc('.', stdout);
-        fflush(stdout);
+        putc('.', stdout); fflush(stdout);
         if (arr[i] == numToCheck) {
             return 1;
         }
@@ -33,7 +33,6 @@ void hnd(int sig) {
     exit(0);
 }
 
-
 int main(int argc, char *argv[])
 {
     clock_t begin = clock();
@@ -46,7 +45,7 @@ int main(int argc, char *argv[])
     if (N < 1 || N > 100) N = 1;
 
     const long int TABSIZE = 100000;
-    int found, procStatus;
+    int found = 0, procStatus;
     pid_t proc;
     long int inputedNum;
     int inputIsCorrect = 0;
@@ -81,14 +80,12 @@ int main(int argc, char *argv[])
 
         if (proc == 0) // child
         {
-            signal(SIGTERM, hnd);
-            printf("CPID : %d", getpid());
-            return goThroughArray(
-                arr,
-                start,
-                end,
-                0
-            );
+            signal(SIGTERM, hnd);  // Set signal handler early
+
+            printf("CPID : %d\n", getpid());
+            
+            // array search
+            return goThroughArray(arr, start, end, 0);
         }
     }
 
@@ -101,7 +98,7 @@ int main(int argc, char *argv[])
 
             if (WIFEXITED(procStatus) && WEXITSTATUS(procStatus) == 1) {
                 found = 1;
-                kill(0, SIGTERM);
+                kill(0, SIGTERM); // Kill all children >:3
                 break;
             }
             endedChildren++;
