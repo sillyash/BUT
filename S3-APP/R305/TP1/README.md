@@ -131,3 +131,7 @@ else printf("No needles.\n");
 [See file](./crowdNeedle.c)
 
 
+## Exercice 3 : Tous dehors.
+
+[See file](./allOut)
+

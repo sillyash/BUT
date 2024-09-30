@@ -12,7 +12,11 @@ int goThroughArray(
     char numToCheck
     ) {
     for (long int i = begin; i < end; i++) {
-        if (arr[i] == numToCheck) return 1;
+        putc('.', stdout);
+        fflush(stdout);
+        if (arr[i] == numToCheck) {
+            return 1;
+        }
     }
     return 0;
 }
@@ -24,10 +28,18 @@ void printArray(unsigned char arr[], int arrSize) {
     printf("\n");
 }
 
+void hnd(int sig) {
+    printf("PID %d, exiting!\n", getpid());
+    exit(0);
+}
+
 
 int main(int argc, char *argv[])
 {
     clock_t begin = clock();
+
+    // parent proc ignores sigterm
+    signal(SIGTERM, SIG_IGN);
 
     int N = 0;
     if (argc > 1) N = atoi(argv[1]);
@@ -59,6 +71,8 @@ int main(int argc, char *argv[])
         }  
     }
 
+    printf("PPID : %d\n", getpid());
+
     for (int i=0; i<N; i++)
     {
         proc = fork();
@@ -67,6 +81,8 @@ int main(int argc, char *argv[])
 
         if (proc == 0) // child
         {
+            signal(SIGTERM, hnd);
+            printf("CPID : %d", getpid());
             return goThroughArray(
                 arr,
                 start,
@@ -85,6 +101,7 @@ int main(int argc, char *argv[])
 
             if (WIFEXITED(procStatus) && WEXITSTATUS(procStatus) == 1) {
                 found = 1;
+                kill(0, SIGTERM);
                 break;
             }
             endedChildren++;
@@ -100,7 +117,7 @@ int main(int argc, char *argv[])
     time_spent *= 1000; // make it ms instead of sec
 
     printf(
-        "Tabsize :\t\t%ld\nExecution time :\t%lfms",
+        "\nTabsize :\t\t%ld\nExecution time :\t%lfms",
         TABSIZE,
         time_spent
     );
