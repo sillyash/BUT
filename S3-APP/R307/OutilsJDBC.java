@@ -119,6 +119,29 @@ public class OutilsJDBC
         res.close();
 
         // Q3
+        requete = "INSERT INTO CLIENT (nomClient, prenomClient, motPasse, adrClient, CPClient) VALUES" +
+                "('MERIENNE', 'Ashley', 'visiblePassword123', '12 rue Paul Fort', 75014)";
+        res = exec1Requete(requete, maConnection, 0);
+
+        requete = "INSERT INTO CLIENT (nomClient, prenomClient, motPasse, adrClient, CPClient) VALUES" +
+                "('ESCOFFIER', 'Emma', 'visiblePassword321', 'somewhere in Arpajon', 91000)";
+        res = exec1Requete(requete, maConnection, 0);
+
+        requete = "INSERT INTO LOCATION (numExemplaire, dateLocation, numClient, " +
+                "dateEnvoi, dateRetour) VALUES (20096, SYSDATE, 1, SYSDATE)";
+        res = exec1Requete(requete, maConnection, 0);
+
+        requete = "INSERT INTO LOCATION (numExemplaire, dateLocation, numClient, " +
+                "dateEnvoi, dateRetour) VALUES (20096, SYSDATE-3, 2, SYSDATE-1, SYSDATE)";
+        res = exec1Requete(requete, maConnection, 0);
+
+
+        requete = "DELETE FROM CLIENT";
+        res = exec1Requete(requete, maConnection, 0);
+
+        requete = "DELETE FROM LOCATION";
+        res = exec1Requete(requete, maConnection, 0);
+
 
         closeConnection(maConnection);
     }
