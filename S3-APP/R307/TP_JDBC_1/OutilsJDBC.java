@@ -37,6 +37,7 @@ public class OutilsJDBC
         }
         catch (SQLException e){
             System.out.println("Problème lors de l'exécution de la requête : "+requete);
+            System.err.println(e);
         }
         return res;
     }
@@ -118,6 +119,7 @@ public class OutilsJDBC
         printResults(res);
         res.close();
 
+
         // Q3
         requete = "INSERT INTO CLIENT (nomClient, prenomClient, motPasse, adrClient, CPClient) VALUES" +
                 "('MERIENNE', 'Ashley', 'visiblePassword123', '12 rue Paul Fort', 75014)";
@@ -128,13 +130,12 @@ public class OutilsJDBC
         res = exec1Requete(requete, maConnection, 0);
 
         requete = "INSERT INTO LOCATION (numExemplaire, dateLocation, numClient, " +
-                "dateEnvoi, dateRetour) VALUES (20096, SYSDATE, 1, SYSDATE)";
+                "dateEnvoi, dateRetour) VALUES (20096, SYSDATE, 1, SYSDATE, null)";
         res = exec1Requete(requete, maConnection, 0);
 
         requete = "INSERT INTO LOCATION (numExemplaire, dateLocation, numClient, " +
                 "dateEnvoi, dateRetour) VALUES (20096, SYSDATE-3, 2, SYSDATE-1, SYSDATE)";
         res = exec1Requete(requete, maConnection, 0);
-
 
         requete = "DELETE FROM CLIENT";
         res = exec1Requete(requete, maConnection, 0);
