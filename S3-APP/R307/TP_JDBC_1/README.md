@@ -9,7 +9,7 @@
 ```java
 import java.sql.*;
 
-public class OutilsJDBC {
+public class TP_JDBC_1.OutilsJDBC {
 	public static Connection openConnection (String url) {
 		Connection co=null;
 		try {
@@ -69,19 +69,27 @@ public class OutilsJDBC {
 
 #### 2. Ecrire le code java pour se connecter à l'aide de jdbc.
 
->[Voir fichier](./../OutilsJDBC.java)
+>[Voir fichier](./OutilsJDBC.java)
 
 
 #### 3. Exécutez une requête permettant de récupérer les 10 premières lignes de la table Film dans un objet ResultSet et affichez le résultat sur la console. Pour cela, vous utiliserez les méthodes permettant d'établir, puis de clore la connexion, en récupérant les éventuelles exceptions levées.
 
->[Voir fichier](./../OutilsJDBC.java)
+>[Voir fichier](./OutilsJDBC.java)
 
 
 ### Question 3
 
->[Voir fichier](./../OutilsJDBC.java)
+>[Voir fichier](./OutilsJDBC.java)
 
 
 ### Question 4
 
+#### Q4.1
 
+Classe OutilsJDBC version personnalisée :
+>[Voir fichier](./JDBCTools.java)
+
+
+#### Q4.2
+
+>[Voir fichier](./LocationFilms.java)

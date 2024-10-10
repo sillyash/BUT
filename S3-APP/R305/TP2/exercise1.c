@@ -26,42 +26,48 @@ int main(int argc, char* argv[])
 	int draw = sockfd[1];
 	int proc = fork();
 
-	if (proc == 0)
+	if (proc == 0) // DRAW
 	{
 		close(pi);
 		printf("Hi im the child\n");
 		char req;
 		double z;
-
-		
 		
 		while (1)
 		{
-			printf("PRINTING IN THE WHILE\n");
 			/* wait for 8 bits (char) of data from draw */
-			read(pi, &req, sizeof(char));
+			read(draw, &req, sizeof(req));
 
 			z = ((double)random()/RAND_MAX);
-			printf("z \t%lf", z);
 			write(draw, &z, sizeof(z));
 		}
 	}
-	else
+	else // PI
 	{
 		close(draw);
+		printf("Hi I'm the parent\n");
 		int N = 0, M = 0;
-		double x, y;
+		double x=0, y=0;
 		char msg = 'c';
+		double PI;
 
 		while (1)
 		{
-			write(pi, &msg, sizeof(msg)); /* request rand double */
-			read(draw, &x, sizeof(double));
-
+			/* request x */
 			write(pi, &msg, sizeof(msg));
-			read(draw, &y, sizeof(double));
+			read(pi, &x, sizeof(x));
 
-			printf("x \t%lf\ny \t%lf\n", x, y);
+			/* request y */
+			write(pi, &msg, sizeof(msg));
+			read(pi, &y, sizeof(y));
+
+			N++;
+
+			if ((x*x + y*y) <= 1) M++;
+
+			PI = (double)(4*M)/N;
+
+			printf("x \t%lf\ny \t%lf\nN \t%d\nM \t%d\nPI \t%lf\n\n", x, y, N, M, PI);
 		}
 		
 		if (N == M) {}

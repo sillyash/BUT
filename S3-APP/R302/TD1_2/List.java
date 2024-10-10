@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 public class List<T> extends BinaryTree<T> implements ListInterface<T> {
     
-    private T data;
-    private List<T> tail;
-    private List<T> parent;
+    public T data;
+    public List<T> tail;
+    public List<T> parent;
 
     @SafeVarargs
     public List(T head, T... data) {

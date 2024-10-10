@@ -104,4 +104,18 @@ public class List<T> extends BinaryTree<T> implements ListInterface<T> {
         }
     }
 
+    public void remove(T elem)
+    {
+        if (this.length() == 0) return;
+        if (this.data().equals(elem))
+        {
+            if (this.length() > 1) {
+                this.data = this.tail().data;
+                this.tail = this.tail().tail();
+            }
+            else this.tail = null;
+            return;
+        }
+        this.tail.remove(elem);
+    }
 }

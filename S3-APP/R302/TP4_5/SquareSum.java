@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class SquareSum {
     
@@ -25,24 +24,40 @@ public class SquareSum {
     }
 
 
-    public static int nbCarresBruteforce(int soldats) {
+    public static ArrayList<Integer> possibleSquares(int soldats)
+    {
+        ArrayList<Integer> possibleSquareSizes = new ArrayList<>();
 
-        Tree<Integer> squares = new Tree<>(soldats);
-        int fatherValue = soldats;
-
-        while (fatherValue > 1)
+        for (int i=0; i<soldats; i++)
         {
-            for (int i = fatherValue; i > 0; i--) {
-                if (isSquare(i)) squares.addChildren(new Tree<>(i));
-            }
-
-
+            if (isSquare(i))
+                possibleSquareSizes.add(i);
         }
+        return possibleSquareSizes;
+    }
 
-        System.out.println(squares);
+
+    public static Tree<Integer> fillPossibilityTree(Tree<Integer> tree)
+    {
+        ArrayList<Integer> possibleSquareSizes = possibleSquares(1);
+
+        for (Integer square : possibleSquareSizes)
+        {
+            Tree<Integer> child = new Tree<Integer>(tree.data() - square);
+            tree.addChildren(child);
+        }
+        return null;
+    }
+
+
+    public static int nbCarresBruteforce(int soldats)
+    {
+        Tree<Integer> possibleResults = new Tree<>(soldats);
+
+        fillPossibilityTree(possibleResults);
+        System.out.println("Possibilities : " + possibleResults);
 
         return -1;
-
     }
 
 

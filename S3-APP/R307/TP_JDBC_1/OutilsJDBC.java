@@ -1,6 +1,6 @@
-import oracle.jdbc.pool.*;
+package TP_JDBC_1;
 
-import java.awt.*;
+import oracle.jdbc.pool.*;
 import java.sql.*;
 import java.util.*;
 
@@ -107,7 +107,7 @@ public class OutilsJDBC
 
 
         // Q1.3
-        String requete = "SELECT * FROM ENS2004.FILM WHERE ROWNUM < 10";
+        String requete = "SELECT * FROM ENS2004.FILM WHERE ROWNUM <= 10";
         ResultSet res = exec1Requete(requete, maConnection, 0);
         printResults(res);
         res.close();
