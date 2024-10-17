@@ -6,6 +6,18 @@ public class SquareSum {
      * Vous pourrez ensuite l'améliorer pour afficher la liste des carrés choisis.
      */
 
+    public static Integer getMin(List<Integer> objets)
+    {
+        Integer min = objets.data();
+        List<Integer> li = objets;
+        while (li.length() > 1)
+        {
+            li = li.tail();
+            if (li.data() < min) min = li.data();
+        }
+        return min;
+    }
+
     public static int nbCarresGlouton (int soldats) {
         int nbSquares = 0;
         while (soldats > 0) {
@@ -28,7 +40,7 @@ public class SquareSum {
     {
         ArrayList<Integer> possibleSquareSizes = new ArrayList<>();
 
-        for (int i=0; i<soldats; i++)
+        for (int i=0; i<=soldats; i++)
         {
             if (isSquare(i))
                 possibleSquareSizes.add(i);
@@ -37,27 +49,45 @@ public class SquareSum {
     }
 
 
-    public static Tree<Integer> fillPossibilityTree(Tree<Integer> tree)
-    {
-        ArrayList<Integer> possibleSquareSizes = possibleSquares(1);
+    public static Tree<Integer> fillPossibilityTree(Tree<Integer> tree) {
+        if (tree.data() == 0) return new Tree<>(0);
 
-        for (Integer square : possibleSquareSizes)
-        {
-            Tree<Integer> child = new Tree<Integer>(tree.data() - square);
-            tree.addChildren(child);
+        for (Integer square : possibleSquares(tree.data())) {
+            int remainder = tree.data() - square;
+
+            if (remainder >= 0) {
+                Tree<Integer> child = new Tree<>(remainder);
+                tree.addChildren(fillPossibilityTree(child));
+            }
         }
-        return null;
+
+        return tree;
     }
 
+    public static int findMinPhalanges(Tree<Integer> node) {
+        if (node.data() == 0) {
+            return 0;
+        }
+
+        int minPhalanges = -1;
+
+        for (int i = 0; i < node.nbChildren(); i++) {
+            if (minPhalanges != -1)
+                minPhalanges = Math.min(minPhalanges, findMinPhalanges(node.child(i)));
+            else minPhalanges = findMinPhalanges(node.child(i));
+        }
+
+        return 1 + minPhalanges;
+    }
 
     public static int nbCarresBruteforce(int soldats)
     {
         Tree<Integer> possibleResults = new Tree<>(soldats);
 
-        fillPossibilityTree(possibleResults);
-        System.out.println("Possibilities : " + possibleResults);
+        possibleResults = fillPossibilityTree(possibleResults);
+        //System.out.println("Possibilities :\n" + possibleResults);
 
-        return -1;
+        return findMinPhalanges(possibleResults);
     }
 
 

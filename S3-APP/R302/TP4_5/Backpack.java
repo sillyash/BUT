@@ -1,127 +1,123 @@
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.ArrayList;
 
 public class Backpack {
 
-    public static int sum(List<Integer> objets) {
-        if (objets == null){
-            return 0;
-        }
-        else{
-            return objets.data() + sum(objets.tail());
-        }
+    public static Integer getMin(ArrayList<Integer> objets) {
+        return Collections.min(objets);
     }
 
 
-    public static List<Integer> backPackGloutonMin(int contenance, List<Integer> objets)
-    {
-        System.out.println(objets + "   " + contenance);
-        if (objets.length() == 0 || contenance < getMin(objets))
-            return null;
+    public static Integer getMax(ArrayList<Integer> objets) {
+        return Collections.max(objets);
+    }
+
+
+    public static int sum(ArrayList<Integer> list) {
+        int total = 0;
+        for (Integer value : list) {
+            total += value;
+        }
+        return total;
+    }
+
+
+    public static ArrayList<Integer> backPackGloutonMin(int contenance, ArrayList<Integer> objets) {
+
+        if (objets.isEmpty()) return new ArrayList<>();
 
         Integer min = getMin(objets);
+        ArrayList<Integer> li = new ArrayList<>();
+        li.add(min);
 
+        if (objets.size() == 1) {
+            if (contenance >= min) {
+                return li;
+            } else {
+                return new ArrayList<>();
+            }
+        }
+
+        objets.remove(min);
         if (contenance >= min) {
-            objets.remove(min);
             contenance -= min;
         }
 
-        List<Integer> li = new List<Integer>(min);
-        li.setTail(backPackGloutonMin(contenance, objets));
+        li.addAll(backPackGloutonMin(contenance, objets));
         return li;
     }
 
 
-    public static List<Integer> backPackGloutonMax(int contenance, List<Integer> objets)
-    {
-        System.out.println(objets + "   " + contenance);
-        if (objets.length() == 0 || contenance < getMin(objets))
-            return null;
+    public static ArrayList<Integer> backPackGloutonMax(int contenance, ArrayList<Integer> objets) {
 
-        List<Integer> li;
+        if (objets.isEmpty()) return new ArrayList<>();
+
         Integer max = getMax(objets);
+        ArrayList<Integer> li = new ArrayList<>();
+        li.add(max);
 
-        if (contenance >= max) {
-            objets.remove(max);
-            contenance -= max;
-            li = new List<Integer>(max);
-            li.setTail(backPackGloutonMax(contenance, objets));
-        } else {
-            objets.remove(max);
-            li = backPackGloutonMax(contenance, objets);
+        if (objets.size() == 1) {
+            if (contenance >= max) {
+                return li;
+            } else {
+                return new ArrayList<>();
+            }
         }
+
+        objets.remove(max);
+        if (contenance >= max) {
+            contenance -= max;
+        }
+
+        li.addAll(backPackGloutonMax(contenance, objets));
         return li;
     }
 
 
-    public static Integer getMax(List<Integer> objets)
-    {
-        Integer max = objets.data();
-        List<Integer> li = objets;
-        while (li.length() > 1)
-        {
-            li = li.tail();
-
-            Integer elem = li.data();
-            if (elem > max) max = elem;
-        }
-        return max;
-    }
-
-    public static Integer getMin(List<Integer> objets)
-    {
-        Integer min = objets.data();
-        List<Integer> li = objets;
-        while (li.length() > 1)
-        {
-            li = li.tail();
-            if (li.data() < min) min = li.data();
-        }
-        return min;
-    }
-
-
-    public static List<Integer> backPackBruteForce(int contenance, List<Integer> objets){
+    public static ArrayList<Integer> backPackBruteForce(int contenance, ArrayList<Integer> objets){
 
         /* Votre code ici ; il y a deux versions à faire */
         return null;
     }
 
 
-    public static void main (String... args){
-        List<Integer> result = null;
+    public static void main(String... args) {
+        ArrayList<Integer> result;
+        ArrayList<Integer> objets;
 
-        /*System.out.println("----------------- TEST GLOUTON MIN ------------------");
+        System.out.println("----------------- TEST GLOUTON MIN ------------------");
 
-        result = backPackGloutonMin(20, new List<>(3, 5, 13, 2));
-        if (result != null) result.display();
-        System.out.printf("Votre fonction choisit des objets de volume total %d, l'optimal est 20\n", sum(result));
+        objets = new ArrayList<>(Arrays.asList(7, 4, 3, 3, 2));
+        result = backPackGloutonMin(19, objets);
+        System.out.println(result);
+        System.out.printf("Votre fonction choisit des objets de volume total %d, l'optimal est 19\n", sum(result));
 
-        result = backPackGloutonMin(11, new List<>(3, 3, 3, 2, 2, 2, 2, 2));
-        if (result != null) result.display();
-        System.out.printf("Votre fonction choisit des objets de volume total %d, l'optimal est 10\n", sum(result));
+        objets = new ArrayList<>(Arrays.asList(7, 4, 3, 3, 2));
+        result = backPackGloutonMin(20, objets);
+        System.out.println(result);
+        System.out.printf("Votre fonction choisit des objets de volume total %d, l'optimal est 19\n", sum(result));
 
-*/
-        System.out.println("----------------- TEST GLOUTON MAX ------------------");
+        System.out.println("\n----------------- TEST GLOUTON MAX ------------------");
 
-        result = backPackGloutonMax(20, new List<>(3, 5, 13, 2));
-        if (result != null) result.display();
-        System.out.printf("Votre fonction choisit des objets de volume total %d, l'optimal est 20\n", sum(result));
+        objets = new ArrayList<>(Arrays.asList(7, 4, 3, 3, 2));
+        result = backPackGloutonMax(19, objets);
+        System.out.println(result);
+        System.out.printf("Votre fonction choisit des objets de volume total %d, l'optimal est 19\n", sum(result));
 
-        result = backPackGloutonMax(11, new List<>(3, 3, 3, 2, 2, 2, 2, 2));
-        if (result != null) result.display();
-        System.out.printf("Votre fonction choisit des objets de volume total %d, l'optimal est 10\n", sum(result));
+        objets = new ArrayList<>(Arrays.asList(7, 4, 3, 3, 2));
+        result = backPackGloutonMax(20, objets);
+        System.out.println(result);
+        System.out.printf("Votre fonction choisit des objets de volume total %d, l'optimal est 19\n", sum(result));
 
+        System.out.println("\n----------------- TEST BRUTE FORCE ------------------");
 
-        System.out.println("----------------- TEST BRUTE FORCE ------------------");
+        objets = new ArrayList<>(Arrays.asList(7, 4, 3, 3, 2));
+        result = backPackBruteForce(19, objets);
+        System.out.printf("Votre fonction choisit des objets de volume total %d, l'optimal est 19\n", sum(result));
 
-        result = backPackBruteForce(20, new List<>(3, 5, 13, 2));
-        if (result != null) result.display();
-        System.out.printf("Votre fonction choisit des objets de volume total %d, l'optimal est 20\n", sum(result));
-
-        result = backPackBruteForce(11, new List<>(3, 3, 3, 2, 2, 2, 2, 2));
-        if (result != null) result.display();
-        System.out.printf("Votre fonction choisit des objets de volume total %d, l'optimal est 10\n", sum(result));
-
+        objets = new ArrayList<>(Arrays.asList(7, 4, 5, 3, 3));
+        result = backPackBruteForce(20, objets);
+        System.out.printf("Votre fonction choisit des objets de volume total %d, l'optimal est 19\n", sum(result));
     }
-
 }
