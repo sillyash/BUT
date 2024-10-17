@@ -38,10 +38,10 @@ The program uses ```n+1``` processes for ```n``` clients.
 ### Propose an organization of your program (with a scheme if needed) so that both interaction tasks are performed in parallel.
 
 1. Create connexion (socket, connect)
-2. fork for child and parent process
-	- parent process allows writing messages that are then sent (write)
-	- child process listens for incoming messages that are then displayed (read, std::out)
+2. Listen for messages
+3. Write messages to server
 
+To do ```2.``` and ```3.``` simultaneously, we should create a child process.
 
 ### Implement a client program that can communicate with the provided server implementation. Use the source outline client.c and the indications below. Put the source code into your class report.
 
