@@ -35,6 +35,7 @@ public class JDBCTools
         return co;
     }
 
+
     public static ResultSet executeRequest (String request, Connection co, int type){
         ResultSet res=null;
         try {
@@ -54,6 +55,7 @@ public class JDBCTools
         return res;
     }
 
+
     public static void closeConnection(Connection co){
         try {
             co.close();
@@ -64,26 +66,69 @@ public class JDBCTools
         }
     }
 
-    public static void printResults(ResultSet res) throws SQLException {
+
+    public static void printResults(ResultSet res) throws SQLException
+    {
+        if (res == null) {
+            System.out.println("Nothing to display : ResultSet empty.");
+            return;
+        }
+
         System.out.println();
         ResultSetMetaData metaData = res.getMetaData();
 
-        System.out.print("ROW, ");
-        for(int i = 1; i<=metaData.getColumnCount(); i++) {
+        System.out.print("ROW | ");
+        for(int i=1; i<=metaData.getColumnCount(); i++) {
             System.out.print(metaData.getColumnName(i));
             if (!(i==metaData.getColumnCount()))
-                System.out.print(", ");
+                System.out.print(" | ");
         }
         System.out.println();
 
         while (res.next()) {
             System.out.print(res.getRow());
-            System.out.print(",\t ");
+            System.out.print(", \t");
 
-            for (int i=0; i<metaData.getColumnCount(); i++) {
-                System.out.print(res.getObject(i+1));
-                if (!(i==metaData.getColumnCount()-1))
-                    System.out.print(", ");
+            for (int i=1; i<=metaData.getColumnCount(); i++) {
+                System.out.print(res.getObject(i));
+                if (!(i==metaData.getColumnCount()))
+                    System.out.print(", \t");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+
+    public static void printResults(ResultSet res, String[] cols) throws SQLException
+    {
+        if (res == null) {
+            System.out.println("Nothing to display : ResultSet empty.");
+            return;
+        }
+
+        System.out.println();
+        System.out.print("ROW | ");
+        for(int i=0; i<cols.length; i++) {
+            System.out.print(cols[i]);
+            if (!(i==cols.length-1))
+                System.out.print(" | ");
+        }
+        System.out.println();
+
+        while (res.next()) {
+            System.out.print(res.getRow());
+            System.out.print(", \t");
+
+            for (int i=0; i<cols.length; i++) {
+                try {
+                    System.out.print(res.getObject(cols[i]));
+                } catch (SQLException e) {
+                    System.err.println("Wrong column name given : " + cols[i]);
+                    return;
+                }
+                if (!(i==cols.length-1))
+                    System.out.print(", \t");
             }
             System.out.println();
         }
