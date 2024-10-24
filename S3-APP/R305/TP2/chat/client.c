@@ -66,7 +66,8 @@ int main(int argc, char *argv[])
   }
   else {
     while (1) {
-        strcpy(msgSend, "");
+        strncpy(msgSend, "", strlen(msgSend));
+        
         int bytesReceived = read(0, bufInput, BUFFER_SIZE - 1);  // Reading user input
         bufInput[bytesReceived] = '\0';  // Null-terminate the input string
 
