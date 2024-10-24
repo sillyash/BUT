@@ -22,14 +22,16 @@ So the port used is ```5015```.
 
 ## How many processes does the server program uses to handle 1, 2, n clients (use the ps command)?
 
-		PID TTY          TIME CMD
-	25013 pts/1    00:00:00 bash
-	25043 pts/1    00:00:00 chat_serveur
-	25052 pts/1    00:00:00 chat_serveur
-	25058 pts/1    00:00:00 chat_serveur
-	25066 pts/1    00:00:00 chat_serveur
-	25080 pts/1    00:00:00 chat_serveur
-	25176 pts/1    00:00:00 ps
+```
+	PID TTY          TIME CMD
+25013 pts/1    00:00:00 bash
+25043 pts/1    00:00:00 chat_serveur
+25052 pts/1    00:00:00 chat_serveur
+25058 pts/1    00:00:00 chat_serveur
+25066 pts/1    00:00:00 chat_serveur
+25080 pts/1    00:00:00 chat_serveur
+25176 pts/1    00:00:00 ps
+```
 
 The program uses ```n+1``` processes for ```n``` clients.
 
@@ -48,5 +50,17 @@ To do ```2.``` and ```3.``` simultaneously, we should create a child process.
 [See file](./client.c)
 
 ## 2.2 - Server
+
+### Explain why the traditional architecture using a dedicated server process for each connection is hard to implement in the case of a chat application
+
+It will be hard to implement as we need to keep track of every child process or socket that connects to our server to send the message to each and every one of them.
+
+### Why is the server process killed if it writes into a closed (or write-closed) socket? Propose a way to avoid this problem.
+
+Writing onto a closed socket kills a program, that's how C is designed.
+
+A solution is using multiplexing to check for open sockets only and track every socket.
+
+### Implement a server program that can communicate with your client. Use the provided source outline serveur.c. Put the source code into your class report.
 
 [See file](./serveur.c)
