@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inheritJdk="true">
+	<contentEntry url="file://$MODULE_DIR$">
+		<packagePrefix url="file://$MODULE_DIR$" value="TP_JDBC_1"/>
+	</contentEntry>
+	<levels>
+		<level name="de.vandermeer.asciitable" value="project"/>
+	</levels>
+</component>
