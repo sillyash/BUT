@@ -1,4 +1,3 @@
-package TP_JDBC_1;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;

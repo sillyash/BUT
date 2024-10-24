@@ -1,4 +1,3 @@
-package TP_JDBC_1;
 import oracle.jdbc.pool.*;
 import java.sql.*;
 import java.util.*;
