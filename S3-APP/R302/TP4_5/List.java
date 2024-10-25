@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 public class List<T> extends BinaryTree<T> implements ListInterface<T> {
     
-    public T data;
-    public List<T> tail;
-    public List<T> parent;
+    private T data;
+    private List<T> tail;
+    private List<T> parent;
 
     @SafeVarargs
     public List(T head, T... data) {
@@ -104,4 +104,32 @@ public class List<T> extends BinaryTree<T> implements ListInterface<T> {
         }
     }
 
+    public void remove(T elem) {
+        // If the list is empty, do nothing
+        if (this.length() == 0) return;
+
+        // Case when the element to remove is the first element (the head)
+        if (this.data.equals(elem)) {
+            if (this.tail != null) {
+                // Copy the data from the next node and skip over it
+                this.data = this.tail.data;
+                this.tail = this.tail.tail;
+            } else {
+                // Handle the case where it's the only element in the list
+                throw new RuntimeException("Cannot remove last element of List.");
+            }
+            return;
+        }
+
+        // Traverse the list to find the element to remove
+        List<T> current = this;
+        while (current.tail != null) {
+            if (current.tail.data.equals(elem)) {
+                // Element found in the next node, so skip the next node
+                current.tail = current.tail.tail;
+                return;
+            }
+            current = current.tail; // Move to the next node
+        }
+    }
 }

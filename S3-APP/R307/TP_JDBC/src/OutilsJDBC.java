@@ -1,6 +1,4 @@
 import oracle.jdbc.pool.*;
-
-import java.awt.*;
 import java.sql.*;
 import java.util.*;
 
@@ -37,6 +35,7 @@ public class OutilsJDBC
         }
         catch (SQLException e){
             System.out.println("Problème lors de l'exécution de la requête : "+requete);
+            System.err.println(e);
         }
         return res;
     }
@@ -88,7 +87,7 @@ public class OutilsJDBC
         ds.setDatabaseName("etudom");
         ds.setUser("amerie1");
 
-        String password = "";
+        String password;
         Scanner sc = new Scanner(System.in);
         System.out.print("Input OracleDB password : ");
         password = sc.next();
@@ -106,7 +105,7 @@ public class OutilsJDBC
 
 
         // Q1.3
-        String requete = "SELECT * FROM ENS2004.FILM WHERE ROWNUM < 10";
+        String requete = "SELECT * FROM ENS2004.FILM WHERE ROWNUM <= 10";
         ResultSet res = exec1Requete(requete, maConnection, 0);
         printResults(res);
         res.close();
@@ -118,7 +117,30 @@ public class OutilsJDBC
         printResults(res);
         res.close();
 
+
         // Q3
+        requete = "INSERT INTO CLIENT (nomClient, prenomClient, motPasse, adrClient, CPClient) VALUES" +
+                "('MERIENNE', 'Ashley', 'visiblePassword123', '12 rue Paul Fort', 75014)";
+        res = exec1Requete(requete, maConnection, 0);
+
+        requete = "INSERT INTO CLIENT (nomClient, prenomClient, motPasse, adrClient, CPClient) VALUES" +
+                "('ESCOFFIER', 'Emma', 'visiblePassword321', 'somewhere in Arpajon', 91000)";
+        res = exec1Requete(requete, maConnection, 0);
+
+        requete = "INSERT INTO LOCATION (numExemplaire, dateLocation, numClient, " +
+                "dateEnvoi, dateRetour) VALUES (20096, SYSDATE, 1, SYSDATE, null)";
+        res = exec1Requete(requete, maConnection, 0);
+
+        requete = "INSERT INTO LOCATION (numExemplaire, dateLocation, numClient, " +
+                "dateEnvoi, dateRetour) VALUES (20096, SYSDATE-3, 2, SYSDATE-1, SYSDATE)";
+        res = exec1Requete(requete, maConnection, 0);
+
+        requete = "DELETE FROM CLIENT";
+        res = exec1Requete(requete, maConnection, 0);
+
+        requete = "DELETE FROM LOCATION";
+        res = exec1Requete(requete, maConnection, 0);
+
 
         closeConnection(maConnection);
     }
