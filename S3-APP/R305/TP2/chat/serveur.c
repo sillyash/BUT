@@ -1,100 +1,128 @@
 /* SERVEUR. Lancer ce programme en premier (pas d'arguments). */
 
-#include <stdio.h>                  /* fichiers d'en-tête classiques */
+#include <stdio.h>
 #include <stdlib.h>
-#include <sys/select.h>
+#include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
-#include <signal.h>
-#include <string.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <sys/socket.h>             /* fichiers d'en-tête "réseau" */
+#include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <netdb.h>
+#include <sys/select.h>
+#include <errno.h> // Include this header for error handling
 
-#define PORT_SERVEUR 5015           /* Numéro de port pour le serveur */
-#define MAX_CLIENTS   128           /* Nombre maximum de clients */
-#define BUFFER_SIZE  1024           /* Taille maximum des messages */
+#define BUFFER_SIZE 1024
+#define PORT 5015
 
-int main(int argc, char *argv[])
+void handle_new_connection(int secoute, fd_set *ensemble, int *max) {
+  int socserv = accept(secoute, NULL, NULL);
+  if (socserv < 0) {
+    perror("accept error");
+    return;
+  }
+  FD_SET(socserv, ensemble);       // ajouter socket de service
+  if (socserv > *max) *max = socserv; // mettre max à jour
+  printf("Nouvelle connexion acceptée : %d\n", socserv);
+}
+
+void broadcast_message(int fd, fd_set *ensemble, int max, char *message, int bytesRead) {
+  /* On parcourt les sockets */
+  for (int fd2 = 0; fd2 <= max; fd2++) {
+    if (FD_ISSET(fd2, ensemble) && fd2 != fd) {
+      int bytesWritten = write(fd2, &message, bytesRead);
+      if (bytesWritten <= 0) {
+        if (errno == EPIPE) {
+          printf("Socket fermé : %d\n", fd2);
+          FD_CLR(fd2, ensemble);
+          shutdown(fd2, SHUT_RDWR);
+          close(fd2);
+        } else {
+          perror("write error");
+        }
+      }
+    }
+  }
+}
+
+void handle_client_message(int fd, fd_set *ensemble, int max, char *message) {
+  int bytesRead = read(fd, message, BUFFER_SIZE);
+  if (bytesRead <= 0) {
+    printf("Client déconnecté\n");
+    FD_CLR(fd, ensemble);            // on retire le socket de service
+    shutdown(fd, SHUT_RDWR);
+    close(fd);
+  } else {
+    printf("Message reçu : %s\n", message);
+    broadcast_message(fd, ensemble, max, message, bytesRead);
+  }
+}
+
+
+int main()
 {
-  /* 1. On crée la socket d'écoute. */
-  int secoute = socket(
-    AF_INET,
-    SOCK_STREAM,
-    0
-  );
+  int secoute, max;
+  fd_set ensemble;
+  struct sockaddr_in server_addr;
 
-  /* 2. On prépare l'adresse du serveur. */
-  struct sockaddr_in saddr = {0};
-  saddr.sin_family = AF_INET;
-  saddr.sin_port = htons(PORT_SERVEUR);
-  saddr.sin_addr.s_addr = htonl(INADDR_ANY);
-
-  /* 3. On attache la socket a l'adresse du serveur. */
-  int bindFail = bind(
-    secoute,
-    (struct sockaddr*) &saddr,
-    sizeof(saddr)
-  );
-
-  if (bindFail) {
-    perror("Bind failed.");
-    exit(2);
+  // Create socket
+  secoute = socket(AF_INET, SOCK_STREAM, 0);
+  if (secoute < 0) {
+    perror("socket");
+    exit(EXIT_FAILURE);
   }
 
-  /* 4. Enregistrement auprès du système. */
-  listen(secoute, 10);
-  char message[BUFFER_SIZE];
+  // Set up server address
+  server_addr.sin_family = AF_INET;
+  server_addr.sin_addr.s_addr = INADDR_ANY;
+  server_addr.sin_port = htons(PORT);
 
-  fd_set ensemble, temp;
-  FD_ZERO(&ensemble); // vider l’ensemble principal
-  int max = secoute;
+  // Bind socket
+  if (bind(secoute, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
+    perror("bind");
+    close(secoute);
+    exit(EXIT_FAILURE);
+  }
+
+  // Listen for connections
+  if (listen(secoute, 5) < 0) {
+    perror("listen error");
+    close(secoute);
+    exit(EXIT_FAILURE);
+  }
+
+  char message[BUFFER_SIZE];
+  
+  // Initialize fd sets
+  FD_ZERO(&ensemble);
+  FD_SET(secoute, &ensemble);
+  max = secoute;
+
+  printf("Serveur en attente de connexions...\n");
 
   while (1)
   {
-    printf("Serveur en attente de nouveaux clients ou messages.\n");
+    fd_set read_fds = ensemble;
 
-    temp = ensemble;                      // copier l’ensemble
-    select(max+1, &temp, NULL, NULL, NULL);
+    // Use select to monitor multiple file descriptors
+    if (select(max + 1, &read_fds, NULL, NULL, NULL) < 0) {
+      perror("select error");
+      close(secoute);
+      exit(EXIT_FAILURE);
+    }
 
-    /* Pour chaque client */
-    for (int fd=0; fd<=max; fd++)
-    {
-      if (!FD_ISSET(fd, &temp)) continue; // fd pas prêt
-
-      /* 5. Si on a reçu une demande sur la socket d'écoute... */
-      if (fd == secoute) {                // demande de connexion
-        int socserv = accept(
-          secoute,
-          NULL,
-          NULL
-        );
-        FD_SET(socserv, &ensemble);       // ajouter socket de service
-        if (socserv > max) max = socserv; // mettre max à jour
-        continue;
-      }
-    
-      /* 6. Si on a reçu des données sur une socket de service... */
-      int bytesRead = read(fd, message, BUFFER_SIZE);
-      if (bytesRead <= 0) {
-        FD_CLR(fd, &ensemble);            // on retire le socket de service
-        shutdown(fd, SHUT_RDWR);
-        close(fd);
-        continue;
-      }
-
-      for (int fd2=0; fd2<max; fd2++) {
-        if (FD_ISSET(fd2, &temp) && fd2 != secoute && fd2 != fd) {
-          write(fd2, message, BUFFER_SIZE);
+    for (int fd = 0; fd <= max; fd++) {
+      if (FD_ISSET(fd, &read_fds)) {
+        if (fd == secoute) {
+          handle_new_connection(secoute, &ensemble, &max);
+        } else {
+          handle_client_message(fd, &ensemble, max, message);
         }
       }
     }
   }
 
-  /* 7. On termine et libère les ressources. */
+  printf("Serveur terminé.\n");
+  // Terminate and free resources
   shutdown(secoute, SHUT_RDWR);
   close(secoute);
 
