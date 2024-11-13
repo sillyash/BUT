@@ -275,12 +275,11 @@ Thread initial d'ID 3084601024
 Aucun thread annexe n'a été exécuté.
 ```
 
->a
+>f
 
 ### Exercise 2 : Parallelization of matrix × vector multiplication
 
-Multiplication of a matrix by a vector is an operation frequently used in computer science (scientific computation, computer graph-
-ics, etc.). It is therefore quite interesting to parallelize it in order to improve its performance.
+Multiplication of a matrix by a vector is an operation frequently used in computer science (scientific computation, computer graphics, etc.). It is therefore quite interesting to parallelize it in order to improve its performance.
 
 This computation is realized with two nested loops as shown in Figure 1, where we multiply matrix A by vector x and obtain another vector y. 
 
@@ -293,6 +292,8 @@ for (i = 0; i < NB_LIGNES; i++)
 ```
 
 #### Implement a program that uses threads to parallelize the matrix-vector multiplication in such a way that each element of the result is computed in parallel with others.
+
+>[See file](./matrix.c)
 
 ### Exercise 3 : Client-server application.
 
@@ -307,22 +308,20 @@ clients are numbered in the order of arrival.
 
 #### Implement the server program with all the necessary synchronization to avoid the interference errors.
 
->a
+>[See file](./server.c)
 
 ### Exercise 4 : Dining philosophers.
 
-Five philosophers - P0, P1, P2, P3, P4 - are seated around a bowl of noodles.
+Five philosophers - P<sub>0</sub>, P<sub>1</sub>, P<sub>2</sub>, P<sub>3</sub>, P<sub>4</sub> - are seated around a bowl of noodles.
 
-Between each pair of neighbors there is a fork: F0 between P4 and P0, F1 between P0 and P1, F2 between P1 and P2, F3 between P2 and P3, F4 between P3 and P4. Each philosopher passes back and forth between eating and thinking; both activities take some arbitrary amount of
+Between each pair of neighbors there is a fork: F<sub>0</sub> between P<sub>4</sub> and P<sub>0</sub>, F<sub>1</sub> between P<sub>0</sub> and P<sub>1</sub>, F<sub>2</sub> between P<sub>1</sub> and P<sub>2</sub>, F<sub>3</sub> between P<sub>2</sub> and P<sub>3</sub>, F<sub>4</sub> between P<sub>3</sub> and P<sub>4</sub>. Each philosopher passes back and forth between eating and thinking; both activities take some arbitrary amount of
 time.
 
-A philosopher Pi can only eat when he holds the fork Fi to its right and the fork F(i+1) mod 5 to its left. A fork can only be held by one philosopher at a time, and philosophers can not pick two forks simultaneously.
+A philosopher P<sub>i</sub> can only eat when he holds the fork F<sub>i</sub> to its right and the fork F<sub>(i+1) mod 5</sub>  to its left. A fork can only be held by one philosopher at a time, and philosophers can not pick two forks simultaneously.
 
 #### Complete the code below in order to simulate the dining philosophers.
 
 The exclusive access to the forks is realized by the locking of corresponding mutexes.
-
->a
 
 ```c
 #define PLACES 5
@@ -334,7 +333,12 @@ void *philosophe(void *arg) {
 	long int f_gauche = (place + 1) % PLACES;
 
 	while (1) { // philosophe un jour, philosophe toujours
+		pthread_mutex_lock(&fourchettes[MIN(f_droite, f_gauche)]); // ADDED
+		pthread_mutex_lock(&fourchettes[MAX(f_droite, f_gauche)]); // ADDED
 		sleep(random() % 3); // je médite, mes deux mains libres
+
+		pthread_mutex_unlock(&fourchettes[f_droite]); // ADDED
+		pthread_mutex_unlock(&fourchettes[f_gauche]); // ADDED
 		sleep(random() % 3); // je mange, les fourchettes dans les mains
 	}
 	return NULL;
