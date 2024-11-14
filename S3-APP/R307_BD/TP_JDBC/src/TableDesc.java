@@ -1,10 +1,7 @@
-import de.vandermeer.asciitable.AsciiTable;
-
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class JDBC2
+public class TableDesc
 {
     public static void main (String[] args) throws SQLException
     {
