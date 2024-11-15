@@ -9,7 +9,7 @@
 ```java
 import java.sql.*;
 
-public class TP_JDBC_1.OutilsJDBC {
+public class TP_JDBC_1.JDBC.OutilsJDBC {
 	public static Connection openConnection (String url) {
 		Connection co=null;
 		try {
@@ -69,25 +69,25 @@ public class TP_JDBC_1.OutilsJDBC {
 
 #### 2. Ecrire le code java pour se connecter à l'aide de jdbc.
 
->[Voir fichier](./src/OutilsJDBC.java)
+>[Voir fichier](./src/JDBC/OutilsJDBC.java)
 
 
 #### 3. Exécutez une requête permettant de récupérer les 10 premières lignes de la table Film dans un objet ResultSet et affichez le résultat sur la console. Pour cela, vous utiliserez les méthodes permettant d'établir, puis de clore la connexion, en récupérant les éventuelles exceptions levées.
 
->[Voir fichier](./src/OutilsJDBC.java)
+>[Voir fichier](./src/JDBC/OutilsJDBC.java)
 
 
 ### Question 3
 
->[Voir fichier](./src/OutilsJDBC.java)
+>[Voir fichier](./src/JDBC/OutilsJDBC.java)
 
 
 ### Question 4
 
 #### Q4.1
 
-Classe OutilsJDBC version personnalisée :
->[Voir fichier](./src/JDBCTools.java)
+Classe JDBC.OutilsJDBC version personnalisée :
+>[Voir fichier](./src/JDBC/JDBCTools.java)
 
 
 #### Q4.2
@@ -101,9 +101,39 @@ Classe OutilsJDBC version personnalisée :
 
 >[Voir fichier (méthode)](./src/JDBCTools.java)
 > 
->[Voir fichier (main)](./src/TableDesc.java)
+>[Voir fichier (main)](./src/JDBC2/TableDesc.java)
 
 
 ### Question 2
 
+>[Voir fichier](./src/JDBC2/Question2.java)
 
+
+### Question 3
+
+```sql
+CREATE OR REPLACE FUNCTION nbreFilms1 (numActeur IN ens2004.Acteur.numIndividu%TYPE)
+RETURN NUMBER
+IS
+    nbFilms NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO nbFilms
+    FROM ENS2004.Acteur A
+    INNER JOIN ENS2004.Film F ON F.numFilm = A.numFilm
+    WHERE A.NumIndividu = numActeur;
+    
+    RETURN nbFilms;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        RETURN 0;
+    WHEN VALUE_ERROR THEN
+        DBMS_OUTPUT.PUT_LINE('Value error occurred');
+        RETURN -1;
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('An unexpected error occurred: ' || SQLERRM);
+        RETURN -1;
+END;
+/
+```
+
+>[Voir fichier](./src/JDBC2/Question3.java)

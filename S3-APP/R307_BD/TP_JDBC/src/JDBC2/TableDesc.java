@@ -1,3 +1,7 @@
+package JDBC2;
+
+import JDBC.JDBCTools;
+
 import java.sql.*;
 import java.util.Scanner;
 
