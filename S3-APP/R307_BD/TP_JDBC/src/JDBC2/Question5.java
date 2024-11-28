@@ -5,27 +5,29 @@ import JDBC.JDBCTools;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.Scanner;
 
 public class Question5
 {
-    public static void FilmsWithDirector(String sonNom, Connection co) throws SQLException
+    public static void titreFilmActeur(String nomActeur, Connection co) throws SQLException
     {
-        CallableStatement cst = co.prepareCall("{? = call nbreFilms2(?)}");
-        cst.registerOutParameter(1, java.sql.Types.INTEGER);
-        cst.setString(2, sonNom);
-        boolean error = cst.execute();
+        CallableStatement cst = co.prepareCall("{call unTitre(?,?,?)}");
+        cst.setString(1, nomActeur);
+        cst.registerOutParameter(2, Types.VARCHAR);
+        cst.registerOutParameter(3, Types.VARCHAR);
 
-        if (error) {
-            System.err.println("Error while executing nbFilms2(" + sonNom + ").");
+        boolean erreur = cst.execute();
+
+        if (erreur) {
+            System.err.println("Error while executing unTitre(" + nomActeur + ").");
             return;
         }
 
-        int nbFilms = cst.getInt(1);
-        cst.close();
-
-        System.out.print("Films réalisés par " + sonNom.toUpperCase() + " : \t");
-        System.out.println(nbFilms);
+        String prenom = cst.getString(2);
+        String titre = cst.getString(3);
+        System.out.println("Prénom de l'acteur : " + prenom);
+        System.out.println("Titre du film : " + titre);
     }
 
     public static void main(String[] args) throws SQLException
@@ -38,12 +40,13 @@ public class Question5
         );
 
         Scanner sc = new Scanner(System.in);
-        String directorName = "";
+        String nomActeur;
 
-        System.out.print("Entrez un nom de réalisateur.ice :\n>>> ");
-        directorName = sc.next();
+        System.out.print("Entrez un nom de acteur.ice :\n>>> ");
+        nomActeur = sc.next();
+        System.out.println();
 
-        FilmsWithDirector(directorName, maConnexion);
+        titreFilmActeur(nomActeur, maConnexion);
 
         sc.close();
     }

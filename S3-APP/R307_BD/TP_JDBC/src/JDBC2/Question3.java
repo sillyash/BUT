@@ -10,20 +10,14 @@ public class Question3
     public static void FilmsWithActor(String nameActor, Connection co) throws SQLException
     {
         ResultSet actors = Question2.ActorsWithName(nameActor, co);
-        PreparedStatement psm = co.prepareStatement(
-                "SELECT F.Titre " +
-                        "FROM ENS2004.ACTEUR A " +
-                        "INNER JOIN ENS2004.FILM F ON F.NumFilm = A.NumFilm " +
-                        "WHERE A.NumIndividu = ?"
-        );
 
         while (actors.next())
         {
             int numActeur = actors.getInt("NUMINDIVIDU");
 
             CallableStatement cst = co.prepareCall("{? = call nbreFilms1(?)}");
-            cst.setInt(2, numActeur);
             cst.registerOutParameter(1, java.sql.Types.INTEGER);
+            cst.setInt(2, numActeur);
             boolean error = cst.execute();
 
             if (error) {

@@ -21,7 +21,7 @@ public class Question2 {
         return JDBCTools.executeRequest(req, co ,1);
     }
 
-    public static ResultSet ActorsWithName(String name, Connection co) throws SQLException
+    public static ResultSet ActorsWithName(String name, Connection co)
     {
         String req =
                 "SELECT DISTINCT I.NumIndividu, I.PrenomIndividu, I.NomIndividu " +
