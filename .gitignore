@@ -2,3 +2,4 @@
 .metadata
 out/
 build/
+.bak_*
