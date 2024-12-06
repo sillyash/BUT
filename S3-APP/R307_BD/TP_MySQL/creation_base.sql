@@ -7,26 +7,26 @@ DROP TABLE IF EXISTS Buveur;
 
 CREATE TABLE Viticulteur (
     numViti INT AUTO_INCREMENT,
-    nom		VARCHAR(100) NOT NULL,
-    prenom	VARCHAR(100) NOT NULL,
-    ville	VARCHAR(70) NOT NULL,
+    nom	VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    ville VARCHAR(70) NOT NULL,
     
     PRIMARY KEY (numViti)
 );
 
 
 CREATE TABLE Buveur (
-	numBuv INT AUTO_INCREMENT,
-    nom		VARCHAR(100) NOT NULL,
-    prenom	VARCHAR(100) NOT NULL,
-    ville	VARCHAR(70) NOT NULL,
+    numBuv INT AUTO_INCREMENT,
+    nom	VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    ville VARCHAR(70) NOT NULL,
     
     PRIMARY KEY (numBuv)
 );
 
 
 CREATE TABLE Vin (
-	numVin INT AUTO_INCREMENT,
+    numVin INT AUTO_INCREMENT,
     cru VARCHAR(200) NOT NULL,
     millesime YEAR NOT NULL,
     region VARCHAR(50) NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE Vin (
 
 
 CREATE TABLE Commande (
-	numComm INT AUTO_INCREMENT,
+    numComm INT AUTO_INCREMENT,
     numBuv INT NOT NULL,
     numVin INT NOT NULL,
     dateComm DATE NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE Commande (
 
 
 CREATE TABLE Livraison (
-	numComm	INT,
+    numComm INT,
     dateLiv DATE NOT NULL,
     quantiteLiv INT NOT NULL,
     
