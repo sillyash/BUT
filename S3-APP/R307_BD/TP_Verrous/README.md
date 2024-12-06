@@ -44,3 +44,16 @@ Pour ce faire sous SQL Developer :
 
 ## Accès simultané aux données
 
+
+### 1. Dans la fenêtre 2, peut-on faire un SELECT sur la table concernée par la mise à jour effectuée dans la fenêtre 1 ?
+
+
+### 2. Dans la fenêtre 2, peut-on faire un UPDATE sur la ligne concernée par la mise à jour effectuée dans la fenêtre 1 ?
+
+
+### 3. Dans la fenêtre 2, peut-on faire un UPDATE sur une ligne de la table non concernée par la mise à jour effectuée dans la fenêtre 1 ?
+
+
+### 4. Le comportement au niveau des verrous est-il le même si la requête UPDATE effectuée dans la 2ème fenêtre est remplacée par une suppression dans la table ?
+
+
