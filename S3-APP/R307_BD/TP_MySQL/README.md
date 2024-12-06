@@ -1,6 +1,8 @@
 # TD MySQL
 
-## Ash MERIENNE | S3 APP1
+#### Ash MERIENNE | S3 APP1
+
+## Exercices
 
 ### 1. On reprend la base de données des vins de l’an dernier, mais on ne reprend que les tables vin et viticulteur. Créez ces deux tables en mySql, et insérez les valeurs suivantes :
 
@@ -94,3 +96,35 @@ END $$
 
 DELIMITER ;
 ```
+
+## Bonus
+
+### Créer un trigger qui vérifie qu'un viticulteur ne produit pas plus de 10 vins
+
+```sql
+DELIMITER $$;
+
+CREATE OR REPLACE TRIGGER nbreVinsViti
+ON Vin
+FOR EACH ROW
+BEGIN
+    DECLARE nbVins INT;
+
+    SELECT COUNT(*) IN nbVins
+    FROM Vin
+    WHERE numViti = :old.numViti;
+
+    IF nbVins >= 10 THEN
+        EXCEPTION ...
+    ENDIF;
+END $$
+
+DELIMITER ;
+```
+
+### Regarder comment faire du JDBC vers mySQL
+
+Mes classes Java :
+- [JDBCTools](./JDBCTools.java)
+  - [JDBCmySql](./JDBCmySql.java)
+  - [JDBCoracle](./JDBCoracle.java)
