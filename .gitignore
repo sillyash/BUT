@@ -2,4 +2,6 @@
 .metadata
 out/
 build/
+.vpp.bak_*
 .bak_*
+.bak*
