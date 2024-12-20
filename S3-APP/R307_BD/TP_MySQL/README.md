@@ -81,6 +81,6 @@ DELIMITER ;
 ### Regarder comment faire du JDBC vers mySQL
 
 Mes classes Java :
-- [JDBCTools](./JDBCTools.java)
-  - [JDBCmySql](./JDBCmySql.java)
-  - [JDBCoracle](./JDBCoracle.java)
+- [JDBC.JDBCTools](./JDBC/JDBCTools.java)
+  - [JDBC.JDBCmySql](./JDBC/JDBCmySql.java)
+  - [JDBC.JDBCoracle](./JDBC/JDBCoracle.java)
