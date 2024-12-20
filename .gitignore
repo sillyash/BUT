@@ -2,5 +2,12 @@
 .metadata
 out/
 build/
+<<<<<<< HEAD
 .bak_*
 *.vpp.bak_*
+=======
+*.vpp.bak_*
+*.bak_*
+*.bak*
+*.vpp.lck
+>>>>>>> 6fd2e1a493a94cf3825a77f6afba348528ddad09
