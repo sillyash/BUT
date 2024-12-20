@@ -9,7 +9,7 @@ CREATE TABLE Viticulteur (
     numViti INT AUTO_INCREMENT,
     nom	VARCHAR(100) NOT NULL,
     prenom VARCHAR(100) NOT NULL,
-    ville VARCHAR(70) NOT NULL,
+    ville VARCHAR(70) NULL,
     
     PRIMARY KEY (numViti)
 );
