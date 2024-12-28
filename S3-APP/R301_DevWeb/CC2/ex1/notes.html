@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<meta lang="fr">
+		<meta title="Formulaire notes">
+		<link rel="stylesheet" href="./styles.css">
+	</head>
+
+	<body>
+		<form action="calcul_moyenne.php" method="get">
+			<div class="form-section">
+				<label for="matiere1">Matière</label>
+				<input type="text" name="matiere1" required/>
+				<label for="note1">Note</label>
+				<input type="number" name="note1" required/>
+			</div>
+		
+			<div class="form-section">
+				<label for="matiere2">Matière</label>
+				<input type="text" name="matiere2"/>
+				<label for="note2">Note</label>
+				<input type="number" name="note2"/>
+			</div>
+			
+			<div class="form-section">
+				<label for="matiere3">Matière</label>
+				<input type="text" name="matiere3"/>
+				<label for="note3">Note</label>
+				<input type="number" name="note3"/>
+			</div>
+
+			<div class="form-section">
+				<label for="matiere4">Matière</label>
+				<input type="text" name="matiere4"/>
+				<label for="note4">Note</label>
+				<input type="number" name="note4"/>
+			</div>
+		
+			<input id="button" type="submit" name="BTNSend" value="Envoyer" />
+		</form>
+	</body>
+</html>

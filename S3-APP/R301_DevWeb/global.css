@@ -1,0 +1,17 @@
+@charset "utf-8";
+@import "./jetbrainsmono.css";
+@import "array.css";
+
+* {
+	font-family: 'JetBrains Mono';
+	color: lightpink;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	background-color: darkslategrey;
+}

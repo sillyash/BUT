@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<title>TP3 - ex4</title>
+	<link rel="stylesheet" href="/~amerie1/R301/global.css"/>
+	<link rel="icon" type="image/x-icon" href="/~amerie1/favicon.ico">
+</head>
+
+<form action="afficherVoiture.php" method="get">
+
+	<div class="form-section">
+		<label for="immatriculation">Immatriculation</label>
+		<input type="text" name="immatriculation"/>
+	</div>
+
+	<div class="form-section">
+		<label for="marque">Marque</label>
+		<input type="text" name="marque"/>
+	</div>
+	
+	<div class="form-section">
+		<label for="couleur">Couleur</label>
+		<input type="text" name="couleur"/>
+	</div>
+
+	<input id="button" type="submit" name="BTNSend" value="Envoyer" />
+
+</form>
+
+<style>
+
+form {
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	margin-top: 2rem;
+	padding: 1rem 2rem;
+	background-color:rebeccapurple;
+	border: 1px lightpink;
+	border-radius: 20px;
+}
+
+.form-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0.6rem;
+	margin-bottom: 0.4rem;
+}
+
+label {
+	min-width: 50%;
+}
+
+input {
+	min-width: 50%;
+	height: 30px;
+	background-color: DarkSlateBlue;
+	border: 1px lightpink;
+	border-radius: 5px;
+}
+
+#button {
+	width: 120px;
+	height: 35px;
+	align-self: center;
+	border: none;
+	background-color: DarkSlateBlue;
+	border-radius: 8px;
+	margin-top: 1rem;
+}
+
+</style>
+</html>

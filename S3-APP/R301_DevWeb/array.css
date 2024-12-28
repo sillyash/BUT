@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid lightpink;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #3a3a3a;
+}
+
+.seuilAtteint {
+  background-color: brown;
+}

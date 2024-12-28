@@ -1,0 +1,23 @@
+@charset "utf_8";
+
+.liDetails {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: fit-content;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+	vertical-align: middle;
+}
+
+.BTNdetails {
+	height: 30px;
+	align-content: center;
+	align-items: center;
+	border: 1px solid lightpink;
+	border-radius: 3px;
+	background-color: darkslategrey;
+	text-align: center;
+	vertical-align: middle;
+}
