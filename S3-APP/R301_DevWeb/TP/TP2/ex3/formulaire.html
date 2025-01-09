@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<title>TP2 - ex3c</title>
+	<link rel="stylesheet" href="/~amerie1/R301/global.css"/>
+	<link rel="icon" type="image/x-icon" href="/~amerie1/favicon.ico">
+</head>
+	
+<form action="ex3c.php" method="get">
+
+	<label for="taux">Taux : </label>
+	<input type="number" name="taux" value="0.1" min="0.1" max="10" step="0.1" />
+
+	<label for="seuil">Seuil : </label>
+	<input type="number" name="seuil" value="500" min="500" max="100000" step="100" />
+
+	<label for="capital_initial">Capital initial : </label>
+	<input type="number" name="capital_initial" value="500" min="500" max="100000" step="100" />
+
+	<input id="button" type="submit" name="boutonEnvoyer" value="Envoyer" />
+
+</form>
+
+<style>
+
+form {
+	display: flex;
+	flex-direction: column;
+	min-width: 250px;
+}
+
+input {
+	height: 20px;
+	margin-top: 0.2rem;
+	margin-bottom: 1rem;
+	background-color: darkolivegreen;
+}
+
+#button {
+	width: 100px;
+	height: 25px;
+	align-self: center;
+	border: none;
+	background-color: darkolivegreen;
+	border-radius: 8px;
+}
+
+</style>
+</html>
