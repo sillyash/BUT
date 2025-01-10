@@ -2,11 +2,13 @@ package control;
 
 import entity.Engine;
 
+import java.awt.*;
 import java.util.Random;
 
 public class Jeu2048 implements IControl
 {
     public static final int GRID_SIZE = 4;
+    public static final int INIT_CELLS = 2;
     private Engine engine;
 
     public Jeu2048 () {
@@ -15,20 +17,11 @@ public class Jeu2048 implements IControl
 
     @Override
     public void init() {
-        /*
-        int[][] tab = new int[GRID_SIZE][GRID_SIZE];
-        Random rand = new Random();
+        this.engine = new Engine(GRID_SIZE, GRID_SIZE);
 
-        for (int i=0; i<GRID_SIZE; i++) {
-            for (int j=0; j<GRID_SIZE; j++) {
-                rand.ints();
-                tab[i][j] =
-            }
+        for (int i=0; i<INIT_CELLS; i++) {
+            this.engine.addNewCell();
         }
-        */
-
-        int[][] vals = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
-        this.engine = new Engine(vals);
     }
 
     @Override
