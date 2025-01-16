@@ -74,8 +74,6 @@ public class Engine
 		double rand = Math.random();
 		int cell = new Random().nextInt(emptyCells.size());
 
-		System.out.println(emptyCells.size());
-
 		if (rand < PROBABILITY_FOUR) {
 			emptyCells.get(cell).setContent(4);
 		} else {
