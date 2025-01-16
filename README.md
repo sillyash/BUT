@@ -37,7 +37,7 @@ TODO : Add classes
 - S204 | Database management, triggers, views, and Python statistics and plotting for 2024 Paris Olympics
 - S203 | Network setup, DHCP servers, DHCP relays, DNS servers (unbound), and Apache hosting
   > My favorite from the semester! ^_^
-- S1256 | transversal project : conception, UML, design modeling, Java Swing for 2024 Paris Olympics management systems
+- [S1256 | transversal project : conception, UML, design modeling, Java Swing for 2024 Paris Olympics management systems](https://github.com/sillyash/S1256)
 
 
 ## Semester 3 (apprenticeship)
@@ -45,6 +45,8 @@ TODO : Add classes
 ### Classes
 
 - R301 | WebDev : PHP basics (routing, forms, MVC method...)
+  - [REST API](https://github.com/sillyash/S301-API)
+  - [Website](https://github.com/sillyash/S301-WebApp)
 - R302 | Effective development : recursion, bruteforce... (Java)
 - R303 | Analysis : UML and database / data treatment visualisation
 - R304 | Development quality : UML and object oriented programming planning (Visual Paradigm)
