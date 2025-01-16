@@ -119,11 +119,55 @@ public class Jeu2048 implements IControl
 
     @Override
     public boolean isOver() {
-        return false;
+        if (!engine.getEmptyCells().isEmpty()) return false;
+
+        int[][] grid = getGrid();
+        int l = engine.getHeight();
+        int c = engine.getWidth();
+
+        for (int i=1; i<l-1; i++) {
+            for (int j=1; j<c-1; j++)
+            {
+                int center = grid[i][j];
+                int left = grid[i][j-1];
+                int right = grid[i][j+1];
+
+                int up = grid[i-1][j];
+                int down = grid[i+1][j];
+
+                int upLeft = grid[i-1][j-1];
+                int upRight = grid[i-1][j+1];
+
+                int downLeft = grid[i+1][j-1];
+                int downRight = grid[i+1][j+1];
+
+                if (center == left || center == right) return false;
+                if (center == up || center == down) return false;
+
+                if (upLeft == up || upLeft == left) return false;
+                if (upRight == up || upRight == right) return false;
+
+                if (downLeft == down || downLeft == left) return false;
+                if (downRight == down || downRight == right) return false;
+            }
+        }
+
+        return true;
     }
 
     @Override
     public int score() {
-        return 0;
+        int[][] grid = getGrid();
+        int l = engine.getHeight();
+        int c = engine.getWidth();
+        int max = 0;
+
+        for (int i=0; i<l; i++) {
+            for (int j=0; j<c; j++) {
+                if (grid[i][j] > max) max = grid[i][j];
+            }
+        }
+
+        return max;
     }
 }
