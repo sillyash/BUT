@@ -6,10 +6,13 @@ require_once(WORKDIR . "/modele/voiture.php");
 
 class Controleur
 {
+	protected static $objet;
+	protected static $cle;
+
 	public static function lireObjets() {
-		$titre = "les " . $objet . "s";
-		$table = ucfirst($objet);
-		$cle = $table::$cle;
+		$titre = "les " . static::$objet . "s";
+		$table = ucfirst(static::$objet);
+		$cle = static::$cle;
 		$tab_o = $table::getAll();
 		
 		include(WORKDIR . "/vue/debut.php");
@@ -18,15 +21,14 @@ class Controleur
 		include(WORKDIR . "/vue/fin.html");
 	}
 
-	public static function lireObjet() {
-		$titre = "un.e " . $objet . ".ice";
-		$table = ucfirst($objet);
-		$cle = $table::$cle;
-		$message = "L'" . $objet . "ice";
+	public static function lireUnObjet() {
+		$titre = "un.e " . static::$objet . ".ice";
+		$table = ucfirst(static::$objet);
+		$cle = static::$cle;
+		$message = "L'" . static::$objet . "ice";
 		
-		if (!isset($_GET["login"])) $_GET["login"] = "igor";
-		$l = $_GET["login"];
-		$obj = Utilisateur::getObjetById($l);
+		$l = $_GET[$cle];
+		$obj = $table::getObjetById($l);
 
 		include(WORKDIR . "/vue/debut.php");
 		include(WORKDIR . "/vue/menu.html");

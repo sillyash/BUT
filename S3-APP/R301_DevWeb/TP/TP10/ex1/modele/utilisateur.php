@@ -1,6 +1,6 @@
 <?php
 
-include("modele.php");
+require_once("modele.php");
 
 class Utilisateur extends Modele
 {
