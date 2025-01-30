@@ -44,12 +44,15 @@ public class ClientThread extends Thread
                 writeData.flush();
 
                 response = readData.readLine().strip();
-            } while (response.equals("Try again!"));
+                System.out.println(response);
+            } while (!response.equals("Congratulations, you found the number !"));
         } catch (IOException e) {
             System.err.println("Failed to read buffer : " + e.getMessage());
         }
 
         try {
+            response = readData.readLine().strip();
+            System.out.println(response);
             sc.close();
             writeData.close();
             readData.close();
