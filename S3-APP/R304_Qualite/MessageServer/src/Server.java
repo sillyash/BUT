@@ -80,6 +80,9 @@ public class Server
         for (ServerThread thread : threads) {
             thread.writeData.println(START_MSG);
             thread.writeData.flush();
+        }
+
+        for (ServerThread thread : threads) {
             thread.join();
         }
 
