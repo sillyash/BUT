@@ -44,12 +44,11 @@ public class ServerThread extends Thread
 
                 if (guessedNum > secretNum) {
                     writeData.println("Lower!");
-                    nbTries++;
                 }
                 else if (guessedNum < secretNum) {
                     writeData.println("Higher!");
-                    nbTries++;
                 }
+                nbTries++;
                 writeData.flush();
 
             } while (guessedNum != secretNum);
