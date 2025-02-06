@@ -2,6 +2,7 @@ import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,9 +10,9 @@ class ServerThread extends Thread {
     protected Socket socket;
     protected PrintWriter writeData;
     protected BufferedReader readData;
-    protected ArrayList<String[]> clientInfos = new ArrayList<>();
+    protected Vector<String[]> clientInfos = new Vector<>();
 
-    public ServerThread(Socket s, ArrayList<String[]> c) throws IOException {
+    public ServerThread(Socket s, Vector<String[]> c) throws IOException {
         this.socket = s;
         this.clientInfos = c;
         this.writeData = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
