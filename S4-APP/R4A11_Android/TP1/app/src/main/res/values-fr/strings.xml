@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pizzeria</string>
+    <string name="btn1">Napolitaine</string>
+    <string name="btn2">Royale</string>
+    <string name="btn3">Montagnarde</string>
+    <string name="btn4">Quatre Saisons</string>
+    <string name="btn5">Raclette</string>
+    <string name="btn6">Hawai</string>
+    <string name="btn7">Panna Cotta</string>
+    <string name="btn8">Tiramisu</string>
+</resources>
