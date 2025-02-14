@@ -167,3 +167,6 @@ main form input[type=submit],main form input[type=reset]{
 
 /* ------------------------------------------------------------------ */
 
+.BTNaside {
+	color: orange;
+}
