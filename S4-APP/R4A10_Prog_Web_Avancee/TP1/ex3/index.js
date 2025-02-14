@@ -60,8 +60,11 @@ function setTableColors(table) {
 		// Iterate over the cells in the current row
 		for (let j = 0; j < row.cells.length; j++) {
 			let cell = row.cells[j];
-			let style = cell.style;
-			style.backgroundColor = cell.innerText;
+			let color = cell.innerText;
+			let bwContrast = getBWcontrastColor(color);
+
+			cell.style.backgroundColor = color;
+			cell.style.color = bwContrast;
 		}
 	}
 }
@@ -69,10 +72,12 @@ function setTableColors(table) {
 function changeColor(event) {
 	const cell = event.target;
 	const color = cell.innerText;
+	const contrastBW = getBWcontrastColor(color);
 	let paragraphs = document.querySelectorAll("p");
 	
 	paragraphs.forEach(paragraph => {
 		paragraph.style.color = color;
+		//paragraph.style.backgroundColor = contrastBW;
 	});
 }
 
