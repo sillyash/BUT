@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Pizzeria</string>
-    <string name="btn1">Napolitaine</string>
-    <string name="btn2">Royale</string>
-    <string name="btn3">Montagnarde</string>
-    <string name="btn4">Quatre Saisons</string>
-    <string name="btn5">Raclette</string>
-    <string name="btn6">Hawai</string>
-    <string name="btn7">Panna Cotta</string>
-    <string name="btn8">Tiramisu</string>
+    <string name="napolitean">Napolitaine</string>
+    <string name="royale">Royale</string>
+    <string name="mountain">Montagnarde</string>
+    <string name="fourSeasons">Quatre Saisons</string>
+    <string name="raclette">Raclette</string>
+    <string name="hawaii">Hawai</string>
+    <string name="pannaCotta">Panna Cotta</string>
+    <string name="tiramisu">Tiramisu</string>
 </resources>
