@@ -55,6 +55,56 @@ footer address p{
 	text-align : center;
 }
 
+.flex100row {
+	display: flex;
+	flex-direction: row;
+
+	align-self: center;
+	align-items: center;
+	align-content: center;
+
+	justify-self: center;
+	justify-items: center;
+	justify-content: center;
+
+	--padding: 3px;
+	padding: var(--padding);
+
+	width:  calc(100% - (2 * var(--padding)));
+	height: calc(40px - (2 * var(--padding)));
+}
+
+#searchBar {
+	height: 100%;
+	width: 300px;
+
+	font-weight: bold;
+	padding: 0 7px;
+
+	border: 3px solid black;
+	border-radius: 15px;
+}
+
+#searchBar:valid {
+	border-color: green;
+}
+
+#searchBar:invalid {
+	border-color: red;
+}
+
+#searchBar.empty {
+	border-color: black;
+}
+
+#searchBar:focus {
+	outline: none;
+}
+
+.searchFound {
+	background-color: aquamarine;
+}
+
 /* ----------------------- css du tableau -------------------------- */
 
 main table, main table td, main table th {
@@ -167,3 +217,6 @@ main form input[type=submit],main form input[type=reset]{
 
 /* ------------------------------------------------------------------ */
 
+aside > span {
+	color: orange;
+}

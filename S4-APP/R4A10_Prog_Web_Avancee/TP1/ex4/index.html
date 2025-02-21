@@ -2,11 +2,12 @@
 <html lang="fr">
 	<head>
 		<meta charset="utf-8" />
-		<title>1er html</title>
+		<title>R4A10 TP1</title>
 		<link rel="stylesheet" href="./styles/index.css" />
 		<link rel="stylesheet" href="./styles/float_101.css" />
 		<link rel="stylesheet" href="./styles/flexbox_101_nav.css" />
 		<link rel="stylesheet" href="./styles/grid_101.css" />
+		<script src="./index.js"></script>
 	</head>
 	<body>
 		<header>
@@ -22,6 +23,30 @@
 		</nav>
 		
 		<aside>
+			<span>
+				Première couleur :
+				<input id="input-col1" type="color" />
+			</span>
+			<span>
+				Seconde couleur :
+				<input id="input-col2" type="color" />
+			</span>
+			<button onclick="ajouterCouleurs()">
+				Ajouter
+			</button>
+
+			<table id="asideTable">
+				<tbody>
+					<tr>
+						<td>IndianRed</td>
+						<td>LightCoral</td>
+					</tr>
+					<tr>
+						<td>DarkSalmon</td>
+						<td>LightSalmon</td>
+					</tr>
+				</tbody>
+			</table>
 			<p>
 				Cette page est réalisée	en première année d'informatique,
 				à l'iut d'Orsay, dans le cadre du cours R1.02
@@ -35,6 +60,15 @@
 		</aside>
 		
 		<main>
+			<search class="flex100row">
+				<input
+					id="searchBar" type="search"
+					class="empty"
+					name="searchBar"
+					placeholder="Recherche dans le texte"
+					onkeyup="searchParagraphsMain(this)"
+				/>
+			</search>
 			<section>
 				<div>
 					<img src="./images/alphabet/uu.png" alt="lettre U" />
