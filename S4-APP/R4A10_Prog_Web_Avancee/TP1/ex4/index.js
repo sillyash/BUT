@@ -144,6 +144,36 @@ function searchParagraphsMain(searchBar) {
 	else searchBar.setCustomValidity('Pas de résultats');
 }
 
+function searchParagraphsMainV2(searchBar) {
+	const searchValue = searchBar.value;
+	const paragraphs = document.querySelectorAll('p');
+	let valid = false;
+
+	// TODO : fixAll
+
+	if (searchValue === '') {
+		console.log('EMPTY')
+		searchBar.classList.add('empty');
+
+		paragraphs.forEach(p => {
+			valid = true;
+			p.innerHTML.replace("<span class='hit'>", '');
+			p.innerHTML.replace("</span>", '');
+		});
+		return;
+	} else {
+		searchBar.classList.remove('empty');
+	}
+
+	paragraphs.forEach(paragraph => {
+		const text = paragraph.innerText;
+		text.replace(searchValue, "<span class='hit'>"+searchValue+"</span>");
+	});
+
+	if (valid) searchBar.setCustomValidity('');
+	else searchBar.setCustomValidity('Pas de résultats');
+}
+
 /* -------------------- Main -------------------- */
 
 function mainEx3() {
