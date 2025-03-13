@@ -9,4 +9,10 @@
     <string name="hawaii">Hawaii</string>
     <string name="pannaCotta">Panna Cotta</string>
     <string name="tiramisu">Tiramisu</string>
+    <string name="deleteOrders">Delete Orders</string>
+    <string name="chooseTable">Table number</string>
+    <string name="validate">Validate</string>
+    <string name="inputTableNumberHint">13</string>
+    <string name="tableDescription">Order for table number : </string>
+    <string name="tableNumFormatError">Choose a valid number between 1 and 99</string>
 </resources>

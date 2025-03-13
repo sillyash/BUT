@@ -9,4 +9,10 @@
     <string name="hawaii">Hawai</string>
     <string name="pannaCotta">Panna Cotta</string>
     <string name="tiramisu">Tiramisu</string>
+    <string name="deleteOrders">Supprimer les commandes</string>
+    <string name="chooseTable">Numéro de table</string>
+    <string name="validate">Valider</string>
+    <string name="inputTableNumberHint">13</string>
+    <string name="tableDescription">Commande pour la table : </string>
+    <string name="tableNumFormatError">Choisissez un nombre entre 1 et 99</string>
 </resources>
