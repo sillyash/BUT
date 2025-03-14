@@ -113,7 +113,7 @@ function ajouterCouleurs() {
 }
 
 function searchParagraphsMain(searchBar) {
-	const searchValue = searchBar.value.toUpperCase();
+	const searchValue = searchBar.value;
 	const paragraphs = document.querySelectorAll('p');
 	let valid = false;
 
@@ -125,12 +125,12 @@ function searchParagraphsMain(searchBar) {
 			p.classList.remove('searchFound')
 		});
 		return;
-	} else {
-		searchBar.classList.remove('empty');
 	}
 
+	searchBar.classList.remove('empty');
+
 	paragraphs.forEach(paragraph => {
-		const text = paragraph.innerText.toUpperCase();
+		const text = paragraph.innerText;
 
 		if (text.includes(searchValue)) {
 			if (!valid) valid = true;
@@ -149,29 +149,34 @@ function searchParagraphsMainV2(searchBar) {
 	const paragraphs = document.querySelectorAll('p');
 	let valid = false;
 
-	// TODO : fixAll
+	const openingTag = "<span class='searchFound'>";
+	const closingTag = "</span>";
+	const span = openingTag + searchValue + closingTag;
 
 	if (searchValue === '') {
-		console.log('EMPTY')
-		searchBar.classList.add('empty');
-
-		paragraphs.forEach(p => {
-			valid = true;
-			p.innerHTML.replace("<span class='hit'>", '');
-			p.innerHTML.replace("</span>", '');
-		});
-		return;
+			searchBar.classList.add('empty');
+			searchBar.setCustomValidity('Pas de résultats');
 	} else {
 		searchBar.classList.remove('empty');
 	}
 
-	paragraphs.forEach(paragraph => {
-		const text = paragraph.innerText;
-		text.replace(searchValue, "<span class='hit'>"+searchValue+"</span>");
+	paragraphs.forEach(p => {
+			const text = p.getAttribute('data-text-orig');
+			p.innerHTML = text.replace(searchValue, span);
 	});
 
 	if (valid) searchBar.setCustomValidity('');
 	else searchBar.setCustomValidity('Pas de résultats');
+}
+
+function setParagraphsAttributes() {
+	const paragraphs = document.querySelectorAll('p');
+
+	paragraphs.forEach(
+		p => {
+			p.setAttribute('data-text-orig', p.innerText);
+		}
+	);
 }
 
 /* -------------------- Main -------------------- */
@@ -185,6 +190,7 @@ function mainEx3() {
 }
 
 function main() {
+	setParagraphsAttributes();
 	mainEx3();
 }
 
