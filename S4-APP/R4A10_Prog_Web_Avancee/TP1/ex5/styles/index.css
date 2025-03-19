@@ -27,6 +27,17 @@ aside{
 	background-repeat : no-repeat;
 	background-size : cover;
 }
+
+.asideImages {
+	display: flex;
+
+	width: 100%;
+	padding: 2rem;
+	
+	background: none;
+	border: none;
+}
+
 aside p{
 	color : white;
 	font-size : 1.2rem;
