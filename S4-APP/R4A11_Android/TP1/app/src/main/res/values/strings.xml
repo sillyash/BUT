@@ -15,4 +15,6 @@
     <string name="inputTableNumberHint">13</string>
     <string name="tableDescription">Order for table number : </string>
     <string name="tableNumFormatError">Choose a valid number between 1 and 99</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

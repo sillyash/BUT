@@ -27,8 +27,11 @@ public class ClientThread extends Thread {
         try {
             this.connect();
             this.sendOrder();
+            this.getResponses();
             this.closeConnection();
-        } catch (IOException e) {
+        }
+
+        catch (IOException e) {
             Log.e("Server", e.getMessage());
         }
     }
@@ -49,7 +52,9 @@ public class ClientThread extends Thread {
 
         this.out.write(clientMsg);
         this.out.flush();
+    }
 
+    protected void getResponses() throws IOException {
         String serverMsg = this.in.readLine();
         Log.i("Server", serverMsg);
         this.activity.setTableText(serverMsg);
