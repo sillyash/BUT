@@ -17,7 +17,7 @@ Ash MERIENNE
 - [x] Plusieurs langues
 - [ ] Plusieurs tailles d'écrans
 - [x] Réinitialisation des commandes
-- [ ] Logo de l'application
+- [x] Logo de l'application
 - [ ] Application serveur
 
 
@@ -32,7 +32,7 @@ Observer les messages de la console (onglet ___Run___) :
 - en mettant l'application en arrière-plan ;
 - en fermant l'application.
 
-**Retrouve-t-on ce qui a été vu pendant le cours ?**
+**Retrouve-t-on ce qui a été vu pendant le cours ?**
 
 >Oui, on remarque notamment le `onDestroy` sur la rotation d'écran, ce qui explique le bsoin des Bundle pour sauvegarder les données.
 

@@ -6,16 +6,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     protected ArrayList<Button> btnsOrder = new ArrayList<>();
@@ -58,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
         // Retrieve orders
         Log.v("InstanceState", "Retrieving orders...");
         ArrayList<Order> savedOrders = savedInstanceState.getParcelableArrayList("orders");
-        Log.d("InstanceState", "Orders retrieved : " + savedOrders.size());
+
+        int ordersCount = (savedOrders != null) ? savedOrders.size() : 0;
+        Log.d("InstanceState", "Orders retrieved : " + ordersCount);
         this.orders.addAll(savedOrders);
 
         this.updateButtons();
@@ -86,40 +88,7 @@ public class MainActivity extends AppCompatActivity {
         products.add(new Product(91, getString(R.string.tiramisu), 2.99));
     }
 
-    protected void updateButtons() {
-        for (Button btn : btnsOrder) {
-            // Get product name
-            String productName = btn.getText().toString();
-            productName = productName.split(":")[0];
-            productName = productName.trim();
-
-            // Reset button text
-            btn.setText(productName);
-
-            Order o = null;
-            Product p = null;
-            for (Order order : orders) {
-                Product product = order.getProduct();
-                String orderProductName = product.getName();
-                if (orderProductName.equals(productName)) {
-                    o = order;
-                    p = product;
-                    break;
-                }
-            }
-
-            if (o == null) continue;
-
-            // Update button text
-            btn.setText(o.getProduct().getName() + " : " + o.getQuantity());
-
-            ClientThread ct = new ClientThread(this.tableNumber, p);
-            ct.run();
-        }
-    }
-
-
-    protected void onSaveInstanceState (Bundle outState) {
+    protected void onSaveInstanceState (@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putParcelableArrayList("orders", this.orders);
         Log.i("InstanceState", "Orders saved");
@@ -131,50 +100,101 @@ public class MainActivity extends AppCompatActivity {
         this.setListener(btn);
     }
 
+    protected void updateButtons() {
+        for (Button btn : btnsOrder) {
+            String productName = getProductName(btn);
+            this.resetButtonText(btn, productName);
+
+            Product p = this.getProduct(productName);
+            Order o = this.getOrSetOrder(p);
+
+            this.updateButtonText(btn, o , p);
+        }
+    }
+
     protected void setListener(Button btn) {
-        btn.setOnClickListener(v -> {
-            Button b = (Button) v;
-            String name = b.getText().toString();
-            // Remove number and comma
-            name = name.split(":")[0];
-            // Remove trailing whitespace
-            name = name.trim();
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button btn = (Button) v;
 
-            Product product = null;
-            for (Product p : products) {
-                if (p.getName().equals(name)) {
-                    product = p;
-                    break;
-                }
+                String name = getProductName(btn);
+                Product p = getProduct(name);
+                Order o = getOrSetOrder(p);
+
+                updateButtonText(btn, o, p);
+                orderProduct(p);
             }
-
-            if (product == null) {
-                Log.e("Product", "Product not found : " + name);
-                return;
-            } else {
-                Log.d("Product", "Product found : " + product.getName());
-            }
-
-            Order order = null;
-            for (Order o : orders) {
-                String productOrder = o.getProduct().getName();
-                if (productOrder.equals(product.getName())) {
-                    order = o;
-                    break;
-                }
-            }
-
-            if (order == null) {
-                order = new Order(product);
-                orders.add(order);
-                Log.i("Order", "Order created : " + order.getProduct().getName());
-            } else {
-                order.addQuantity();
-                Log.i("Order", "Order updated : " + order.getProduct().getName());
-            }
-
-            b.setText(product.getName() + " : " + order.getQuantity());
         });
+    }
+
+    private void orderProduct(Product p) {
+        Log.i("Server", "Starting client thread");
+        ClientThread ct = new ClientThread(this, tableNumber, p);
+        ct.start();
+    }
+
+    private void resetButtonText(Button btn, String productName) {
+        btn.setText(productName);
+    }
+
+    private void updateButtonText(Button b, Order o, Product p) {
+        String s = p.getName();
+        s += " : ";
+        s += o.getQuantity();
+        b.setText(s);
+    }
+
+    private String getProductName(Button b) {
+        String name = b.getText().toString();
+        name = name.split(":")[0]; // Remove number and comma
+        name = name.trim();              // Remove trailing whitespace(s)
+        return name;
+    }
+
+    private Product getProduct(String name) {
+        Product product = null;
+        for (Product p : products) {
+            if (p.getName().equals(name)) {
+                product = p;
+                break;
+            }
+        }
+
+        if (product == null) {
+            Log.e("Product", "Product not found : " + name);
+        } else {
+            Log.d("Product", "Product found : " + product.getName());
+        }
+
+        return product;
+    }
+
+    private Order getOrSetOrder(Product p) {
+        Order order = null;
+        for (Order o : orders) {
+            String productOrder = o.getProduct().getName();
+            if (productOrder.equals(p.getName())) {
+                order = o;
+                break;
+            }
+        }
+
+        if (order == null) {
+            order = new Order(p);
+            orders.add(order);
+            Log.i("Order", "Order created : " + order.getProduct().getName());
+        } else {
+            order.addQuantity();
+            Log.i("Order", "Order updated : " + order.getProduct().getName());
+        }
+
+        return order;
+    }
+
+    public void setTableText(String msg) {
+        TextView tv = findViewById(R.id.tableNumTextView);
+        tv.setText(msg);
     }
 
     @Override
