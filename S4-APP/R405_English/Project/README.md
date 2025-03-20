@@ -40,5 +40,63 @@ We engage in collaborative partnerships with academic institutions and other pha
 
 ## The product
 
-TODO : Product
+__Ethical Clinical Trial Matching Service__
+
+### Overview
+
+The Ethical Clinical Trial Matching Service is designed to connect patients with relevant clinical trials while ensuring ethical standards are upheld throughout the process. This service leverages advanced technologies to provide personalized and secure matching, prioritizing patient privacy, data security, and ethical considerations.
+
+### Tech Stack
+
+- __Database__
+  - PostgreSQL
+  - MongoDB
+- __Server__ : backend API
+  - Node.js
+  - Express
+- __AI and Machine Learning__ : Machine learning (ML) and Natural Language Processing (NLP)
+  - Python with TensorFlow
+  - spaCy
+- __Frontend__
+  - React
+  - Redux
+  - Tailwind CSS
+
+#### Security and Compliance
+
+- __Data Encryption__:
+  - __AES-256__: For encrypting sensitive patient data both at rest and in transit, ensuring data security and privacy.
+  - __TLS/SSL__: For securing data transmission between the client and server, protecting against eavesdropping and tampering.
+
+- __Authentication and Authorization__:
+  - __OAuth 2.0__: For secure and standardized authentication, allowing users to grant limited access to their data without exposing credentials.
+  - __JWT (JSON Web Tokens)__: For securely transmitting information between parties as a JSON object, ensuring secure and stateless authentication.
+
+- __Compliance__:
+  - __GDPR and HIPAA__: Ensuring compliance with data protection regulations, prioritizing patient privacy and data security.
+  - __Ethical AI Guidelines__: Adhering to guidelines for ethical AI development, ensuring transparency, fairness, and accountability in AI-driven matching processes.
+
+### Ethical Considerations
+
+#### Privacy and Consent
+
+- __Informed Consent__: Ensuring patients provide explicit consent for their data to be used in the matching process, with clear explanations of how their data will be used and protected.
+- __Data Minimization__: Only collecting and processing data that is necessary for the matching process, minimizing the risk of data breaches and misuse.
+
+#### Bias and Fairness
+
+- __Bias Mitigation__: Implementing algorithms that actively identify and mitigate biases in the matching process, ensuring fair and equitable access to clinical trials for all patients.
+- __Diverse Data Sets__: Using diverse and representative data sets for training machine learning models, reducing the risk of biased outcomes.
+
+#### Transparency and Accountability
+
+- __Transparent Algorithms__: Providing clear explanations of how the matching algorithms work, ensuring patients and healthcare providers understand the decision-making process.
+- __Audit Trails__: Maintaining detailed logs of data access and processing activities, enabling audits and ensuring accountability.
+
+#### Accessibility and Inclusivity
+
+- __Accessible Design__ : Ensuring the service is accessible to users with disabilities, adhering to Web Content Accessibility Guidelines (WCAG).
+- __Inclusive Language__: Using inclusive language in user interfaces and communications, respecting the diversity of patients and healthcare providers.
+
+By integrating these technologies and ethical considerations, the Ethical Clinical Trial Matching Service aims to provide a secure, fair, and transparent platform for connecting patients with relevant clinical trials, prioritizing patient well-being and ethical standards.
 
