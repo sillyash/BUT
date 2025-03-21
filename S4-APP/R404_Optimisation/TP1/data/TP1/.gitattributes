@@ -1,0 +1,8 @@
+graphe_creux.json filter=lfs diff=lfs merge=lfs -text
+graphe_dense.json filter=lfs diff=lfs merge=lfs -text
+reseau_ferre_idf/gares.json filter=lfs diff=lfs merge=lfs -text
+reseau_ferre_idf/graphe.json filter=lfs diff=lfs merge=lfs -text
+reseau_ferre_idf/sommets.json filter=lfs diff=lfs merge=lfs -text
+reseau_routier_idf/graphe_idf_annuaire.json filter=lfs diff=lfs merge=lfs -text
+reseau_routier_idf/graphe_idf.json filter=lfs diff=lfs merge=lfs -text
+reseau_routier_idf/graphe_idf_sommets.json filter=lfs diff=lfs merge=lfs -text
