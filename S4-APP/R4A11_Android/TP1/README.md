@@ -10,7 +10,9 @@ Ash MERIENNE
 - [x] Interface
 - [x] Animation de l'interface ([voir notes](#commandes))
 - [x] Plusieurs activités
-- [ ] Threads & réseau
+- [x] Threads & réseau
+- [ ] Fragments
+- [ ] Préférences
 
 ### Parties complémentaires
 
@@ -18,7 +20,11 @@ Ash MERIENNE
 - [ ] Plusieurs tailles d'écrans
 - [x] Réinitialisation des commandes
 - [x] Logo de l'application
-- [ ] Application serveur
+- [ ] Serveur Android
+- [ ] Afficher les messages du serveur dans une pop-up
+- [ ] Visualiser les ingrédients sélectionnés
+- [ ] Utiliser une liste d'ingrédients au lieu d'un bouton
+
 
 
 ## Questions de TP
