@@ -34,7 +34,7 @@ Observer les messages de la console (onglet ___Run___) :
 
 **Retrouve-t-on ce qui a été vu pendant le cours ?**
 
->Oui, on remarque notamment le `onDestroy` sur la rotation d'écran, ce qui explique le bsoin des Bundle pour sauvegarder les données.
+>Oui, on remarque notamment le `onDestroy` sur la rotation d'écran, ce qui explique le besoin des Bundle pour sauvegarder les données.
 
 
 ## Notes
