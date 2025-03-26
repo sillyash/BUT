@@ -38,7 +38,7 @@ Observer les messages de la console (onglet ___Run___) :
 
 
 ## Notes
-- [ ] manger du caca
+
 ### Commandes
 
 J'ai choisi d'implémenter les commandes sous forme OOP : c'est-à-dire que j'ai réalisé les classes `Order`, `Product` et leur implémentation dans `MainActivity`.
