@@ -34,11 +34,11 @@ Observer les messages de la console (onglet ___Run___) :
 
 **Retrouve-t-on ce qui a été vu pendant le cours ?**
 
->Oui, on remarque notamment le `onDestroy` sur la rotation d'écran, ce qui explique le bsoin des Bundle pour sauvegarder les données.
+>Oui, on remarque notamment le `onDestroy` sur la rotation d'écran, ce qui explique le besoin des Bundle pour sauvegarder les données.
 
 
 ## Notes
-
+- [ ] manger du caca
 ### Commandes
 
 J'ai choisi d'implémenter les commandes sous forme OOP : c'est-à-dire que j'ai réalisé les classes `Order`, `Product` et leur implémentation dans `MainActivity`.
