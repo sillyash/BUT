@@ -15,4 +15,12 @@
     <string name="inputTableNumberHint">13</string>
     <string name="tableDescription">Commande pour la table : </string>
     <string name="tableNumFormatError">Choisissez un nombre entre 1 et 99</string>
+    <string name="mozzarella">Mozzarella</string>
+    <string name="gorgonzola">Gorgonzola</string>
+    <string name="anchovies">Anchois</string>
+    <string name="capers">Câpres</string>
+    <string name="olives">Olives</string>
+    <string name="artichokes">Artichauds</string>
+    <string name="rawHam">Jambon cru</string>
+    <string name="cookedHam">Jambon cuit</string>
 </resources>

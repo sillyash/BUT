@@ -72,19 +72,14 @@ public class StartActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() { super.onStart(); Log.i("START", this.getClass().getName()); }
-
     @Override
     protected void onRestart() { super.onRestart(); Log.i("RESTART", this.getClass().getName()); }
-
     @Override
     protected void onResume() { super.onResume(); Log.i("RESUME", this.getClass().getName()); }
-
     @Override
     protected void onPause() { super.onPause(); Log.i("PAUSE", this.getClass().getName()); }
-
     @Override
     protected void onStop() { super.onStop(); Log.i("STOP", this.getClass().getName()); }
-
     @Override
     protected void onDestroy() { super.onDestroy(); Log.i("DESTROY", this.getClass().getName()); }
 }

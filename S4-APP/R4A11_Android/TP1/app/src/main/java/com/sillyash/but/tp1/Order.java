@@ -2,6 +2,8 @@ package com.sillyash.but.tp1;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 
@@ -48,6 +50,28 @@ public class Order implements Parcelable {
     public void writeToParcel(@NonNull Parcel parcel, int i) {
         parcel.writeInt(MainActivity.products.indexOf(product));
         parcel.writeInt(quantity);
+    }
+
+    public static Order getOrSetOrder(List<Order> orders, Product p) {
+        Order order = null;
+        for (Order o : orders) {
+            String productOrder = o.getProduct().getName();
+            if (productOrder.equals(p.getName())) {
+                order = o;
+                break;
+            }
+        }
+
+        if (order == null) {
+            order = new Order(p);
+            orders.add(order);
+            Log.i("Order", "Order created : " + order.getProduct().getName());
+        } else {
+            order.addQuantity();
+            Log.i("Order", "Order updated : " + order.getProduct().getName());
+        }
+
+        return order;
     }
 
     public void addQuantity() { this.quantity++; }

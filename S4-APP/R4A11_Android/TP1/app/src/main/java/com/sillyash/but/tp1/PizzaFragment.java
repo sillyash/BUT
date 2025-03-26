@@ -1,64 +1,107 @@
 package com.sillyash.but.tp1;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PizzaFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
 public class PizzaFragment extends Fragment {
+    protected MainActivity activity;
+    protected View view;
+    protected ArrayList<Button> btnsOrder = new ArrayList<>();
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public PizzaFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PizzaFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PizzaFragment newInstance(String param1, String param2) {
-        PizzaFragment fragment = new PizzaFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    public PizzaFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        this.activity = (MainActivity) getActivity();
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pizza, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        this.view = inflater.inflate(R.layout.fragment_pizza, container, false);
+
+        Log.i("PIZZAFRAGMENT", "onCreateView!!!!!");
+
+        Button btnDeleteOrders = view.findViewById(R.id.btnDeleteOrders);
+        btnDeleteOrders.setOnClickListener( v -> {
+            this.activity.orders.clear();
+            this.updateButtons();
+        });
+
+        this.initButtons();
+        return this.view;
     }
+
+    protected void initButtons() {
+        this.setPizzaButton(R.id.btn1);
+        this.setPizzaButton(R.id.btn2);
+        this.setPizzaButton(R.id.btn3);
+        this.setPizzaButton(R.id.btn4);
+        this.setPizzaButton(R.id.btn5);
+        this.setPizzaButton(R.id.btn6);
+        this.setPizzaButton(R.id.btn7);
+        this.setPizzaButton(R.id.btn8);
+    }
+
+    protected void setPizzaButton(int btnID) {
+        Button btn = view.findViewById(btnID);
+        this.btnsOrder.add(btn);
+        this.setListener(btn);
+    }
+
+    protected void updateButtons() {
+        for (Button btn : btnsOrder) {
+            String productName = Product.getProductName(btn);
+            this.resetButtonText(btn, productName);
+
+            Product p = Product.getProduct(activity.products, productName);
+            Order o = Order.getOrSetOrder(activity.orders, p);
+
+            this.updateButtonText(btn, o , p);
+        }
+    }
+
+    protected void setListener(Button btn) {
+        Log.v("BUTTON", "Setting listener on " + btn);
+        btn.setOnClickListener(v -> {
+            Button btn1 = (Button) v;
+
+            String name = Product.getProductName(btn1);
+            Product p = Product.getProduct(activity.products, name);
+            Order o = Order.getOrSetOrder(activity.orders, p);
+
+            updateButtonText(btn1, o, p);
+            Log.i("ORDER", "Ordering...");
+            activity.orderProduct(p);
+        });
+    }
+
+    void resetButtonText(Button btn, String productName) {
+        btn.setText(productName);
+    }
+
+    void updateButtonText(Button b, Order o, Product p) {
+        String s = p.getName();
+        s += " : ";
+        s += o.getQuantity();
+        b.setText(s);
+    }
+
+    @Override
+    public void onStart() { super.onStart(); Log.i("START", this.getClass().getName()); }
+    @Override
+    public void onResume() { super.onResume(); Log.i("RESUME", this.getClass().getName()); }
+    @Override
+    public void onPause() { super.onPause(); Log.i("PAUSE", this.getClass().getName()); }
+    @Override
+    public void onStop() { super.onStop(); Log.i("STOP", this.getClass().getName()); }
+    @Override
+    public void onDestroy() { super.onDestroy(); Log.i("DESTROY", this.getClass().getName()); }
 }

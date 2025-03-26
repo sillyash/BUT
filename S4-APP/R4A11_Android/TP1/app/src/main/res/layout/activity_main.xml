@@ -50,9 +50,11 @@
         android:name="com.sillyash.but.tp1.PizzaFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tableNumTextView"
+        tools:layout="@layout/fragment_pizza" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,6 +15,12 @@
     <string name="inputTableNumberHint">13</string>
     <string name="tableDescription">Order for table number : </string>
     <string name="tableNumFormatError">Choose a valid number between 1 and 99</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mozzarella">Mozzarella</string>
+    <string name="gorgonzola">Gorgonzola</string>
+    <string name="anchovies">Anchovies</string>
+    <string name="capers">Capers</string>
+    <string name="olives">Olives</string>
+    <string name="artichokes">Artichokes</string>
+    <string name="rawHam">Raw ham</string>
+    <string name="cookedHam">Cooked ham</string>
 </resources>
