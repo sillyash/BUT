@@ -28,23 +28,13 @@ aside{
 	background-size : cover;
 }
 
-.asideImages {
-	display: flex;
-
-	width: 100%;
-	padding: 2rem;
-	
-	background: none;
-	border: none;
-}
-
 #imagesCBX {
 	margin-left: 5px;
 	margin-right: 5px;
 }
 
-.selectedImage {
-	border: 3px solid lightcoral;
+#selectedImage {
+	border: 2px solid lightcoral;
 }
 
 aside p{

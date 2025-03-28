@@ -2,17 +2,10 @@ const filename = "images.js";
 console.info("File \"" + filename + "\" loaded.");
 
 function setImages() {
-	let divs = document.querySelectorAll('div[id^=cadre]');
-	
-	divs.forEach(
-		d => {
-			const uri = `url(./images/filtres_et_cadres/${d.id}.png)`;
-			d.style.backgroundImage = uri;
-			d.style.height = '150px';
-			d.style.backgroundSize = 'contain';
-			d.style.backgroundRepeat = 'no-repeat';
-			d.addEventListener('click', echange_images);
-		}
+	let images = document.querySelectorAll('.album > img');
+
+	images.forEach(
+		d => { d.addEventListener('click', echange_images); }
 	);
 }
 
@@ -20,7 +13,21 @@ function setImages() {
  * @param {Event} e 
  */
 function echange_images(e) {
+	let cbx = document.getElementById('imagesCBX');
+	if ( ! cbx.checked) return;
 
+	let selectedImage = document.getElementById('selectedImage');
+	let img = e.target;
+
+	if ( ! selectedImage) {
+		img.id = 'selectedImage';
+		return;
+	}
+
+	if ( selectedImage == e.target ) {
+		img.id = '';
+		return;
+	}
 }
 
 /* -------------------- Main -------------------- */
