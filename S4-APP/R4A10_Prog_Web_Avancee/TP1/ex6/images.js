@@ -14,13 +14,12 @@ function setImages() {
  */
 function echange_images(e) {
 	let cbx = document.getElementById('imagesCBX');
-	if ( ! cbx.checked) return;
-
 	let selectedImage = document.getElementById('selectedImage');
 	let img = e.target;
-
+	
 	// Aucune image déjà sélectionnée -> sélectionner
 	if ( ! selectedImage) {
+		if ( ! cbx.checked) return;
 		img.id = 'selectedImage';
 		return;
 	}
@@ -28,6 +27,15 @@ function echange_images(e) {
 	// Image cliquée deux fois -> désélectionner
 	if ( selectedImage == e.target ) {
 		img.id = '';
+		cbx.checked = false;
+		return;
+	}
+
+	// Si on a décoché entre temps, nettoyer
+	if ( ! cbx.checked) {
+		img.id = '';
+		selectedImage.id = '';
+		cbx.checked = false;
 		return;
 	}
 
@@ -42,7 +50,9 @@ function echange_images(e) {
 	if (selectedImageNextSibling) parent.insertBefore(img, selectedImageNextSibling);
 	else parent.appendChild(img);
 
+	// Nettoyer
 	selectedImage.id = '';
+	cbx.checked = false;
 }
 
 /* -------------------- Main -------------------- */
