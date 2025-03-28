@@ -39,12 +39,9 @@ function echange_images(e) {
 	parent.insertBefore(selectedImage, img);
 
 	// Déplacer img avant selectedImage
-	if (selectedImageNextSibling) {
-		parent.insertBefore(img, selectedImageNextSibling);
-	} else {
-		parent.appendChild(img);
-	}
-	
+	if (selectedImageNextSibling) parent.insertBefore(img, selectedImageNextSibling);
+	else parent.appendChild(img);
+
 	selectedImage.id = '';
 }
 
