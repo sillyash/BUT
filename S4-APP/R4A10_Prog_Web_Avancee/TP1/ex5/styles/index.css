@@ -30,12 +30,8 @@ aside{
 
 .asideImages {
 	display: flex;
-
-	width: 100%;
-	padding: 2rem;
-	
+	width: auto;
 	background: none;
-	border: none;
 }
 
 aside p{
