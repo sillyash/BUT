@@ -29,8 +29,7 @@ function setImages() {
  */
 function move_img(e) {
 	// Return if no left click
-	const btns = e.buttons;
-	if ( ! btns == 1) return;
+	if ( ! e.buttons == 1) return;
 	
 	let div = e.target;
 	const mouseX = e.movementX;
