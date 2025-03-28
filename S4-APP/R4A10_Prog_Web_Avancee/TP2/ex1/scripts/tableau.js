@@ -54,7 +54,19 @@ function insertAverages(rows, moyennes) {
  * @param {HTMLTableRowElement} aggregats
  */
 function insertAggregations(moyennes, aggregats) {
+    let index = 0;
+    for (cell of aggregats.cells) {
+        if (isTableHeader(cell)) continue;
+        let avg = 0;
+        cols = cell.colSpan;
 
+        for (let i=0; i<cols; i++) {
+            avg += moyennes.cells[i+index];
+        }
+        avg /= cols;
+        cell.innerHTML = avg;
+        index += cols;
+    }
 }
 
 /* -------------------- Main -------------------- */
