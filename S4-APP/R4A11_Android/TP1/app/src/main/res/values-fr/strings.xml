@@ -23,4 +23,6 @@
     <string name="artichokes">Artichauds</string>
     <string name="rawHam">Jambon cru</string>
     <string name="cookedHam">Jambon cuit</string>
+    <string name="customPizza">Pizza personnalisée</string>
+    <string name="backToPizza">Revenir au menu des pizzas</string>
 </resources>

@@ -23,4 +23,6 @@
     <string name="artichokes">Artichokes</string>
     <string name="rawHam">Raw ham</string>
     <string name="cookedHam">Cooked ham</string>
+    <string name="customPizza">Custom pizza</string>
+    <string name="backToPizza">Back to pizza menu</string>
 </resources>

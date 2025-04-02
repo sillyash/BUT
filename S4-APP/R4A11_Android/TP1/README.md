@@ -45,8 +45,29 @@ Observer les messages de la console (onglet ___Run___) :
 
 ## Notes
 
+### Packages
+
+Le code Java es divisé en plusieurs paquets :
+- Activities
+  - MainActivity.java
+  - StartActivity.java
+- Fragments
+  - IngredientFragment.java
+  - PizzaFragment.java
+- Models
+  - Ingredient
+  - OrderIngredient
+  - OrderProduct
+  - Product
+- Server
+  - ClientThreadCustomPizza
+  - ClientThreadPizza
+  - ServerTools
+
 ### Commandes
 
 J'ai choisi d'implémenter les commandes sous forme OOP : c'est-à-dire que j'ai réalisé les classes `Order`, `Product` et leur implémentation dans `MainActivity`.
 
-Pour avoir la persistance courte durée, j'ai tuilisé l'interface `Parcelable` dans la classe `Order`, qui en quelque sorte "sérialise" l'objet dans un `Bundle`.
+>Ces classes sont dans la package `Models`.
+
+Pour avoir la persistance courte durée, j'ai donc utilisé l'interface `Parcelable` dans la classe `Order`, qui en quelque sorte "sérialise" l'objet dans un `Bundle`.

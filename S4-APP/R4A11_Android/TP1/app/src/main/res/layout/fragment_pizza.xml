@@ -5,12 +5,12 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PizzaFragment">
+    tools:context=".Fragments.PizzaFragment">
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="3dp"
@@ -24,7 +24,7 @@
     <Button
         android:id="@+id/btn2"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="3dp"
@@ -39,7 +39,7 @@
     <Button
         android:id="@+id/btn3"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="3dp"
@@ -54,7 +54,7 @@
     <Button
         android:id="@+id/btn4"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="3dp"
@@ -69,7 +69,7 @@
     <Button
         android:id="@+id/btn5"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="3dp"
@@ -84,7 +84,7 @@
     <Button
         android:id="@+id/btn6"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="3dp"
@@ -99,7 +99,7 @@
     <Button
         android:id="@+id/btn7"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="3dp"
@@ -114,7 +114,7 @@
     <Button
         android:id="@+id/btn8"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="3dp"
@@ -129,7 +129,7 @@
     <Button
         android:id="@+id/btnDeleteOrders"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:layout_marginTop="5dp"
         android:text="@string/deleteOrders"
         android:textSize="20sp"
@@ -138,4 +138,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn8" />
+
+    <Button
+        android:id="@+id/btnCustomPizza"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/customPizza"
+        android:textSize="20sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintDimensionRatio="w,0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeleteOrders" />
 </androidx.constraintlayout.widget.ConstraintLayout>
