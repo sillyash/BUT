@@ -75,11 +75,41 @@ function insertAggregations(moyennes, aggregats) {
     }
 }
 
+
+function insertSortArrows(thead) {
+    const upArrow = '\u{2191}';
+    const downArrow = '\u{2193}';
+
+    let cols = thead.children[1].children;
+    let tr = document.createElement('tr');
+
+    for (col of cols) {
+        let td = document.createElement('td');
+
+        if ( ! isTableHeader(col)) {
+            tr.appendChild(td);
+            continue;
+        }
+
+        let btn1 = document.createElement('btn');
+        let btn2 = document.createElement('btn');
+
+        btn1.innerText = upArrow;
+        btn2.innerText = downArrow;
+
+        td.append(btn1, btn2);
+        tr.appendChild(td);
+    }
+
+    thead.appendChild(tr);
+} 
+
 /* -------------------- Main -------------------- */
 
 function main() {
 	let tab = document.querySelector('article > table');
 
+    let thead = tab.tHead;
     let tbody = tab.tBodies[0];
     let tfoot = tab.tFoot;
 
@@ -90,6 +120,8 @@ function main() {
     handleLowGrades(rows);
     insertAverages(rows, moyennes);
     insertAggregations(moyennes, aggregats);
+
+    insertSortArrows(thead)
 }
 
 document.addEventListener(
