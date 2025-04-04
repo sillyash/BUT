@@ -25,6 +25,7 @@ function fillJsonColumns(json, cols) {
 
 function fillJsonRows(json, rows) {
     tabJSON.lignes = [];
+    tabJSON.magiciens = [];
 
     for (let row of rows) {
         let cells = row.children;
@@ -32,6 +33,7 @@ function fillJsonRows(json, rows) {
 
         for (let cell of cells) {
             if ( ! isTableHeader(cell)) arr.push(parseInt(cell.innerHTML));
+            else tabJSON.magiciens.push(cell.innerHTML);
         }
 
         json.lignes.push(arr);
@@ -82,6 +84,16 @@ function table_to_mobile() {
         let j = 0;
         let filter = (i%2 == 0);
 
+        let trMag = document.createElement('tr');
+        let tdMag = document.createElement('td');
+
+        tdMag.innerHTML = tabJSON.magiciens[i];
+        tdMag.colSpan = 2;
+        tdMag.style.fontWeight = 'bold';
+
+        trMag.appendChild(tdMag);
+        tbody.appendChild(trMag);
+
         tabJSON.colonnes.forEach(col => {
             let tr = document.createElement('tr');
             if (filter) tr.style.filter = 'invert(0.1)';
@@ -112,14 +124,23 @@ function table_to_desktop() {
     let tbody = document.createElement('tbody');
     let trHead = document.createElement('tr');
 
+    let emptyCell = document.createElement('td');
+    trHead.appendChild(emptyCell);
+
     tabJSON.colonnes.forEach(col => {
         let th = document.createElement('th');
         th.innerHTML = col;
         trHead.appendChild(th);
     });
 
+    let i = 0;
     tabJSON.lignes.forEach(row => {
         let tr = document.createElement('tr');
+        let tdMag = document.createElement('td');
+
+        tdMag.innerHTML = tabJSON.magiciens[i++];
+        tdMag.style.fontWeight = 'bold';
+        tr.appendChild(tdMag);
 
         row.forEach(note => {
             let td = document.createElement('td');
