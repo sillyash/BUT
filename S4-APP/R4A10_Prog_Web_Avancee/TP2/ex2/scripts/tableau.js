@@ -63,12 +63,76 @@ function emptyTable(tab) {
 
 
 function table_to_mobile() {
+    let tab = document.querySelector('article > table');
+    emptyTable(tab);
 
+    let thead = document.createElement('thead');
+    let tbody = document.createElement('tbody');
+
+    let th1 = document.createElement('th');
+    let th2 = document.createElement('th');
+
+    th1.innerHTML = 'Discipline';
+    th2.innerHTML = 'Note';
+
+    thead.appendChild(th1);
+    thead.appendChild(th2);
+
+    for (let i=0; i<tabJSON.lignes.length; i++) {
+        let j = 0;
+        let filter = (i%2 == 0);
+
+        tabJSON.colonnes.forEach(col => {
+            let tr = document.createElement('tr');
+            if (filter) tr.style.filter = 'invert(0.1)';
+    
+            let td1 = document.createElement('td');
+            td1.innerHTML = col;
+            td1.style.fontWeight = 'bold';
+    
+            let td2 = document.createElement('td');
+            td2.innerHTML = tabJSON.lignes[i][j++];
+            
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+        });
+    }
+
+    tab.appendChild(thead);
+    tab.appendChild(tbody);
 }
 
 
 function table_to_desktop() {
+    let tab = document.querySelector('article > table');
+    emptyTable(tab);
 
+    let thead = document.createElement('thead');
+    let tbody = document.createElement('tbody');
+    let trHead = document.createElement('tr');
+
+    tabJSON.colonnes.forEach(col => {
+        let th = document.createElement('th');
+        th.innerHTML = col;
+        trHead.appendChild(th);
+    });
+
+    tabJSON.lignes.forEach(row => {
+        let tr = document.createElement('tr');
+
+        row.forEach(note => {
+            let td = document.createElement('td');
+            td.innerHTML = note;
+            tr.appendChild(td);
+        });
+
+        tbody.appendChild(tr);
+    })
+    
+    thead.appendChild(trHead);
+    tab.appendChild(thead);
+    tab.appendChild(tbody);
 }
 
 /* -------------------- Main -------------------- */
@@ -90,7 +154,7 @@ function main() {
 
     console.log(tabJSON);
 
-    emptyTable(tab);
+    table_to_desktop();
 }
 
 document.addEventListener(
