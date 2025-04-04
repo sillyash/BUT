@@ -54,8 +54,7 @@ function insertAverages(rows, moyennes) {
  * @param {HTMLTableRowElement} aggregats
  */
 function insertAggregations(moyennes, aggregats) {
-    let index = 0;
-    console.log(moyennes.cells, aggregats.cells);
+    let index = 1;
     
     for (cell of aggregats.cells) {
         if (isTableHeader(cell)) continue;
@@ -63,13 +62,11 @@ function insertAggregations(moyennes, aggregats) {
         cols = cell.colSpan;
 
         for (let i=0; i<cols; i++) {
-            console.log(index, i, moyennes.cells[i+index]);
-            avg += moyennes.cells[i+index];
+            //console.log('aggr :', index, 'i: ',i, 'moy: ', moyennes.cells[i+index]);
+            let moy = moyennes.cells[i+index].innerHTML;
+            moy = parseFloat(moy);
+            avg += moy;
         }
-
-        console.log(cols, avg);
-
-        avg = parseFloat(avg.innerHTML);
         avg /= cols;
         avg = Number(avg).toFixed(2);
 
