@@ -55,15 +55,24 @@ function insertAverages(rows, moyennes) {
  */
 function insertAggregations(moyennes, aggregats) {
     let index = 0;
+    console.log(moyennes.cells, aggregats.cells);
+    
     for (cell of aggregats.cells) {
         if (isTableHeader(cell)) continue;
         let avg = 0;
         cols = cell.colSpan;
 
         for (let i=0; i<cols; i++) {
+            console.log(index, i, moyennes.cells[i+index]);
             avg += moyennes.cells[i+index];
         }
+
+        console.log(cols, avg);
+
+        avg = parseFloat(avg.innerHTML);
         avg /= cols;
+        avg = Number(avg).toFixed(2);
+
         cell.innerHTML = avg;
         index += cols;
     }
