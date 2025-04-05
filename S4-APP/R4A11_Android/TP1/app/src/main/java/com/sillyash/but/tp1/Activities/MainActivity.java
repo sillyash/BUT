@@ -11,8 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.sillyash.but.tp1.Fragments.IngredientFragment;
 import com.sillyash.but.tp1.Fragments.PizzaFragment;
 import com.sillyash.but.tp1.Models.Ingredient;
 import com.sillyash.but.tp1.Models.OrderIngredient;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<OrderIngredient> orderIngredients = new ArrayList<>();
     public static ArrayList<Product> products = new ArrayList<>();
     public static ArrayList<Ingredient> ingredients = new ArrayList<>();
+    public static int currentView = 0;
     protected int tableNumber;
 
     @Override
@@ -55,10 +58,13 @@ public class MainActivity extends AppCompatActivity {
         String desc = getString(R.string.tableDescription) + ' ' + this.tableNumber;
         tv.setText(desc);
 
-        this.loadDefaultView();
+
 
         // If there is no saved instance state, return
-        if (savedInstanceState == null) return;
+        if (savedInstanceState == null) {
+            this.loadView();
+            return;
+        }
 
         // Retrieve orders
         Log.v("InstanceState", "Retrieving orders...");
@@ -75,18 +81,25 @@ public class MainActivity extends AppCompatActivity {
         int ingredientsCount = (savedIngredients != null) ? savedIngredients.size() : 0;
         Log.d("InstanceState", "Ingredients retrieved : " + ingredientsCount);
         this.orderIngredients.addAll(savedIngredients);
+
+        int view = savedInstanceState.getInt("currentView");
+        currentView = view;
+        this.loadView();
     }
 
-    protected void loadDefaultView() {
+    public void loadView() {
         // Get the FragmentManager
         FragmentManager fragmentManager = this.getSupportFragmentManager();
 
         // Create a new instance of PizzaFragment
-        PizzaFragment pizzaFragment = new PizzaFragment();
+        Fragment frag = null;
+
+        if (currentView == 0) frag = new PizzaFragment();
+        else frag = new IngredientFragment();
 
         // Begin a FragmentTransaction
         fragmentManager.beginTransaction()
-                .replace(R.id.frameLayout, pizzaFragment)
+                .replace(R.id.frameLayout, frag)
                 .addToBackStack(null)
                 .commit();
     }
@@ -122,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putParcelableArrayList("orders", this.orderProducts);
         outState.putParcelableArrayList("ingredients", this.orderIngredients);
+        outState.putInt("currentView", currentView);
         Log.i("InstanceState", "Orders saved");
     }
 

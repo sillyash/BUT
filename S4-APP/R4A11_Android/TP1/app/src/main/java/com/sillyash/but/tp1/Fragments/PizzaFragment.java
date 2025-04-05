@@ -65,18 +65,13 @@ public class PizzaFragment extends Fragment {
 
     protected void setIngredientButton() {
         Button btnCustomPizza = this.view.findViewById(R.id.btnCustomPizza);
+        if (btnCustomPizza == null) {
+            Log.e("PIZZAFRAGMENT", "btnCustomPizza is null");
+            return;
+        }
         btnCustomPizza.setOnClickListener( v -> {
-            // Get the FragmentManager
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager(); // Or getChildFragmentManager() if this is in a Fragment
-
-            // Create a new instance of PizzaFragment
-            IngredientFragment ingredientFragment = new IngredientFragment();
-
-            // Begin a FragmentTransaction
-            fragmentManager.beginTransaction()
-                    .replace(R.id.frameLayout, ingredientFragment)
-                    .addToBackStack(null)
-                    .commit();
+            MainActivity.currentView = 1;
+            this.activity.loadView();
         });
     }
 

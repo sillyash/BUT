@@ -12,6 +12,21 @@
         tools:context=".Fragments.PizzaFragment">
 
         <Button
+            android:id="@+id/btnBackToPizza"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="3dp"
+            android:text="@string/backToPizza"
+            android:textSize="20sp"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnValidate" />
+
+        <Button
             android:id="@+id/btnValidate"
             android:layout_width="0dp"
             android:layout_height="50dp"
@@ -28,7 +43,7 @@
         <Button
             android:id="@+id/btn1"
             android:layout_width="0dp"
-            android:layout_height="65dp"
+            android:layout_height="50dp"
             android:layout_marginStart="3dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="3dp"
@@ -42,7 +57,7 @@
         <Button
             android:id="@+id/btn2"
             android:layout_width="0dp"
-            android:layout_height="65dp"
+            android:layout_height="50dp"
             android:layout_marginStart="3dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="3dp"
@@ -57,7 +72,7 @@
         <Button
             android:id="@+id/btn3"
             android:layout_width="0dp"
-            android:layout_height="65dp"
+            android:layout_height="50dp"
             android:layout_marginStart="3dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="3dp"
@@ -71,7 +86,7 @@
         <Button
             android:id="@+id/btn4"
             android:layout_width="0dp"
-            android:layout_height="65dp"
+            android:layout_height="50dp"
             android:layout_marginStart="3dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="3dp"
@@ -86,7 +101,7 @@
         <Button
             android:id="@+id/btn5"
             android:layout_width="0dp"
-            android:layout_height="65dp"
+            android:layout_height="50dp"
             android:layout_marginStart="3dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="3dp"
@@ -100,7 +115,7 @@
         <Button
             android:id="@+id/btn6"
             android:layout_width="0dp"
-            android:layout_height="65dp"
+            android:layout_height="50dp"
             android:layout_marginStart="3dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="3dp"
@@ -115,7 +130,7 @@
         <Button
             android:id="@+id/btn7"
             android:layout_width="0dp"
-            android:layout_height="65dp"
+            android:layout_height="50dp"
             android:layout_marginStart="3dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="3dp"
@@ -129,7 +144,7 @@
         <Button
             android:id="@+id/btn8"
             android:layout_width="0dp"
-            android:layout_height="65dp"
+            android:layout_height="50dp"
             android:layout_marginStart="3dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="3dp"

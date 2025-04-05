@@ -2,6 +2,9 @@ package com.sillyash.but.tp1.Server;
 
 import android.util.Log;
 
+import androidx.fragment.app.DialogFragment;
+
+import com.sillyash.but.tp1.Fragments.PizzaDialog;
 import com.sillyash.but.tp1.Models.Ingredient;
 import com.sillyash.but.tp1.Activities.MainActivity;
 import com.sillyash.but.tp1.Models.OrderIngredient;
@@ -69,10 +72,14 @@ public class ClientThreadCustomPizza extends Thread {
         String serverMsg = this.in.readLine();
         Log.i("Server", serverMsg);
         this.activity.setTableText(serverMsg);
+        PizzaDialog pd = new PizzaDialog(serverMsg);
+        pd.show(activity.getSupportFragmentManager(), "PizzaDialog");
 
         serverMsg = this.in.readLine();
         Log.i("Server", serverMsg);
         this.activity.setTableText(serverMsg);
+        pd.setMessage(serverMsg);
+        pd.show(activity.getSupportFragmentManager(), "PizzaDialog");
     }
 
     protected void closeConnection() throws IOException {

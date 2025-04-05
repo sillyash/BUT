@@ -11,7 +11,7 @@ Ash MERIENNE
 - [x] Animation de l'interface ([voir notes](#commandes))
 - [x] Plusieurs activités
 - [x] Threads & réseau
-- [ ] Fragments
+- [x] Fragments
 - [ ] Préférences
 
 ### Parties complémentaires
@@ -21,7 +21,7 @@ Ash MERIENNE
 - [x] Réinitialisation des commandes
 - [x] Logo de l'application
 - [ ] Serveur Android
-- [ ] Afficher les messages du serveur dans une pop-up
+- [x] Afficher les messages du serveur dans une pop-up
 - [ ] Visualiser les ingrédients sélectionnés
 - [ ] Utiliser une liste d'ingrédients au lieu d'un bouton
 
