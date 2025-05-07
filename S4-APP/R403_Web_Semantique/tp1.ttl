@@ -1,20 +1,25 @@
-@prefix iut: <https://cours.iut-orsay.fr/qar/>.
-
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<https://cours.iut-orsay.fr/qar/cours1> <http://www.w3.org/2000/01/rdf-schema#label> "Qualité et au delà du relationnel"@fr .
+@prefix iut: <https://cours.iut-orsay.fr/qar/> .
+
+<https://cours.iut-orsay.fr/qar/cours1>
+<http://www.w3.org/2000/01/rdf-schema#label>
+"Qualité et au delà du relationnel"@fr .
 
 # Same as
 
-iut:cours1 rdfs:label "Qualité et au delà du relationnel"@fr .
+iut:cours1
+rdfs:label
+"Qualité et au delà du relationnel"@fr .
 
 iut:Barrack_Obama a foaf:Person .
 
-iut:Barrack_Obama foaf:depiction
+iut:Barrack_Obama
+foaf:depiction
 "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/960px-Official_portrait_of_Barack_Obama.jpg" .
+
 
