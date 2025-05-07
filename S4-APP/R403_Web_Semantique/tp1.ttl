@@ -2,7 +2,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
 @prefix iut: <https://cours.iut-orsay.fr/qar/> .
 
 # Q1
@@ -18,6 +17,4 @@ rdfs:label
 "Qualité et au delà du relationnel"@fr .
 
 # Q2
-
-iut:Barrack_Obama a foaf:Person .
 
