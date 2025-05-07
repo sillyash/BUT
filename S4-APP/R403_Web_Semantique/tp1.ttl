@@ -78,11 +78,11 @@ iut:City a rdfs:Class ;
 iut:city a rdf:Property ;
 		rdfs:domain iut:City ;
 		rdfs:range xsd:string ;
-		rdfs:label "Name"@en ;
+		rdfs:label "Name"@en .
 
 iut:country a rdf:Property ;
 		rdfs:domain iut:City ;
-		rdfs:range iut:Country
+		rdfs:range iut:Country ;
 		rdfs:label "Country"@en .
 
 ## Country
