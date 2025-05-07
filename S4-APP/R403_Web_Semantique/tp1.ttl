@@ -152,5 +152,129 @@ iut:tabmaster_pro_12 a iut:Tablet ;
 ## Pourquoi est-il important de spécifier le type d'un littéral en RDF ?
 ## > Car un litéral est par défaut un string.
 
+iut:Department a rdfs:Class ;
+		rdfs:label "Department"@en .
+
+iut:department a rdf:Property ;
+		rdfs:domain iut:Department ;
+		rdfs:range xsd:string ;
+		rdfs:label "Dpartment"@en .
+
+iut:country a rdf:Property ;
+		rdfs:domain iut:Department ;
+		rdfs:range iut:Country ;
+		rdfs:label "Country"@en .
+
+iut:department a rdf:Property ;
+		rdfs:domain iut:City ;
+		rdfs:range iut:Department ;
+		rdfs:label "Department"@en .
+
+iut:france a iut:Country ;
+		iut:country "France"@en .
+
+iut:essonne a iut:Department ;
+		iut:country iut:france ;
+		iut:department "Essonne"@en .
+
+iut:orsay a iut:City ;
+		iut:city "Orsay"@en ;
+		iut:country iut:france ;
+		iut:department iut:essonne .
+
+
+iut:Laboratory a rdfs:Class ;
+		rdfs:label "Laboratory"@en .
+
+iut:laboratory a rdf:Property ;
+		rdfs:domain iut:Laboratory ;
+		rdfs:range xsd:string ;
+		rdfs:label "Laboratory"@en .
+
+iut:acronym a rdf:Property ;
+		rdfs:domain iut:Laboratory ;
+		rdfs:range xsd:string ;
+		rdfs:label "Acronym"@en .
+
+iut:acronym a rdf:Property ;
+		rdfs:domain iut:Laboratory ;
+		rdfs:range iut:University ;
+		rdfs:label "University"@en .
+
+
+iut:University a rdfs:Class ;
+		rdfs:label "University"@en .
+
+iut:university a rdf:Property ;
+		rdfs:domain iut:University ;
+		rdfs:range xsd:string ;
+		rdfs:label "University"@en .
+
+iut:department a rdf:Property ;
+		rdfs:domain iut:University ;
+		rdfs:range iut:Department ;
+		rdfs:label "Department"@en .
+
+
+iut:Researcher a rdfs:Class ;
+		rdfs:label "Researcher"@en .
+
+iut:Researcher rdfs:subClassOf iut:Person .
+
+iut:LabTeam a rdfs:Class ;
+		rdfs:label "Laboratory team"@en .
+
+iut:labteam a rdf:Property ;
+		rdfs:domain iut:LabTeam ;
+		rdfs:range xsd:string ;
+		rdfs:label "Lab Team"@en .
+
+iut:members a rdf:Property ;
+		rdfs:domain iut:LabTeam ;
+		rdfs:range iut:Resarcher ;
+		rdfs:label "Members"@en .
+
+iut:director a rdf:Property ;
+		rdfs:domain iut:LabTeam ;
+		rdfs:range iut:Researcher ;
+		rdfs:label "Director"@en .
+
+
+
+iut:ileDeFrance a iut:Department ;
+		iut:department "Île de France"@fr ;
+		iut:country iut:france .
+
+iut:parisSaclay a iut:University ;
+		iut:university "Université Paris-Saclay"@en ;
+		iut:Department iut:ileDeFrance .
+
+iut:fatiha_sais a iut:Researcher ;
+		iut:name "Saïs" ;
+		iut:surname "Fatiha" .
+
+iut:alain_denise a iut:Researcher ;
+		iut:name "Denise" ;
+		iut:surname "Alain" .
+
+iut:lahdak a iut:LabTeam ;
+		iut:labteam "LAHDAK" ;
+		iut:director iut:fatiha_sais .
+
+iut:bioinfo a iut:LabTeam ;
+		iut:labteam "BIOINFO" ;
+		iut:director iut:alain_denise .
+
+iut:lisn a iut:Laboratory ;
+		iut:laboratory "Laboratoire Interdisciplinaire des Sciences du Numérique"@fr ;
+		iut:acronym "LISN" ;
+		iut:university iut:parisSaclay ;
+		iut:labteam iut:lahdak, iut:bioinfo .
+
+iut:lrb a iut:Laboratory ;
+		iut:laboratory "Laboratoire de Recherche en Biologie"@fr ;
+		iut:acronym "LRB" ;
+		iut:university iut:parisSaclay ;
+		iut:labteam iut:lahdak .
 
 
