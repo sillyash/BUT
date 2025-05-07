@@ -18,8 +18,3 @@ rdfs:label
 
 iut:Barrack_Obama a foaf:Person .
 
-iut:Barrack_Obama
-foaf:depiction
-"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/960px-Official_portrait_of_Barack_Obama.jpg" .
-
-
