@@ -18,3 +18,96 @@ rdfs:label
 
 # Q2
 
+# Classes
+
+## Person
+iut:Person a rdfs:Class ;
+    rdfs:label "Person"@en .
+
+iut:name a rdf:Property ;
+    rdfs:domain iut:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Name"@en .
+
+iut:surname a rdf:Property ;
+    rdfs:domain iut:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Surname"@en .
+
+iut:birthdate a rdf:Property ;
+    rdfs:domain iut:Person ;
+    rdfs:range xsd:date ;
+    rdfs:label "Birthdate"@en .
+
+iut:cityBorn a rdf:Property ;
+		rdfs:domain iut:Person ;
+		rdfs:range iut:City ;
+		rdfs:label "Birthplace"@en .
+
+## Position
+iut:Position a rdfs:Class ;
+		rdfs:label "Position"@en .
+
+iut:startDate a rdf:Property ;
+		rdfs:domain iut:Position ;
+		rdfs:range xsd:date ;
+		rdfs:label "Start date"@en .
+
+iut:endDate a rdf:Property ;
+		rdfs:domain iut:Position ;
+		rdfs:range xsd:date ;
+		rdfs:label "End date"@en .
+
+iut:position a rdf:Property ;
+		rdfs:domain iut:Position ;
+		rdfs:range xsd:string ;
+		rdfs:label "Position"@en .
+
+## Politician
+iut:Politician rdfs:subClassOf iut:Person ;
+    rdfs:label "Politician"@en .
+
+## AmericanPolitician
+iut:AmericanPolitician rdfs:subClassOf iut:Politician ;
+    rdfs:label "American Politician"@en .
+
+## City
+iut:City a rdfs:Class ;
+		rdfs:label "City"@en .
+
+iut:city a rdf:Property ;
+		rdfs:domain iut:City ;
+		rdfs:range xsd:string ;
+		rdfs:label "Name"@en ;
+
+iut:country a rdf:Property ;
+		rdfs:domain iut:City ;
+		rdfs:range iut:Country
+		rdfs:label "Country"@en .
+
+## Country
+iut:Country a rdfs:Class ;
+		rdfs:label "Country"@en .
+
+iut:country a rdf:Property ;
+		rdfs:domain iut:Country ;
+		rdfs:range xsd:string ;
+		rdfs:label "Name"@en .
+
+
+# Instances
+iut:hawaii a iut:Country ;
+	iut:country "Hawaii" .
+
+iut:honolulu a iut:City ;
+		iut:city "Honolulu" ;
+		iut:country iut:hawaii .
+
+iut:barrack_obama a iut:AmericanPolitician ;
+		rdfs:label "Barrack Obama" ;
+    iut:surname "Obama" ;
+    iut:name "Barrack" ;
+    iut:birthdate "1961-08-06"^^xsd:date ;
+		iut:cityBorn iut:honolulu .
+
+
