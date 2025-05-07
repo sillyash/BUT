@@ -110,4 +110,47 @@ iut:barrack_obama a iut:AmericanPolitician ;
     iut:birthdate "1961-08-06"^^xsd:date ;
 		iut:cityBorn iut:honolulu .
 
+# Q3
+
+iut:Product a rdfs:Class ;
+		rdfs:label "Product"@en .
+
+iut:product a rdf:Property ;
+		rdfs:domain iut:Product ;
+		rdfs:range xsd:string ;
+		rdfs:label "Product"@en .
+
+iut:price a rdf:Property ;
+		rdfs:domain iut:Product ;
+		rdfs:range xsd:float ;
+		rdfs:label "Price"@en .
+
+iut:unitsSold a rdf:Property ;
+		rdfs:domain iut:Product ;
+		rdfs:range xsd:integer ;
+		rdfs:label "Units sold"@en .
+
+iut:marketedDate a rdf:Property ;
+		rdfs:domain iut:Product ;
+		rdfs:range xsd:date ;
+		rdfs:label "Marketed on"@en .
+
+iut:isInStock a rdf:Property ;
+		rdfs:domain iut:Product ;
+		rdfs:range xsd:boolean ;
+		rdfs:label "Is in stock"@en .
+
+iut:TechProduct rdfs:subClassOf iut:Product .
+iut:Tablet rdfs:subClassOF iut:TechProduct .
+
+iut:tabmaster_pro_12 a iut:Tablet ;
+		iut:product "TabMaster Pro 12"@en ;
+		iut:price "499.99"^^xsd:float ;
+		iut:unitsSold "10452"^^xsd:integer ;
+		iut:marketedDate "2025-01-15"^^xsd:date .
+
+## Pourquoi est-il important de spécifier le type d'un littéral en RDF ?
+## > Car un litéral est par défaut un string.
+
+
 
