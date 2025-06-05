@@ -1,0 +1,107 @@
+@prefix iut: <https://cours.iut-orsay.fr/qar/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+@prefix geof: <http://www.opengis.net/def/function/geosparql/>.
+@prefix uom: <http://www.opengis.net/def/uom/OGC/1.0/> .
+
+# Entité 			    # Type 			 # WKT
+# --------------------- # -------------- # ---------------------
+# Paris                   Commune          POLYGON((2.25 48.8, 2.42 48.8, 2.42 48.92, 2.25 48.92, 2.25 48.8))
+# Tour Eiffel 			  Monument 		   POINT(2.2945 48.8584)
+# Musée du Louvre 		  Musée 		   POINT(2.3376 48.8606)
+# Musée d'Orsay 		  Musée 		   POINT(2.3266 48.8599)
+# Tour Montparnasse 	  Gratte-Ciel 	   POINT(2.3213 48.8421)
+# Panthéon 				  Monument 		   POINT(2.3460 48.8462)
+# Jardin du Luxembourg 	  Jardin 		   POLYGON((2.331 48.846, 2.334 48.846, 2.334 48.849, 2.331 48.849, 2.331 48.846))
+# Champs-Élysées 		  Avenue 		   LINESTRING(2.298 48.872, 2.307 48.873, 2.313 48.874, 2.320 48.875, 2.327 48.876)
+# La Seine 				  Fleuve 		   LINESTRING(2.25 48.83, 2.30 48.85, 2.35 48.86, 2.42 48.87)
+
+iut:paris a iut:Commune ;
+    rdfs:label "Paris"@fr ;
+    rdf:type geo:Feature ;
+    geo:hasGeometry iut:parisGeo .
+
+iut:parisGeo a geo:Geometry ;
+    geo:asWKT "POLYGON((2.25 48.8, 2.42 48.8, 2.42 48.92, 2.25 48.92, 2.25 48.8))"^^geo:wktLiteral .
+
+############
+
+iut:tourEiffel a iut:Monument ;
+    rdfs:label "Tour Eiffel"@fr ;
+    rdf:type geo:Feature ;
+    geo:hasGeometry iut:eiffelGeo .
+
+iut:eiffelGeo a geo:Geometry ;
+    geo:asWKT "POINT(2.2945 48.8584)"^^geo:wktLiteral .
+
+############
+
+iut:louvre a iut:Musée ;
+    rdfs:label "Musée du Louvre"@fr ;
+    rdf:type geo:Feature ;
+    geo:hasGeometry iut:louvreGeo .
+
+iut:louvreGeo a geo:Geometry ;
+    geo:asWKT "POINT(2.3376 48.8606)"^^geo:wktLiteral .
+
+############
+
+iut:orsayMusee a iut:Musée ;
+    rdfs:label "Musée d'Orsay"@fr ;
+    rdf:type geo:Feature ;
+    geo:hasGeometry iut:orsayGeo .
+
+iut:orsayGeo a geo:Geometry ;
+    geo:asWKT "POINT(2.3266 48.8599)"^^geo:wktLiteral .
+
+############
+
+iut:tourMontp a iut:GratteCiel ;
+    rdfs:label "Tour Montparnasse"@fr ;
+    rdf:type geo:Feature ;
+    geo:hasGeometry iut:montpGeo .
+
+iut:montpGeo a geo:Geometry ;
+    geo:asWKT "POINT(2.3213 48.8421)"^^geo:wktLiteral .
+
+############
+
+iut:pantheon a iut:Monument ;
+    rdfs:label "Panthéon"@fr ;
+    rdf:type geo:Feature ;
+    geo:hasGeometry iut:pantheonGeo .
+
+iut:pantheonGeo a geo:Geometry ;
+    geo:asWKT "POINT(2.3460 48.8462)"^^geo:wktLiteral .
+
+############
+
+iut:jardinLuco a iut:Jardin ;
+    rdfs:label "Jardin du Luxembourg"@fr ;
+    rdf:type geo:Feature ;
+    geo:hasGeometry iut:lucoGeo .
+
+iut:lucoGeo a geo:Geometry ;
+    geo:asWKT "POLYGON((2.331 48.846, 2.334 48.846, 2.334 48.849, 2.331 48.849, 2.331 48.846))"^^geo:wktLiteral .
+
+############
+
+iut:champsElysees a iut:Avenue ;
+    rdfs:label "Champs-Élysées"@fr ;
+    rdf:type geo:Feature ;
+    geo:hasGeometry iut:champsElyseesGeo .
+
+iut:champsElyseesGeo a geo:Geometry ;
+    geo:asWKT "LINESTRING(2.298 48.872, 2.307 48.873, 2.313 48.874, 2.320 48.875, 2.327 48.876)"^^geo:wktLiteral .
+
+############
+
+iut:seine a iut:Fleuve ;
+    rdfs:label "La Seine"@fr ;
+    rdf:type geo:Feature ;
+    geo:hasGeometry iut:seineGeo .
+
+iut:seineGeo a geo:Geometry ;
+    geo:asWKT "LINESTRING(2.25 48.83, 2.30 48.85, 2.35 48.86, 2.42 48.87)"^^geo:wktLiteral .
