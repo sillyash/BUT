@@ -1,0 +1,25 @@
+services:
+  nagios:
+    build: .
+    ports:
+      - "127.0.0.1:8080:80"
+    networks:
+      custom_network:
+        aliases:
+          - nagios
+    hostname: nagios
+  
+  nginx:
+    image: "nginx:latest"
+    command: nginx -g "daemon off;"
+    ports:
+      - "127.0.0.2:8080:80"
+    networks:
+      custom_network:
+        aliases:
+          - nginx
+    hostname: nginx
+
+networks:
+  custom_network:
+    driver: bridge
