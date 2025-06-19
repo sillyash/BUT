@@ -1,0 +1,2608 @@
+@prefix iut: <https://cours.iut-orsay.fr/iws/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geof: <http://www.opengis.net/def/function/geosparql/> .
+@prefix uom: <http://www.opengis.net/def/uom/OGC/1.0/> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+<https://cours.iut-orsay.fr/iws/commune/75101> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19013;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 01"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19013 geo:asWKT "Point(2.33629344655 48.8626304852)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75102> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19014;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 02"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19014 geo:asWKT "Point(2.34410716666 48.8679033789)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75103> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19015;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 03"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19015 geo:asWKT "Point(2.35936105897 48.8630541318)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75104> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19016;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 04"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19016 geo:asWKT "Point(2.35736193814 48.854228282)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75105> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19017;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 05"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19017 geo:asWKT "Point(2.34985938556 48.8445086596)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75106> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19018;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 06"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19018 geo:asWKT "Point(2.33267089859 48.8489680919)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75107> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19019;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 07"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19019 geo:asWKT "Point(2.31243868773 48.8560825982)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75108> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19020;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 08"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19020 geo:asWKT "Point(2.31258256042 48.8725272666)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75109> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19021;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 09"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19021 geo:asWKT "Point(2.33746024139 48.8768961624)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75110> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19022;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 10"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19022 geo:asWKT "Point(2.36111290456 48.8760285569)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75111> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19023;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 11"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19023 geo:asWKT "Point(2.37874106024 48.8594154976)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75112> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19024;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 12"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19024 geo:asWKT "Point(2.41980703497 48.8351562307)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75113> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19025;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 13"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19025 geo:asWKT "Point(2.36246822852 48.8287176845)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75114> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19026;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 14"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19026 geo:asWKT "Point(2.32710088326 48.8289932116)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75115> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19027;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 15"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19027 geo:asWKT "Point(2.29355937244 48.8401554186)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75116> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19028;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 16"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19028 geo:asWKT "Point(2.2620995594 48.8603987604)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75117> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19029;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 17"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19029 geo:asWKT "Point(2.30748555949 48.8873371665)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75118> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19030;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 18"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19030 geo:asWKT "Point(2.34871193387 48.8927350746)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75119> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19031;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 19"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19031 geo:asWKT "Point(2.38469432787 48.886868623)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/75120> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19032;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/75>;
+  iut:nom "Paris 20"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19032 geo:asWKT "Point(2.40081982673 48.8631867774)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/77122> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19033;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/77>;
+  iut:nom "Combs-la-Ville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19033 geo:asWKT "Point(2.57516916269 48.657908631)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/77251> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19034;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/77>;
+  iut:nom "Lieusaint"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19034 geo:asWKT "Point(2.54994732668 48.6259910244)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/77326> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19035;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/77>;
+  iut:nom "Nandy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19035 geo:asWKT "Point(2.54782852721 48.5821287279)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/77450> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19036;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/77>;
+  iut:nom "Servon"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19036 geo:asWKT "Point(2.59164264543 48.7150535859)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78007> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19037;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Aigremont"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19037 geo:asWKT "Point(2.0153630611 48.9008380509)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78030> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19038;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Auffargis"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19038 geo:asWKT "Point(1.90243823035 48.6842952632)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78043> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19039;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Bailly"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19039 geo:asWKT "Point(2.08067809572 48.8366896896)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78050> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19040;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Bazoches-sur-Guyonne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19040 geo:asWKT "Point(1.85242453244 48.7738475764)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78062> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19041;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Beynes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19041 geo:asWKT "Point(1.86989017513 48.854444414)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78073> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19042;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Bois-d'Arcy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19042 geo:asWKT "Point(2.01911294303 48.8044185716)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78087> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19043;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Bonnelles"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19043 geo:asWKT "Point(2.0296290825 48.6181895067)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78092> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19044;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Bougival"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19044 geo:asWKT "Point(2.13760707765 48.8635986439)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78108> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19045;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Bréviaires"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19045 geo:asWKT "Point(1.81639481084 48.7212410686)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78117> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19046;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Buc"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19046 geo:asWKT "Point(2.12394286717 48.7718338876)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78120> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19047;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Bullion"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19047 geo:asWKT "Point(1.98307952001 48.6245810321)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78123> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19048;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Carrières-sous-Poissy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19048 geo:asWKT "Point(2.02913706544 48.9455638989)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78124> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19049;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Carrières-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19049 geo:asWKT "Point(2.17838235323 48.9119335064)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78125> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19050;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Celle-les-Bordes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19050 geo:asWKT "Point(1.94488436228 48.6416446846)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78126> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19051;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Celle-Saint-Cloud"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19051 geo:asWKT "Point(2.13519126228 48.8469487124)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78128> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19052;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Cernay-la-Ville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19052 geo:asWKT "Point(1.95970981041 48.6696344922)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78133> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19053;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Chambourcy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19053 geo:asWKT "Point(2.03321565205 48.8960592796)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78143> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19054;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Châteaufort"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19054 geo:asWKT "Point(2.09509831044 48.7390044414)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78146> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19055;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Chatou"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19055 geo:asWKT "Point(2.15393458329 48.8965574645)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78152> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19056;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Chavenay"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19056 geo:asWKT "Point(1.98288004519 48.8483573502)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78158> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19057;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Chesnay"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19057 geo:asWKT "Point(2.13014908209 48.8272397742)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78160> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19058;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Chevreuse"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19058 geo:asWKT "Point(2.03714431459 48.707150143)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78162> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19059;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Choisel"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19059 geo:asWKT "Point(2.01450641994 48.6739368242)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78164> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19060;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Clairefontaine-en-Yvelines"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19060 geo:asWKT "Point(1.90638035997 48.6167741818)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78165> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19061;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Clayes-sous-Bois"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19061 geo:asWKT "Point(1.9840595554 48.8186406601)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78168> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19062;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Coignières"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19062 geo:asWKT "Point(1.91381870273 48.7497670046)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78189> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19063;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Crespières"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19063 geo:asWKT "Point(1.921122695 48.8822021619)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78190> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19064;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Croissy-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19064 geo:asWKT "Point(2.13541164589 48.8787825592)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78193> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19065;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Dampierre-en-Yvelines"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19065 geo:asWKT "Point(1.97307941128 48.7037164037)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78196> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19066;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Davron"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19066 geo:asWKT "Point(1.94749093682 48.8636419011)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78208> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19067;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Élancourt"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19067 geo:asWKT "Point(1.96049898519 48.7781596518)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78220> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19068;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Essarts-le-Roi"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19068 geo:asWKT "Point(1.8952517006 48.716019265)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78224> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19069;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Étang-la-Ville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19069 geo:asWKT "Point(2.06048754387 48.8674116059)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78233> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19070;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Feucherolles"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19070 geo:asWKT "Point(1.97983777956 48.8800880696)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78242> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19071;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Fontenay-le-Fleury"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19071 geo:asWKT "Point(2.04662335413 48.8177984988)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78251> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19072;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Fourqueux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19072 geo:asWKT "Point(2.05562938511 48.8853336012)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78297> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19073;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Guyancourt"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19073 geo:asWKT "Point(2.07605207737 48.7730783892)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78311> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19074;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Houilles"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19074 geo:asWKT "Point(2.1874640255 48.9265781359)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78321> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19075;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Jouars-Pontchartrain"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19075 geo:asWKT "Point(1.90784227893 48.7904544648)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78322> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19076;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Jouy-en-Josas"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19076 geo:asWKT "Point(2.16266396041 48.7661635434)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78334> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19077;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Lévis-Saint-Nom"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19077 geo:asWKT "Point(1.93544246617 48.7266074685)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78343> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19078;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Loges-en-Josas"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19078 geo:asWKT "Point(2.13911723694 48.7624385138)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78349> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19079;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Longvilliers"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19079 geo:asWKT "Point(1.99920343837 48.5741940135)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78350> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19080;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Louveciennes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19080 geo:asWKT "Point(2.11364039022 48.8590188206)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78356> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19081;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Magny-les-Hameaux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19081 geo:asWKT "Point(2.0519793397 48.7410207273)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78358> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19082;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Maisons-Laffitte"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19082 geo:asWKT "Point(2.15161594901 48.9523369002)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78366> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19083;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Mareil-le-Guyon"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19083 geo:asWKT "Point(1.85148876174 48.7910883719)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78367> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19084;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Mareil-Marly"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19084 geo:asWKT "Point(2.07668355901 48.8807836526)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78372> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19085;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Marly-le-Roi"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19085 geo:asWKT "Point(2.09125004298 48.865007453)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78383> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19086;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Maurepas"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19086 geo:asWKT "Point(1.92404037065 48.7698393561)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78389> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19087;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Méré"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19087 geo:asWKT "Point(1.81994051826 48.7955470885)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78396> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19088;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Mesnil-le-Roi"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19088 geo:asWKT "Point(2.1221732386 48.9257999518)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78397> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19089;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Mesnil-Saint-Denis"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19089 geo:asWKT "Point(1.96613835861 48.7402250614)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78398> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19090;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Mesnuls"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19090 geo:asWKT "Point(1.83436184333 48.754542649)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78406> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19091;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Milon-la-Chapelle"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19091 geo:asWKT "Point(2.04661853944 48.7284642837)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78418> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19092;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Montesson"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19092 geo:asWKT "Point(2.1399267913 48.9172263937)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78420> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19093;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Montfort-l'Amaury"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19093 geo:asWKT "Point(1.80894544858 48.771347152)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78423> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19094;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Montigny-le-Bretonneux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19094 geo:asWKT "Point(2.02952194549 48.779658781)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78442> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19095;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Neauphle-le-Château"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19095 geo:asWKT "Point(1.90470412718 48.8130997421)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78443> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19096;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Neauphle-le-Vieux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19096 geo:asWKT "Point(1.85898101008 48.8151801039)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78455> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19097;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Noisy-le-Roi"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19097 geo:asWKT "Point(2.05479110499 48.8465154476)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78466> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19098;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Orgeval"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19098 geo:asWKT "Point(1.96928773573 48.9164887331)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78481> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19099;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Pecq"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19099 geo:asWKT "Point(2.10503635898 48.8936170481)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78486> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19100;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Perray-en-Yvelines"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19100 geo:asWKT "Point(1.84356131142 48.6968018136)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78490> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19101;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Plaisir"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19101 geo:asWKT "Point(1.94698515715 48.8126082296)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78498> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19102;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Poissy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19102 geo:asWKT "Point(2.02715552772 48.9235359371)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78499> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19103;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Ponthévrard"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19103 geo:asWKT "Point(1.90806414752 48.5499350037)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78502> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19104;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Port-Marly"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19104 geo:asWKT "Point(2.10903947427 48.8804759755)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78517> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19105;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Rambouillet"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19105 geo:asWKT "Point(1.82652871851 48.6539051954)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78518> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19106;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Rennemoulin"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19106 geo:asWKT "Point(2.04229462765 48.8332483875)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78522> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19107;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Rochefort-en-Yvelines"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19107 geo:asWKT "Point(1.97977823093 48.5924280148)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78524> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19108;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Rocquencourt"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19108 geo:asWKT "Point(2.10442227131 48.8327186556)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78537> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19109;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Saint-Arnoult-en-Yvelines"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19109 geo:asWKT "Point(1.93463847942 48.5725220079)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78545> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19110;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Saint-Cyr-l'École"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19110 geo:asWKT "Point(2.0659250703 48.8065759294)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78548> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19111;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Saint-Forget"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19111 geo:asWKT "Point(1.99703639595 48.7127668824)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78550> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19112;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Saint-Germain-de-la-Grange"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19112 geo:asWKT "Point(1.90235458205 48.8330731847)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78551> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19113;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Saint-Germain-en-Laye"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19113 geo:asWKT "Point(2.09870929375 48.9407041394)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78561> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19114;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Saint-Lambert"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19114 geo:asWKT "Point(2.00622958047 48.7339427592)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78564> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19115;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Saint-Martin-de-Bréthencourt"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19115 geo:asWKT "Point(1.91568171795 48.5148592192)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78569> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19116;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Sainte-Mesme"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19116 geo:asWKT "Point(1.94057719252 48.5356862351)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78571> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19117;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Saint-Nom-la-Bretèche"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19117 geo:asWKT "Point(2.01915428049 48.8634050098)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78575> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19118;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Saint-Rémy-lès-Chevreuse"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19118 geo:asWKT "Point(2.07898924956 48.703873758)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78576> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19119;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Saint-Rémy-l'Honoré"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19119 geo:asWKT "Point(1.87573805831 48.7487507773)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78586> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19120;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Sartrouville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19120 geo:asWKT "Point(2.17458686513 48.9396085498)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78590> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19121;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Senlisse"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19121 geo:asWKT "Point(1.97174310378 48.6854188568)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78601> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19122;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Sonchamp"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19122 geo:asWKT "Point(1.86888636176 48.5880930813)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78615> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19123;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Thiverval-Grignon"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19123 geo:asWKT "Point(1.93387158899 48.8442697487)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78620> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19124;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Toussus-le-Noble"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19124 geo:asWKT "Point(2.1179056339 48.7466272252)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78621> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19125;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Trappes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19125 geo:asWKT "Point(1.99344014312 48.7750019561)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78623> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19126;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Tremblay-sur-Mauldre"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19126 geo:asWKT "Point(1.878022372 48.7834999157)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78640> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19127;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Vélizy-Villacoublay"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19127 geo:asWKT "Point(2.19707485523 48.783985823)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78644> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19128;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Verrière"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19128 geo:asWKT "Point(1.95133109322 48.7545862133)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78646> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19129;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Versailles"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19129 geo:asWKT "Point(2.11789297191 48.8025669671)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78650> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19130;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Vésinet"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19130 geo:asWKT "Point(2.13039312004 48.8938640591)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78653> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19131;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Vicq"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19131 geo:asWKT "Point(1.82843694709 48.821484306)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78655> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19132;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Vieille-Église-en-Yvelines"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19132 geo:asWKT "Point(1.87479828191 48.669743712)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78672> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19133;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Villennes-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19133 geo:asWKT "Point(1.99586527491 48.9368195223)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78674> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19134;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Villepreux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19134 geo:asWKT "Point(2.0130908572 48.8311450096)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78683> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19135;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Villiers-Saint-Frédéric"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19135 geo:asWKT "Point(1.88250820601 48.8201784594)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78686> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19136;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Viroflay"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19136 geo:asWKT "Point(2.17151291149 48.802404069)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/78688> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19137;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/78>;
+  iut:nom "Voisins-le-Bretonneux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19137 geo:asWKT "Point(2.04850691768 48.758677648)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91017> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19138;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Angervilliers"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19138 geo:asWKT "Point(2.05864904136 48.5911202876)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91021> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19139;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Arpajon"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19139 geo:asWKT "Point(2.24349117607 48.5908921647)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91027> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19140;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Athis-Mons"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19140 geo:asWKT "Point(2.38660492325 48.7092445775)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91037> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19141;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Auvernaux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19141 geo:asWKT "Point(2.4879155112 48.5291181496)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91038> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19142;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Auvers-Saint-Georges"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19142 geo:asWKT "Point(2.22600147466 48.4773721699)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91041> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19143;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Avrainville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19143 geo:asWKT "Point(2.24428910412 48.5576520151)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91044> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19144;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Ballainvilliers"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19144 geo:asWKT "Point(2.28913874502 48.6713240802)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91045> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19145;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Ballancourt-sur-Essonne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19145 geo:asWKT "Point(2.38788025142 48.521899752)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91047> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19146;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Baulne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19146 geo:asWKT "Point(2.38140884118 48.4949687726)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91064> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19147;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Bièvres"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19147 geo:asWKT "Point(2.20665207098 48.7567351109)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91080> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19148;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Boissy-le-Cutté"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19148 geo:asWKT "Point(2.28518160664 48.4702885961)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91081> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19149;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Boissy-le-Sec"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19149 geo:asWKT "Point(2.09143210906 48.4846711917)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91085> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19150;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Boissy-sous-Saint-Yon"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19150 geo:asWKT "Point(2.21286982392 48.5500395894)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91086> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19151;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Bondoufle"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19151 geo:asWKT "Point(2.38002541357 48.6140476567)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91093> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19152;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Boullay-les-Troux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19152 geo:asWKT "Point(2.04828313772 48.6753515056)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91095> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19153;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Bouray-sur-Juine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19153 geo:asWKT "Point(2.29610342228 48.5123020136)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91097> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19154;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Boussy-Saint-Antoine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19154 geo:asWKT "Point(2.53381915314 48.6895309069)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91098> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19155;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Boutervilliers"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19155 geo:asWKT "Point(2.05114682408 48.4555830213)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91103> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19156;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Brétigny-sur-Orge"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19156 geo:asWKT "Point(2.3021623232 48.6025113399)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91105> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19157;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Breuillet"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19157 geo:asWKT "Point(2.16598389799 48.5718215115)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91106> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19158;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Breux-Jouy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19158 geo:asWKT "Point(2.16049670709 48.5549501512)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91109> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19159;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Brières-les-Scellés"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19159 geo:asWKT "Point(2.14290097216 48.4636769085)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91111> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19160;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Briis-sous-Forges"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19160 geo:asWKT "Point(2.1309080467 48.6271447741)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91114> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19161;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Brunoy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19161 geo:asWKT "Point(2.50394753271 48.6964396294)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91115> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19162;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Bruyères-le-Châtel"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19162 geo:asWKT "Point(2.18687041469 48.600315457)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91122> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19163;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Bures-sur-Yvette"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19163 geo:asWKT "Point(2.15838686116 48.6929979919)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91129> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19164;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Cerny"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19164 geo:asWKT "Point(2.31068283872 48.4859798517)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91132> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19165;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Chamarande"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19165 geo:asWKT "Point(2.21800082924 48.5167739657)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91135> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19166;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Champcueil"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19166 geo:asWKT "Point(2.44815529587 48.5067693664)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91136> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19167;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Champlan"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19167 geo:asWKT "Point(2.27815398132 48.7083599746)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91148> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19168;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Chauffour-lès-Étréchy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19168 geo:asWKT "Point(2.16843822281 48.5078619555)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91156> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19169;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Cheptainville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19169 geo:asWKT "Point(2.27416218366 48.5465841683)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91159> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19170;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Chevannes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19170 geo:asWKT "Point(2.44062628529 48.5335355797)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91161> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19171;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Chilly-Mazarin"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19171 geo:asWKT "Point(2.3111122334 48.7077663127)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91174> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19172;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Corbeil-Essonnes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19172 geo:asWKT "Point(2.46934079002 48.6034809251)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91175> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19173;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Corbreuse"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19173 geo:asWKT "Point(1.96031071197 48.494765705)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91179> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19174;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Coudray-Montceaux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19174 geo:asWKT "Point(2.48742424481 48.5587791447)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91182> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19175;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Courcouronnes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19175 geo:asWKT "Point(2.41288009058 48.6216349774)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91186> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19176;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Courson-Monteloup"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19176 geo:asWKT "Point(2.14130817077 48.5982232022)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91191> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19177;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Crosne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19177 geo:asWKT "Point(2.46331727859 48.7200869901)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91198> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19178;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "D'Huison-Longueville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19178 geo:asWKT "Point(2.32754055181 48.4557191202)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91200> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19179;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Dourdan"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19179 geo:asWKT "Point(1.99430156785 48.5359351532)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91201> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19180;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Draveil"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19180 geo:asWKT "Point(2.42197801862 48.6778413772)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91204> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19181;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Écharcon"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19181 geo:asWKT "Point(2.40080185445 48.5750589359)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91207> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19182;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Égly"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19182 geo:asWKT "Point(2.22141176606 48.5778313904)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91215> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19183;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Épinay-sous-Sénart"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19183 geo:asWKT "Point(2.51577225487 48.6871527113)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91216> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19184;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Épinay-sur-Orge"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19184 geo:asWKT "Point(2.31834586071 48.672618112)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91225> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19185;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Étiolles"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19185 geo:asWKT "Point(2.48331098589 48.6501283496)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91226> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19186;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Étréchy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19186 geo:asWKT "Point(2.17928848122 48.4924832389)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91228> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19187;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Évry"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19187 geo:asWKT "Point(2.44008244492 48.6294831659)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91232> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19188;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Ferté-Alais"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19188 geo:asWKT "Point(2.36734978463 48.481221954)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91235> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19189;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Fleury-Mérogis"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19189 geo:asWKT "Point(2.36825308788 48.6333048682)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91243> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19190;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Fontenay-lès-Briis"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19190 geo:asWKT "Point(2.16460955805 48.6107631779)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91244> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19191;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Fontenay-le-Vicomte"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19191 geo:asWKT "Point(2.40068041051 48.5468386132)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91247> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19192;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Forêt-le-Roi"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19192 geo:asWKT "Point(2.0468515284 48.4755183328)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91249> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19193;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Forges-les-Bains"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19193 geo:asWKT "Point(2.08295423107 48.619866924)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91272> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19194;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Gif-sur-Yvette"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19194 geo:asWKT "Point(2.12788365005 48.6988273634)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91274> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19195;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Gometz-la-Ville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19195 geo:asWKT "Point(2.10961593577 48.672349947)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91275> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19196;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Gometz-le-Châtel"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19196 geo:asWKT "Point(2.142891374 48.6745834658)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91284> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19197;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Granges-le-Roi"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19197 geo:asWKT "Point(2.01059778399 48.4981066436)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91286> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19198;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Grigny"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19198 geo:asWKT "Point(2.38789647858 48.6568896116)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91292> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19199;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Guibeville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19199 geo:asWKT "Point(2.27170202676 48.5671878264)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91293> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19200;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Guigneville-sur-Essonne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19200 geo:asWKT "Point(2.37103830296 48.4638589713)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91312> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19201;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Igny"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19201 geo:asWKT "Point(2.22442021749 48.7362250613)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91315> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19202;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Itteville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19202 geo:asWKT "Point(2.34431579636 48.5145241389)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91318> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19203;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Janville-sur-Juine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19203 geo:asWKT "Point(2.25385756053 48.5011134841)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91319> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19204;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Janvry"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19204 geo:asWKT "Point(2.15536092787 48.6461448761)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91326> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19205;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Juvisy-sur-Orge"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19205 geo:asWKT "Point(2.37393682594 48.6918789321)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91330> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19206;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Lardy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19206 geo:asWKT "Point(2.27017712838 48.5270354108)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91332> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19207;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Leudeville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19207 geo:asWKT "Point(2.32774257442 48.5707254105)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91333> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19208;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Leuville-sur-Orge"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19208 geo:asWKT "Point(2.26786916606 48.614191732)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91338> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19209;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Limours"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19209 geo:asWKT "Point(2.08125663662 48.6465432324)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91339> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19210;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Linas"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19210 geo:asWKT "Point(2.25135348658 48.6255061941)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91340> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19211;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Lisses"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19211 geo:asWKT "Point(2.42469094606 48.5966688856)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91345> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19212;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Longjumeau"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19212 geo:asWKT "Point(2.30247056719 48.6900488045)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91347> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19213;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Longpont-sur-Orge"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19213 geo:asWKT "Point(2.28647061043 48.6404556934)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91363> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19214;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Marcoussis"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19214 geo:asWKT "Point(2.20621393661 48.6463321888)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91376> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19215;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Marolles-en-Hurepoix"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19215 geo:asWKT "Point(2.29920657171 48.5649798618)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91377> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19216;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Massy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19216 geo:asWKT "Point(2.27513131903 48.7277896426)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91378> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19217;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Mauchamps"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19217 geo:asWKT "Point(2.19718165044 48.5272680908)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91386> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19218;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Mennecy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19218 geo:asWKT "Point(2.43753236038 48.5586242184)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91411> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19219;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Molières"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19219 geo:asWKT "Point(2.07284691795 48.671525)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91412> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19220;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Mondeville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19220 geo:asWKT "Point(2.4204540658 48.4912035622)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91421> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19221;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Montgeron"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19221 geo:asWKT "Point(2.46249881778 48.6951531801)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91425> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19222;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Montlhéry"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19222 geo:asWKT "Point(2.26812085232 48.6422562554)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91432> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19223;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Morangis"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19223 geo:asWKT "Point(2.33614296581 48.702703885)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91433> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19224;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Morigny-Champigny"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19224 geo:asWKT "Point(2.20748797746 48.4409475427)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91434> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19225;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Morsang-sur-Orge"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19225 geo:asWKT "Point(2.35088739655 48.6562855194)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91435> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19226;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Morsang-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19226 geo:asWKT "Point(2.50087368249 48.5768153629)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91457> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19227;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Norville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19227 geo:asWKT "Point(2.26569127873 48.5814225294)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91458> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19228;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Nozay"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19228 geo:asWKT "Point(2.23814387316 48.6606560132)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91461> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19229;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Ollainville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19229 geo:asWKT "Point(2.21888103138 48.6063091787)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91468> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19230;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Ormoy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19230 geo:asWKT "Point(2.45777798707 48.5732357153)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91471> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19231;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Orsay"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19231 geo:asWKT "Point(2.18737051177 48.7004093953)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91473> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19232;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Orveau"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19232 geo:asWKT "Point(2.29666744574 48.4491758886)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91477> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19233;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Palaiseau"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19233 geo:asWKT "Point(2.22881488083 48.7146765876)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91479> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19234;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Paray-Vieille-Poste"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19234 geo:asWKT "Point(2.3598349385 48.7241848219)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91482> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19235;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Pecqueuse"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19235 geo:asWKT "Point(2.03658537249 48.6482785839)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91494> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19236;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Plessis-Pâté"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19236 geo:asWKT "Point(2.3415354355 48.6071065715)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91514> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19237;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Quincy-sous-Sénart"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19237 geo:asWKT "Point(2.52837404941 48.6703327314)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91519> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19238;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Richarville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19238 geo:asWKT "Point(1.99842610136 48.4685502881)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91521> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19239;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Ris-Orangis"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19239 geo:asWKT "Point(2.40793631766 48.6451939168)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91525> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19240;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Roinville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19240 geo:asWKT "Point(2.05333144451 48.5170698274)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91534> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19241;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saclay"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19241 geo:asWKT "Point(2.1663021309 48.7354339366)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91538> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19242;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Aubin"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19242 geo:asWKT "Point(2.1395315453 48.7149626666)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91540> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19243;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Chéron"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19243 geo:asWKT "Point(2.12662820406 48.5491975829)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91546> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19244;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Cyr-sous-Dourdan"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19244 geo:asWKT "Point(2.03782109729 48.5655061412)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91549> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19245;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Sainte-Geneviève-des-Bois"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19245 geo:asWKT "Point(2.33019417891 48.6412523804)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91552> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19246;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Germain-lès-Arpajon"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19246 geo:asWKT "Point(2.2646136849 48.5982444605)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91553> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19247;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Germain-lès-Corbeil"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19247 geo:asWKT "Point(2.49140468072 48.6257066899)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91556> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19248;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Hilaire"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19248 geo:asWKT "Point(2.08707092552 48.4416195593)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91560> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19249;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Jean-de-Beauregard"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19249 geo:asWKT "Point(2.17124577371 48.6657065613)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91568> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19250;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Maurice-Montcouronne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19250 geo:asWKT "Point(2.12082584197 48.5789512305)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91570> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19251;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Michel-sur-Orge"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19251 geo:asWKT "Point(2.31170277845 48.6320496004)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91573> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19252;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Pierre-du-Perray"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19252 geo:asWKT "Point(2.51614926696 48.6058282604)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91577> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19253;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saintry-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19253 geo:asWKT "Point(2.4941919266 48.5930107359)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91578> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19254;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Sulpice-de-Favières"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19254 geo:asWKT "Point(2.17969276336 48.5363608889)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91579> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19255;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Vrain"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19255 geo:asWKT "Point(2.32289078443 48.5373210479)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91581> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19256;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saint-Yon"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19256 geo:asWKT "Point(2.19243577473 48.5610752043)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91587> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19257;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Saulx-les-Chartreux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19257 geo:asWKT "Point(2.26634749221 48.6850264714)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91589> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19258;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Savigny-sur-Orge"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19258 geo:asWKT "Point(2.34873862215 48.684228392)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91593> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19259;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Sermaise"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19259 geo:asWKT "Point(2.08893971049 48.5310930707)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91600> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19260;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Soisy-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19260 geo:asWKT "Point(2.46296011606 48.6601163856)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91602> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19261;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Souzy-la-Briche"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19261 geo:asWKT "Point(2.15432082253 48.5269161626)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91617> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19262;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Tigery"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19262 geo:asWKT "Point(2.51906038006 48.6444988439)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91619> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19263;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Torfou"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19263 geo:asWKT "Point(2.23447204587 48.5320494268)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91630> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19264;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Val-Saint-Germain"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19264 geo:asWKT "Point(2.08128870384 48.5678789376)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91631> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19265;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Varennes-Jarcy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19265 geo:asWKT "Point(2.56238031249 48.6815226941)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91634> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19266;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Vaugrigneuse"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19266 geo:asWKT "Point(2.10541488357 48.6013342807)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91635> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19267;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Vauhallan"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19267 geo:asWKT "Point(2.19905265979 48.7307999031)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91645> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19268;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Verrières-le-Buisson"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19268 geo:asWKT "Point(2.25171297214 48.75044312)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91648> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19269;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Vert-le-Grand"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19269 geo:asWKT "Point(2.36719516135 48.583559319)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91649> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19270;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Vert-le-Petit"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19270 geo:asWKT "Point(2.36598547883 48.552025472)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91657> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19271;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Vigneux-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19271 geo:asWKT "Point(2.42793203784 48.7037445355)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91659> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19272;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Villabé"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19272 geo:asWKT "Point(2.45200288236 48.5857767602)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91661> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19273;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Villebon-sur-Yvette"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19273 geo:asWKT "Point(2.23505155118 48.6956774396)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91662> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19274;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Villeconin"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19274 geo:asWKT "Point(2.12813043077 48.5019182614)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91665> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19275;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Ville-du-Bois"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19275 geo:asWKT "Point(2.26503430984 48.6610194975)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91666> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19276;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Villejust"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19276 geo:asWKT "Point(2.22294283132 48.6777382383)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91667> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19277;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Villemoisson-sur-Orge"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19277 geo:asWKT "Point(2.33108879096 48.6613107676)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91671> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19278;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Villeneuve-sur-Auvers"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19278 geo:asWKT "Point(2.25415010197 48.4671191613)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91679> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19279;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Villiers-le-Bâcle"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19279 geo:asWKT "Point(2.1221470247 48.7288080861)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91685> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19280;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Villiers-sur-Orge"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19280 geo:asWKT "Point(2.29950120792 48.6584199819)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91687> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19281;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Viry-Châtillon"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19281 geo:asWKT "Point(2.37374357641 48.6696168935)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91689> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19282;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Wissous"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19282 geo:asWKT "Point(2.32903292215 48.7294509959)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91691> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19283;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Yerres"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19283 geo:asWKT "Point(2.49273020271 48.7157210712)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/91692> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19284;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/91>;
+  iut:nom "Ulis"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19284 geo:asWKT "Point(2.18518955 48.680321482)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92002> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19285;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Antony"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19285 geo:asWKT "Point(2.2993268102 48.7503412602)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92004> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19286;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Asnières-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19286 geo:asWKT "Point(2.2880384663 48.9153530123)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92007> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19287;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Bagneux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19287 geo:asWKT "Point(2.30989995212 48.7983229866)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92009> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19288;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Bois-Colombes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19288 geo:asWKT "Point(2.26738552597 48.9153368426)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92012> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19289;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Boulogne-Billancourt"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19289 geo:asWKT "Point(2.23913599058 48.8365843138)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92014> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19290;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Bourg-la-Reine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19290 geo:asWKT "Point(2.31643010763 48.7799073627)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92019> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19291;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Châtenay-Malabry"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19291 geo:asWKT "Point(2.26282598525 48.7681690197)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92020> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19292;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Châtillon"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19292 geo:asWKT "Point(2.28799131883 48.8034091756)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92022> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19293;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Chaville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19293 geo:asWKT "Point(2.19234061062 48.8076083562)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92023> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19294;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Clamart"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19294 geo:asWKT "Point(2.25474652922 48.7964306792)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92024> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19295;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Clichy"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19295 geo:asWKT "Point(2.30575230452 48.9035359139)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92025> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19296;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Colombes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19296 geo:asWKT "Point(2.24675160629 48.9225179147)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92026> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19297;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Courbevoie"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19297 geo:asWKT "Point(2.25570587289 48.8984504771)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92032> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19298;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Fontenay-aux-Roses"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19298 geo:asWKT "Point(2.28723493557 48.7897301312)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92033> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19299;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Garches"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19299 geo:asWKT "Point(2.18665007789 48.8450113548)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92035> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19300;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Garenne-Colombes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19300 geo:asWKT "Point(2.24464604084 48.9067577111)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92036> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19301;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Gennevilliers"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19301 geo:asWKT "Point(2.29384987973 48.9345190548)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92040> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19302;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Issy-les-Moulineaux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19302 geo:asWKT "Point(2.26449823277 48.82347434)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92044> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19303;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Levallois-Perret"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19303 geo:asWKT "Point(2.28688268127 48.895071672)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92046> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19304;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Malakoff"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19304 geo:asWKT "Point(2.29693599517 48.8169695977)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92047> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19305;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Marnes-la-Coquette"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19305 geo:asWKT "Point(2.16647261735 48.830271264)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92048> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19306;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Meudon"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19306 geo:asWKT "Point(2.22696287829 48.8037275796)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92049> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19307;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Montrouge"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19307 geo:asWKT "Point(2.31648921432 48.8153032159)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92050> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19308;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Nanterre"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19308 geo:asWKT "Point(2.20671346353 48.8960701282)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92051> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19309;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Neuilly-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19309 geo:asWKT "Point(2.26642584746 48.8853719688)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92060> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19310;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Plessis-Robinson"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19310 geo:asWKT "Point(2.26064286011 48.7804383642)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92062> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19311;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Puteaux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19311 geo:asWKT "Point(2.23834178314 48.8837094969)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92063> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19312;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Rueil-Malmaison"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19312 geo:asWKT "Point(2.1773406315 48.8691897371)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92064> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19313;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Saint-Cloud"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19313 geo:asWKT "Point(2.20864570316 48.8428741034)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92071> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19314;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Sceaux"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19314 geo:asWKT "Point(2.29529414514 48.776816369)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92072> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19315;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Sèvres"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19315 geo:asWKT "Point(2.21052297438 48.821476509)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92073> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19316;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Suresnes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19316 geo:asWKT "Point(2.21965517625 48.8698479132)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92075> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19317;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Vanves"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19317 geo:asWKT "Point(2.28739490768 48.8215227089)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92076> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19318;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Vaucresson"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19318 geo:asWKT "Point(2.16026455161 48.8410515899)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92077> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19319;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Ville-d'Avray"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19319 geo:asWKT "Point(2.17761311514 48.8215895592)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/92078> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19320;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/92>;
+  iut:nom "Villeneuve-la-Garenne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19320 geo:asWKT "Point(2.32448995943 48.9364061917)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93001> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19321;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Aubervilliers"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19321 geo:asWKT "Point(2.38445513768 48.9121722626)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93006> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19322;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Bagnolet"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19322 geo:asWKT "Point(2.42274096688 48.8690836308)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93008> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19323;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Bobigny"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19323 geo:asWKT "Point(2.43863982727 48.907688244)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93031> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19324;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Épinay-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19324 geo:asWKT "Point(2.31453043231 48.9550132062)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93039> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19325;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Île-Saint-Denis"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19325 geo:asWKT "Point(2.32545252764 48.9395693769)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93045> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19326;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Lilas"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19326 geo:asWKT "Point(2.419667821 48.8819208939)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93048> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19327;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Montreuil"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19327 geo:asWKT "Point(2.44816211857 48.8633175054)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93049> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19328;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Neuilly-Plaisance"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19328 geo:asWKT "Point(2.51040249898 48.8643287852)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93053> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19329;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Noisy-le-Sec"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19329 geo:asWKT "Point(2.45913647372 48.891322463)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93055> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19330;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Pantin"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19330 geo:asWKT "Point(2.40872147475 48.8983093876)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93061> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19331;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Pré-Saint-Gervais"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19331 geo:asWKT "Point(2.40542232961 48.8846734877)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93063> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19332;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Romainville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19332 geo:asWKT "Point(2.43767884231 48.8852118968)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93064> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19333;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Rosny-sous-Bois"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19333 geo:asWKT "Point(2.4863404591 48.8745763768)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93066> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19334;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Saint-Denis"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19334 geo:asWKT "Point(2.3592429975 48.9295650455)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/93070> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19335;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/93>;
+  iut:nom "Saint-Ouen"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19335 geo:asWKT "Point(2.33257042205 48.909806575)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94001> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19336;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Ablon-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19336 geo:asWKT "Point(2.42117629348 48.7238409464)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94002> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19337;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Alfortville"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19337 geo:asWKT "Point(2.42124593241 48.7960843864)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94003> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19338;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Arcueil"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19338 geo:asWKT "Point(2.33351024984 48.8058803597)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94004> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19339;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Boissy-Saint-Léger"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19339 geo:asWKT "Point(2.52528049019 48.7470359922)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94011> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19340;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Bonneuil-sur-Marne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19340 geo:asWKT "Point(2.48799310463 48.7733620104)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94015> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19341;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Bry-sur-Marne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19341 geo:asWKT "Point(2.52319657626 48.8384095661)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94016> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19342;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Cachan"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19342 geo:asWKT "Point(2.33153313164 48.7916121646)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94017> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19343;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Champigny-sur-Marne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19343 geo:asWKT "Point(2.51709815257 48.817254364)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94018> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19344;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Charenton-le-Pont"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19344 geo:asWKT "Point(2.40760915477 48.8228084978)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94019> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19345;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Chennevières-sur-Marne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19345 geo:asWKT "Point(2.54157630073 48.7976502878)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94021> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19346;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Chevilly-Larue"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19346 geo:asWKT "Point(2.35306611234 48.766848001)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94022> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19347;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Choisy-le-Roi"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19347 geo:asWKT "Point(2.41742518222 48.764315118)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94028> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19348;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Créteil"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19348 geo:asWKT "Point(2.45463530415 48.7837401836)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94033> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19349;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Fontenay-sous-Bois"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19349 geo:asWKT "Point(2.47395409774 48.8511046382)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94034> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19350;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Fresnes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19350 geo:asWKT "Point(2.32612839743 48.7571343016)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94037> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19351;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Gentilly"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19351 geo:asWKT "Point(2.34420659702 48.8132044389)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94038> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19352;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Haÿ-les-Roses"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19352 geo:asWKT "Point(2.33772915609 48.7763207843)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94041> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19353;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Ivry-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19353 geo:asWKT "Point(2.38778023612 48.8128063812)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94042> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19354;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Joinville-le-Pont"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19354 geo:asWKT "Point(2.47044977809 48.8193683216)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94043> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19355;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Kremlin-Bicêtre"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19355 geo:asWKT "Point(2.35657965243 48.809220102)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94044> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19356;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Limeil-Brévannes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19356 geo:asWKT "Point(2.48936184357 48.7450357782)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94046> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19357;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Maisons-Alfort"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19357 geo:asWKT "Point(2.43818248906 48.8063923267)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94047> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19358;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Mandres-les-Roses"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19358 geo:asWKT "Point(2.54830741614 48.7058880174)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94048> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19359;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Marolles-en-Brie"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19359 geo:asWKT "Point(2.55491338455 48.7394780616)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94052> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19360;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Nogent-sur-Marne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19360 geo:asWKT "Point(2.48166741533 48.8366634713)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94053> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19361;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Noiseau"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19361 geo:asWKT "Point(2.55542375351 48.774315467)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94054> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19362;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Orly"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19362 geo:asWKT "Point(2.39468296999 48.7429320073)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94055> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19363;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Ormesson-sur-Marne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19363 geo:asWKT "Point(2.53924214317 48.7854562744)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94056> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19364;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Périgny"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19364 geo:asWKT "Point(2.56167940426 48.6968359635)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94058> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19365;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Perreux-sur-Marne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19365 geo:asWKT "Point(2.50406848573 48.8423952383)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94065> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19366;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Rungis"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19366 geo:asWKT "Point(2.35281832827 48.7494821504)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94067> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19367;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Saint-Mandé"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19367 geo:asWKT "Point(2.4192191088 48.842440243)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94068> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19368;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Saint-Maur-des-Fossés"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19368 geo:asWKT "Point(2.49386450452 48.7990677797)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94069> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19369;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Saint-Maurice"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19369 geo:asWKT "Point(2.4374501342 48.8184921372)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94070> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19370;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Santeny"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19370 geo:asWKT "Point(2.57637480242 48.7356177142)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94071> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19371;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Sucy-en-Brie"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19371 geo:asWKT "Point(2.5330560803 48.7656456593)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94073> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19372;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Thiais"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19372 geo:asWKT "Point(2.38537729524 48.7607841928)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94074> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19373;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Valenton"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19373 geo:asWKT "Point(2.46129479573 48.752872402)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94075> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19374;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Villecresnes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19374 geo:asWKT "Point(2.53157741439 48.7208692486)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94076> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19375;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Villejuif"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19375 geo:asWKT "Point(2.36006103249 48.7928547268)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94077> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19376;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Villeneuve-le-Roi"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19376 geo:asWKT "Point(2.41037420069 48.7320914576)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94078> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19377;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Villeneuve-Saint-Georges"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19377 geo:asWKT "Point(2.448998846 48.7413809637)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94079> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19378;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Villiers-sur-Marne"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19378 geo:asWKT "Point(2.54520483293 48.8259586165)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94080> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19379;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Vincennes"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19379 geo:asWKT "Point(2.43798650741 48.8473732045)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/94081> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19380;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/94>;
+  iut:nom "Vitry-sur-Seine"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19380 geo:asWKT "Point(2.39412680533 48.7882828307)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/95018> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19381;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/95>;
+  iut:nom "Argenteuil"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19381 geo:asWKT "Point(2.2410409502 48.9511344629)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/95063> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19382;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/95>;
+  iut:nom "Bezons"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19382 geo:asWKT "Point(2.21133387765 48.9259810125)"^^geo:wktLiteral .
+
+<https://cours.iut-orsay.fr/iws/commune/95176> a iut:Commune;
+  geo:hasGeometry _:a460642dd36f4e43b1147e816657a20b19383;
+  iut:Département <https://cours.iut-orsay.fr/iws/departement/95>;
+  iut:nom "Cormeilles-en-Parisis"@fr .
+
+_:a460642dd36f4e43b1147e816657a20b19383 geo:asWKT "Point(2.19921349468 48.9682249677)"^^geo:wktLiteral .
