@@ -45,8 +45,6 @@ PREFIX geo: 	<http://www.opengis.net/ont/geosparql#>
 PREFIX geof: 	<http://www.opengis.net/def/function/geosparql/>
 PREFIX uom: 	<http://www.opengis.net/def/uom/OGC/1.0/>
 
-# Parmi les communes du département de l’Essonne, afficher les deux communes qui sont les plus éloignées l’une de l’autre, en affichant la distance entre ces deux communes et les coordonnées géographiques de ces communes
-
 SELECT ?commune1Nom ?commune2Nom ?commune1WKT ?commune2WKT (ROUND(?distance) as ?dist)
 WHERE {
     ?commune1 a iut:Commune ;
@@ -112,7 +110,7 @@ WHERE {
 
 ### Question supplémentaire (optionnelle)
 
-Créer un nouveau dépôt de données sur GraphDB contenant uniquement les communes des résultats de la question 4) et le fichier [paris.ttl](./paris.ttl) du TP5.
+Créer un nouveau dépôt de données sur GraphDB contenant uniquement les communes des [résultats de la question 4](./tp6-query-result) et le fichier [paris.ttl](./paris.ttl) du TP5.
 
 #### En utilisant l'interface SPARQL dans GraphDB, écrire une requête qui permet d’afficher toutes les paires de communes ayant quasiment la même distance à celle entre Orsay et la Tour Eiffel.
 
