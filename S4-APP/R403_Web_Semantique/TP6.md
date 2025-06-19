@@ -115,5 +115,38 @@ Créer un nouveau dépôt de données sur GraphDB contenant uniquement les commu
 #### En utilisant l'interface SPARQL dans GraphDB, écrire une requête qui permet d’afficher toutes les paires de communes ayant quasiment la même distance à celle entre Orsay et la Tour Eiffel.
 
 ```sparql
+PREFIX iut: 	<https://cours.iut-orsay.fr/iws/>
+PREFIX rdf: 	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: 	<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: 	<http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: 	<http://www.opengis.net/ont/geosparql#>
+PREFIX geof: 	<http://www.opengis.net/def/function/geosparql/>
+PREFIX uom: 	<http://www.opengis.net/def/uom/OGC/1.0/>
 
+SELECT ?c1nom ?c2nom ?distCommunes ?distReference
+WHERE {
+    ?c1 a iut:Commune ;
+    	iut:nom ?c1nom ;
+    	geo:hasGeometry/geo:asWKT ?c1WKT .
+    
+    ?c2 a iut:Commune ;
+    	iut:nom ?c2nom ;
+    	geo:hasGeometry/geo:asWKT ?c2WKT .
+   
+    ?orsay a iut:Commune ;
+    	iut:nom "Orsay"@fr ;
+    	geo:hasGeometry/geo:asWKT ?orsayWKT .
+    
+    ?eiffel a geo:Feature ;
+    	rdfs:label "Tour Eiffel"@fr ;
+    	geo:hasGeometry/geo:asWKT ?eiffelWKT .
+    
+    BIND(geof:distance(?eiffelWKT, ?orsayWKT, uom:metre) AS ?distOrsayEiffel)
+    BIND(geof:distance(?c1WKT, ?c2WKT, uom:metre) AS ?distCommunes)
+    
+    BIND(ROUND(?distOrsayEiffel) as ?distReference)
+    BIND(ROUND(?distCommunes) as ?distMatch)
+    
+    FILTER(?distReference = ?distMatch)
+}
 ```
