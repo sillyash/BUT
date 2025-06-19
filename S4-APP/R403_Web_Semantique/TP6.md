@@ -110,7 +110,7 @@ WHERE {
 
 ### Question supplémentaire (optionnelle)
 
-Créer un nouveau dépôt de données sur GraphDB contenant uniquement les communes des [résultats de la question 4](./tp6-query-result) et le fichier [paris.ttl](./paris.ttl) du TP5.
+Créer un nouveau dépôt de données sur GraphDB contenant uniquement les communes des [résultats de la question 4](./tp6-query-result.ttl) et le fichier [paris.ttl](./paris.ttl) du TP5.
 
 #### En utilisant l'interface SPARQL dans GraphDB, écrire une requête qui permet d’afficher toutes les paires de communes ayant quasiment la même distance à celle entre Orsay et la Tour Eiffel.
 
