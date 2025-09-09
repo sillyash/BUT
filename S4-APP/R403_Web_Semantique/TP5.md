@@ -63,18 +63,34 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX iut: <https://cours.iut-orsay.fr/qar/>
 PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
 
-SELECT ?monument (ROUND(MIN(geof:distance(?WKTMonument, ?WKTMusee, uom:metre))) as ?distance)
-WHERE {
-    ?monument a iut:Monument ;
-    	geo:hasGeometry ?geoMonument .
-    
+Select ?monument ?musee ?distance
+where 
+{
     ?musee a iut:Musée ;
     	geo:hasGeometry ?geoMusee .
+	?geoMusee geo:asWKT ?WKTMusee .
+	
+    ?monument a iut:Monument ;
+                geo:hasGeometry ?geoMonument .
+	?geoMonument geo:asWKT ?WKTMonument .
     
-    ?geoMonument geo:asWKT ?WKTMonument .
-    ?geoMusee geo:asWKT ?WKTMusee .
+    BIND(geof:distance(?WKTMonument, 	?WKTMusee, uom:metre) as ?distance)
+    FILTER(?distance=?minDistance)
+    {
+    SELECT ?monument (MIN(geof:distance(?WKTMonument, 	?WKTMusee, uom:metre)) as ?minDistance)
+        WHERE {
+            ?monument a iut:Monument ;
+                geo:hasGeometry ?geoMonument .
+
+            ?musee a iut:Musée ;
+                geo:hasGeometry ?geoMusee .
+
+            ?geoMonument geo:asWKT ?WKTMonument .
+            ?geoMusee geo:asWKT ?WKTMusee .
+        }
+        GROUP BY ?monument
+    }
 }
-GROUP BY ?monument
 ```
 
 #### Écrivez une requête SPARQL qui permet de vérifier avec GeoSPARQL si la seine traverse Paris.
