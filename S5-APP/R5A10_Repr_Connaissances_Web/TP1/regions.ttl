@@ -1,0 +1,64 @@
+@base <https://cours.iut-orsay.fr/rcw/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rcw: <https://cours.iut-orsay.fr/rcw/> .
+@prefix dep: <https://cours.iut-orsay.fr/rcw/departement/> .
+@prefix reg: <https://cours.iut-orsay.fr/rcw/region/> .
+@prefix pcs: <https://cours.iut-orsay.fr/rcw/PCS/> .
+@prefix circ: <https://cours.iut-orsay.fr/rcw/circonscription/> .
+@prefix depu: <https://cours.iut-orsay.fr/rcw/depute/> .
+
+reg:1 a rcw:Region;
+  rdfs:label "Guadeloupe"@fr .
+
+reg:2 a rcw:Region;
+  rdfs:label "Martinique"@fr .
+
+reg:3 a rcw:Region;
+  rdfs:label "Guyane"@fr .
+
+reg:4 a rcw:Region;
+  rdfs:label "La Réunion"@fr .
+
+reg:6 a rcw:Region;
+  rdfs:label "Mayotte"@fr .
+
+reg:11 a rcw:Region;
+  rdfs:label "Île-de-France"@fr .
+
+reg:24 a rcw:Region;
+  rdfs:label "Centre-Val de Loire"@fr .
+
+reg:27 a rcw:Region;
+  rdfs:label "Bourgogne-Franche-Comté"@fr .
+
+reg:28 a rcw:Region;
+  rdfs:label "Normandie"@fr .
+
+reg:32 a rcw:Region;
+  rdfs:label "Hauts-de-France"@fr .
+
+reg:44 a rcw:Region;
+  rdfs:label "Grand Est"@fr .
+
+reg:52 a rcw:Region;
+  rdfs:label "Pays de la Loire"@fr .
+
+reg:53 a rcw:Region;
+  rdfs:label "Bretagne"@fr .
+
+reg:75 a rcw:Region;
+  rdfs:label "Nouvelle-Aquitaine"@fr .
+
+reg:76 a rcw:Region;
+  rdfs:label "Occitanie"@fr .
+
+reg:84 a rcw:Region;
+  rdfs:label "Auvergne-Rhône-Alpes"@fr .
+
+reg:93 a rcw:Region;
+  rdfs:label "Provence-Alpes-Côte d'Azur"@fr .
+
+reg:94 a rcw:Region;
+  rdfs:label "Corse"@fr .
