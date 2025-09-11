@@ -101,10 +101,31 @@ depu:488 a rcw:Elu ;
   rcw:pcs             pcs:85 .
 ```
 
+## Partie B
+
+### Importation des données dans OntoRefine
+
+1. Importer le fichier `.csv` dans OntoRefine
+2. Editer le squelette RDF:
+  i. Ajouter les préfixes
+  ii. Créer les ressources et les propriétés
+3. Exporter les données au format RDF (Turtle)
+
+### Méthode
+
+1. Commencer par le fichier [`regions.csv`](./regions.csv) pour créer les ressources `Région` (préfixe `reg:`)
+2. Ensuite, importer le fichier [`departements.csv`](./departements.csv) pour créer les ressources `Département` (préfixe `dep:`) et les relier aux régions
+3. Puis, importer le fichier [`elus-deputes.csv`](./elus-deputes.csv) pour créer les ressources `Circonscription` (préfixe `circ:`), `Depute` (préfixe `depu:`), et `PCS` (préfixe `pcs:`), et les relier aux départements.
+
+On obtienra ainsi les fichiers suivants:
+- [`regions.ttl`](./regions.ttl)
+- [`departements.ttl`](./departements.ttl)
+- [`deputes_pcs_circonscriptions.ttl`](./deputes_pcs_circonscriptions.ttl)
+
 ## Partie C
 
-Après avoir modélisé vos données (Partie A) et généré vos graphes RDF avec
-Ontorefine (Partie B), vous allez maintenant charger ces données dans une
+Après avoir modélisé vos données [Partie A](#partie-a) et généré vos graphes RDF avec
+Ontorefine [Partie B](#partie-b), vous allez maintenant charger ces données dans une
 base RDF afin de pouvoir les interroger avec le langage SPARQL.
 
 ### Q1. Quelles catégories socio-professionnelles sont les plus représentées à l’Assemblée nationale ?
