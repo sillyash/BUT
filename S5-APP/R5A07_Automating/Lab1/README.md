@@ -139,12 +139,34 @@ You and your group should have the same file permissions as vera and
 linguists. Put down the appropriate commands in the gray box.
 
 ```bash
-mkdir -p ~/corpus/bin
-mkdir -p ~/corpus/French-data
-touch ~/corpus/README.md
-touch ~/corpus/bin/README.md
-touch ~/corpus/French-data/README.md
+mkdir ~/corpus
+chmod 755 corpus
+
+cd ~/corpus
+mkdir bin French-data
+chmod 755 bin French-data
+
+touch README.md bin/README.md
+chmod 644 README.md
+
+cd French-data
+touch README.md train.cupt
+chmod 755 README.md
+chmod 644 train.cupt
+
+ln -s ../bin scripts
+ln ../README.md README-all.md
 ```
+
+### b. ransform the list of commands to a bash script containing comments, as recommended in Lecture 3.
+
+This includes:
+- in the first line, after `#!`, the shell to be used to execute the script (you can find it with the `which` bash command, for example `#!/usr/bin/bash`,
+- a header comment describing what the script does and which parameters it takes (here: none); this resembles a function documentation in C++ programming (input, output, contents),
+- comments for each logical block of the script,
+- messages for the user to inform her what the script is doing
+
+>See file [makeTree.sh](./makeTree.sh)
 
 ## Appendix
 
