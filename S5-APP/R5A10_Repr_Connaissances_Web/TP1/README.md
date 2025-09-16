@@ -1,5 +1,10 @@
 # TP1
 
+De données tabulaires (CSV) vers un graphe RDF
+avec Ontorefine
+
+---
+
 ## Partie A
 
 ### Q2. Proposez un modèle RDF qui relie ces informations
