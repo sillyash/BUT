@@ -13,6 +13,14 @@ https://git.iut-orsay.fr/apaskev/s5-automation-students.
 
 How many branches does it have? What is the date and the author of the last commit? How many open issues does it contain? Who is its owner?
 
+> It has 1 branch: 'main'
+>
+> Last commit: Andrei Paskevich - 2025-09-15 11:33:50 GMT+2
+>
+> Open issues: 6
+>
+> Owner: Andriy Paskevich
+
 ### b. Fork it to create you own instance.
 
 To this aim, in the web interface of the teacher’s repo, click
@@ -25,7 +33,7 @@ Such as `Plan → Wiki`, `Code → Repository`, and `Code → Branches`.
 Check that your forked version contains the same
 branches and files as the original teacher’s repository.
 
-### d. In the teachers’ repository, got to Issues → Actions (icon with 3 vertical dots).
+### d. In the teachers’ repository, got to `Issues → Actions`.
 
 Export the issues as a `.csv` file. They will be sent to you per email.
 
