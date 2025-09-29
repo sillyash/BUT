@@ -35,6 +35,7 @@ LIMIT 10
 ```
 
 ![areas](./areas.svg)
+[See SVG file](./areas.svg)
 
 | countryLabel                  | area                      |
 |:------------------------------|--------------------------:|
@@ -65,7 +66,7 @@ WHERE {
 }
 ```
 
-View map: [**`capitals.geojson`**](./capitals.geojson)
+[See GeoJSON file](./capitals.geojson)
 
 ### 4. Analyser
 
@@ -91,6 +92,7 @@ ORDER BY DESC(?nobelPrizes)
 ```
 
 ![nobels](./nobels.svg)
+[See SVG file](./nobels.svg)
 
 | continentLabel       | nobelPrizes |
 |:---------------------|------------:|
@@ -111,8 +113,17 @@ série Breaking Bad.
 
 Essayez la vue 'TreeMap'.
 
-```SparQL
-
+```js
+SELECT ?seasonsLabel ?episodesLabel
+WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
+  ?BreakingBad wdt:P31 wd:Q5398426 ;
+               wdt:P1476 "Breaking Bad"@en ;
+               wdt:P527 ?seasons .
+  
+  ?seasons wdt:P527 ?episodes .
+}
 ```
 
 ### 6. Art
@@ -121,9 +132,25 @@ Affichez les tableaux exposés à Paris produits par Claude Monet.
 
 Essayez la vue 'Image Grid'.
 
-```SparQL
-
+```js
+SELECT ?paintingLabel ?arrLabel ?image
+WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
+  ?ClaudeMonet wdt:P31 wd:Q5 ;
+               wdt:P1559 "Claude Monet"@fr .
+  
+  ?painting wdt:P31 wd:Q3305213 ;
+            wdt:P276 ?location ;
+            wdt:P170 ?ClaudeMonet ;
+            wdt:P18 ?image .
+  
+  ?location wdt:P131 ?arr .
+  ?arr wdt:P131 wd:Q90 .
+}
 ```
+
+https://w.wiki/FRi4
 
 ### 7. Professions
 
@@ -132,9 +159,51 @@ d’astronautes ?
 
 Essayez la vue 'Bar Chart'.
 
-```SparQL
-
+```js
+SELECT ?otherOccupationLabel (COUNT(*) AS ?nb)
+WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
+  ?astronaut wdt:P31 wd:Q5 ;
+             wdt:P106 wd:Q11631 .
+  
+  ?astronaut wdt:P106 ?otherOccupation .
+}
+GROUP BY ?otherOccupationLabel
+ORDER BY DESC(?nb)
+OFFSET 1
 ```
+
+![professions](./astronaut_professions.svg)
+[See SVG file](./astronaut_professions.svg)
+
+| Profession               | Count |
+|--------------------------|------:|
+| aircraft pilot           | 249   |
+| engineer                 | 223   |
+| military officer         | 218   |
+| test pilot               | 82    |
+| military flight engineer | 76    |
+| physicist                | 53    |
+| politician               | 50    |
+| physician                | 50    |
+| fighter pilot            | 40    |
+| military personnel       | 37    |
+| university teacher       | 31    |
+| writer                   | 26    |
+| businessperson           | 25    |
+| explorer                 | 22    |
+| flight engineer          | 21    |
+| air force officer        | 19    |
+| chemist                  | 18    |
+| naval officer            | 16    |
+| entrepreneur             | 14    |
+| airman                   | 14    |
+| test cosmonaut           | 14    |
+| Research Cosmonaut       | 13    |
+| astronomer               | 12    |
+| member of the State Duma | 12    |
+| ...                      |       |
 
 ### 8. Histoire
 
@@ -143,19 +212,41 @@ Royaume-Uni ou les États-Unis ont participé.
 
 Essayez la vue 'Map'.
 
-```SparQL
-
+```js
+SELECT ?countryLabel ?warLabel ?coordinates
+WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
+  ?war wdt:P31 wd:Q198 ;
+       wdt:P710 ?country ;
+       wdt:P276 ?location .
+  
+  ?location wdt:P625 ?coordinates .
+  
+  FILTER(?country IN (wd:Q142, wd:Q145, wd:Q30))
+}
 ```
 
-### 9. Politique*
+[View GeoJSON file](./wars.geojson)
+
+### 9. Politique
 
 Affichez les présidents français avec leur nom, photo, date de début de
 mandat et leur âge à ce moment.
 
 Essayez la vue 'Timeline'.
 
-```SparQL
-
+```js
+SELECT ?presidentLabel
+WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
+  ?president wdt:P31 wd:Q5 ;
+             wdt:P39 wd:Q191954 ;
+             wdt:P569 ?dateBirth ;
+             wdt:
+}
+LIMIT 10
 ```
 
 ### 10.  Sport
