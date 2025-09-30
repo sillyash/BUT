@@ -237,16 +237,21 @@ mandat et leur âge à ce moment.
 Essayez la vue 'Timeline'.
 
 ```js
-SELECT ?presidentLabel
+SELECT ?president ?presidentLabel ?startDate (CONCAT(STR(?age), " ans") AS ?ageLabel) (SAMPLE(?photo) AS ?photo) 
 WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
   
-  ?president wdt:P31 wd:Q5 ;
-             wdt:P39 wd:Q191954 ;
-             wdt:P569 ?dateBirth ;
-             wdt:
+  ?president p:P39 ?statement ;
+             wdt:P569 ?birthDate ;
+             wdt:P18 ?photo .
+  
+  ?statement ps:P39 wd:Q191954 ;
+             pq:P580 ?startDate .
+  
+  BIND(YEAR(?startDate) - YEAR(?birthDate) AS ?age)
 }
-LIMIT 10
+GROUP BY ?president ?presidentLabel ?startDate ?age
+ORDER BY ?startDate
 ```
 
 ### 10.  Sport
