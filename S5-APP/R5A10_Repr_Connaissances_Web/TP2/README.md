@@ -259,8 +259,19 @@ ORDER BY ?startDate
 Affichez les joueurs de football français ayant gagné le Ballon d’or, avec leurs
 photos et l’année dans laquelle ils ont gagné.
 
-```SparQL
+```js
+SELECT ?joueur ?joueurLabel ?date ?image 
+WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en". }
 
+  ?joueur wdt:P106 wd:Q937857 ;
+          wdt:P27 wd:Q142 ;
+          wdt:P18 ?image ;
+          p:P166 ?statement .
+  
+  ?statement ps:P166 wd:Q166177 ;
+             pq:P585 ?date .
+} ORDER BY ?date
 ```
 
 ### 11.  Question du cours
@@ -275,8 +286,26 @@ Pour ces pays, affichez:
 - le nom du nouveau Premier ministre
 - le drapeau du pays
 
-```SparQL
-
+```js
+SELECT ?final ?finalLabel ?finalDate ?country ?countryLabel ?headOfGov ?headOfGovLabel ?startGov ?flag
+WHERE {
+  ?final wdt:P31 wd:Q12708896 ;
+          wdt:P1923 ?team ;
+          wdt:P580 ?finalDate .
+  ?team wdt:P17 ?country .
+  ?country wdt:P41 ?flag ; 
+            p:P6 ?head_of_gov_statement .
+  ?head_of_gov_statement pq:P580 ?startGov ; 
+                          ps:P6 ?headOfGov .
+  ?headOfGov p:P39 ?position_statement .
+  ?position_statement ps:P39 ?premierMinistre .
+  
+  {?premierMinistre wdt:P31 wd:Q14212} UNION {?premierMinistre wdt:P279 wd:Q14212} 
+    
+  FILTER ((YEAR(?startGov) = YEAR(?finalDate)))
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" . }
+}
+ORDER BY DESC(?finalDate)
 ```
 
 ### 12.  Recherche personnelle
