@@ -1,4 +1,4 @@
-# Viirtualisation - TP1
+# Virtualisation - TP1
 
 ## 1. Rappels Docker
 
@@ -160,8 +160,8 @@ docker run -d -p 8081:8081 --network mongo_network --name mongo_express \
 
 http://localhost:8081/
 
-|              |       |
-|:-------------|:------|
+|          |       |
+|:---------|:------|
 | **Username** | admin |
 | **Password** | pass  |
 
@@ -174,6 +174,7 @@ And voilà !
 > See [Docker Compose file](docker-compose.yml)
 
 This Docker Compose project has two services:
+
 - **db**: a *MySQL* container
 - **phpmyadmin**: a *PHPMyAdmin* container
 
@@ -189,3 +190,35 @@ docker compose up
 ```
 
 http://localhost:8081
+
+```bash
+$ docker volume list
+
+DRIVER    VOLUME NAME
+local     tp1_dbdata
+```
+
+```bash
+$ docker compose ps
+
+NAME               IMAGE                   COMMAND                  SERVICE      CREATED         STATUS         PORTS
+tp1-db-1           mysql:latest            "docker-entrypoint.s…"   db           4 minutes ago   Up 4 minutes   33060/tcp, 0.0.0.0:6033->3306/tcp, [::]:6033->3306/tcp
+tp1-phpmyadmin-1   phpmyadmin/phpmyadmin   "/docker-entrypoint.…"   phpmyadmin   4 minutes ago   Up 4 minutes   0.0.0.0:8081->80/tcp, [::]:8081->80/tcp
+```
+
+Here we can see `docker-compose` created a volume and two containers.
+
+We can see these are prepended with `'tp1'` to avoid confusion with other containers from other projects.
+
+### 3.4. Mise en place d'un *'bind mount'* dans un stack
+
+Dans le répertoire courant, reprenez le tutoriel officiel qui se trouve sur la [page suivante](https://docs.docker.com/compose/gettingstarted/).
+
+> Voir [composetest/](./composetest/)
+
+Interprétez l’idée principale de ce tutoriel après avoir effectué toutes les étapes.
+
+> L'idée principale du tutoriel est de voir à la fois les bases d'une image (*Dockerfile*),
+> et un réseau de conteneurs (*docker-compose*), et **surtout** le *bind mount*, qui consiste
+> à avoir un montage de volume sur un dossier local de la machine hôte: ici cela sert à charger
+> le code de l'application Python dynamiquement depuis la machine hôte.
