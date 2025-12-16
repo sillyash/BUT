@@ -4,14 +4,14 @@ metadata:
   name: mysql-pv-volume
   labels:
     type: local
-  spec:
+spec:
   storageClassName: manual
   capacity:
-  storage: 20Gi
+    storage: 20Gi
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   hostPath:
-  path: "/mnt/data"
+    path: "/mnt/data"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -20,7 +20,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
       storage: 20Gi

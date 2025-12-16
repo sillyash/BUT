@@ -3,10 +3,10 @@
 > [!TIP]
 >
 > Avant de commencer, il est vivement recommandé d’ajouter
-> à la fin de votre fichier ~/.bashrc la ligne suivante: \
-> `./usr/share/bash-completion/bash_completion` \
-> et utiliser la touche **Tab** pendant l’édition de vos commandes. \
-> Même chose: \
+> à la fin de votre fichier ~/.bashrc la ligne suivante:
+> `./usr/share/bash-completion/bash_completion`
+> et utiliser la touche **Tab** pendant l’édition de vos commandes.
+> Même chose:
 > `source <(kubectl completion bash)`
 > et
 > `source <(minikube completion bash)`
@@ -95,12 +95,13 @@ nginx-deployment-7457467ffd-nqqnq   1/1     Running   0          21m
 > On constate que Kubernetes fonctionne avec des *__K8s objects__*.
 > Ils sont organisés *top-down* de la façon suivante:
 >
-> | K8s Object  | Description                            |
-> |:------------|:---------------------------------------|
-> | Nodes       | Instance Kubernetes (Master ou Worker) |
-> | ReplicaSets | Répartit le *load* sur un/plusieurs pods |
-> | Pods        | Contient un ou plusieurs *containers*    |
-> | Containers  | Un conteneur Docker                    |
+>
+> | K8s Object  | Description                              |
+> | :------------ | :----------------------------------------- |
+> | Nodes       | Instance Kubernetes (Master ou Worker)   |
+> | ReplicaSets | Répartit le*load* sur un/plusieurs pods |
+> | Pods        | Contient un ou plusieurs*containers*     |
+> | Containers  | Un conteneur Docker                      |
 
 Pour illustrer le propos:
 
@@ -155,7 +156,7 @@ kubectl delete service nginx-deployment
 Dans cette section, nous allons utiliser le deuxième type de service ClusterIP pour
 déployer un service à l’intérieur du cluster.
 
-> Cf. `nginxdep.yaml`
+> Cf. [`nginxdep.yaml`](./nginxdep.yaml)
 
 > [!TIP]
 >
@@ -184,7 +185,7 @@ my-nginx-7d9b55c9f-wc5h4   1/1     Running   0          3m12s   10.244.0.8   min
 
 Pour exposer le déploiement précédent, il faut le lier à un service.
 
-> Cf. `nginx-service.yaml`
+> Cf. [`nginx-service.yaml`](./nginx-service.yaml)
 
 ```bash
 kubectl apply -f nginx-service.yaml
@@ -318,4 +319,71 @@ Vous pouvez exécuter une application *stateful* en créant un
 Deployment Kubernetes et en le connectant à un *PersistentVolume*
 existant à l’aide d’un *PersistentVolumeClaim*.
 
-> Cf. `mysql-service.yaml`
+> Cf. [`mysql-service.yaml`](./mysql-service.yaml) et [`mysql-volume.yaml`](./mysql-volume.yaml)
+
+- Interprétez les deux fichiers.
+
+> Le premier fichier (`mysql-service.yaml`) est une définition de service: on y choisit les ports à exposer,
+> l'image (mysql), les variables environnement et les volumes, qui permettent à la
+> base de données d'avoir un stockage persistent, qui existe après extinction du conteneur.
+>
+> Le deuxiième fichier (`mysql-volume.yaml`) est un définition de volume: on y choisit le type de driver
+> (ici 'local'), les accès (ici RWO pour monter en accès lecture/écriture), et la capacité de stockage.
+
+- Déployez les deux fichiers.
+
+```bash
+kubectl apply -f mysql-service.yaml
+kubectl apply -f mysql-volume.yaml
+```
+
+- Affichez les informations liées au déploiement.
+
+```bash
+$ kubectl get deployments -o wide mysql
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES      SELECTOR
+mysql   1/1     1            1           12m   mysql        mysql:5.6   app=mysql
+```
+
+- Listez les Pods créés par le déploiement.
+
+```bash
+$ kubectl get pods -o wide
+NAME                     READY   STATUS    RESTARTS   AGE   IP           NODE       NOMINATED NODE   READINESS GATES
+mysql-5669f8d7c4-jrxlx   1/1     Running   0          12m   10.244.0.3   minikube   <none>           <none>
+```
+
+- Inspectez le `PersistentVolumeClaim`
+
+```bash
+$ kubectl describe pvc mysql-pv-claim 
+Name:          mysql-pv-claim
+Namespace:     default
+StorageClass:  manual
+Status:        Bound
+Volume:        mysql-pv-volume
+Labels:        <none>
+Annotations:   pv.kubernetes.io/bind-completed: yes
+               pv.kubernetes.io/bound-by-controller: yes
+Finalizers:    [kubernetes.io/pvc-protection]
+Capacity:      20Gi
+Access Modes:  RWO
+VolumeMode:    Filesystem
+Used By:       mysql-5669f8d7c4-jrxlx
+Events:
+  Type     Reason              Age   From                         Message
+  ----     ------              ----  ----                         -------
+  Warning  ProvisioningFailed  20m   persistentvolume-controller  storageclass.storage.k8s.io "manual" not found
+```
+
+- Exécutez un client MySQL pour vous connecter au serveur
+
+```bash
+kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -ppassword
+```
+
+- Supprimez toutes les ressources déployées précédemment.
+
+```bash
+kubectl delete deployments --all
+```
