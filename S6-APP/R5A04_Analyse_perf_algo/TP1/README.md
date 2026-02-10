@@ -48,9 +48,16 @@ Pour la liste au hasard, puisque le temps n'est pas le même à chaque fois, il 
 
 > Cf. [liste.py](./liste.py)
 
+![Fig. 1](./Figure_1.png)
+
+![Fig. 2](./Figure_2.png)
+
 Que pensez-vous du temps pris sur une liste aléatoire ? Essayer de trouver une explication.
 
-> a
+> On ne voit pas vraiment la tendance, mais on peut discerner une ligne au dessus de laquelle il n'y a pas de points:
+> cela s'explique par le fait qu'on a un cas 'pire', et tous les autres cas sont plus rapides en moyenne.
+>
+> On retrouve donc une ligne "limite", avec tous les points dessous.
 
 ## Recherche dichotomique
 
