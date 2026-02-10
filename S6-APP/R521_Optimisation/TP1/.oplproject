@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+    	
+    <version>1.0</version>
+    	
+    <configs>
+        		
+        <config default="true" name="Config_exemple" category="opl">
+            			
+            <ref name="Exemple.mod" type="model">
+			</ref>
+            		
+        </config>
+        		
+        <config default="false" name="Config_recyclage" category="opl">
+            			
+            <ref name="Recylage.mod" type="model">
+			</ref>
+            		
+        </config>
+        		
+        <config default="false" name="Config_dihydrogene" category="opl">
+            			
+            <ref name="Dihydrogene.mod" type="model">
+			</ref>
+            		
+        </config>
+        	
+    </configs>
+    	
+
+</project>
