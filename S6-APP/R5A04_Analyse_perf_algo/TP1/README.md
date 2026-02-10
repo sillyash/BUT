@@ -23,9 +23,9 @@ Puisqu'on mesure du temps de calcul, n'utilisez pas des exécuteurs en ligne ou 
 > $O(n^2)$
 
 - $k(n) = \sum_{i=0}^n (3i+7)$
-> $O(n)$
+> $O(n^2)$
 
-- $l(n) = $4n(2n + 1)(n^2 + 2)$ 
+- $l(n) = 4n(2n + 1)(n^2 + 2)$ 
 > $O(n^4)$
 
 ### 2. Ouvrir **Geogebra** et tracer les courbes de vos fonctions divisées par votre majoration asymptotique (la fonction dans le $O(.)$).
@@ -33,5 +33,34 @@ Puisqu'on mesure du temps de calcul, n'utilisez pas des exécuteurs en ligne ou 
 Dire pour chaque courbe obtenue si asymptotiquement (=quand n tend vers $\infty$) elle diverge (tend vers $\infty$), tend vers $0$ ou alors semble tendre vers une constante.
 
 ## Recherche classique
+
+1. Implémenter la recherche classique dans une liste.
+2. Tester sur quelques petits exemples et mesurez le temps utilisé. \
+Pour les exemples trop petits, c'est normal si le temps mesuré change entre les exécutions. On pourra mesurer le temps pris par $1000$ exécutions et faire la moyenne.
+3.  Vous pouvez utiliser les fonctions de temps **Python** : https://docs.python.org/3/library/time.html#time.process_time. \
+L'idée est de mesurer le temps au début et à la fin de l’exécution et de calculer la différence.
+4. Écrivez des fonctions qui génèrent des listes de test correspondant au pire cas.
+5. Mesurez le temps pris au pire cas pour différentes valeurs de $n$ (une dizaine) et tracez une courbe du temps pris en fonction de $n$ (en utilisant par exemple https://matplotlib.org/stable/tutorials/pyplot.html). Comparez le résultat avec vos attendus.
+6. Profitez-en pour comparer le temps pris pour construire la liste et le temps pour faire la recherche (*profilage de code*).
+
+Réitérez votre protocole pour le meilleur cas, et pour une liste prise au hasard.
+Pour la liste au hasard, puisque le temps n'est pas le même à chaque fois, il vaut mieux faire la moyenne sur une centaine d'essais (ou plus...).
+
+> Cf. [liste.py](./liste.py)
+
+Que pensez-vous du temps pris sur une liste aléatoire ? Essayer de trouver une explication.
+
+> a
+
+## Recherche dichotomique
+
+Faites le même exercice pour la recherche dichotomique sur une liste triée.
+
+Comparez les courbes entre elles et à ce que vous attendez en théorie.
+
+Pour les tests,
+- Si vous tirez une liste au hasard et que vous la triez avec `.sort()`, mesurez aussi le temps de tri et comparez-le au temps de recherche (et comprenez pourquoi vous aurez un souci)
+- Essayez de trouver des idées qui évitent ce problème !
+
 
 
