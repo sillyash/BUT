@@ -59,11 +59,13 @@ def test_search_worst(nb_exec: int, intrange: tuple[int], sizerange: tuple[int])
     exec_times.append(et)
     size_values.append(i)
   
-  plt.plot(size_values, exec_times, 'ro')
-  plt.xlabel('List size')
-  plt.ylabel('Execution time (ns)')
-  plt.title('Linear search worst case')
-  plt.show()
+  plot_results(
+		size_values=size_values,
+		exec_times=exec_times,
+		graph_title='Linear search (worst case)',
+		x_label='List size (n)',
+		y_label='Execution time (ns)'
+	)
 
 
 def test_search_regul(nb_exec: int, intrange: tuple[int], sizerange: tuple[int]):
@@ -81,11 +83,22 @@ def test_search_regul(nb_exec: int, intrange: tuple[int], sizerange: tuple[int])
     exec_times.append(et)
     size_values.append(i)
   
+  plot_results(
+		size_values=size_values,
+		exec_times=exec_times,
+		graph_title='Linear search (random)',
+		x_label='List size (n)',
+		y_label='Execution time (ns)'
+	)
+
+
+def plot_results(size_values: list[int], exec_times: list, graph_title: str, x_label: str, y_label: str):
   plt.plot(size_values, exec_times, 'ro')
-  plt.xlabel('List size')
-  plt.ylabel('Execution time (ns)')
-  plt.title('Linear search regular')
+  plt.title(graph_title)
+  plt.xlabel(x_label)
+  plt.ylabel(y_label)
   plt.show()
+  return
 
 
 if __name__ == '__main__':
