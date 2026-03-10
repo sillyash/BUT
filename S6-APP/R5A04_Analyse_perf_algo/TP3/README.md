@@ -14,7 +14,22 @@ dans laquelle vous devez effectuer $5000$ recherches.
 Avez-vous interêt à trier la liste auparavant ? Et
 pour $5$ recherches ? Quelle est la valeur limite ?
 
-> a
+> Il est rentable de trier la liste aupravant pour
+> un million d'identifiants : cela nous permet ensuite
+> d'utiliser la recherche dichotomique en coût total
+> de $n*log(n)$ puis $log(n)$, donc $O(n*log(n))$.
+>
+> Pour $5$ recherches cependant, il est plus coûteux de
+> trier la liste que de simplement la parcourir, pour un
+> coût total de $O(n)$.
+>
+> Pour cacluler le point où l'un devient préférable on peut
+> calculer:
+> 
+> $$ log_{2}(1000000) \simeq 20 $$
+>
+> Donc à partir de $20$ recherches, il devient préférable
+> d'utiliser le tri.
 
 > [!IMPORTANT]
 > Pour les questions suivantes, essayez de trouver au
@@ -26,7 +41,15 @@ pour $5$ recherches ? Quelle est la valeur limite ?
 Trouver deux entiers dans une liste dont la somme vaut
 une certaine cible (donnée en entrée).
 
-> a
+> __Alogirhtme naïf :__ \
+> On prend tous les couples possibles, donc $n^2 + n$ couples,
+> et on calcule la somme. On est donc sur un coût en $O(n^2)$.
+>
+> __Algorithme optimisé :__ \
+> On évite de calculer deux fois les couples puisque l'addition
+> est transitive.
+> 
+> TODO : algo
 
 ## Q2
 
@@ -34,6 +57,10 @@ Trouver la $7^{e}$ plus grande valeur d'une liste. (et si
 on remplace $7$ par une valeur donnée en entrée dont on
 pense qu'elle n'est pas trop grande ?)
 
+> __Alogirhtme naïf :__ \
+> a
+>
+> __Algorithme optimisé :__ \
 > a
 
 ## Q3
@@ -43,6 +70,10 @@ Dire si deux listes données en entrée ont au moins un
 
 Et si on cherche tous les éléments en commun ?
 
+> __Alogirhtme naïf :__ \
+> a
+>
+> __Algorithme optimisé :__ \
 > a
 
 ## Q4
@@ -50,6 +81,10 @@ Et si on cherche tous les éléments en commun ?
 Étant données une liste et une cible, trouver deux
 entiers dans la liste dont la somme vaut la cible.
 
+> __Alogirhtme naïf :__ \
+> a
+>
+> __Algorithme optimisé :__ \
 > a
 
 ## Q5 (difficile)
@@ -57,4 +92,36 @@ entiers dans la liste dont la somme vaut la cible.
 Dans un tableau d'entiers tab, trouvez le sous-tableau
 `tab[a:b]` avec la somme maximale.
 
-> a
+> __Algorithme naïf :__ \
+> Pour chaque tranche ($n*(n+1)$ tranches), on calcule la
+> somme ($n$ opérations) : on a donc $O(n^3)$.
+>
+> __Algorithme optimisé :__ \
+> Prenons une approche *"diviser pour régner"* : si l'on
+> part du principe que la tranche avec la somme maximale
+> est la somme des tranches adjaçentes les plus
+> grandes, on peut diviser la tableau initialement en
+> tranches de taille 1.
+>
+> Mettons ces valeurs dans un dictionnaire: *e.g.*
+> ```json
+> {
+>   "1:1" : 2,
+>   "2:2" : -1,
+>   ...
+> }
+> ```
+>
+> A chaque itération, prenons chaque agrandissement,
+> (gauche et droite) et calculons la somme intelligemment
+> à l'aide des valeurs déjà connues.
+> 
+> ```json
+> {
+>   "1:1" : 2,
+>   ...
+>   "3:7" : 9
+> }
+> ```
+> On doit donc calculer pour $n*n$ couples des coordonnées,
+> ainsi on descend à un coût en $O(n^2)$.
