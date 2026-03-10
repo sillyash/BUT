@@ -55,10 +55,18 @@ Prendre le premier élément (le pivot) et séparez le tableau d'entrée en deux
 
 #### Cas aléatoire
 
-![cas aléatoire rapide](./rapide_worst.png)
+![cas aléatoire rapide](./rapide_random.png)
 
 ### Tri fusion
 
 Couper le tableau en deux, trier chaque moitié récursivement, puis combiner les deux tableaux triés ensemble.
+
+#### Pire cas
+
+![pire cas rapide](./fusion_worst.png)
+
+#### Cas aléatoire
+
+![cas aléatoire rapide](./fusion_random.png)
 
 > Si vous avez terminé, vous pouvez essayer d'autres tris ou essayer d'inventer le vôtre et d'appliquer la même démarche.

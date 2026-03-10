@@ -31,6 +31,32 @@ def tri_rapide(li: list[int]):
 		return tri_rapide(plus_petit) + [pivot] + tri_rapide(plus_grand)
 
 
-def tri_fusion():
-  pass
+def fusion(gauche: list[int], droite: list[int]):
+	if not len(gauche) or not len(droite):
+			return gauche or droite
+
+	result = []
+	i, j = 0, 0
+	while len(result) < len(gauche) + len(droite):
+			if gauche[i] < droite[j]:
+					result.append(gauche[i])
+					i += 1
+			else:
+					result.append(droite[j])
+					j += 1
+			if i == len(gauche) or j == len(droite):
+					result.extend(gauche[i:] or droite[j:])
+					break
+
+	return result
+
+
+def tri_fusion(li: list[int]) -> list[int]:
+  if len(li) < 2: return li
+  
+  milieu = int(len(li) / 2)
+  gauche = tri_fusion(li[:milieu])
+  droite = tri_fusion(li[milieu:])
+  
+  return fusion(gauche, droite)
 
