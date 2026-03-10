@@ -10,3 +10,4 @@ build/
 *.vpp.lck
 .idea/
 *.iml
+__pycache__/
