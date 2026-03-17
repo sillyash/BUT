@@ -58,8 +58,20 @@ on remplace $7$ par une valeur donnée en entrée dont on
 pense qu'elle n'est pas trop grande ?)
 
 > __Alogirhtme naïf :__ \
-> a
+> On initialise une liste vide des valeurs les plus grandes
+> de taille fixe $7$ ou par une valeur en entrée. On y ajoute
+> au début les $7$ premières valeurs de la liste, de manière
+> triée.
 >
+> On parcours la liste, on compare chaque élément de la liste
+> à chaque élément de notre liste des valeurs les plus grandes.
+>
+> Si on trouve plus grand, on insère au bon endroit (on doit
+> parcourir toute la liste à chaque fois).
+>
+> On a donc un coût de: $O(n*M)$ où $n$ est la taille de la
+> liste et $M = 7$ ou est un paramètre.
+> 
 > __Algorithme optimisé :__ \
 > a
 
