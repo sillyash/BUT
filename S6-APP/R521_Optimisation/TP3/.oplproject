@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+    	
+    <version>1.0</version>
+    	
+    <configs>
+        		
+        <config default="true" name="Exercice1" category="opl">
+            			
+            <ref name="Exercice1.mod" type="model">
+			</ref>
+            		
+        </config>
+        		
+        <config default="false" name="Exercice2" category="opl">
+            			
+            <ref name="Exercice2.mod" type="model">
+			</ref>
+            		
+        </config>
+        		
+        <config default="false" name="Exercice3" category="opl">
+            			
+            <ref name="Exercice3.mod" type="model">
+			</ref>
+            		
+        </config>
+        	
+    </configs>
+    	
+
+</project>
