@@ -1,6 +1,6 @@
 Timer unit: 1e-09 s
 
-Total time: 1.5842e-05 s
+Total time: 5.1213e-05 s
 File: /home/amerie1/BUT/S6-APP/R5A04_Analyse_perf_algo/TP5/profile.py
 Function: directSearch at line 12
 
@@ -8,12 +8,12 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
     12                                           @profile
     13                                           def directSearch(tab, target):
-    14        59       7485.0    126.9     47.2      for elt in tab:
-    15        59       8119.0    137.6     51.2          if elt == target:
-    16         1        238.0    238.0      1.5              return True
+    14       196      22603.0    115.3     44.1      for elt in tab:
+    15       196      28394.0    144.9     55.4          if elt == target:
+    16         1        216.0    216.0      0.4              return True
     17                                               return False
 
-Total time: 0.00240125 s
+Total time: 0.00248899 s
 File: /home/amerie1/BUT/S6-APP/R5A04_Analyse_perf_algo/TP5/profile.py
 Function: naiveSearch at line 4
 
@@ -21,13 +21,13 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
      4                                           @profile
      5                                           def naiveSearch(tab, target):
-     6         1        268.0    268.0      0.0      found = False
-     7     10001    1085323.0    108.5     45.2      for elt in tab:
-     8     10000    1303701.0    130.4     54.3          if elt == target:
-     9       107      11816.0    110.4      0.5              found = True
-    10         1        142.0    142.0      0.0      return found
+     6         1        251.0    251.0      0.0      found = False
+     7     10001    1170727.0    117.1     47.0      for elt in tab:
+     8     10000    1306544.0    130.7     52.5          if elt == target:
+     9       100      11302.0    113.0      0.5              found = True
+    10         1        169.0    169.0      0.0      return found
 
-Total time: 0.0292692 s
+Total time: 0.0298613 s
 File: /home/amerie1/BUT/S6-APP/R5A04_Analyse_perf_algo/TP5/profile.py
 Function: random_tab at line 19
 
@@ -35,8 +35,8 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
     19                                           @profile
     20                                           def random_tab(value, length):
-    21         1      12847.0  12847.0      0.0          print("bla")
-    22         1   29256316.0 2.93e+07    100.0          return [random.randint(1, value) for _ in range(length)]
+    21         1      11606.0  11606.0      0.0          print("bla")
+    22         1   29849688.0 2.98e+07    100.0          return [random.randint(1, value) for _ in range(length)]
 
   0.00 seconds - /home/amerie1/BUT/S6-APP/R5A04_Analyse_perf_algo/TP5/profile.py:12 - directSearch
   0.00 seconds - /home/amerie1/BUT/S6-APP/R5A04_Analyse_perf_algo/TP5/profile.py:4 - naiveSearch

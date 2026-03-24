@@ -41,6 +41,8 @@ produits. Vous devez:
 	changerait pour une entrée $10$ fois plus grande
 	(et vérifier).
 
+> Cf. [`profile.txt`](./profile.txt)
+
 > Au début du fichier:
 >   - `Timer unit: 1e-09 s` : unité de temps (ici microsecondes)
 >
@@ -58,6 +60,8 @@ et profilez toutes les fonctions sur une taille de
 liste raisonnable. Comparez la version naïve en temps
 $O(n^2)$ et plus rapide en temps $O(n \cdot \log n)$
 (en utilisant `insertInOrder_rec`).
+
+> Cf. [`profile_insertSort.txt`](./profile_insertSort.txt)
 
 6. Récupérez le code [`profile_dicho.py`](./profile_dicho.py)
 et profilez la fonction main. On va revisiter une
