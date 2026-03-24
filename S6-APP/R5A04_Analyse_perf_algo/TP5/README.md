@@ -73,6 +73,14 @@ dans un tableau de taille $1000000$, à partir de
 quelle valeur de $k$ est-ce que cela devient
 intéressant de trier le tableau auparavant ? 
 
+> Cf. [`profile_dicho.txt`](./profile_dicho.txt)
+
+> Pour la recherche linéaire, on a beaucoup plus
+> d'instructions et un temps total de $15.9785$
+> secondes, tandis que pour la recherche
+> dichotomique, on a moins d'instructions et
+> un temps de $0.00261053$ secondes.
+
 7. Ecrivez les deux versions et trouvez la valeur
 de $k$ où l'algorithme le plus rapide change.
 Vérifiez que cela correspond à l'analyse qu'on a

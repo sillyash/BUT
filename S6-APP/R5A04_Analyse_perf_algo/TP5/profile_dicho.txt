@@ -1,0 +1,35 @@
+Timer unit: 1e-09 s
+
+Total time: 0.00261053 s
+File: /home/amerie1/BUT/S6-APP/R5A04_Analyse_perf_algo/TP5/profile_dicho.py
+Function: dicho at line 11
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    11                                           @profile
+    12                                           def dicho(tab, target, start = 0, end = None):
+    13      1254     308036.0    245.6     11.8      if end is None: end = len(tab) - 1
+    14      1254     171543.0    136.8      6.6      if (start >= end): return False
+    15                                               
+    16      1253     350452.0    279.7     13.4      mid = start + (end - start) // 2
+    17                                               
+    18      1253     404310.0    322.7     15.5      if tab[mid] == target: return True
+    19      1154     746351.0    646.8     28.6      if tab[mid] > target: return dicho(tab, target, start, mid - 1)
+    20                                               
+    21       571     629840.0   1103.0     24.1      else: return dicho(tab, target, mid+1, end)
+
+Total time: 15.9785 s
+File: /home/amerie1/BUT/S6-APP/R5A04_Analyse_perf_algo/TP5/profile_dicho.py
+Function: search at line 4
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     4                                           @profile
+     5                                           def search(tab, target):
+     6  50498251 8696828156.0    172.2     54.4      for elt in tab:
+     7  50498250 7281541415.0    144.2     45.6          if elt == target:
+     8        99      85322.0    861.8      0.0              return True
+     9         1        241.0    241.0      0.0      return False
+
+  0.00 seconds - /home/amerie1/BUT/S6-APP/R5A04_Analyse_perf_algo/TP5/profile_dicho.py:11 - dicho
+ 15.98 seconds - /home/amerie1/BUT/S6-APP/R5A04_Analyse_perf_algo/TP5/profile_dicho.py:4 - search
