@@ -41,6 +41,18 @@ produits. Vous devez:
 	changerait pour une entrée $10$ fois plus grande
 	(et vérifier).
 
+> Au début du fichier:
+>   - `Timer unit: 1e-09 s` : unité de temps (ici microsecondes)
+>
+> Les colonnes:
+>   - `Line #` : le n° de ligne
+>   - `Hits` : le nombre d'exécutions ce cette ligne
+>   - `Time` : temps total d'exécution pour cette ligne
+>   - `Per Hit` : temps d'exécution moyen pour cette ligne
+>   - `% Time` : proportion du temps d'exécution de cette ligne par
+> 	rapport au total de la fonction
+>   - `Line Contents` : contenu de la ligne (code)
+
 5. Récupérez le code [`profile_insertSort.py`](./profile_insertSort.py)
 et profilez toutes les fonctions sur une taille de
 liste raisonnable. Comparez la version naïve en temps
