@@ -63,6 +63,9 @@ $O(n^2)$ et plus rapide en temps $O(n \cdot \log n)$
 
 > Cf. [`profile_insertSort.txt`](./profile_insertSort.txt)
 
+> On a pour la fonction "classique" $0.208433$ secondes,
+> et pour la fonction récursive $0.0268121$ secondes.
+
 6. Récupérez le code [`profile_dicho.py`](./profile_dicho.py)
 et profilez la fonction main. On va revisiter une
 question posée au TP3 : si on fait $k$ recherches
