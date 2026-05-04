@@ -70,7 +70,7 @@ def build_huffman_tree(occ_dict: dict):
   return priority_queue[0] # Parent element (root)
 
 
-def build_huffman_table(huff_tree: HuffNode) -> dict:
+def build_huffman_table(huff_tree: Optional[HuffNode]) -> dict:
   if huff_tree is None:
     return {}
   
