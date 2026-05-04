@@ -14,11 +14,32 @@ class HuffNode:
   
   def __repr__(self):
     return self.__str__()
-  
-  def __str__(self):
+
+  def _label(self) -> str:
     if self.left is None and self.right is None:
       return f"{self.char!r}:{self.freq}"
-    return f"({self.freq}, {self.left}, {self.right})"
+    return f"*:{self.freq}"
+
+  def pretty(self) -> str:
+    lines = []
+
+    def walk(node, prefix: str, is_last: bool):
+      if node is None:
+        return
+
+      branch = "`-- " if is_last else "|-- "
+      lines.append(prefix + branch + node._label())
+
+      children = [child for child in (node.left, node.right) if child is not None]
+      next_prefix = prefix + ("    " if is_last else "|   ")
+      for index, child in enumerate(children):
+        walk(child, next_prefix, index == len(children) - 1)
+
+    walk(self, "", True)
+    return "\n".join(lines)
+  
+  def __str__(self):
+    return self.pretty()
 
 
 def build_huffman_tree(occ_dict: dict):
