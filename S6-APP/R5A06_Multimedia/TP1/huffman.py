@@ -7,9 +7,18 @@ class HuffNode:
     self.freq = freq
     self.left = left
     self.right = right
+
+  def __lt__(self, other):
+    # Tie-break on char so heap operations stay deterministic.
+    return (self.freq, self.char or "") < (other.freq, other.char or "")
+  
+  def __repr__(self):
+    return self.__str__()
   
   def __str__(self):
-    pass
+    if self.left is None and self.right is None:
+      return f"{self.char!r}:{self.freq}"
+    return f"({self.freq}, {self.left}, {self.right})"
 
 
 def build_huffman_tree(occ_dict: dict):
