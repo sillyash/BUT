@@ -3,6 +3,7 @@ import sys
 import argparse
 
 from pprint import pprint
+from huffman import build_huffman_tree
 from occurence import build_occurence_dict
 
 
@@ -13,8 +14,15 @@ def main(path: str) -> int:
   
   file = open(path, mode='r')
   occ_dict = build_occurence_dict(file=file)
+  file.close()
+  
   print("Occurence dict:")
   pprint(occ_dict)
+  
+  huff_tree = build_huffman_tree(occ_dict=occ_dict)
+  
+  print("Huffman tree:")
+  print(huff_tree)
 
 
 if __name__ == "__main__":

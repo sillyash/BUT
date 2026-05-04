@@ -10,7 +10,6 @@ def build_occurence_dict(file: io.TextIOWrapper) -> dict:
 		buffer = file.read(BUFFER_SIZE)
 		process_buffer(occ_dict=occ_dict, buffer=buffer)
 
-	file.close()
 	return occ_dict
 
 
