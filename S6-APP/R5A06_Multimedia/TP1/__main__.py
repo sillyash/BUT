@@ -5,6 +5,7 @@ import argparse
 from pprint import pprint
 from huffman import build_huffman_tree, build_huffman_table
 from occurence import build_occurence_dict
+from size import calculate_sizes, print_compression_report
 
 
 def main(path: str) -> int:
@@ -36,6 +37,10 @@ def main(path: str) -> int:
   for char in sorted(huffman_table.keys(), key=lambda c: huffman_table[c]):
     display_char = repr(char)[1:-1]  # Remove quotes from repr
     print(f"{display_char:>15} -> {huffman_table[char]}")
+  
+  original_bits, encoded_bits = calculate_sizes(occ_dict, huffman_table)
+  print_compression_report(original_bits, encoded_bits)
+  return 0
 
 
 if __name__ == "__main__":
