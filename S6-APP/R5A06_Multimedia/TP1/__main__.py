@@ -41,6 +41,7 @@ def main(path: str) -> int:
   original_bits, encoded_bits = calculate_sizes(occ_dict, huffman_table)
   print_compression_report(original_bits, encoded_bits)
   return 0
+  return 0
 
 
 if __name__ == "__main__":
