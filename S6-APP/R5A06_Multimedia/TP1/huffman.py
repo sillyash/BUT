@@ -14,6 +14,8 @@ class HuffNode:
 
 def build_huffman_tree(occ_dict: dict):
   assert(occ_dict is not None)
+  if not occ_dict:
+    return None
   
   # Convert frequency dictionary to heap nodes.
   priority_queue = [HuffNode(freq=freq, char=char) for char, freq in occ_dict.items()]
