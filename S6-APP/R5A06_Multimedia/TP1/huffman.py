@@ -68,3 +68,26 @@ def build_huffman_tree(occ_dict: dict):
     heapq.heappush(priority_queue, node)
     
   return priority_queue[0] # Parent element (root)
+
+
+def build_huffman_table(huff_tree: HuffNode) -> dict:
+  if huff_tree is None:
+    return {}
+  
+  huffman_codes = {}
+  
+  def traverse(node, code: str):
+    if node is None:
+      return
+    
+    # Leaf node: store the code for this character
+    if node.left is None and node.right is None:
+      huffman_codes[node.char] = code if code else "0"  # Handle single-char edge case
+      return
+    
+    # Traverse left (append '0') and right (append '1')
+    traverse(node.left, code + "0")
+    traverse(node.right, code + "1")
+  
+  traverse(huff_tree, "")
+  return huffman_codes
