@@ -1,17 +1,12 @@
 import heapq
+from typing import Optional
 
 class HuffNode:
-  def __init__(self, freq: int, char: str):
+  def __init__(self, freq: int, char: Optional[str] = None, left=None, right=None):
     self.char = char
     self.freq = freq
-    self.left = None
-    self.right = None
-  
-  def __repr__(root, prefix="", is_left=True):
-    if root is not None:
-        print_tree(root.right, prefix + ("│   " if is_left else "    "), False)
-        print(prefix + ("└── " if is_left else "┌── ") + str(root.value))
-        print_tree(root.left, prefix + ("    " if is_left else "│   "), True)
+    self.left = left
+    self.right = right
   
   def __str__(self):
     pass
@@ -20,9 +15,8 @@ class HuffNode:
 def build_huffman_tree(occ_dict: dict):
   assert(occ_dict is not None)
   
-  # Zip used for iteration
-  # Converts the dict to iterator of tuples
-  priority_queue = [HuffNode(char, freq) for char, freq in zip(occ_dict.items())]
+  # Convert frequency dictionary to heap nodes.
+  priority_queue = [HuffNode(freq=freq, char=char) for char, freq in occ_dict.items()]
   
   # Heap queue used for fast access
   # Converts the list of tuples into a sorted heap
@@ -36,13 +30,9 @@ def build_huffman_tree(occ_dict: dict):
     
     # Merge
     freq = left_child.freq + right_child.freq
-    node = HuffNode(freq=freq)
-    
-    node.left = left_child
-    node.right = right_child
+    node = HuffNode(freq=freq, left=left_child, right=right_child)
     
     # Push
     heapq.heappush(priority_queue, node)
     
   return priority_queue[0] # Parent element (root)
-
