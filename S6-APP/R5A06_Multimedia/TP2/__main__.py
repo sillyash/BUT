@@ -15,14 +15,22 @@ def main(path: str) -> int:
   
   file = open(path, mode='r')
   
+  # LOAD JSON
   pixels = load_pixels_from_json(path=file)
   img = json_to_image(pixels=pixels)
   img.show()
 
   file.close()
 
+  # UPSCALE
   img = upscale_image(pixels=pixels, ratio=40) # 480 x 640
   img.show()
+
+  # CONVOLUTION
+  # TODO
+
+  # JPEG COMPRESSION
+  # TODO
   
   return 0
 

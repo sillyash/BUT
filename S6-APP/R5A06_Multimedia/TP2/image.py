@@ -47,3 +47,38 @@ def upscale_image(pixels: list[list[int]], ratio: int) -> Image.Image:
 
 	return img
 
+
+def convolution(image: Image.Image, kernel: list[list[int]]) -> Image.Image:
+	assert(len(kernel) == len(kernel[0]))
+	assert(len(kernel) % 2 != 0)
+	
+	conv_len = len(kernel)
+	im_map = image.load()
+	h, w = image.size
+
+	print(left, right)
+
+	for j in range(h):
+		for i in range(w):
+			acc = [0, 0, 0] # R, G, B
+
+			for x in range(conv_len):
+				for y in range(conv_len):
+					idx_h = i + x - conv_len // 2
+					idx_w = j + y - conv_len // 2
+
+					if idx_h < 0 or idx_h >= h:
+						# TODO
+						continue
+					
+					if idx_w < 0 or idx_w >= w:
+						# TODO
+						continue
+					
+					factor = kernel[x][y]
+					pixel = im_map[idx_h, idx_w]
+
+					for color_channel in range(3):
+						acc[color_channel] += factor * pixel[color_channel]
+			
+			im_map[i, j] = tuple(acc)
