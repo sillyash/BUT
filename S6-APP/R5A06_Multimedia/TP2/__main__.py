@@ -2,9 +2,10 @@ import os
 import sys
 import argparse
 
-from image import load_pixels_from_json, json_to_image, upscale_image
+from image import load_pixels_from_json, json_to_image, upscale_image, convolution, testJpegCompression
 
 def main(path: str) -> int:
+  
   if not os.path.exists(path):
     print("File not found: ", path, file=sys.stderr)
     exit(2)
@@ -26,11 +27,39 @@ def main(path: str) -> int:
   img = upscale_image(pixels=pixels, ratio=40) # 480 x 640
   img.show()
 
+
+  sharpen_mat = [
+    [0, -1, 0],
+    [-1, 5, -1],
+    [0, -1, 0]
+  ]
+
+  blur_mat = [
+    [1/9, 1/9, 1/9],
+    [1/9, 1/9, 1/9],
+    [1/9, 1/9, 1/9]
+  ]
+
+  laplacian_mat = [
+    [-1, -1, -1],
+    [-1, 8, -1],
+    [-1, -1, -1]
+  ]
+
+  directional_blur = [
+    [0, 0, 0],
+    [1/3, 1/3, 1/3],
+    [0, 0, 0]
+  ]
+
   # CONVOLUTION
-  # TODO
+  img = convolution(image=img, kernel=blur_mat)
+  img.show()
 
   # JPEG COMPRESSION
-  # TODO
+  factors = [95, 50, 25]
+  for fac in factors:
+    testJpegCompression("assets/cradlefive-art2.png", fac)
   
   return 0
 
