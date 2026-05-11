@@ -2,7 +2,7 @@ import os
 import sys
 import argparse
 
-from image import load_pixels_from_json, json_to_image
+from image import load_pixels_from_json, json_to_image, upscale_image
 
 def main(path: str) -> int:
   if not os.path.exists(path):
@@ -20,6 +20,9 @@ def main(path: str) -> int:
   img.show()
 
   file.close()
+
+  img = upscale_image(pixels=pixels, ratio=40) # 480 x 640
+  img.show()
   
   return 0
 
