@@ -84,7 +84,7 @@ def convolution(image: Image.Image, kernel: list[list[int]]) -> Image.Image:
 	return new_img
 
 
-def testJpegCompression(path : str, fac : int):
+def test_jpeg_compression(path : str, fac : int):
 	test_image = Image.open(path).convert('RGB')
 	
 	test_image.save(f'assets/test_{fac}.jpg', quality=fac)

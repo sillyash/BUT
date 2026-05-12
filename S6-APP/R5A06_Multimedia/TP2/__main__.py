@@ -2,7 +2,7 @@ import os
 import sys
 import argparse
 
-from image import load_pixels_from_json, json_to_image, upscale_image, convolution, testJpegCompression
+from image import load_pixels_from_json, json_to_image, upscale_image, convolution, test_jpeg_compression
 
 def main(path: str) -> int:
   
@@ -59,7 +59,7 @@ def main(path: str) -> int:
   # JPEG COMPRESSION
   factors = [95, 50, 25]
   for fac in factors:
-    testJpegCompression("assets/cradlefive-art2.png", fac)
+    test_jpeg_compression("assets/cradlefive-art2.png", fac)
   
   return 0
 
