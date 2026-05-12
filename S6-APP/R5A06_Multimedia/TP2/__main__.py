@@ -4,6 +4,24 @@ import argparse
 
 from image import load_pixels_from_json, json_to_image, upscale_image, convolution, test_jpeg_compression
 
+
+SHARPEN_MATRIX = [[ 0, -1,  0],
+                  [-1,  5, -1],
+                  [ 0, -1,  0]]
+
+BLUR_MATRIX =  [[1/9, 1/9, 1/9],
+                [1/9, 1/9, 1/9],
+                [1/9, 1/9, 1/9]]
+
+LAPLACIAN_MATRIX = [[-1, -1, -1],
+                    [-1,  8, -1],
+                    [-1, -1, -1]]
+
+DIRECTIONAL_BLUR_MATRIX =  [[  0,   0,   0],
+                            [1/3, 1/3, 1/3],
+                            [  0,   0,   0]]
+
+
 def main(path: str) -> int:
   if not os.path.exists(path):
     print("File not found: ", path, file=sys.stderr)
@@ -26,33 +44,8 @@ def main(path: str) -> int:
   img = upscale_image(pixels=pixels, ratio=40) # 480 x 640
   img.show()
 
-
-  sharpen_mat = [
-    [0, -1, 0],
-    [-1, 5, -1],
-    [0, -1, 0]
-  ]
-
-  blur_mat = [
-    [1/9, 1/9, 1/9],
-    [1/9, 1/9, 1/9],
-    [1/9, 1/9, 1/9]
-  ]
-
-  laplacian_mat = [
-    [-1, -1, -1],
-    [-1, 8, -1],
-    [-1, -1, -1]
-  ]
-
-  directional_blur = [
-    [0, 0, 0],
-    [1/3, 1/3, 1/3],
-    [0, 0, 0]
-  ]
-
   # CONVOLUTION
-  img = convolution(image=img, kernel=blur_mat)
+  img = convolution(image=img, kernel=BLUR_MATRIX)
   img.show()
 
   # JPEG COMPRESSION
