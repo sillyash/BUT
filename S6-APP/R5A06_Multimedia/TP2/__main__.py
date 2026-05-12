@@ -2,7 +2,27 @@ import os
 import sys
 import argparse
 
-from image import load_pixels_from_json, json_to_image, upscale_image
+from image import load_pixels_from_json, json_to_image, upscale_image, convolution, test_jpeg_compression
+
+
+SHARPEN_MATRIX = [[ 0, -1,  0],
+                  [-1,  5, -1],
+                  [ 0, -1,  0]]
+
+BLUR_MATRIX =  [[1/9, 1/9, 1/9],
+                [1/9, 1/9, 1/9],
+                [1/9, 1/9, 1/9]]
+
+LAPLACIAN_MATRIX = [[-1, -1, -1],
+                    [-1,  8, -1],
+                    [-1, -1, -1]]
+
+DIRECTIONAL_BLUR_MATRIX =  [[  0,   0,   0],
+                            [1/3, 1/3, 1/3],
+                            [  0,   0,   0]]
+
+JPEG_COMPRESSION_FACTORS = [95, 50, 25]
+
 
 def main(path: str) -> int:
   if not os.path.exists(path):
@@ -27,10 +47,12 @@ def main(path: str) -> int:
   img.show()
 
   # CONVOLUTION
-  # TODO
+  img = convolution(image=img, kernel=BLUR_MATRIX)
+  img.show()
 
   # JPEG COMPRESSION
-  # TODO
+  for fac in JPEG_COMPRESSION_FACTORS:
+    test_jpeg_compression("assets/cradlefive-art2.png", fac)
   
   return 0
 

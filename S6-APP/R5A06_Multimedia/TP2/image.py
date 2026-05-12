@@ -7,6 +7,10 @@ BG_COLOR = (0, 0, 0)
 MARIO_RED = (177, 52, 37)
 LUIGI_GREEN = (30, 180, 45)
 
+def clamp(value : int|float, val_min, val_max) -> int|float:
+	return max(val_min, min(value, val_max))
+
+
 def load_pixels_from_json(path: str) -> list[list[int]]:
 	js = json.load(path)
 	try:
@@ -53,32 +57,34 @@ def convolution(image: Image.Image, kernel: list[list[int]]) -> Image.Image:
 	assert(len(kernel) % 2 != 0)
 	
 	conv_len = len(kernel)
-	im_map = image.load()
-	h, w = image.size
+	w, h = image.size
 
-	print(left, right)
+	src_map = image.load()
 
-	for j in range(h):
-		for i in range(w):
+	new_img = create_new_image(size=(w, h))
+	new_map = new_img.load()
+
+	for i in range(w):
+		for j in range(h):
 			acc = [0, 0, 0] # R, G, B
 
 			for x in range(conv_len):
 				for y in range(conv_len):
-					idx_h = i + x - conv_len // 2
-					idx_w = j + y - conv_len // 2
+					idx_w = clamp(value=(i + x - conv_len // 2), val_min=0, val_max=w-1)
+					idx_h = clamp(value=(j + y - conv_len // 2), val_min=0, val_max=h-1)
 
-					if idx_h < 0 or idx_h >= h:
-						# TODO
-						continue
-					
-					if idx_w < 0 or idx_w >= w:
-						# TODO
-						continue
-					
 					factor = kernel[x][y]
-					pixel = im_map[idx_h, idx_w]
+					pixel = src_map[idx_w, idx_h]
 
 					for color_channel in range(3):
 						acc[color_channel] += factor * pixel[color_channel]
 			
-			im_map[i, j] = tuple(acc)
+			new_map[i,j] = tuple(round(val) for val in acc)
+
+	return new_img
+
+
+def test_jpeg_compression(path : str, fac : int):
+	test_image = Image.open(path).convert('RGB')
+	
+	test_image.save(f'assets/test_{fac}.jpg', quality=fac)
