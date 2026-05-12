@@ -1,0 +1,23 @@
+# Create a centralized UART hub with baud rate configuration
+emulation CreateUARTHub "uartHub"
+# uartHub BaudRate 115200 # Deprecated
+
+# Create sender machine
+mach create "node_sender"
+machine LoadPlatformDescription @platforms/boards/nrf52840dk_nrf52840.repl
+sysbus LoadELF @/workspace/zephyrproject/src/node_sender/build/zephyr/zephyr.elf
+connector Connect sysbus.uart0 uartHub
+showAnalyzer sysbus.uart0
+
+# Create receiver machine
+mach create "node_receiver"
+machine LoadPlatformDescription @platforms/boards/nrf52840dk_nrf52840.repl
+sysbus LoadELF @/workspace/zephyrproject/src/node_receiver/build/zephyr/zephyr.elf
+connector Connect sysbus.uart0 uartHub
+showAnalyzer sysbus.uart0
+
+# Enable UART logging for debugging
+logLevel -1 sysbus.uart0
+
+# Start simulation
+start
