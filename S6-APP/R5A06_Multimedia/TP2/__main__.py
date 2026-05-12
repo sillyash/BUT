@@ -5,7 +5,6 @@ import argparse
 from image import load_pixels_from_json, json_to_image, upscale_image, convolution, test_jpeg_compression
 
 def main(path: str) -> int:
-  
   if not os.path.exists(path):
     print("File not found: ", path, file=sys.stderr)
     exit(2)
