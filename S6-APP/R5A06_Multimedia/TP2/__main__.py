@@ -21,6 +21,8 @@ DIRECTIONAL_BLUR_MATRIX =  [[  0,   0,   0],
                             [1/3, 1/3, 1/3],
                             [  0,   0,   0]]
 
+JPEG_COMPRESSION_FACTORS = [95, 50, 25]
+
 
 def main(path: str) -> int:
   if not os.path.exists(path):
@@ -49,8 +51,7 @@ def main(path: str) -> int:
   img.show()
 
   # JPEG COMPRESSION
-  factors = [95, 50, 25]
-  for fac in factors:
+  for fac in JPEG_COMPRESSION_FACTORS:
     test_jpeg_compression("assets/cradlefive-art2.png", fac)
   
   return 0
