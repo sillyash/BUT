@@ -10,6 +10,8 @@ This project uses `uv`. [__Install `uv`__](https://docs.astral.sh/uv/getting-sta
 To install the dependencies in a virtual environment, use:
 
 ```bash
+cd TP3
+uv venv --python /usr/bin/python3.11 .venv # to link system dependencies (PortAudio & TKinter)
 uv sync
 ```
 

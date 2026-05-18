@@ -1,13 +1,17 @@
 import tkinter as tk 		# system dependency
 from tkinter import ttk
 import sounddevice as sd
+import numpy as np
 import threading
 import time
 import math
 
+from sound import extract_dominant_freq_from_rec, freq_to_note
+
+REC_DURATION = 0.5
+SAMPLE_RATE = 8000
 
 # classe pour la fenêtre
-
 class PitchApp:
 
     def __init__(self, master):
@@ -53,15 +57,22 @@ class PitchApp:
         #####
         while self.running:
             #récupération d'un tableau d'échantillons sur une petite durée ( sd.rec / sd.wait )
+            data = sd.rec(
+                int(REC_DURATION * SAMPLE_RATE),
+                samplerate=SAMPLE_RATE,
+                channels=1,
+                dtype="float32",
+                device=self.device_index,
+                blocking=True
+            )
             
             #vérification que les échantillons de ce tableau ont une valeur suffisamment élevée
-            
-            # extraction de la fréquence fondamentale à l'aide de librosa
-            # pour l'instant freq est égale à "nan" (not a number)
-            freq = float("nan")
+            #extraction de la fréquence fondamentale à l'aide de librosa
+            freq = extract_dominant_freq_from_rec(data=data, sr=SAMPLE_RATE)
+
             # mise à jour de l'interface
-            self.update_display(freq)
-            time.sleep(0.01)
+            self.update_display(freq=freq)
+            time.sleep(secs=0.01)
 
     # mise à jour de l'interface à partir de la fréquence
     def update_display(self, freq):
