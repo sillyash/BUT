@@ -1,0 +1,16 @@
+emulation CreateUARTHub "uartHub"
+
+mach create "sender"
+machine LoadPlatformDescription @platforms/cpus/nrf52840.repl
+sysbus LoadELF @node_sender/build/zephyr/zephyr.elf
+connector Connect sysbus.uart0 uartHub
+showAnalyzer sysbus.uart0
+
+mach create "receiver"
+machine LoadPlatformDescription @platforms/cpus/nrf52840.repl
+sysbus LoadELF @node_receiver/build/zephyr/zephyr.elf
+connector Connect sysbus.uart0 uartHub
+
+showAnalyzer sysbus.uart0
+
+start

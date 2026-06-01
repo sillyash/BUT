@@ -1,0 +1,13 @@
+using sysbus
+mach create "debug"
+machine LoadPlatformDescription @platforms/cpus/nrf52840.repl
+sysbus LoadELF @node_sender/build_debug/zephyr/zephyr.elf
+
+emulation CreateUARTHub "uartHub"
+connector Connect sysbus.uart0 uartHub
+
+showAnalyzer sysbus.uart0
+
+start
+
+machine StartGdbServer 3333

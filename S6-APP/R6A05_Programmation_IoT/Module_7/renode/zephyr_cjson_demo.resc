@@ -1,0 +1,29 @@
+# Créer un UARTHub pour connecter les deux machines
+emulation CreateUARTHub "uarthub"
+
+# Créer les machines
+mach create "capteur"
+# Charger les plateformes (par exemple, nRF52840 pour les deux machines)
+machine LoadPlatformDescription @platforms/cpus/nrf52840.repl
+# Connecter la première UART de chaque machine au hub
+connector Connect sysbus.uart0 uarthub
+# Configuration des fenêtres de terminal (optionnel)
+showAnalyzer sysbus.uart0
+
+
+mach create "serveur"
+# Charger les plateformes (par exemple, nRF52840 pour les deux machines)
+machine LoadPlatformDescription @platforms/cpus/nrf52840.repl
+# Connecter la première UART de chaque machine au hub
+connector Connect sysbus.uart0 uarthub
+# Configuration des fenêtres de terminal (optionnel)
+showAnalyzer sysbus.uart0
+
+# Charger les binaires sur les machines respectives
+mach set "capteur"
+sysbus LoadELF @/workspace/zephyrproject/src/capteur_json/build/zephyr/zephyr.elf
+
+mach set "serveur"
+sysbus LoadELF @/workspace/zephyrproject/src/serveur_json/build/zephyr/zephyr.elf
+
+start
