@@ -28,9 +28,13 @@ def freq_to_note(freq):
 				return None, None
 
 		# Calcul note / demi-ton à partir de la fréquence et de la valeur du LA / A4 (440 Hz)
-		#########
-		
+		n = 12 * np.log2(freq / A4)
+		semitone = round(n)
+		midi_note = 69 + semitone  # A4 = MIDI 69
+		note_names = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
+		note = note_names[midi_note % 12] + str(midi_note // 12 - 1)
+
 		# Calcul des cents (les centièmes de notes / demi-tons)
-		#########
+		cents = (n - semitone) * 100
 
 		return note, cents
