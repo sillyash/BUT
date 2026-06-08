@@ -2,11 +2,15 @@ import os
 import sys
 import cv2
 
+AVAILABLE_EXTS = ['.mp4', '.avi', '.mkv']
+
 def check_video_file(path: str) -> None:
   """Checks the given file path and extension."""
   if not os.path.exists(path):
     print("File not found: ", path, file=sys.stderr)
     exit(2)
+
+  ext = os.path.splitext(path)[-1]
 
   if ext not in AVAILABLE_EXTS:
     print(

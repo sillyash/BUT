@@ -1,7 +1,6 @@
 import argparse
 import tools
-
-AVAILABLE_EXTS = ['.mp4', '.avi', '.mkv']
+import video
 
 
 def main(path: str) -> int:
@@ -24,7 +23,7 @@ if __name__ == "__main__":
       "file",
       nargs="?",
       default="",
-      help=f"Path to the video file ({', '.join(AVAILABLE_EXTS)}).\nIf not provided, will use default camera."
+      help=f"Path to the video file ({', '.join(tools.AVAILABLE_EXTS)}).\nIf not provided, will use default camera."
   )
   
   args = parser.parse_args()
