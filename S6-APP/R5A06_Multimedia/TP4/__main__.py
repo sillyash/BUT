@@ -12,7 +12,7 @@ def main(path: str) -> int:
   else:
     cap = tools.video(path)
   
-  # TODO
+  video.background_substract(cap)
 
   return 0
 
