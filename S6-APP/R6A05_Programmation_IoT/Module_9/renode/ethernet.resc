@@ -1,0 +1,16 @@
+using sysbus
+
+emulation CreateSwitch "switch1"
+
+mach create "gateway"
+machine LoadPlatformDescription @platforms/boards/nucleo_h753zi.repl
+
+sysbus LoadELF @ethernet/build/zephyr/zephyr.elf
+emulation CreateTap "tap0" "tap"
+
+connector Connect sysbus.ethernet switch1
+connector Connect host.tap switch1
+
+showAnalyzer sysbus.usart1
+
+start
