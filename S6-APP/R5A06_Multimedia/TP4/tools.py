@@ -2,7 +2,8 @@ import os
 import sys
 import cv2
 
-AVAILABLE_EXTS = ['.mp4', '.avi', '.mkv']
+from __init__ import AVAILABLE_EXTS
+
 
 def check_video_file(path: str) -> None:
   """Checks the given file path and extension."""
@@ -18,6 +19,17 @@ def check_video_file(path: str) -> None:
       file=sys.stderr
     )
     exit(2)
+
+
+def get_fps(cap: cv2.VideoCapture) -> int:
+  """Returns FPS value for a given video file."""
+  return cap.get(cv2.CAP_PROP_FPS)
+
+
+def get_resolution(cap: cv2.VideoCapture) -> (int, int):
+  h = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+  w = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+  return (h,w)
 
 
 def camera() -> cv2.VideoCapture:

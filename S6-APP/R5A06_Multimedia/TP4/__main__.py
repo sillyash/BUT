@@ -2,18 +2,19 @@ import argparse
 import tools
 import video
 
+from __init__ import AVAILABLE_EXTS
+
 
 def main(path: str) -> int:
-  cap = None # Video capture
+  cap = None  # Video capture
 
   if path == "" or path is None:
     print("No file provided, using default camera.")
     cap = tools.camera()
   else:
-    cap = tools.video(path)
+    cap = tools.video(path=path)
   
-  video.background_substract(cap)
-
+  video.background_substract(cap=cap)
   return 0
 
 

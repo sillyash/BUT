@@ -1,10 +1,8 @@
 import cv2
 import time
+import tools
 
-THRESH = (190, 255)
-FPS = 24
-MIN_AREA = 400  # ignore les contours trop petits (bruit)
-
+from __init__ import THRESH, MIN_AREA_RATIO
 
 def draw_rect(contour, frame, mask):
   x, y, w, h = cv2.boundingRect(contour)
@@ -12,6 +10,11 @@ def draw_rect(contour, frame, mask):
 
 
 def background_substract(cap: cv2.VideoCapture) -> None:
+  fps = tools.get_fps(cap=cap)
+  resolution = tools.get_resolution(cap=cap)
+  area_thresh = (resolution[0] * resolution[1]) / MIN_AREA_RATIO
+  print("AREA : ", area_thresh)
+
   subbg = cv2.createBackgroundSubtractorMOG2()
 
   while True:
@@ -37,15 +40,16 @@ def background_substract(cap: cv2.VideoCapture) -> None:
     )
 
     for contour in listecontours:
-      if cv2.contourArea(contour) < MIN_AREA:
+      if cv2.contourArea(contour) < area_thresh:
         continue
       draw_rect(contour=contour, frame=frame, mask=mask)
 
-    cv2.imshow("Le masque binaire", mask)
+    #cv2.imshow("Le masque binaire", mask)
+    cv2.imshow("Frame", frame)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
       break
 
-    time.sleep(1 / FPS)
+    time.sleep(1 / fps)
 
   cv2.destroyAllWindows()
