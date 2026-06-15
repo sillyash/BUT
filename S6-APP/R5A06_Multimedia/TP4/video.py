@@ -1,9 +1,9 @@
 import cv2
 import time
 
-THRESH = (200, 255)
+THRESH = (190, 255)
 FPS = 24
-MIN_AREA = 500  # ignore les contours trop petits (bruit)
+MIN_AREA = 400  # ignore les contours trop petits (bruit)
 
 
 def draw_rect(contour, frame, mask):
