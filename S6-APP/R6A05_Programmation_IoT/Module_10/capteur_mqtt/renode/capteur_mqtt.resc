@@ -1,0 +1,14 @@
+using sysbus
+emulation CreateSwitch "switch1"
+
+mach create "capteur_mqtt"
+machine LoadPlatformDescription @platforms/boards/nucleo_h753zi.repl
+sysbus LoadELF @capteur_mqtt/build/zephyr/zephyr.elf
+
+emulation CreateTap "tap0" "tap"
+connector Connect sysbus.ethernet switch1
+connector Connect host.tap switch1
+
+showAnalyzer sysbus.usart1
+
+start

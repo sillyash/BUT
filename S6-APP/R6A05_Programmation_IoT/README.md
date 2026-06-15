@@ -6,18 +6,19 @@ Ash MERIENNE
 
 ### Vocabulary
 
-|      |                                                |
-|:-----|:-----------------------------------------------|
-| RTOS | Real-time Operating System                     |
-| UART | Universal asynchronous receiver-transmitter    |
-| GPIO | General Purpose Input/Output                   |
-| TX   | Transmitter buffer (UART)                      |
-| RX   | Receiver buffer (UART)                         |
-| IER  | Interrupt Enable Register                      |
-| ISR  | Interrupt Service Routine                      |
-| IRQ  | Interrupt Request                              |
-| GDB  | GNU Debugger                                   |
-| MPU  | Memory Protection Unit                         |
+|      |                                             |
+|------|---------------------------------------------|
+| RTOS | Real-time Operating System                  |
+| UART | Universal asynchronous receiver-transmitter |
+| GPIO | General Purpose Input/Output                |
+| TX   | Transmitter buffer (UART)                   |
+| RX   | Receiver buffer (UART)                      |
+| IER  | Interrupt Enable Register                   |
+| ISR  | Interrupt Service Routine                   |
+| IRQ  | Interrupt Request                           |
+| GDB  | GNU Debugger                                |
+| MPU  | Memory Protection Unit                      |
+| MQTT | Message Queuing Telemetry Transport         |
 
 ### Setup
 
@@ -35,9 +36,9 @@ Ash MERIENNE
 >
 > There is a mount between the container and the host.
 > It can be very useful for loading / exporting source code:
-> 
+>
 > Example (host):
-> 
+>
 > ```
 > cd ~/workspace/root/src
 > cp -r ~/R6A05_Programmation_IoT/Module_4/* .
@@ -52,7 +53,7 @@ cd /opt/zephyr-.../
 
 > [!NOTE]
 >
-> This is __*optional*__, only do if you have trouble
+> This is *__optional__*, only do if you have trouble
 > with __Renode__ (`LoadPlatformDescription` errors).
 
 Ensure internet is available, then:
@@ -137,7 +138,7 @@ showAnalyzer sysbus.uart0
 machine StartGdbServer 3333
 ```
 
-On another terminal __*in the Zephyr docker container*__,
+On another terminal *__in the Zephyr docker container__*,
 run:
 
 ```bash
@@ -218,10 +219,10 @@ start
 
 #### Find header files and documentation
 
-| Option   | URL / Guidelines                       |
-|:---------|:---------------------------------------|
-| Option A | Search "Zephyr API xyz"                |
-| Option B | https://docs.zephyrproject.org/        |
+| Option   | URL / Guidelines                |
+|----------|---------------------------------|
+| Option A | Search "Zephyr API xyz"         |
+| Option B | https://docs.zephyrproject.org/ |
 
 > [!NOTE]
 >
@@ -265,6 +266,9 @@ CONFIG_THREAD_ANALYZER_AUTO=y
 CONFIG_THREAD_ANALYZER_RUN_UNLOCKED=y
 CONFIG_THREAD_ANALYZER_USE_PRINTK=y
 CONFIG_CONSOLE=y
+
+# MQTT
+CONFIG_MQTT_LIB=y
 ```
 
 #### Logging
@@ -306,28 +310,28 @@ printk(...) /* Gets logged */
 
 #### Various functions
 
-| Function / method         | Usage                                 |
-|:--------------------------|:--------------------------------------|
-| `printk()`                | Prints to *serial* output             |
-| `k_sleep(K_SECONDS(s))`   | Sleeps for `s` seconds                |
-| `k_msleep(s)`             | Sleep for `s` milliseconds            |
-|-|-|
-| `gpio_is_ready_dt()`      | Check if GPIO device is ready         |
-| `gpio_pin_configure_dt()` | Configure GPIO pin as output          |
-| `gpio_pin_toggle_dt()`    | Toggle a GPIO device (LED, etc.)      |
-| `gpio_pin_get_dt()`       | Get a GPIO value (button, etc.)       |
-|-|-|
-| `uartHub`                 | Central communication hub UART        |
-| `BaudRate 115200`         | Standard transmission rate            |
-| `uart_poll_out()`         | Send a byte in polling mode           |
-| `uart_poll_in()`          | Receive a byte in polling mode        |
-| `uart_irq_callback_set()` | Configure a callback for interrupts   |
-|-|-|
-| `k_timer_init(&t, c, s)`  | Configure a timer, with callback `c` and stop `s` functions |
-| `k_timer_start(&t, p, d)` | Start a timer, with `p` period and `d` initial delay in `K_SECONDS` |
-|-|-|
-| `k_work_init(&w, h)`      | Initialize a worker `w` with handler function `h` |
-| `k_msgq_put(&q, &c, K_NO_WAIT)` | 
+| Function / method               | Usage                                                               |
+|---------------------------------|---------------------------------------------------------------------|
+| `printk()`                      | Prints to *serial* output                                           |
+| `k_sleep(K_SECONDS(s))`         | Sleeps for `s` seconds                                              |
+| `k_msleep(s)`                   | Sleep for `s` milliseconds                                          |
+| \-                              | \-                                                                  |
+| `gpio_is_ready_dt()`            | Check if GPIO device is ready                                       |
+| `gpio_pin_configure_dt()`       | Configure GPIO pin as output                                        |
+| `gpio_pin_toggle_dt()`          | Toggle a GPIO device (LED, etc.)                                    |
+| `gpio_pin_get_dt()`             | Get a GPIO value (button, etc.)                                     |
+| \-                              | \-                                                                  |
+| `uartHub`                       | Central communication hub UART                                      |
+| `BaudRate 115200`               | Standard transmission rate                                          |
+| `uart_poll_out()`               | Send a byte in polling mode                                         |
+| `uart_poll_in()`                | Receive a byte in polling mode                                      |
+| `uart_irq_callback_set()`       | Configure a callback for interrupts                                 |
+| \-                              | \-                                                                  |
+| `k_timer_init(&t, c, s)`        | Configure a timer, with callback `c` and stop `s` functions         |
+| `k_timer_start(&t, p, d)`       | Start a timer, with `p` period and `d` initial delay in `K_SECONDS` |
+| \-                              | \-                                                                  |
+| `k_work_init(&w, h)`            | Initialize a worker `w` with handler function `h`                   |
+| `k_msgq_put(&q, &c, K_NO_WAIT)` |                                                                     |
 
 ### UART
 
@@ -371,7 +375,7 @@ Polling is simpler burt drains CPU usage more (and battery!).
 
 Interrupts are more efficient but need proper callback handling.
 
-You need to enable RX/TX interrupt 
+You need to enable RX/TX interrupt
 
 #### Timer based
 
@@ -410,3 +414,4 @@ struct msg {
 } __packed; /* packed removes padding in struct */
 
 Cf. Module 5
+```
